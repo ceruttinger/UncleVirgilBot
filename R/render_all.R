@@ -16,4 +16,8 @@ if (file.exists("R/06_build_pdf_manifest.R")) {
   source("R/06_build_pdf_manifest.R")
 }
 
+if (file.exists("R/07_build_corpus_summary.R")) {
+  source("R/07_build_corpus_summary.R")
+}
+
 message("Done.")
