@@ -1,0 +1,41 @@
+---
+title: "Sentiment"
+---
+
+```{r}
+#| label: sentiment-load
+#| echo: false
+library(readr)
+library(dplyr)
+library(ggplot2)
+if (!file.exists("data/processed/sentiment_by_chapter.csv")) {
+  source("R/02_sentiment_analysis.R")
+}
+sentiment <- read_csv("data/processed/sentiment_by_chapter.csv", show_col_types = FALSE)
+```
+
+This page rebuilds the sentiment analysis in a reproducible way rather than relying on old saved PNG files.
+
+## Net sentiment by chapter
+
+```{r}
+#| echo: false
+sentiment %>%
+  ggplot(aes(x = reorder(chapter_title, chapter), y = net_bing_sentiment)) +
+  geom_col() +
+  coord_flip() +
+  labs(x = NULL, y = "Positive words minus negative words", title = "Net Bing sentiment by chapter") +
+  theme_minimal()
+```
+
+## AFINN score by chapter
+
+```{r}
+#| echo: false
+sentiment %>%
+  ggplot(aes(x = reorder(chapter_title, chapter), y = afinn_score)) +
+  geom_col() +
+  coord_flip() +
+  labs(x = NULL, y = "AFINN score", title = "AFINN sentiment by chapter") +
+  theme_minimal()
+```

@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>chapter_02 – Uncle Virgil Bot</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-f10e0ff7b47c76990a11197da8be0964.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="stylesheet" href="../../../assets/css/styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Uncle Virgil Bot</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../chapters.html"> 
+<span class="menu-text">Chapters</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../sentiment.html"> 
+<span class="menu-text">Sentiment</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../emotions.html"> 
+<span class="menu-text">Emotions</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../wordclouds.html"> 
+<span class="menu-text">Word Clouds</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../timeline.html"> 
+<span class="menu-text">Timeline</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../corpus_review.html"> 
+<span class="menu-text">Corpus QA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../scans.html"> 
+<span class="menu-text">Scanned PDFs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../search.html"> 
+<span class="menu-text">Search</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../chatbot.html"> 
+<span class="menu-text">Chatbot</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../next_steps.html"> 
+<span class="menu-text">Next Steps</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../aws_pipeline.html"> 
+<span class="menu-text">AWS Pipeline</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#chapter-2-the-teenage-period" id="toc-chapter-2-the-teenage-period" class="nav-link active" data-scroll-target="#chapter-2-the-teenage-period">Chapter 2: The Teenage Period</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7"></h1></header><div class="quarto-title-block"><div class="quarto-title-tools-only"><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+
+
+
+
+<section id="chapter-2-the-teenage-period" class="level1">
+<h1>Chapter 2: The Teenage Period</h1>
+<ul>
+<li>Source records: 2–2</li>
+<li>Date confidence: medium</li>
+<li>Boundary confidence: medium</li>
+</ul>
+<p>. ee GHAPTER TWO The Teenage Period</p>
+<p>CHAPTER TWO PART ONE I was ordained a Deacon in the Aaronic Priesthood on my birthday, April 1, 1934 by my Bishop, Louis F. Nuffer. Later when I was in high school he was also my biology teacher. Passing the sacrament in those days was a stiffly formal affair. We all had to wear white shirts and black bow ties and always held our left arm behind our backs. The trays were much heavier than they are now and contained | small real glasses which had to be washed after each Sunday. } | Our family used to have the job of cleaning these glasses | and trays every week. During these years, I used to give frequent two-and-a half minute talks which were standard for the Sunday School up until about the early 1980’s and afforded the youth a great opportunity to learn to speak before a congregation. I always performed pretty well on these talks and received a lot of compliments. My ordination to the office of a Teacher took place on November 15, 1936 by Vern L. Brown, a member of the bishopric of the fourth ward. I participated in several things of interest during these early teen-age years. One was a excursion to the Logan Temple to do proxy baptisms. On our way home we stopped at the grave site of Martin Harris, my great grandfather in Clarkston, Utah, the same town where my father, Lehi, was born. We also stopped at the mineral springs at Soda Springs, Idaho and enjoyed the activities there. I also played on the ward volley-ball team that went to Salt Lake City for some sort of finals - we Gidn’t win, that much I recall, but we had a good time just the same. I was also a Boy Scout. My Boy Scout activities were all right but not great. I reached the rank of Star and basically lost interest since I had to work so much after school. I went on several scout trips to Yellowstone Park and other areas in Idaho which had beautiful lakes, rivers, and streams, great for fishing. | On one occasion someone’s axe slipped just as I walked by and cut deep into my right foot just below the ankle. This eliminated my going on the traditional fourteen mile hike so I stayed in camp and fished all day, catching enough fish to feed the whole troop that night. On another trip Martin and I slept on the truck bed instead of on the ground and had the experience of having a bear, which was scrounging for food in the camp, put its paws right up close to us on the truck bed while we held our breath until it decided to search somewhere else. I think that it was during my freshman year in High School that I went to work after school at Brandl’s Meat Market. From Monday to Friday, I worked from 4:00 P.M. to -15-</p>
+<p>6:00 P.M.and all day on Saturdays from about 9:00 A.M. to 9:00 P.M. My pay was $2.00 per week plus a few pounds of meat for the family. I was always paid in silver dollars. On occasion I would go to a late movie which cost about 10 cents in those days. Most of the time I was too tired and only wanted to get home to rest. The meat I received was the only meat that the family ever got so it was a very special occasion to us. My work consisted of cleaning chickens and preparing them for the counters, using the cube- steak machine, cleaning up the cutting room as well as helping put the counter meat back into the refrigerated lockers after the close of business. This work I did until school was over in the Spring.</p>
+<p>I then quit and went to work out ona farm belonging to Wiley Snarr, a member of our Ward. I milked cows twice per day and helped with the hay, irrigation and all the other various tasks associated with farm work. I slept in the bunk house. The only pay I received was board and room (however, the food was the best that I had ever eaten) and at the end of the summer a supply of coal for our fuel in the house. Wiley and I went to the Blind Bull coal mine to pick up the coal and I had the opportunity of going into the mine. This was the first time that I had ever been inside a mine and I have never experienced such utter blackness in my life. Working that summer on the farm convinced me that I never wanted to be a farmer. The hours and frustration would be just too much for me.</p>
+<p>I attended Riverside grammar school (formerly Eagle Rock which was the original name for Idaho Falls) for my 5th and 6th years. This school was not as prestigious as the one I attended previously i.e Eastside. After grammar school I went to OO. E. Bell Jr.&nbsp;High for the 7th, 8th and 9th years of schooling. Sometime during this period, either after the 7th or 8th grades, Mother decided to move to Salt Lake City which apparently was an ill-fated venture and didn’t last very long because we returned to Idaho Falls for the next year of school. I went to Idaho Falls High for my sophomore year (1937/38) and delivered the Salt Lake Tribune, a morning newspaper, getting up about 4:00 A.M. since it was a long route taking me across town on my bicycle. The winter months in Idaho Falls were pretty vicious andI recall taking some bad spills on icy pavement and railroad tracks with a load of newspapers. Also, there was always the</p>
+<p>) problems of dogs yapping at your feet as you pedaled along. In some areas I had to carry a squirt gun with ammonia in it to ward the dogs off. Just a few weeks before school was out I contracted the mumps) and didn’t have to finish the year out since my grades were good enough that I was just given credit for the term.</p>
+<p>-16-</p>
+<p>PART TWO</p>
+<p>Following my recovery I went to California to live</p>
+<p>with my sister Loverna and her husband Al (Lester Allan Harris). They lived in Pomona, California where they had rented a house which had some grape arbors and chicken coops</p>
+<p>. which had been flooded. In the summer I worked primarily at</p>
+<p>cleaning out the chicken coops which had a layer of about</p>
+<div class="line-block">four inches of silt from the flood that had hit that area</div>
+<p>the previous year. It was hard work but eventually we got</p>
+<p>enough coops cleaned out so0 that Al could buy some young chicks which he planned to raise for eggs and/or fryers. He borrowed some money to buy the chicks and we attempted to raise them with little success. They all eventually died and Al had to figure out how to pay back the money he had borrowed. We sold the Concord grapes that were raised in the arbor but Al couldn’t afford the rent on the house so vwe took a couple of rooms at a hotel.</p>
+<p>For a while Al had a pretty good job working ina bakery but he was fired from that for engaging in union- organizing activity (there was no protection for such</p>
+<p>. activity as there is now). I didn’t really know what was</p>
+<p>going on at that time since I had never heard much about</p>
+<div class="line-block">labor problems but obviously we were engaged in some</div>
+<p>activity which, at that time, was probably illegal, or at least not protected by the law. I Know on several occasions I helped Al and some of his associates to pass out union literature in certain neighborhoods and we had to take all sorts of precautions against getting caught.</p>
+<p>Al Harris was a difficult person to like. He was small in stature but claimed to have been a flyweight fighter at one time. He drank a lot and talked a lot about all the things he was going to accomplish but none ever came to fruition. It was pretty tough on me. I was trying to go to High School and yet help out as much as I could to pay for my room and board. I swept out the union halls after school and went with Al on another venture of his, i.e. selling lunches to workers on construction sites. I think some of the things Al engaged in could have been successful had Al had the business background and a little humility. He wouldn’t take much advice from anyone and was always getting stung. He and Loverna had just been married a year and didn’t as yet have any children so from that standpoint it was fortunate. Loverna was pretty supportive of Al but they did have some heated arguments over his ventures.</p>
+<p>In retrospect, my year in Pomona, California was useful to me in that I found new friends and, for the first time, formulated a desire to go to college. The school I attended was Pomona High School and Jr.&nbsp;College, basically a fourteen year arrangement. A student could just continue right on into Jr.&nbsp;College there without missing a beat, not</p>
+<p>-17-</p>
+<div class="line-block">even changing school locations. I was a good student and was</div>
+<p>. able to engage in quite a few extra-curricular activities . such as debating and extemporaneous speaking which involved</p>
+<p>. traveling around to other high schools in the area for</p>
+<p>. debate meets. My fellow students, particularly those on the</p>
+<div class="line-block">debate team,accepted me and we did a lot of fun things</div>
+<div class="line-block">together. Although I never had any formal dates ,I</div>
+<div class="line-block">participated ina lot of group activities.</div>
+<div class="line-block">After the first semester I was elected to the honor</div>
+<div class="line-block">society which was called the Thalians and , amongst other</div>
+<p>things, being in that group got out of taking final exams.</p>
+<p>Instead, the membership had a year-end outing at Balboa</p>
+<p>. Beach. My history/civics teacher was quite concerned that I</p>
+<p>wasn’t planning to go on to college (I still had a year of</p>
+<div class="line-block">high school to complete) and said for me to try to remain in</div>
+<div class="line-block">California and take advantage of its junior college program.</div>
+<div class="line-block">Of course, this was impossible. I felt that I had imposed</div>
+<p>. enough on Al and Loverna and was just another worry for</p>
+<p>them. In school I belonged to the Indaba Club as well as the</p>
+<div class="line-block">Thalians. Indaba was a forensic organization organized to</div>
+<p>further student interest in speech arts. The word “Indaba”</p>
+<p>is of African origin and has something to do with big words.</p>
+<p>, My closest friends in my Junior year were all members of the</p>
+<div class="line-block">debate team, Chuck Vander Linden, Shirley Tyson, and Nancy</div>
+<div class="line-block">Simonsen.</div>
+<p>In addition to my school activities I was active in</p>
+<p>) the local ward of the church and made a lot of good friends</p>
+<p>. there as well as participating in the usual Church social</p>
+<p>. activities. One of the friends of that time was named | Forrest Black. Later we both were at BYU together and his</p>
+<p>Son Daryl married my niece Lyndel (one of Loverna and Al’s . children). Getting back to Idaho Falls was a problem after</p>
+<p>. the school year finished. Al and Loverna couldn’t afford to . send me back by train or bus (that kind of travel was very Sporatic in those days anyhow.) I finally ended up riding with a couple ina Model A Ford. This was before the days of air-conditioned cars so it was pretty hot traveling</p>
+<div class="line-block">across the desert. Cars usually carried a water bag made of</div>
+<div class="line-block">tough canvas which was hung on a headlight or grill ornament</div>
+<p>. and the evaporation kept the water fairly cool and served . for refreshment or, more often than not, to put into the | | radiator which usually overheated.</p>
+<div class="line-block">One of the big surprises that I encountered upon my<br>
+return to Idaho Falls was the growth of my good friend, Jack</div>
+<p>. Kelley, who was about my height when I left but was a tall</p>
+<div class="line-block">6’5” kid when I returned. Jack , Revel Nielson and I were</div>
+<p>) always a three-some although Jack was a year older than</p>
+<p>. Reuel and I. We did practically everything together from</p>
+<p>. about the 7th or 8th grade on. Some other friends during my</p>
+<p>Jr.&nbsp;High and High school years were Wilmer Norton , Harold</p>
+<div class="line-block">Price and his brother, Rulon, and Melvin Olsen (whom we</div>
+<div class="line-block">~18-</div>
+<p>called Pasca for no particular reason). Jack always wanted to me a radio announcer and Reuel (whom we called Jr. because his Dad was also a Reuel) was constantly fiddling with electronic gadgets. Jack’s dad was a manufacturers’ representative and Jr.’s owned and operated the Riteway hardware store in Idaho Falls for many years.</p>
+<p>Since I had spent my Junior year in Pomona, I returned to Idaho Falls High as a transfer student and didn’t belong to any clubs or participate in any of the school offices during my Senior year. I again delivered the Salt Lake Tribune in the early morning hours</p>
+<p>Prior to the start of school the whole family went up</p>
+<p>to Victor, Idaho to work at picking the fall crop of peas. While it was a lot of hard work, it was a very picturesque place to be, right at the base of the Teton mountains. There were some excellent trout streams in the area and even a warm springs where one could go swimming. We used to stun the fish in the shallow streams with our flippers.</p>
+<p>About this time I was ordained to the office of a Priest on September 24, 1939 by Jack A. Packer, a member of the 4th Ward bishopric.</p>
+<p>The years 1939-1940, of course were critical and crucial ones in the history of the world. Upon my graduation from high school in May 1940 , the only thing anybody talked about was as to when the U.S. would be joining in the war effort. The plans of most young people were at best very tentative. Of course, I would have gladly gone to college had the opportunity presented itself. In September 1939,</p>
+<p>World War II began with Germany’s invasion of Poland and the</p>
+<p>declaration of war by Great Britain and France. By the time of my graduation Germany had invaded Belgium, The</p>
+<p>Netherlands, and Luxembourg. I remember my mother’s tears and concern when it was reported (erroneously) that the Nazi’s had also invaded Switzerland. This never happened since it was important to have a neutral state in the area.</p>
+<p>Just after graduation, a group of us took a trip to the World’s Fair in San Francisco on Treasure Island. We used the Oldsmobile of Reuel’s dad and the other members of | the group beside Reuel and myself were Jack Kelley and Melvin Olsen. As a historical note the featured speaker at this fair was an up and coming politician who had just been elected Governor of Minnesota , Harold Stassen, and whom many were predicting would become the president of the United States. As of 1988 he’s still trying!</p>
+<p>PART THREE</p>
+<p>Unable to find a job in Idaho Falls, Jack Kelley and</p>
+<p>I hitch-hiked to Salt Lake City. I had a recommendation -19-</p>
+<p>from our Stake President ,Heber Austin ,and was able to get employment in the Presiding Bishop’s office as a clerk- typist. Jack eventually got a job type-setting at the Deseret News. We lived initially in a small hotel on Main St.&nbsp;(for $2.00 per week) and usually ate at the Grabeteria , a little standup hole in the wall for fast food. Later we moved to the Wilson Hotel and ultimately to a boarding house across the street from the 12th Ward chapel. Here we remained until Jack got transferred and I got married to Joyce McNeill.</p>
+<p>My responsibilities at the PBO were exclusively</p>
+<p>clerical in nature, typing out membership records, filing a</p>
+<p>) copy and sending an appropriate copy to the Ward where a particular member resided. I was also almost exclusively responsible for the filing of the data for the LDS church census as it came in for the year 1940. As I recall the membership was around 800,000 at that time. I worked in this office at very minimum wages until an opportunity came to get a job with the Salt Lake City office of Western , Electric Co, a Bell Telephone subsidiary, under the auspices of Mountain States Telephone and Telegraph. During the entire time of my employment there, I worked in the old Hyland Office of M.S.T.&amp; T. This office was no longer functioning as a telephone exchange. The employees consisted of approximately 20/30 young men charged with the responsibility of dismantling the equipment of the exchange (a manual one) , since Salt Lake was gradually switching to a dial system.</p>
+<p>Almost immediately upon my assignment, after a few days of slinging solder at terminal connections, I was asked to assume the responsibility for the time and attendance records, social security information, and collection of union dues’ for the CWA (Communications Workers of America). I guess I was given this job because I was good at math, had just come from a job with clerical and typing responsibilities and the boss (called the Installer in Charge) who had to do it himself before I came hated this Kind of work. I also had to learn all there was to know about the telephone equipment at the office since the crew was involved in disconnecting and packaging it for shipment to other offices in the MST&amp;T area.</p>
+<p>I was involved in church activities as well and started to date a. young woman named Joyce McNeill quite regularly in the summer of 1941. The war picture also continued to darken. U. S. Lend Lease was providing all our aid to Britain and other countries at war with the Axis powers (Germany, Italy and Japan). It just seemed a matter of time before the U.S. became an active participant in the war. In August 1941 , the Atlantic Charter was signed by Roosevelt and Churchill. On Dec.&nbsp;7, 1941 Japan attacked the U. S. naval bases at Pearl Harbor, Hawaii, destroying most</p>
+<p>-20-</p>
+<p>of the U.S. Pacific fleet. I was loafing at the boarding house between Sunday school and sacrament meeting when the radio announced the attack on Pearl Harbor. The next day Japanese troops attacked the Philippines, Hongkong, Thailand and British Malaya and the U.S. and Great Britain declared war on Japan. By Dec.&nbsp;11, Germany and Italy declared war on the U.S. and Congress recognized a state of war with these two nations as well as with Japan. Immediately with these events, our work force began to disintegrate. The Installer In Charge joined the Navy and, because of my knowledge of all the procedures, as well as the equipment, I was given his responsibility which corresponded to the work of a foreman. Pretty heady stuff for a young man just 19 years old.</p>
+<p>From the outset of my employment with Western Electric I made it a point to maintain good relations with the secretary of my boss, a crusty old telephone man named T.J.Hurley,in the main office. My friendship with her paid off in spades. She would advise me candidly when my boss was upset about something (usually a shipment that hadn’t arrived at the designated destination on time or a delay on our part in making the shipment). There was very little of this but when it did happen sparks flew from the main office. Having been forewarned as to what the problem was, I usually was able to find out what happened by the time the boss got to our office (which didn’t take him very long.) More often than not it involved the newness of the employee. My crew changed almost weekly due to the draft situation.</p>
+<p>Having been given a raise in pay because of my status</p>
+<p>, as the Installer In Charge (as I recall from about $22.50 per week to $27.50) I felt I could afford to pop the question to Joyce McNeill. Eventually she accepted (she was still only 17 but looked and acted much more mature) although her mother was never really in favor of our marriage. I was ordained an Elder on 24th of May 1942 by Elwood Heiner, the President of the 4th Quorum of Elders of the Emigration Stake. At any rate we were married in the Salt Lake temple on 30 September 1942 and less than a month later I received my draft notice. I had to decide whether to be a private in the Army or take a rating in the Navy. Reuel Neilson had written me that anyone who could pass a basic exam in electronics could get a Radio Technician Third Class rating (about the equivalent of an Army buck sargeant) so I took this route and enlisted in the Navy as of October 23, 1942. More about my military service later, however. Almost as soon as I left for basic training at Treasure Island in San Francisco, Joyce’s mother went to work on her. Her mother was on her second marriage herself and didn’t have any qualms about breaking one up. We spent the twelve weeks of my training assignment at Utah State Agricultural College together since married sailors were given permission to have their wives there. After being at Logan, I was</p>
+<p>—-?1-</p>
+<div class="line-block">assigned to the Corpus Christi Naval Air Base training</div>
+<p>school for training in advanced aviation radar. I received ; word that Joyce had miscarried and took a rush trip to Salt f Lake City although there was nothing that I could do. Just prior to my departure from the six month training course at ; Corpus Christi (Oct.1943) Joyce wrote me that she wanted a [ divorce. Things sort of dragged for awhile and it wasn’t ; until I had been assigned to Quonset Pt. Rhode Island Air Station, awaiting the completion of my ship that we did : anything further about the divorce. By then after much , prayer and meditation, I had pretty well concluded that it ! was in the best interest of both of us to. shed this marriage. The divorce decree was dated Dec.&nbsp;23, 1943. It wasn’t until I had been transferred to the | U.S.S.Wasp and was at sea that the divorce and subsequent cancellation of our Temple sealing was finalized. I only saw Joyce once after that. I met her on a Salt Lake street while I was there on leave in 1945 following the bombing of the U.S.S.Wasp and our return to the States for repairs. She had married the sailor she knew before she met me. I : hesitate to guess what my life would have been like had I remained married to Joyce. Perhaps, just have returned to Salt Lake and gone back to work for Western Electric. Who knows? As for Joyce, all I’ve heard through the Ila Rose grapevine is that she is currently (1988) on her fourth marriage. | -22-</p>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/clarkruttinger\.info\/UncleVirgilBot\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Chapter 2: The Teenage Period</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Source records: 2–2</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Date confidence: medium</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Boundary confidence: medium</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>. ee</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>GHAPTER TWO</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>The Teenage Period</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>CHAPTER TWO</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>PART ONE</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>I was ordained a Deacon in the Aaronic Priesthood on</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>my birthday, April 1, 1934 by my Bishop, Louis F. Nuffer.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Later when I was in high school he was also my biology</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>teacher. Passing the sacrament in those days was a stiffly</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>formal affair. We all had to wear white shirts and black</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>bow ties and always held our left arm behind our backs. The</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>trays were much heavier than they are now and contained</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> small real glasses which had to be washed after each Sunday.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>} | Our family used to have the job of cleaning these glasses</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> and trays every week. During these years, I used to give</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>frequent two-and-a half minute talks which were standard for</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>the Sunday School up until about the early 1980's and</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>afforded the youth a great opportunity to learn to speak</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>before a congregation. I always performed pretty well on</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>these talks and received a lot of compliments.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>My ordination to the office of a Teacher took place</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>on November 15, 1936 by Vern L. Brown, a member of the</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>bishopric of the fourth ward. I participated in several</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>things of interest during these early teen-age years. One</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>was a excursion to the Logan Temple to do proxy baptisms.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>On our way home we stopped at the grave site of Martin</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Harris, my great grandfather in Clarkston, Utah, the same</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>town where my father, Lehi, was born. We also stopped at</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>the mineral springs at Soda Springs, Idaho and enjoyed the</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>activities there. I also played on the ward volley-ball team</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>that went to Salt Lake City for some sort of finals - we</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Gidn't win, that much I recall, but we had a good time just</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>the same. I was also a Boy Scout. My Boy Scout activities</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>were all right but not great. I reached the rank of Star</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>and basically lost interest since I had to work so much</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>after school. I went on several scout trips to Yellowstone</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Park and other areas in Idaho which had beautiful lakes,</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>rivers, and streams, great for fishing.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>On one occasion someone's axe slipped just as I</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>walked by and cut deep into my right foot just below the</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>ankle. This eliminated my going on the traditional fourteen</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>mile hike so I stayed in camp and fished all day, catching</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>enough fish to feed the whole troop that night. On another</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>trip Martin and I slept on the truck bed instead of on the</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>ground and had the experience of having a bear, which was</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>scrounging for food in the camp, put its paws right up close</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>to us on the truck bed while we held our breath until it</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>decided to search somewhere else.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>I think that it was during my freshman year in High</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>School that I went to work after school at Brandl's Meat</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>Market. From Monday to Friday, I worked from 4:00 P.M. to</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>-15-</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>6:00 P.M.and all day on Saturdays from about 9:00 A.M. to</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>9:00 P.M. My pay was $2.00 per week plus a few pounds of</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>meat for the family. I was always paid in silver dollars.</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>On occasion I would go to a late movie which cost about 10</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>cents in those days. Most of the time I was too tired and</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>only wanted to get home to rest. The meat I received was</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>the only meat that the family ever got so it was a very</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>special occasion to us. My work consisted of cleaning</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>chickens and preparing them for the counters, using the cube-</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>steak machine, cleaning up the cutting room as well as</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>helping put the counter meat back into the refrigerated</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>lockers after the close of business. This work I did until</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>school was over in the Spring.</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>I then quit and went to work out ona farm belonging</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>to Wiley Snarr, a member of our Ward. I milked cows twice</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>per day and helped with the hay, irrigation and all the</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>other various tasks associated with farm work. I slept in</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>the bunk house. The only pay I received was board and room</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>(however, the food was the best that I had ever eaten) and</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>at the end of the summer a supply of coal for our fuel in</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>the house. Wiley and I went to the Blind Bull coal mine to</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>pick up the coal and I had the opportunity of going into the</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>mine. This was the first time that I had ever been inside a</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>mine and I have never experienced such utter blackness in my</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>life. Working that summer on the farm convinced me that I</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>never wanted to be a farmer. The hours and frustration would</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>be just too much for me.</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>I attended Riverside grammar school (formerly Eagle</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>Rock which was the original name for Idaho Falls) for my 5th</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>and 6th years. This school was not as prestigious as the one</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>I attended previously i.e Eastside. After grammar school I</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>went to OO. E. Bell Jr. High for the 7th, 8th and 9th years</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>of schooling. Sometime during this period, either after the</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>7th or 8th grades, Mother decided to move to Salt Lake City</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>which apparently was an ill-fated venture and didn't last</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>very long because we returned to Idaho Falls for the next</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>year of school. I went to Idaho Falls High for my sophomore</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>year (1937/38) and delivered the Salt Lake Tribune, a</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>morning newspaper, getting up about 4:00 A.M. since it was a</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>long route taking me across town on my bicycle. The winter</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>months in Idaho Falls were pretty vicious andI recall</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>taking some bad spills on icy pavement and railroad tracks</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>with a load of newspapers. Also, there was always the</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>) problems of dogs yapping at your feet as you pedaled along.</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>In some areas I had to carry a squirt gun with ammonia in it</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>to ward the dogs off. Just a few weeks before school was out</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>I contracted the mumps) and didn't have to finish the year</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>out since my grades were good enough that I was just given</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>credit for the term.</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>-16-</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>PART TWO</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>Following my recovery I went to California to live</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>with my sister Loverna and her husband Al (Lester Allan</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>Harris). They lived in Pomona, California where they had</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>rented a house which had some grape arbors and chicken coops</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>. which had been flooded. In the summer I worked primarily at</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>cleaning out the chicken coops which had a layer of about</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> four inches of silt from the flood that had hit that area</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>the previous year. It was hard work but eventually we got</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>enough coops cleaned out so0 that Al could buy some young</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>chicks which he planned to raise for eggs and/or fryers. He</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>borrowed some money to buy the chicks and we attempted to</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>raise them with little success. They all eventually died</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>and Al had to figure out how to pay back the money he had</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>borrowed. We sold the Concord grapes that were raised in the</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>arbor but Al couldn't afford the rent on the house so vwe</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>took a couple of rooms at a hotel.</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>For a while Al had a pretty good job working ina</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>bakery but he was fired from that for engaging in union-</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>organizing activity (there was no protection for such</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>. activity as there is now). I didn't really know what was</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>going on at that time since I had never heard much about</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> labor problems but obviously we were engaged in some</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>activity which, at that time, was probably illegal, or at</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>least not protected by the law. I Know on several occasions</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>I helped Al and some of his associates to pass out union</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>literature in certain neighborhoods and we had to take all</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>sorts of precautions against getting caught.</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>Al Harris was a difficult person to like. He was</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>small in stature but claimed to have been a flyweight</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>fighter at one time. He drank a lot and talked a lot about</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>all the things he was going to accomplish but none ever came</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>to fruition. It was pretty tough on me. I was trying to go</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>to High School and yet help out as much as I could to pay</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>for my room and board. I swept out the union halls after</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>school and went with Al on another venture of his, i.e.</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>selling lunches to workers on construction sites. I think</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>some of the things Al engaged in could have been successful</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>had Al had the business background and a little humility.</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>He wouldn't take much advice from anyone and was always</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>getting stung. He and Loverna had just been married a year</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>and didn't as yet have any children so from that standpoint</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>it was fortunate. Loverna was pretty supportive of Al but</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>they did have some heated arguments over his ventures.</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>In retrospect, my year in Pomona, California was</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>useful to me in that I found new friends and, for the first</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>time, formulated a desire to go to college. The school I</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>attended was Pomona High School and Jr. College, basically a</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>fourteen year arrangement. A student could just continue</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>right on into Jr. College there without missing a beat, not</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>-17-</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> even changing school locations. I was a good student and was</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>. able to engage in quite a few extra-curricular activities</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>. such as debating and extemporaneous speaking which involved</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>. traveling around to other high schools in the area for</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>. debate meets. My fellow students, particularly those on the</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> debate team,accepted me and we did a lot of fun things</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> together. Although I never had any formal dates ,I</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> participated ina lot of group activities.</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> After the first semester I was elected to the honor</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> society which was called the Thalians and , amongst other</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>things, being in that group got out of taking final exams.</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>Instead, the membership had a year-end outing at Balboa</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>. Beach. My history/civics teacher was quite concerned that I</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>wasn't planning to go on to college (I still had a year of</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> high school to complete) and said for me to try to remain in</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> California and take advantage of its junior college program.</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Of course, this was impossible. I felt that I had imposed</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>. enough on Al and Loverna and was just another worry for</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>them. In school I belonged to the Indaba Club as well as the</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Thalians. Indaba was a forensic organization organized to</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>further student interest in speech arts. The word "Indaba"</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>is of African origin and has something to do with big words.</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>, My closest friends in my Junior year were all members of the</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> debate team, Chuck Vander Linden, Shirley Tyson, and Nancy</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Simonsen.</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>In addition to my school activities I was active in</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>) the local ward of the church and made a lot of good friends</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>. there as well as participating in the usual Church social</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>. activities. One of the friends of that time was named</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Forrest Black. Later we both were at BYU together and his</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>Son Daryl married my niece Lyndel (one of Loverna and Al's</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>. children). Getting back to Idaho Falls was a problem after</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>. the school year finished. Al and Loverna couldn't afford to</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>. send me back by train or bus (that kind of travel was very</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>Sporatic in those days anyhow.) I finally ended up riding</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>with a couple ina Model A Ford. This was before the days</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>of air-conditioned cars so it was pretty hot traveling</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> across the desert. Cars usually carried a water bag made of</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> tough canvas which was hung on a headlight or grill ornament</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>. and the evaporation kept the water fairly cool and served</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>. for refreshment or, more often than not, to put into the |</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> radiator which usually overheated.</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> One of the big surprises that I encountered upon my</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> return to Idaho Falls was the growth of my good friend, Jack</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>. Kelley, who was about my height when I left but was a tall</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 6'5" kid when I returned. Jack , Revel Nielson and I were</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>) always a three-some although Jack was a year older than</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>. Reuel and I. We did practically everything together from</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>. about the 7th or 8th grade on. Some other friends during my</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>Jr. High and High school years were Wilmer Norton , Harold</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Price and his brother, Rulon, and Melvin Olsen (whom we</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> ~18-</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>called Pasca for no particular reason). Jack always wanted</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>to me a radio announcer and Reuel (whom we called Jr.</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>because his Dad was also a Reuel) was constantly fiddling</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>with electronic gadgets. Jack's dad was a manufacturers'</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>representative and Jr.'s owned and operated the Riteway</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>hardware store in Idaho Falls for many years.</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>Since I had spent my Junior year in Pomona, I</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>returned to Idaho Falls High as a transfer student and</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>didn't belong to any clubs or participate in any of the</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>school offices during my Senior year. I again delivered the</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>Salt Lake Tribune in the early morning hours</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>Prior to the start of school the whole family went up</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>to Victor, Idaho to work at picking the fall crop of peas.</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>While it was a lot of hard work, it was a very picturesque</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>place to be, right at the base of the Teton mountains.</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>There were some excellent trout streams in the area and even</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>a warm springs where one could go swimming. We used to stun</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>the fish in the shallow streams with our flippers.</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>About this time I was ordained to the office of a</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>Priest on September 24, 1939 by Jack A. Packer, a member of</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>the 4th Ward bishopric.</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>The years 1939-1940, of course were critical and</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>crucial ones in the history of the world. Upon my graduation</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>from high school in May 1940 , the only thing anybody talked</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>about was as to when the U.S. would be joining in the war</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>effort. The plans of most young people were at best very</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>tentative. Of course, I would have gladly gone to college</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>had the opportunity presented itself. In September 1939,</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>World War II began with Germany's invasion of Poland and the</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>declaration of war by Great Britain and France. By the time</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>of my graduation Germany had invaded Belgium, The</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>Netherlands, and Luxembourg. I remember my mother's tears</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>and concern when it was reported (erroneously) that the</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>Nazi's had also invaded Switzerland. This never happened</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>since it was important to have a neutral state in the area.</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>Just after graduation, a group of us took a trip to</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>the World's Fair in San Francisco on Treasure Island. We</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>used the Oldsmobile of Reuel's dad and the other members of |</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>the group beside Reuel and myself were Jack Kelley and</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>Melvin Olsen. As a historical note the featured speaker at</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>this fair was an up and coming politician who had just been</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>elected Governor of Minnesota , Harold Stassen, and whom</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>many were predicting would become the president of the</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>United States. As of 1988 he's still trying!</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>PART THREE</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>Unable to find a job in Idaho Falls, Jack Kelley and</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>I hitch-hiked to Salt Lake City. I had a recommendation</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>-19-</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>from our Stake President ,Heber Austin ,and was able to get</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>employment in the Presiding Bishop's office as a clerk-</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>typist. Jack eventually got a job type-setting at the</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>Deseret News. We lived initially in a small hotel on Main</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>St. (for $2.00 per week) and usually ate at the Grabeteria ,</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>a little standup hole in the wall for fast food. Later we</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>moved to the Wilson Hotel and ultimately to a boarding house</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>across the street from the 12th Ward chapel. Here we</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>remained until Jack got transferred and I got married to</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>Joyce McNeill.</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>My responsibilities at the PBO were exclusively</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>clerical in nature, typing out membership records, filing a</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>) copy and sending an appropriate copy to the Ward where a</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>particular member resided. I was also almost exclusively</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>responsible for the filing of the data for the LDS church</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>census as it came in for the year 1940. As I recall the</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>membership was around 800,000 at that time. I worked in</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>this office at very minimum wages until an opportunity came</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>to get a job with the Salt Lake City office of Western ,</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>Electric Co, a Bell Telephone subsidiary, under the auspices</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>of Mountain States Telephone and Telegraph. During the</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>entire time of my employment there, I worked in the old</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>Hyland Office of M.S.T.&amp; T. This office was no longer</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>functioning as a telephone exchange. The employees</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>consisted of approximately 20/30 young men charged with the</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>responsibility of dismantling the equipment of the exchange</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>(a manual one) , since Salt Lake was gradually switching to</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>a dial system.</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>Almost immediately upon my assignment, after a few</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>days of slinging solder at terminal connections, I was asked</span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>to assume the responsibility for the time and attendance</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>records, social security information, and collection of</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>union dues’ for the CWA (Communications Workers of America).</span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>I guess I was given this job because I was good at math, had</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>just come from a job with clerical and typing</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>responsibilities and the boss (called the Installer in</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>Charge) who had to do it himself before I came hated this</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>Kind of work. I also had to learn all there was to know</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>about the telephone equipment at the office since the crew</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>was involved in disconnecting and packaging it for shipment</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>to other offices in the MST&amp;T area.</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>I was involved in church activities as well and</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>started to date a. young woman named Joyce McNeill quite</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>regularly in the summer of 1941. The war picture also</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>continued to darken. U. S. Lend Lease was providing all our</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>aid to Britain and other countries at war with the Axis</span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>powers (Germany, Italy and Japan). It just seemed a matter</span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>of time before the U.S. became an active participant in the</span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>war. In August 1941 , the Atlantic Charter was signed by</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>Roosevelt and Churchill. On Dec. 7, 1941 Japan attacked the</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>U. S. naval bases at Pearl Harbor, Hawaii, destroying most</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>-20-</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>of the U.S. Pacific fleet. I was loafing at the boarding</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>house between Sunday school and sacrament meeting when the</span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>radio announced the attack on Pearl Harbor. The next day</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>Japanese troops attacked the Philippines, Hongkong, Thailand</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>and British Malaya and the U.S. and Great Britain declared</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>war on Japan. By Dec. 11, Germany and Italy declared war on</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>the U.S. and Congress recognized a state of war with these</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>two nations as well as with Japan. Immediately with these</span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>events, our work force began to disintegrate. The Installer</span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>In Charge joined the Navy and, because of my knowledge of</span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>all the procedures, as well as the equipment, I was given</span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>his responsibility which corresponded to the work of a</span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>foreman. Pretty heady stuff for a young man just 19 years</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>old.</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>From the outset of my employment with Western</span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>Electric I made it a point to maintain good relations with</span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>the secretary of my boss, a crusty old telephone man named</span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>T.J.Hurley,in the main office. My friendship with her paid</span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>off in spades. She would advise me candidly when my boss was</span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>upset about something (usually a shipment that hadn't</span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>arrived at the designated destination on time or a delay on</span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>our part in making the shipment). There was very little of</span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>this but when it did happen sparks flew from the main</span>
+<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>office. Having been forewarned as to what the problem was, I</span>
+<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>usually was able to find out what happened by the time the</span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>boss got to our office (which didn't take him very long.)</span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>More often than not it involved the newness of the employee.</span>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>My crew changed almost weekly due to the draft situation.</span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>Having been given a raise in pay because of my status</span>
+<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>, as the Installer In Charge (as I recall from about $22.50</span>
+<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>per week to $27.50) I felt I could afford to pop the</span>
+<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>question to Joyce McNeill. Eventually she accepted (she was</span>
+<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a>still only 17 but looked and acted much more mature)</span>
+<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>although her mother was never really in favor of our</span>
+<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>marriage. I was ordained an Elder on 24th of May 1942 by</span>
+<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>Elwood Heiner, the President of the 4th Quorum of Elders of</span>
+<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>the Emigration Stake. At any rate we were married in the</span>
+<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>Salt Lake temple on 30 September 1942 and less than a month</span>
+<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>later I received my draft notice. I had to decide whether</span>
+<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>to be a private in the Army or take a rating in the Navy.</span>
+<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a>Reuel Neilson had written me that anyone who could pass a</span>
+<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a>basic exam in electronics could get a Radio Technician Third</span>
+<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a>Class rating (about the equivalent of an Army buck sargeant)</span>
+<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>so I took this route and enlisted in the Navy as of October</span>
+<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>23, 1942. More about my military service later, however.</span>
+<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>Almost as soon as I left for basic training at Treasure</span>
+<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>Island in San Francisco, Joyce's mother went to work on her.</span>
+<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>Her mother was on her second marriage herself and didn't</span>
+<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>have any qualms about breaking one up. We spent the twelve</span>
+<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>weeks of my training assignment at Utah State Agricultural</span>
+<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>College together since married sailors were given permission</span>
+<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>to have their wives there. After being at Logan, I was</span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>—-?1-</span>
+<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> assigned to the Corpus Christi Naval Air Base training</span>
+<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>school for training in advanced aviation radar. I received</span>
+<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a>; word that Joyce had miscarried and took a rush trip to Salt</span>
+<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>f Lake City although there was nothing that I could do. Just</span>
+<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>prior to my departure from the six month training course at</span>
+<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>; Corpus Christi (Oct.1943) Joyce wrote me that she wanted a</span>
+<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>[ divorce. Things sort of dragged for awhile and it wasn't</span>
+<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>; until I had been assigned to Quonset Pt. Rhode Island Air</span>
+<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>Station, awaiting the completion of my ship that we did</span>
+<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>: anything further about the divorce. By then after much</span>
+<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>, prayer and meditation, I had pretty well concluded that it</span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>! was in the best interest of both of us to. shed this</span>
+<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>marriage. The divorce decree was dated Dec. 23, 1943.</span>
+<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>It wasn't until I had been transferred to the</span>
+<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> U.S.S.Wasp and was at sea that the divorce and subsequent</span>
+<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a>cancellation of our Temple sealing was finalized. I only</span>
+<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a>saw Joyce once after that. I met her on a Salt Lake street</span>
+<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a>while I was there on leave in 1945 following the bombing of</span>
+<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a>the U.S.S.Wasp and our return to the States for repairs.</span>
+<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a>She had married the sailor she knew before she met me. I</span>
+<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a>: hesitate to guess what my life would have been like had I</span>
+<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a>remained married to Joyce. Perhaps, just have returned to</span>
+<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a>Salt Lake and gone back to work for Western Electric. Who</span>
+<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a>knows? As for Joyce, all I've heard through the Ila Rose</span>
+<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a>grapevine is that she is currently (1988) on her fourth</span>
+<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a>marriage.</span>
+<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span></span>
+<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a>-22-</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Uncle Virgil memoir analysis project</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

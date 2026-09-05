@@ -1,0 +1,124 @@
+---
+title: "Corpus QA"
+---
+
+```{r}
+#| label: corpus-qa-load
+#| echo: false
+library(readr)
+library(dplyr)
+library(DT)
+library(jsonlite)
+
+if (!file.exists("data/processed/chapter_boundary_review.csv") || !file.exists("data/processed/build_summary.json")) {
+  source("R/01_prepare_corpus.R")
+}
+
+build_summary <- jsonlite::read_json("data/processed/build_summary.json")
+boundaries <- readr::read_csv("data/processed/chapter_boundary_review.csv", show_col_types = FALSE)
+ocr <- readr::read_csv("data/processed/ocr_review.csv", show_col_types = FALSE)
+years <- readr::read_csv("data/processed/year_candidates_by_chapter.csv", show_col_types = FALSE)
+records <- readr::read_csv("data/processed/corpus_records_review.csv", show_col_types = FALSE)
+```
+
+This page is the review station for the weak part of the project: chapter boundaries, OCR quality, and timeline dates.
+
+## Build summary
+
+```{r}
+#| echo: false
+summary_df <- tibble::tibble(
+  field = names(build_summary),
+  value = vapply(build_summary, function(x) paste(unlist(x), collapse = ", "), character(1))
+)
+DT::datatable(summary_df, rownames = FALSE, options = list(pageLength = 10, dom = "tip"))
+```
+
+## Important source warning
+
+The current `corpus_data.json` appears to have been created after the old setup script removed numbers from the text. That means many years and exact dates are missing. The public text and search work, but the timeline should be treated as provisional until the corpus is rebuilt from the raw chapter `.rds` files or scanned PDFs.
+
+Use this order:
+
+```bash
+mkdir -p data/raw_scans
+# copy CH-01.rds ... CH-11.rds into data/raw_scans/
+Rscript R/00_rebuild_raw_text_from_rds.R
+Rscript R/render_all.R
+quarto preview
+```
+
+If you only have scanned PDFs:
+
+```bash
+mkdir -p assets/pdf
+# copy CH-01.pdf ... CH-11.pdf into assets/pdf/
+Rscript R/00_ocr_scanned_pdfs.R
+Rscript R/00_rebuild_raw_text_from_rds.R
+Rscript R/render_all.R
+quarto preview
+```
+
+## Chapter boundary review
+
+Look for `chapter_title_page_or_heading_only`, chapter transitions, and snippets that appear under the wrong chapter.
+
+```{r}
+#| echo: false
+DT::datatable(
+  boundaries,
+  rownames = FALSE,
+  filter = "top",
+  options = list(pageLength = 15, scrollX = TRUE)
+)
+```
+
+## OCR issue review
+
+These are not all errors. They are places where the text deserves attention before we treat the analysis as final.
+
+```{r}
+#| echo: false
+if (nrow(ocr) == 0) {
+  cat("No OCR issue patterns were detected by the current rule set.")
+} else {
+  DT::datatable(
+    ocr,
+    rownames = FALSE,
+    filter = "top",
+    options = list(pageLength = 15, scrollX = TRUE)
+  )
+}
+```
+
+## Year candidates
+
+If this table is sparse, the source text is probably missing numbers. Rebuild from the raw `.rds` or PDFs before making a serious timeline.
+
+```{r}
+#| echo: false
+if (nrow(years) == 0) {
+  cat("No year candidates were found. This strongly suggests the current text source has numbers stripped out.")
+} else {
+  DT::datatable(
+    years,
+    rownames = FALSE,
+    filter = "top",
+    options = list(pageLength = 15, scrollX = TRUE)
+  )
+}
+```
+
+## Record-level corpus view
+
+This helps diagnose bad splits, title pages, and source record boundaries.
+
+```{r}
+#| echo: false
+DT::datatable(
+  records |> select(source_record_id, assigned_chapter, chapter_title, detected_chapter, detected_heading, word_count, review_flag, snippet),
+  rownames = FALSE,
+  filter = "top",
+  options = list(pageLength = 15, scrollX = TRUE)
+)
+```

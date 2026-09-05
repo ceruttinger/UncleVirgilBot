@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>chapter_08 – Uncle Virgil Bot</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-f10e0ff7b47c76990a11197da8be0964.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="stylesheet" href="../../../assets/css/styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Uncle Virgil Bot</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../chapters.html"> 
+<span class="menu-text">Chapters</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../sentiment.html"> 
+<span class="menu-text">Sentiment</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../emotions.html"> 
+<span class="menu-text">Emotions</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../wordclouds.html"> 
+<span class="menu-text">Word Clouds</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../timeline.html"> 
+<span class="menu-text">Timeline</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../corpus_review.html"> 
+<span class="menu-text">Corpus QA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../scans.html"> 
+<span class="menu-text">Scanned PDFs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../search.html"> 
+<span class="menu-text">Search</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../chatbot.html"> 
+<span class="menu-text">Chatbot</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../next_steps.html"> 
+<span class="menu-text">Next Steps</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../aws_pipeline.html"> 
+<span class="menu-text">AWS Pipeline</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#chapter-8-rio-de-janeiro" id="toc-chapter-8-rio-de-janeiro" class="nav-link active" data-scroll-target="#chapter-8-rio-de-janeiro">Chapter 8: Rio De Janeiro</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7"></h1></header><div class="quarto-title-block"><div class="quarto-title-tools-only"><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+
+
+
+
+<section id="chapter-8-rio-de-janeiro" class="level1">
+<h1>Chapter 8: Rio De Janeiro</h1>
+<ul>
+<li>Source records: 8–8</li>
+<li>Date confidence: low</li>
+<li>Boundary confidence: needs_review</li>
+</ul>
+<p>GHAPTER LIGHT Rio de Janeiro</p>
+<p>CHAPTER EIGHT PART ONE</p>
+<p>Both Sedoff and I were assigned to Rio de Janeiro station effective at the end of the fiscal year, June 30, 1965. I commenced the study of the Portuguese language full time upon our return from the TDY trip to Rio. My study of the Portuguese language was by a private ‘ tutor who was somewhat of a goof-off so I didn’t get as much out of the training as I had hoped. Most of our activities in the Spring and summer of 1965 consisted in getting ready to go to Rio de Janeiro. We debated whether or not to sell the beautiful house that we had built in Cobbdale but decided to do so for a couple of reasons: firstly, we would have had to rent it during our absence and that would have involved getting a large family in it, since it was a six bedroom house; secondly, we didn’t like the environment that Gail was getting into with certain of her friends in that neighborhood and preferred not to move back in that area if we could possibly avoid it.</p>
+<p>Marion’s mother, Rhoda Jones, came to visit us in April, 1965 but spent quite a bit of her visit in the hospital due to illness. We still held our stake conferences in the city of Washington, although by this time our stake had been divided making two stakes, Washington and Potomac. In those days we had a two session conference, going in the morning from 10:00 A.M. to 12 o’clock then having lunch, either a box lunch or going to the Hot Shoppes, and then returning for the afternoon sessions. As was normal the kids didn’t particularly like going to conference but they did like going out for lunch in between times so it amounted to a trade off. Our son, Ronald, received his Duty to God award before we left for Rio, an achievement which called for a lot of devotion to his priesthood duties.</p>
+<p>Just prior to leaving McLean we “sold” our old Station wagon the “pink elephant” to Julian Lowe for $1.00. We figured that the ward could use something to haul things back and forth during the construction of the new chapel. This feeling was a real prophecy because, upon our return, we found out that it had indeed performed a yoeman’s job doing all sorts of tasks in connection with the construction of the building.</p>
+<p>Our travel to Brazil was originally scheduled by ocean liner, the Moore-McCormack Lines again, to sail on June 25th. However, this was thwarted by a strike of the maritime workers so we had to delay to see if this strike would be settled. Having sold our house we stayed Cemporarily with the O’Bryants, a period of time which stretched out to be about a week. The failure to travel by</p>
+<p>-67-</p>
+<p>ee a a le Se See el ae ee SS eS Se See EN Se eS a ee ee ee Ce See a ee a sea caused us a number of problems, not the least of which was what we were going to do with our dog, Frisky. We had already made arrangements to have a kennel on the ship but finally determined that we would leave the dog with the O’Bryants while we were in Rio, which turned out for the best because Frisky had been injured earlier and had a shoulder problem which resulted in eventually having to be put asleep, so there wasn’t a problem as to who got the dog when we returned from overseas.</p>
+<p>We went to New York on June 29 and took in the New York World’s Fair while staying in some temporary quarters which the State Department had for its diplomats who got caught in situations like this. It finally got to the point where it was obvious that the strike was not going to be settled so we had to go down to the Port of New York, rifle through our sea trunks and pull out what we could get into luggage to fly down to Rio instead. Finally departed, all Six of us, in cramped seats in the aircraft since about everybody who was trying to get to Rio was on the plane with us. We arrived in Rio on the 4th of July, 1965 with a lot of aches and pains and Marion with very swollen feet, not a very auspicious beginning for our tour of duty. AS was always the case when we went overseas we had 7 to take some temporary quarters ina hotel until we were able to find a house for us to rent. Initially we stayed at the Hotel California on the Copacabana beach, the same hotel where Walt Sedoff and I stayed during our TDY there the previous year. Eventually we found us a house to rent not too far from where the Rio de Janeiro branch of the church met. It was on a street called Lopez Quintas, which was more or less at the foot of Corcovado mountain. This is the mountain which has a towering statue of Christ on it which can be seen from many miles away, it being one of the principal landmarks of Rio de Janeiro. Unfortunately, this street was a cobblestone one and was just below an abandoned quarry which collected thousands of gallons of rainfall before spilling over into the street and wiping it out, an event which took place about five or six times during our stay in Rio. We belonged to the Jardin Botanico (Botanical Gardens) Branch of the Rio de Janeiro Mission. It was just a few blocks down the street from where we lived so was within easy walking distance. Another American family, the Henry Bradfords, lived close to the branch as well. They were assigned to Biwcd oD (Agency for International Development) and had quite a few children some of who were near the ages of ours. Shortly after arriving I was called to serve in the branch presidency, along with Val Carter, and a local Brazilian professor as the branch president. I think his name was Aristogiden Carvalho. -6§8-</p>
+<p>We had quite a few Brazilian members but not many were truly active. As one knows the Church demands a lot of time on Sunday, the day that most working Brazilians went to the beaches. It was also difficult to get them there on weekdays as the Brazilian school system in Rio ran two sessions per day, the second one not getting over until about 6:00 in the evening. Besides this the members had to rely on public transportation since very few had such a thing as an automobile. Marion was President of the Primary as well as being the organist for the Jr.&nbsp;Sunday School. } Our first Christmas in Rio we had the Americans from our church over for a Christmas Eve party. It was after we went to bed that we found out how Brazilians celebrated Christmas Eve. Actually it was about 1:30 A.M. when we saw a man coming up the street with a hugh bongo drum, beating it for all he was worth, and around him shouting and Singing , were a group of characters dressed up in clown costumes and one in a Santa suit and dancing and prancing. On New Year’s Eve, the beaches of Rio de Janeiro are ridied with Macumba ceremonies, the Macumbas being a Spiritualist import from Africa. They don’t mind outsiders watching as long as they don’t get too close. It was interesting but somewhat erie. There was a young girl all dressed in white, whom we supposed was a new inductee into the cult. The other members would all stand around ina circle swaying and chanting and clapping their hands. The girl seemed to be in a trance. They sat her down and took a white chicken which they killed and sprinkled her with its blood. After several more ceremonial things, the young girl and several other women took flowers in their arms and walked out into the surf of the ocean and it looked as if they would just keep on going out into the ocean. Evidences of Macumba rites could be found all over Rio, on street corner, in nitches in the mountains alongside the roads and they consisted basically of a bottle, a candle and a cigar. PART TWO Professionally this tour of duty was quite unsatisfactory. There was a so-called agent-in-place attached to the Soviet Commercial Section. He was the one Walt Sedoff and I contacted when we were in Rio the previous year. In December 1965 and January 1966 most of my Operational effort was directed toward trying to recruit a Suspected GRU (Soviet Military Intelligence) officer who was Carrying on an affair with a Brazilian girl. We did have a recruiter talk to him but he was pulled out of his apartment, into the Soviet Embassy and shipped back to the Soviet Union before we could finalize anything. The balance of our operational effort was to recruit as sources third ; national individuals who were in social or business contact with a Soviet official and who could be utilized as an -§9-</p>
+<p>access agent to establish a relationship with the Soviet which might eventually result in a recruitment.</p>
+<p>We also maintained direct social contact with some of the KGB officers so as to provide an avenue for defection if and when any of them became disaffected. Marion and I spent quite a few evenings out with a Soviet named Borsov and his wife. Nothing ever came of it but this policy worked in some areas of the world to provide access for the Soviets to American intelligence.</p>
+<p>We never got a chance to travel much while in Brazil except to visit the modernistic capital, Brasilia, and also Sao Paulo, the largest city of Brasil and it’s industrial and business center. Marion did got ona trip with a club she belonged to during which time she proceeded to break her ankle which caused her a lot of problems because she walked on the cast before it was set properly and it had to be redone when she returned to Rio de Janeiro. This was the first part of June 1966. She visited Sao Paulo, Campinas and a small town in the interior called Matao, which held a big religious procession on Corpus Christi Day (June 9). for this procession the townspeople decorated the streets with flower petals and other colored substances depicting Christian themes and symbols that the Catholics use.</p>
+<p>As I have mentioned there were a lot of floods while we were there and our street kept getting wiped out requiring us to spend a lot of time walking up and down the hill leading to our house. On one occasion Marion and I were having dinner with an American couple whom I was Geveloping for access purposes when it started to rain profusely. We cut our meeting short and while returning via the Jockey Club area the operational car I was driving got Swamped in several feet of water. A group of the “favelados” | (residents of the slum areas known as favelas) offered to push us to higher ground for a price. However, instead of doing so they pushed us into deeper water and then stuck a gun in our face, robbing us of our money and some of Marion’s jewelry. We had to wade up to our waists until we cleared the Jockey Club area and reached higher ground. A police contact that I used to run surveillance teams said that we were both very lucky to have escaped alive since the holdup people didn’t like to leave witnesses.</p>
+<p>I did have a good operational relationship with a Brazilian official (number three man in their foreign office) who provided me with a lot of useful information on the activities and plans of the Soviets in Brazil. His office was responsible for direct contact with them and all requests for commercial activity had to come through him.</p>
+<p>It helped me keep track of many of the assignments of the KGB and GRU officers who were under cover in both the Soviet Embassy and in their Commercial Section. -70-</p>
+<p>Our social activity in the diplomatic circle was much more limited than it had been in Montevideo. We were invited to some of the social functions involving the Embassy staff but not all of them as we had in Montevideo. However, we were invited to the reception when former Vice-President Richard Nixon paid an official visit. We had met him previously when we were in Montevideo. One of the persons in the Political Section who was very useful to us was a Foreign Service officer named Frank Carlucci, who held some dinner parties to which he invited third national diplomats whom we could meet and who had access to Soviets. Frank Carlucci had a fabulous career after leaving Rio , including being deputy director of C.I.A and as of 1988 the Secretary of Defense.</p>
+<p>In Montevideo we had had visits from several General Authorities, i.e.&nbsp;Elders Kimball and Lee, so we were quite pleased when Elder Richard L. Evans, a member of the Quorum of Twelve, came to Rio although it was not in his capacity as a church official. At that time (1966) he was serving as the President of Rotary International and he was in Brazil for a convention of Rotarians, who held a large luncheon for him. Apparently, the Embassy had done its homework and found that I was a member of the staff who belonged to the L.D.S. church so Marion and I were invited to the luncheon and I was asked to sit on the dais with Elder Evans. As you will recall Elder Evans was known as_ the “voice of the Mormon Tabernacle Choir” for many years and was known for Signing off with the expression “may peace be with you this day and always.”</p>
+<p>One of the men I worked with ( a Lithuanian named Bruno) brought us a young parrot ( papagaio verdadero) whom we named Fred and was a lot of enjoyment to us. He learned to speak quite well, however, rather than learn the phrases which we tried to teach him, he picked up the phrases which</p>
+<p>, we commonly used around the house. He would say, “Gail, telephone” or “Hilton, where are you?” We usually kept him on his perch on the front balcony where the ping-pong table was located. The children and the missionaries used to play a lot of ping-pong there and Fred would imitate the sound of the clock-clock of the ball as it went back and forth over the net. He also mimicked Marion as she was taking her warm- ups for the singing lessons she was taking at the time. One Thanksgiving day we forgot to put him on the front balcony perch and left him instead on the back balcony. That night he was killed by an opossom (we think.) It was quite a loss to us.</p>
+<p>In May 1966 our whole family was sick with intestinal amoebae and it took some potent medicine to get rid of them</p>
+<p>: over a period of about two months. We used boiled and filtered water but got the amoebae in spite of all these precautions. It turned out that our maid didn’t understand</p>
+<p>-7li-</p>
+<p>2S ee EE SE SS hr eS ee a Le the necessity of boiling the water from which she made the ice cubes. The Brazilians being accustomed to the “bugs” couldn’t quite understand why the American members insisted on bringing the water for the sacrament table either.</p>
+<p>The last part of October 1966, Helen Jeanne Jeppsen, Marion’s sister came to visit us and Marion had a good time going places and shopping with her. We also had a visit the following April, from my brother, Martin and his wife Betty.</p>
+<p>All of our children attended school while in Rio. Hilton was in a Brazilian kindergarden and the others attended the Escola Americana, from which Ron graduated in 1966. He went to Utah to attend BYU in the fall of 1966, the first time that any of our children had been away from us for an extended period of time. I think that he enjoyed being on his own although he spent most of the money he was sent for clothes to buy camera equipment. After the completion of his first year, he returned to Rio and was able to work at our C.I.A. office as a part-time cameraman For a couple of months.</p>
+<p>During the cooler weather in Rio de Janeiro we went on Little Sight-seeing excursions (Hilton called them adventures). We had been to the statue of Christ on top of Mt. Corcovado and to Pao de Azucar (Sugar Loaf) and the regular tourists places. We started to go to places a little different, we climbed on some rocks way above the ocean on the way to Vista Chinesa which is practically ina Jungle overlooking the city. One of the things that made Rio depressing was all the filth and poverty. Every place you went it was dirty and people were living in squalor. For example right across from the American Embassy in downtown</p>
+<p>, Rio was a small square with a fountain and people actually lived on the grass around the fountain and bathed and washed in it. There was poverty everywhere and nothing seemed to be done about it.</p>
+<p>We finished our tour in early July just after Stu and Dottie Burton arrived so we only overlapped for a few days. On our way home we stopped in Panama for a little Sightseeing then flew on to California for a visit with the folks there before renting a station wagon and driving to Utah. On our way to Utah we stopped to see some of the Utah Parks such as Bryce and Zion which the kids enjoyed very much. AS usual we spent the majority of our home leave in Utah visiting the relatives there and giving the children a Chance to renew acquaintanceships with their cousins on Marion’s side of the family. Ron got a job working on construction in Provo so stayed there rather than returning to Virginia with us_ since it was so close to the time his second year at the Y was to start. We also knew that he</p>
+<p>would be getting his mission call in the Spring after he turned nineteen. Because of the situation in Vietnam, the -72-</p>
+<p>} Church discouraged farewells for missionaries and as a , result Ron never got to know the people in the McLean Ward . very well prior to his departure, which was unfortunate and I felt guilty not having him back prior to his starting the school year. ff Ss</p>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/clarkruttinger\.info\/UncleVirgilBot\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Chapter 8: Rio De Janeiro</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Source records: 8–8</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Date confidence: low</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Boundary confidence: needs_review</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>GHAPTER LIGHT</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Rio de Janeiro</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>CHAPTER EIGHT</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>PART ONE</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Both Sedoff and I were assigned to Rio de Janeiro</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>station effective at the end of the fiscal year, June 30,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">1965. </span>I commenced the study of the Portuguese language full</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>time upon our return from the TDY trip to Rio. My study of</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>the Portuguese language was by a private ‘ tutor who was</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>somewhat of a goof-off so I didn't get as much out of the</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>training as I had hoped. Most of our activities in the</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Spring and summer of 1965 consisted in getting ready to go</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>to Rio de Janeiro. We debated whether or not to sell the</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>beautiful house that we had built in Cobbdale but decided to</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>do so for a couple of reasons: firstly, we would have had to</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>rent it during our absence and that would have involved</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>getting a large family in it, since it was a six bedroom</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>house; secondly, we didn't like the environment that Gail</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>was getting into with certain of her friends in that</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>neighborhood and preferred not to move back in that area if</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>we could possibly avoid it.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Marion's mother, Rhoda Jones, came to visit us in</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>April, 1965 but spent quite a bit of her visit in the</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>hospital due to illness. We still held our stake conferences</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>in the city of Washington, although by this time our stake</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>had been divided making two stakes, Washington and Potomac.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>In those days we had a two session conference, going in the</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>morning from 10:00 A.M. to 12 o'clock then having lunch,</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>either a box lunch or going to the Hot Shoppes, and then</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>returning for the afternoon sessions. As was normal the kids</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>didn't particularly like going to conference but they did</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>like going out for lunch in between times so it amounted to</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>a trade off. Our son, Ronald, received his Duty to God award</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>before we left for Rio, an achievement which called for a</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>lot of devotion to his priesthood duties.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Just prior to leaving McLean we "sold" our old</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>Station wagon the "pink elephant" to Julian Lowe for $1.00.</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>We figured that the ward could use something to haul things</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>back and forth during the construction of the new chapel.</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>This feeling was a real prophecy because, upon our return,</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>we found out that it had indeed performed a yoeman's job</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>doing all sorts of tasks in connection with the construction</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>of the building.</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>Our travel to Brazil was originally scheduled by</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>ocean liner, the Moore-McCormack Lines again, to sail on</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>June 25th. However, this was thwarted by a strike of the</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>maritime workers so we had to delay to see if this strike</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>would be settled. Having sold our house we stayed</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>Cemporarily with the O'Bryants, a period of time which</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>stretched out to be about a week. The failure to travel by</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>-67-</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>ee a a le Se See el ae ee SS eS Se See EN Se eS a ee ee ee Ce See a ee a</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>sea caused us a number of problems, not the least of which</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>was what we were going to do with our dog, Frisky. We had</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>already made arrangements to have a kennel on the ship but</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>finally determined that we would leave the dog with the</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>O'Bryants while we were in Rio, which turned out for the</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>best because Frisky had been injured earlier and had a</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>shoulder problem which resulted in eventually having to be</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>put asleep, so there wasn't a problem as to who got the dog</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>when we returned from overseas.</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>We went to New York on June 29 and took in the New</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>York World's Fair while staying in some temporary quarters</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>which the State Department had for its diplomats who got</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>caught in situations like this. It finally got to the point</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>where it was obvious that the strike was not going to be</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>settled so we had to go down to the Port of New York, rifle</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>through our sea trunks and pull out what we could get into</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>luggage to fly down to Rio instead. Finally departed, all</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>Six of us, in cramped seats in the aircraft since about</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>everybody who was trying to get to Rio was on the plane with</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>us. We arrived in Rio on the 4th of July, 1965 with a lot of</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>aches and pains and Marion with very swollen feet, not a</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>very auspicious beginning for our tour of duty.</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>AS was always the case when we went overseas we had</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>7 to take some temporary quarters ina hotel until we were</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>able to find a house for us to rent. Initially we stayed at</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>the Hotel California on the Copacabana beach, the same hotel</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>where Walt Sedoff and I stayed during our TDY there the</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>previous year. Eventually we found us a house to rent not</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>too far from where the Rio de Janeiro branch of the church</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>met. It was on a street called Lopez Quintas, which was more</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>or less at the foot of Corcovado mountain. This is the</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>mountain which has a towering statue of Christ on it which</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>can be seen from many miles away, it being one of the</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>principal landmarks of Rio de Janeiro. Unfortunately, this</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>street was a cobblestone one and was just below an abandoned</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>quarry which collected thousands of gallons of rainfall</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>before spilling over into the street and wiping it out, an</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>event which took place about five or six times during our</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>stay in Rio.</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>We belonged to the Jardin Botanico (Botanical</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>Gardens) Branch of the Rio de Janeiro Mission. It was just</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>a few blocks down the street from where we lived so was</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>within easy walking distance. Another American family, the</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>Henry Bradfords, lived close to the branch as well. They</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>were assigned to Biwcd oD (Agency for International</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>Development) and had quite a few children some of who were</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>near the ages of ours. Shortly after arriving I was called</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>to serve in the branch presidency, along with Val Carter,</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>and a local Brazilian professor as the branch president. I</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>think his name was Aristogiden Carvalho.</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>-6§8-</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>We had quite a few Brazilian members but not many</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>were truly active. As one knows the Church demands a lot of</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>time on Sunday, the day that most working Brazilians went to</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>the beaches. It was also difficult to get them there on</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>weekdays as the Brazilian school system in Rio ran two</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>sessions per day, the second one not getting over until</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>about 6:00 in the evening. Besides this the members had to</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>rely on public transportation since very few had such a</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>thing as an automobile. Marion was President of the Primary</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>as well as being the organist for the Jr. Sunday School.</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>} Our first Christmas in Rio we had the Americans from</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>our church over for a Christmas Eve party. It was after we</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>went to bed that we found out how Brazilians celebrated</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>Christmas Eve. Actually it was about 1:30 A.M. when we saw a</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>man coming up the street with a hugh bongo drum, beating it</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>for all he was worth, and around him shouting and Singing ,</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>were a group of characters dressed up in clown costumes and</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>one in a Santa suit and dancing and prancing.</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>On New Year's Eve, the beaches of Rio de Janeiro are</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>ridied with Macumba ceremonies, the Macumbas being a</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>Spiritualist import from Africa. They don't mind outsiders</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>watching as long as they don't get too close. It was</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>interesting but somewhat erie. There was a young girl all</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>dressed in white, whom we supposed was a new inductee into</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>the cult. The other members would all stand around ina</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>circle swaying and chanting and clapping their hands. The</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>girl seemed to be in a trance. They sat her down and took a</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>white chicken which they killed and sprinkled her with its</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>blood. After several more ceremonial things, the young girl</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>and several other women took flowers in their arms and</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>walked out into the surf of the ocean and it looked as if</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>they would just keep on going out into the ocean. Evidences</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>of Macumba rites could be found all over Rio, on street</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>corner, in nitches in the mountains alongside the roads and</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>they consisted basically of a bottle, a candle and a cigar.</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>PART TWO</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>Professionally this tour of duty was quite</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>unsatisfactory. There was a so-called agent-in-place</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>attached to the Soviet Commercial Section. He was the one</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>Walt Sedoff and I contacted when we were in Rio the previous</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>year. In December 1965 and January 1966 most of my</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>Operational effort was directed toward trying to recruit a</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>Suspected GRU (Soviet Military Intelligence) officer who was</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>Carrying on an affair with a Brazilian girl. We did have a</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>recruiter talk to him but he was pulled out of his</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>apartment, into the Soviet Embassy and shipped back to the</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>Soviet Union before we could finalize anything. The balance</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>of our operational effort was to recruit as sources third</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>; national individuals who were in social or business contact</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>with a Soviet official and who could be utilized as an</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>-§9-</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>access agent to establish a relationship with the Soviet</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>which might eventually result in a recruitment.</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>We also maintained direct social contact with some of</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>the KGB officers so as to provide an avenue for defection if</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>and when any of them became disaffected. Marion and I spent</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>quite a few evenings out with a Soviet named Borsov and his</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>wife. Nothing ever came of it but this policy worked in some</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>areas of the world to provide access for the Soviets to</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>American intelligence.</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>We never got a chance to travel much while in Brazil</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>except to visit the modernistic capital, Brasilia, and also</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>Sao Paulo, the largest city of Brasil and it's industrial</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>and business center. Marion did got ona trip with a club</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>she belonged to during which time she proceeded to break her</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>ankle which caused her a lot of problems because she walked</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>on the cast before it was set properly and it had to be</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>redone when she returned to Rio de Janeiro. This was the</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>first part of June 1966. She visited Sao Paulo, Campinas and</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>a small town in the interior called Matao, which held a big</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>religious procession on Corpus Christi Day (June 9). for</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>this procession the townspeople decorated the streets with</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>flower petals and other colored substances depicting</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>Christian themes and symbols that the Catholics use.</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>As I have mentioned there were a lot of floods while</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>we were there and our street kept getting wiped out</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>requiring us to spend a lot of time walking up and down the</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>hill leading to our house. On one occasion Marion and I</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>were having dinner with an American couple whom I was</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>Geveloping for access purposes when it started to rain</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>profusely. We cut our meeting short and while returning via</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>the Jockey Club area the operational car I was driving got</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>Swamped in several feet of water. A group of the "favelados" |</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>(residents of the slum areas known as favelas) offered to</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>push us to higher ground for a price. However, instead of</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>doing so they pushed us into deeper water and then stuck a</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>gun in our face, robbing us of our money and some of</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>Marion's jewelry. We had to wade up to our waists until we</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>cleared the Jockey Club area and reached higher ground. A</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>police contact that I used to run surveillance teams said</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>that we were both very lucky to have escaped alive since the</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>holdup people didn't like to leave witnesses.</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>I did have a good operational relationship with a</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>Brazilian official (number three man in their foreign</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>office) who provided me with a lot of useful information on</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>the activities and plans of the Soviets in Brazil. His</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>office was responsible for direct contact with them and all</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>requests for commercial activity had to come through him.</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>It helped me keep track of many of the assignments of the</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>KGB and GRU officers who were under cover in both the Soviet</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>Embassy and in their Commercial Section.</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>-70-</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>Our social activity in the diplomatic circle was much</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>more limited than it had been in Montevideo. We were invited</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>to some of the social functions involving the Embassy staff</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>but not all of them as we had in Montevideo. However, we</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>were invited to the reception when former Vice-President</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>Richard Nixon paid an official visit. We had met him</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>previously when we were in Montevideo. One of the persons</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>in the Political Section who was very useful to us was a</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>Foreign Service officer named Frank Carlucci, who held some</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>dinner parties to which he invited third national diplomats</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>whom we could meet and who had access to Soviets. Frank</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>Carlucci had a fabulous career after leaving Rio , including</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>being deputy director of C.I.A and as of 1988 the Secretary</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>of Defense.</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>In Montevideo we had had visits from several General</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>Authorities, i.e. Elders Kimball and Lee, so we were quite</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>pleased when Elder Richard L. Evans, a member of the Quorum</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>of Twelve, came to Rio although it was not in his capacity</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>as a church official. At that time (1966) he was serving as</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>the President of Rotary International and he was in Brazil</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>for a convention of Rotarians, who held a large luncheon for</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>him. Apparently, the Embassy had done its homework and</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>found that I was a member of the staff who belonged to the</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>L.D.S. church so Marion and I were invited to the luncheon</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>and I was asked to sit on the dais with Elder Evans. As you</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>will recall Elder Evans was known as_ the "voice of the</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>Mormon Tabernacle Choir" for many years and was known for</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>Signing off with the expression "may peace be with you this</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>day and always."</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>One of the men I worked with ( a Lithuanian named</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>Bruno) brought us a young parrot ( papagaio verdadero) whom</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>we named Fred and was a lot of enjoyment to us. He learned</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>to speak quite well, however, rather than learn the phrases</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>which we tried to teach him, he picked up the phrases which</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>, we commonly used around the house. He would say, "Gail,</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>telephone" or "Hilton, where are you?" We usually kept him</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>on his perch on the front balcony where the ping-pong table</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>was located. The children and the missionaries used to play</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>a lot of ping-pong there and Fred would imitate the sound of</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>the clock-clock of the ball as it went back and forth over</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>the net. He also mimicked Marion as she was taking her warm-</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>ups for the singing lessons she was taking at the time. One</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>Thanksgiving day we forgot to put him on the front balcony</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>perch and left him instead on the back balcony. That night</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>he was killed by an opossom (we think.) It was quite a loss</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>to us.</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>In May 1966 our whole family was sick with intestinal</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>amoebae and it took some potent medicine to get rid of them</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>: over a period of about two months. We used boiled and</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>filtered water but got the amoebae in spite of all these</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>precautions. It turned out that our maid didn't understand</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>-7li-</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>2S ee EE SE SS hr eS ee a Le</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>the necessity of boiling the water from which she made the</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>ice cubes. The Brazilians being accustomed to the "bugs"</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>couldn't quite understand why the American members insisted</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>on bringing the water for the sacrament table either.</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>The last part of October 1966, Helen Jeanne Jeppsen,</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>Marion's sister came to visit us and Marion had a good time</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>going places and shopping with her. We also had a visit the</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>following April, from my brother, Martin and his wife Betty.</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>All of our children attended school while in Rio.</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>Hilton was in a Brazilian kindergarden and the others</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>attended the Escola Americana, from which Ron graduated in</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a><span class="ss">1966. </span>He went to Utah to attend BYU in the fall of 1966, the</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>first time that any of our children had been away from us</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>for an extended period of time. I think that he enjoyed</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>being on his own although he spent most of the money he was</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>sent for clothes to buy camera equipment. After the</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>completion of his first year, he returned to Rio and was</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>able to work at our C.I.A. office as a part-time cameraman</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>For a couple of months.</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>During the cooler weather in Rio de Janeiro we went</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>on Little Sight-seeing excursions (Hilton called them</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>adventures). We had been to the statue of Christ on top of</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>Mt. Corcovado and to Pao de Azucar (Sugar Loaf) and the</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>regular tourists places. We started to go to places a</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>little different, we climbed on some rocks way above the</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>ocean on the way to Vista Chinesa which is practically ina</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>Jungle overlooking the city. One of the things that made Rio</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>depressing was all the filth and poverty. Every place you</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>went it was dirty and people were living in squalor. For</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>example right across from the American Embassy in downtown</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>, Rio was a small square with a fountain and people actually</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>lived on the grass around the fountain and bathed and washed</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>in it. There was poverty everywhere and nothing seemed to be</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>done about it.</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>We finished our tour in early July just after Stu and</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>Dottie Burton arrived so we only overlapped for a few days.</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>On our way home we stopped in Panama for a little</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>Sightseeing then flew on to California for a visit with the</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>folks there before renting a station wagon and driving to</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>Utah. On our way to Utah we stopped to see some of the Utah</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>Parks such as Bryce and Zion which the kids enjoyed very</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>much. AS usual we spent the majority of our home leave in</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>Utah visiting the relatives there and giving the children a</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>Chance to renew acquaintanceships with their cousins on</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>Marion's side of the family. Ron got a job working on</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>construction in Provo so stayed there rather than returning</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>to Virginia with us_ since it was so close to the time his</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>second year at the Y was to start. We also knew that he</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>would be getting his mission call in the Spring after he</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>turned nineteen. Because of the situation in Vietnam, the</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>-72-</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>} Church discouraged farewells for missionaries and as a</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>, result Ron never got to know the people in the McLean Ward</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>. very well prior to his departure, which was unfortunate and</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>I felt guilty not having him back prior to his starting the</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>school year.</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>ff Ss</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Uncle Virgil memoir analysis project</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -1,0 +1,22 @@
+---
+title: "Uncle Virgil Bot"
+---
+
+This is the chatbot shell. It works locally as passage retrieval. After the AWS endpoint is deployed, copy `assets/js/chatbot-config.example.js` to `assets/js/chatbot-config.js` and set the API Gateway `/ask` URL. The browser should never contain a model API key.
+
+<div class="chat-card">
+  <label for="uv-chat-input"><strong>Ask about the memoir</strong></label>
+  <textarea id="uv-chat-input" rows="3" placeholder="Example: What does Virgil say about his time in Montevideo?"></textarea>
+  <button id="uv-chat-button">Ask</button>
+</div>
+
+<div id="uv-chat-status" class="muted"></div>
+<div id="uv-chat-answer"></div>
+<div id="uv-chat-sources"></div>
+
+<script>
+  // Local-only retrieval by default. Do not put API keys here.
+  window.UNCLE_VIRGILBOT_API_ENDPOINT = window.UNCLE_VIRGILBOT_API_ENDPOINT || "";
+</script>
+<script src="assets/js/chatbot-config.js"></script>
+<script src="assets/js/chatbot.js"></script>

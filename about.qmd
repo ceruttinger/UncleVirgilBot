@@ -1,0 +1,24 @@
+---
+title: "About the Project"
+---
+
+The original Uncle Virgil project was an R/Shiny biography text-analysis app. This rebuild keeps the digital humanities purpose but moves the public-facing site to Quarto.
+
+## Source pipeline
+
+The legacy workflow used:
+
+```text
+PDF scans -> PNG page images -> Tesseract OCR -> RDS text files -> combined corpus -> sentiment/word cloud outputs -> corpus_data.json
+```
+
+The new workflow starts from `corpus_data.json`, creates chapter-level datasets, and renders static analysis pages.
+
+## What comes next
+
+1. Review chapter boundaries and dates.
+2. Improve OCR cleanup without destroying historical wording.
+3. Add named entities: people, places, organizations, dates.
+4. Add topic modeling and chapter similarity.
+5. Add AWS backend retrieval.
+6. Add model-generated answers with citations back to chapters and passages.

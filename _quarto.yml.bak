@@ -1,0 +1,66 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - data/public/search_index.json
+    - data/public/word_frequencies.json
+    - data/public/pdf_manifest.json
+    - data/chapter_metadata.csv
+    - data/processed/chapter_stats.csv
+    - data/processed/word_frequencies.csv
+    - data/processed/build_summary.json
+    - data/processed/corpus_records_review.csv
+    - data/processed/chapter_boundary_review.csv
+    - data/processed/ocr_review.csv
+    - data/processed/year_candidates_by_chapter.csv
+    - assets/pdf/
+
+website:
+  title: "Uncle Virgil Bot"
+  site-url: "https://clarkruttinger.info/UncleVirgilBot/"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: chapters.qmd
+        text: Chapters
+      - href: sentiment.qmd
+        text: Sentiment
+      - href: emotions.qmd
+        text: Emotions
+      - href: wordclouds.qmd
+        text: Word Clouds
+      - href: timeline.qmd
+        text: Timeline
+      - href: corpus_review.qmd
+        text: Corpus QA
+      - href: scans.qmd
+        text: Scanned PDFs
+      - href: search.qmd
+        text: Search
+      - href: chatbot.qmd
+        text: Chatbot
+      - href: next_steps.qmd
+        text: Next Steps
+      - href: aws_pipeline.qmd
+        text: AWS Pipeline
+      - href: about.qmd
+        text: About
+  page-footer:
+    left: "Uncle Virgil memoir analysis project"
+    right: "Built with Quarto"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    css: assets/css/styles.css
+    include-in-header: assets/html/noindex.html
+    code-fold: true
+    code-tools: true
+execute:
+  warning: false
+  message: false
+
+  - assets/pdf/**
+  - data/public/**

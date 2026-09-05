@@ -1,0 +1,8 @@
+{
+  "body": "{\"question\": \"What does the memoir say about the USS Wasp?\", \"limit\": 5}",
+  "requestContext": {
+    "http": {
+      "method": "POST"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+---
+title: "Search the Memoir"
+---
+
+This is a static browser-based search over the memoir chunks. It does not require a server.
+
+<div class="search-card">
+  <label for="uv-search"><strong>Search the corpus</strong></label>
+  <input id="uv-search" type="search" placeholder="Try: Marion, CIA, Montevideo, USS Wasp, Idaho Falls" />
+  <button id="uv-search-button">Search</button>
+</div>
+
+<div id="uv-search-status" class="muted"></div>
+<div id="uv-search-results"></div>
+
+<script src="assets/js/search.js"></script>

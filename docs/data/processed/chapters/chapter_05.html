@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>chapter_05 – Uncle Virgil Bot</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-f10e0ff7b47c76990a11197da8be0964.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="stylesheet" href="../../../assets/css/styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Uncle Virgil Bot</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../chapters.html"> 
+<span class="menu-text">Chapters</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../sentiment.html"> 
+<span class="menu-text">Sentiment</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../emotions.html"> 
+<span class="menu-text">Emotions</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../wordclouds.html"> 
+<span class="menu-text">Word Clouds</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../timeline.html"> 
+<span class="menu-text">Timeline</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../corpus_review.html"> 
+<span class="menu-text">Corpus QA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../scans.html"> 
+<span class="menu-text">Scanned PDFs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../search.html"> 
+<span class="menu-text">Search</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../chatbot.html"> 
+<span class="menu-text">Chatbot</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../next_steps.html"> 
+<span class="menu-text">Next Steps</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../aws_pipeline.html"> 
+<span class="menu-text">AWS Pipeline</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#chapter-5-the-cia" id="toc-chapter-5-the-cia" class="nav-link active" data-scroll-target="#chapter-5-the-cia">Chapter 5: The CIA</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7"></h1></header><div class="quarto-title-block"><div class="quarto-title-tools-only"><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+
+
+
+
+<section id="chapter-5-the-cia" class="level1">
+<h1>Chapter 5: The CIA</h1>
+<ul>
+<li>Source records: 5–5</li>
+<li>Date confidence: low</li>
+<li>Boundary confidence: needs_review</li>
+</ul>
+<p>CHAPTER FIVE PART ONE This next part will be devoted to the period of time that I was employed at the Central Intelligence Agency. The C.I.A. was chartered in 1947 and was an outgrowth of the Office of Strategic Services, the military intelligence component during World War II. Many of the officers who were with O.S.S. simply stayed on after the war and most all of them became the heads of divisions and branches in the new civilian intelligence service. Upon receiving my clearance after many months of anxious waiting, we got in our old 1939 Buick and headed back to Shanks Village to pick up our belongings and to dispose of our rather meager furnishings. The trip back was pretty much like the one going to Utah, all kinds of problems with the car, primarily an engine that overheated So we coasted down hills so that the engine would cool off. Eventually we made it back to New York, sold our furniture and packed our car full of clothes, books and what have you and headed for Washington, D.C. somewhat apprehensive as to what we would encounter but at least glad to have some employment of a professional nature. Our trip to Washington was not without incident, however. In those days we had to cross the Delaware River on a ferry boat. We got on the ferry boat all right but when trying to get off, we found that the battery on the old Buick was about gone so we had to be pushed to get off the ferry boat. Such embarrassment one has to go through when you don’t have any money. I reported for duty on October 23, 1950 as a GS-7, the general entry grade of people with at least a Master’s degree. The pay was only $3875 annually but at least it was a regular job. We found some temporary quarters on I St.&nbsp;right smack in the middle of Washington, D.C. in an area which was occupied primarily with blacks. It was convenient to transportation to work and we had already found us an apartment in Virginia which was under construction so we knew we wouldn’t be camping for too long. My initial assignments with the Agency were varied and, of course, I was intrigued with the secrecy of everything. We were just gearing up for a major intelligence effort against the Soviets from a base in Germany. By this date the Soviets had made it abundantly clear that they were going to pursue an expansionist policy, having already taken Over much of eastern Europe. I was immediately put to work writing up the projects for utilization of Russian and other Soviet ethnic groups as targets for penetration of the Soviet Union. I wrote projects for the utilization of the N.T.S. (Nationalnaya Trudovoya Soyuz) an emigre organization of Great Russians. Many of the ethnic groups opposed to communism fled the Soviet Union during and after World War II, and the members of the N.T.S. consisted of a large group -38-</p>
+<p>of military age people who had taken advantage of the opportunity to get out of a totalitarian regime. They represented a tremendous pool of highly-motivated people who were interested in doing anything they could to overthrow the oppressive leaders of the Soviet nation. The projects which I wrote contained not only the operational objectives, such as how, when, where, and why the organization was to be used, but also the financial particulars, including the budgetary estimates, schedules of payments, and methods for effecting payments, all of which was supposed to be done in a clandestine manner. Other organizations utilized were the Belorussian national groups, Lithuanians, Latvians, Estonians, and Ukrainians, all of whom had their own nationalistic interests to pursue. In most cases’ the operational objectives were to obtain personnel through these organizations who would serve as agents’ for penetration into the Soviet Union and who would be trained and controlled by the U.S. intelligence service. Also, these groups were used as propaganda vehicles’ through various media techniques, such as newspapers, periodicals, and radio broadcasts to influence public policy. While the foregoing was the major part of my function as an assistant to the branch chief, I was also involved in another very interesting project for which I had personal responsiblity. This was a project to procure former PT boats to serve as a means of infiltration into the Soviet Union from its various peripheries. In order to do this it was necessary to work through an effective cutout (a person or organization which could not be identified as buying for the U.S. government). We used a retired naval Captain who had extensive contacts and who set up a corporation ostensibly to buy used PT boats for wealthy clients who wanted to use them as pleasure craft (since the building of yachts and vessels like that had been terminated because of the war.) It was my responsibility, in addition to the handling of all the administrative and budgetary aspects of the project, to Oversee the purchase and overhauling of these craft for our particular purpose. The project was budgeted for several million dollars and if we needed more all I had to to was write up a supplementary request. The object of the overhaul was to make the craft Superfast for high speed crossings of certain waters peripheral to the Soviet Union, such as the Black and Baltic Seas. Many of the decisions as to what and how to do it were left up to me, which was ironical because my naval experience had been confined mostly to naval schools and work as an electronic technician on an aircraft carrier. After the PT boats were equipped to our specifications, I had to arrange to ship them to various staging areas in as , secure manner as possible to avoid detection of their existence and especially their intended use for intelligence Purposes. This was done primarily in coordination with -39-</p>
+<p>naval intelligence. Another important aspect of this project was in making arrangements for the recruitment of third national crews to man the converted PT boats since they obviously couldn’t be manned by American personnel. Consequently, I had to devise a project for field personnel . to recruit, train, and fund agents’ for this purpose. All in all, a total of about six converted PT boats were shipped to various parts of the world, such as the Baltic, Black Sea, and the Far East. Concurrent with the PT procurment program, I was also responsible for managing from headquarters, the staging of the clandestine aircraft operating out of southern Europe into Germany and then into the Soviet Union. My job was to arrange with the U.S. Air Force for logistical handling of the two aircraft, before, during and after a clandestine Flight. One can best appreciate the significance of my work in just the air and maritime fields by the fact that upon my departure for the field (Germany) in June of 1952, my projects became the responsibility of an entire division in the Clandestine Services. This division was headed by a retired Rear-Admiral, another Naval officer, two Air Force colonels, and several senior (GS 12-GS 14) civilians. I never had the heart to tell the Rear Admiral (who was once a flag officer on the U.S.S.Wasp) that I had only been an enlisted man in the Navy. In our conversations, he always had to refer to the capability of “we former Navy officers” to switch our talents to civilian activities. During the almost two years we spent in Washington, D.C. area before going overseas, we attended the Falls Church ward of the then Washington Stake which covered all of Virginia, Maryland, anda part of Pennsylvania. Marion and I co-taught a Sunday School class (the ten year olds- which was a good way to find out what went on in members homes). By this time Marion was pregnant with our second enild, Gail, who was born on June 30, 1951. What a difference a couple of years’ makes! When Ron was born Marion was kept in the hospital for about ten days, with Gail she was home in two or three days. I was in a carpool with another CIA man, Hugh Fleischer. It was my turn to drive on June 30th so when Marion started in labor in the morning I called Hugh , picked him up at his home, drove him into the office (the Clandestine Services were located in some WWI type converted barracks called I,J, K and L buildings along side the reflecting pool near the Lincoln Memorial), then drove Marion to Arlington Hospital. The doctor was anxiously awaiting us, having been called before we left home. It was a good thing too because Gail was born in about a half-hour after we arrived at the hospital. -40-</p>
+<p>Of course, we had long since moved into the Willston apartments at Seven Corners in Falls Church, Virginia. Initially we occupied a one bedroom apartment on one of the upper floors which cost us $88.00 a month rent, but with the birth of Gail we were able to obtain a two bedroom apartment on the ground floor. A few weeks after Gail was born, I received a frantic telephone call from Marion saying that Gail had been dropped by her brother and his little friend and was really banged up. When I got to the doctor’s office she looked pretty bad, but the healing power of infants is great, within a few days one could barely tell anything had happened to her. We were fortunate in these early days in the Washington area to be close to Marion’s two sisters, Edith and Mildred and their families, both of whom lived in the Arlington area. They helped us a lot in making the transition from the academic to the professional public service world.</p>
+<p>After much travail with our old 1939 Buick and getting promotions regularly, we bought a little Studebaker called a Starlite coupe, which we enjoyed very much. In June 1952, my assignment to the field came through. It was to the Combined Soviet Operations Base in Munich, Germany. After leaving our apartment and getting our furniture packed for shipment overseas, we drove to Utah and California for a vacation. While in California, in addition to visiting relatives, Ila, Martin, Loverna and their families, I took the opportunity to call on my old college chum, Bill Gay, was was by then the Chief of Staff for Howard Hughes, a very impressive position with a lot of power. He suggested that I might want to work for him when I returned from overseas. PART TWO</p>
+<p>The housing Situation overseas, particularly in Germany, was pretty bad so I had to go to the field ahead of my family to await the time when housing would be available. I returned to Washington driving our little coupe with a young couple and their child who needed transportation to that area, while Marion and the two children stayed with her family in Provo. I arrived in Germany in early August and lived in a bachelor apartment in McGraw Kasern until mid- September when Marion arrived with Ronald and Gail, after traveling via train and airplane from Provo, a big task in those days. We lived temporarily in a small apartment of an officer who was on home leave (Al Galcius) until our furniture arrived when we moved to a house at Sabineschmidt Str. 12, one of many German quarters taken over by the allied occupation forces. Ron was only three and a half at the time and was awfully glad to see toys and household furniture which he could recognize.</p>
+<p>We attended a German branch of the church, although after sacrament services, the Americans attended classes</p>
+<p>-4)-</p>
+<p>which were conducted in English. The German saints were still suffering a lot as a result of the war and didn’t have much in terms of assets but they were very generous. On one occasion, shortly after we arrived, we were at a branch dinner and the only thing being served was a weisswurst, a large white sausage, filled with gristle and fat. I managed to choke mine down as did Marion but there was no way we could get our young children to do so. Of course, this went over like a lead balloon with the Germans who felt fortunate to have anything to eat at all. There were a lot of L.D.§ servicemen in Munich and we became close friends with many of them. One of them ,Robert Bolinder, married a German girl named Gertrude. He later became the president and C.E.O of the Albertson’food chain operating out of Boise, Idaho. We also took advantage of the sight-seeing available to uS, being right in the midst of beautiful Bavaria and close to the Austrian alps and the famous ski resorts of southern Germany such as Garmisch.</p>
+<p>My operational and supervisory activities in Munich came under the auspices of what was known as the Combined Soviet Operations Base (i.e a combination of the Office of Special Operations and the Office of Policy Coordination, latter being a fancy word for psychological warfare and political propaganda). It was headed by Harry Rositzke, my former division chief in the States, with David E. Murphy as his deputy, latter having been my branch chief in Washington. The main function of this base was to launch Clandestine operations into the Soviet Union and the Eastern European countries, although most of the latter took place from the Berlin base. This was done by whatever means one could devise, overland, air drop, or sea infiltration. Mostly, we were involved in the recruitment and training of agents to be air-dropped into the Soviet Union much as agents had been sent in during World War II to try to recruit partisan groups inside the target country. My particular responsibility was to work with dissident ethnic groups such as the Belorussians, Ukrainians, and Lithuanians. I was a section chief, with responsiblity for the supervision of approximately 12-14 other officers, as well as running my own operations, principally with the BNR (the Belorussian National Republic) leaders and the people they could manage to recruit to return to their homeland and try to set up a base of operations there. I had been promoted to GS-11 while still in Washington (about the equivalent of an Army captain) and early in 1954 was promoted to grade GS-12 (roughly equivalent to a Major.)</p>
+<p>I tried to maintain a clandestine relationship with a variety of high-level officials of dissident emigre groups, Such as the president and his chief operating officer of the Belorussian National Republic in exile, certain Lithuanian leaders, also in exile, many of whom were former cabinet officers in the legitimate government of Lithuania before it</p>
+<p>—-42?-</p>
+<p>was invaded by the Soviets ( e.g.&nbsp;the ministers of foreign affairs, finance and agriculture). It was difficult to keep things on a clandestine basis since their national pride would not permit the type of relationship tradional in the intelligence business. I remember on one occasion driving to Regensburg to meet my Lithuanian contacts, only to find that they had arranged a luncheon for all their associates to meet me. To them I was just a representative of the U. S. Government who was the source of funding for some of the activities which they wanted to run themselves but did’nt have the where-with-all or know-how to do. I’m sure that | situations of this type resulted in my name being on the</p>
+<p>roster of the K.G.B. early in my career.</p>
+<p>We took advantage of the fact that we were living in Europe to do as much sightseeing as possible. There were a lot of beautiful lakes and villages close to Munich and Austria was just a couple of hours drive on the autobahn. Lake Tegernsee and Lake Chiemsee were especially nice to visit as was the famous ski resort areas of the Alps, Garmisch-Partenkirken where the winter Olympics were held at one time before WWII, I believe in 1936. While my weekday workdays were very long, I did manage to get away for short trips with the family on weekends and holidays. My first trip away from Munich was an operational one which required me to go to Brussels in November 1952 to consult on an operational activity involving our station there, since it was in Brussels that the B.N.R. maintained its headquarters. About all I really remember about that trip was how cold it was in Brussels being, as it is, very close to the English Channel. Marion and I also managed to get away for a few days to visit with Peter and Mary Brescia in Nurnberg, the home of Nazism. Peter was in my graduating class of the Columbia University School of International Affairs. He was in the State Department assigned to Nurnberg as a HICOG representative (High Commissioner for Germany). It was very interesting to see some of the places where Hitler had first consolidated his rise to power.</p>
+<p>Christmas in Munich was quite an event for us, our first in Germany, and the home of so many of our Christmas carols such as O Tannenbaum (Oh, Christmas Tree). The Germans were still valiantly trying to recover from the war so most of them didn’t have much but one could feel the Christmas spirit very much and , of course, the cold weather and snow helped in that regard. We did most of our shopping in the Post Exchange (the PX) since prices were so much better for us. The exchange rate between the dollar and the Deuschmark was four to one and strictly controlled although it was not representative of the mark’s true value, which was closer to 4.25 to one dollar. I recall going to the PX with Ron and buying a clock for Marion, only to have him announce when we got home that Daddy had told him that he wasn’t supposed to tell her that we had bought her a clock For Christmas.</p>
+<p>—43-</p>
+<p>In early February 1953, Orin and Rita Parker came to visit us. They were stationed in Athens, Greece with an organization known as AFME ( American Friends of the Middle East). Rita was pregnant and did not want to nor was it recommended that she have a baby in a hospital in Athens so they had arranged to have the birth take place in Germany where she could have the attention of the Army Field hospital located in Munich. We had known the Parkers for many years. Rita was from Idaho Falls, Idaho and was in the Same ward as I was. My sister, Ila, used to babysit her on occasion. Orin and Rita were both at B.Y.U. with us, in many of the same clubs and organizations and Orin and I graduated From B.Y.U. in the same graduating class. Time dragged on the pregnancy as it frequently does with the first child and Orin had some business to conduct in some other city, I believe it was Vienna. Of course, while he as away was just the time that young Jeff decided to make his entrance into the world, so Marion and I ended up rushing Rita to the 98th Field Hospital a few hours before Orin was scheduled to return. He got a message at the airport to go directly to the hospital where his wife was having a baby, which also happened to be Marion’s’ birthday, February 12th. Quite a way to celebrate one’s birthday.</p>
+<p>It was during the winter of 1952-1953 that we were able to make our first trip to Garmisch and visit by cable car the famous Zugspitz, a towering mountain peak from which one could see part of the Austrian, Swiss and Italian Alps. We also managed ae short trip to Oberammergau, the site of the world-famous passion play (held every ten years and this wasn’t the year, however). We also took a quick trip to Heidelberg with a few of the servicemen who were in the Munich L.D.S. group. We had the advantage of having a car available to us, something which was still quite a luxury in Germany in the early fifties, although there were already quite a few Volkswagen beetles running around , affordable only to a limited number of the German people. Gasoline was also at a premium. We were allocated so much through the military Post Exchange system and it was very inexpensive compared to what the Germans had to pay for the limited Supply on the open market, about 25 cents per gallon as I recall. PART THREE</p>
+<p>After a winter of extensive operational activity, primarily training and preparing for infiltration by air into the Soviet Union, many groups of the emigre recruits which I mentioned earlier, I finally was able to take a real vacation with Marion and another couple, Marvin and Gayla Green. Marvin Green was an Army captain and one of</p>
+<p>—-44-</p>
+<p>4 | the L.D.S8. Chaplains assigned to the large military contingent in Munich, the headquarters for the Southern Area Command. Our car, the Starlite coupe, wasn’t very big but we loaded our luggage plus as many five gallon containers of gasoline as we could into its trunk and took off for Italy on April 29, 1953 with a lot of snow still on the ground in Germany and Austria but after we passed through the Brenner Pass and into the Italian Alps and down into Italy, the weather was spring-like. We arrived in Venice, hired a gondola taxi, and was greeted when we reached the Metropole Hotel with a literal red carpet being rolled down the steps right to the edge of the gondola. Our visit covered all the usual sights Venice, St.&nbsp;Mark’s Cathedral, the Palace of the Dognas (dukes), the Bridge of Sighs, and Lido beach. From Venice we drove to Florence, arriving there on April 30th. The next morning we woke up to a tremendous noise in the plaza below where there was a huge crowd for a political demonstration. Only then did it occur to us that it was May Day, the traditional Labor Day in Europe and the day on which most of the leftist groups show their political muscle. In Florence, we visited many of the famous art galleries since by this time most of the paintings taken from them during the war had been returned and were ) available again for viewing by the public. Evidence of wartime damage to some of the Italian cities was quite apparent, however. We then headed for Rome, stopping enroute to see the tower of Pisa. In Rome we stayed at the Victoria Hotel and in a few short days visited the Roman Forum, the Coloseum, the Catacombs where the early Christians secreted themselves, the Roman baths, the Pantheon, and , of course, the famous St.&nbsp;Peter’s cathedral, the Vatican museum, and the Sistine chapel to see Michaelangelo’s famous paintings. After Rome, we traveled to Livorno (Leghorn) to resupply our gasoline at the PX there, then spent two days at Viareggio on the Thyrrenian Sea, even braving the cold water to get a little bit of the feel of the ocean. We stopped for some sight-seeing in Genoa, principally to see its famous cathedral and the statue of Christopher Columbus (who was a Genoese). We returned via the Swiss Alps where it was still winter, stopping at a delightful pension in Silvaplana not far from St.&nbsp;Moritz, where we had a plateful of steaks served family style and comforters on our beds with about six inches of down in them. That night, however, because the temperature was quite a bit below freezing, I had to drain the water from the car. One of our short trips was to Vienna, Austria for which one had to receive permission since it involved traveling through the Soviet Zone of East Germany ona Special train. Once on board it took a long time getting Started because someone’s passport was out of order. It turned out to be Marion’s, which, of course, wasn’t out of -45-</p>
+<p>order at all, except that someone had just neglected to put down one of the zeroes which preceded the actually number. The Soviets typically using any sort of excuse to try to frustrate the Americans. Our visit to this fabulous city was exciting and ina couple of days we saw the opera house, St. Stephan’s cathedral, the Capuchen church and the Hapsburg tombs, Schoenbrunn Palace, the wine gardens of Grunzing, the home of Beethoven, and statues of such reknown composers as Mozart, Straus, and Haydn. ’</p>
+<p>One weekend in July (July 11-12) we drove to Landshut for the reenactment of the Royal wedding (Hochzeit) between George of Landshut, Bavaria and Hedwig, a Polish princess, which took place in 1475. Everything was made as authentic as possible, the carriage for the bride and groom, the costumes, the entertainment and the food. There was a festival ground with knights engaged in tilting and lance fighting, and some delicious 15th century barbecued fish. Some of the people who were with us_ on this trip were servicemen Evan Judd and Ed Speight, Dale and Marie Gray (an army dentist) and the Wierdt’s (Charlotte and Leonard, a non- member Air Force colonel). Also took a quick trip to the Bodensee (Lake Constance) to Lindau, Ulm and the castle at Neu Schwanstein, and went to see the violin makers at Mittenwald.</p>
+<p>The dictator of the Soviet Union , Joseph V. Stalin, died in early 1953 and we anticipated that his death would cause some changes if not an upheaval in the Soviet Union. This was true to a certain extent but it did not occur as rapidly as we thought it might. Our operational activity of infiltrating the U.S.S:.R continued although we were experiencing a lot of failures. The control of the K.G.B was so extensive that almost all, and eventually all, of the teams that we sent in were compromised. We had managed to maintain WT contact with some of them but in spite of that contact we always had to consider the possibility that they had come under hostile control. When it served their purposes the Soviets would publish in Pravda the accounts of the arrest, trial and often the execution of the “spies” that the U. S. Intelligence Service had sent in to subvert their citizens. Much of this, of course, was to discourage other people from being recruited to send in. It did have its effects although, to their credit, their were still some highly motivated young men who would knowingly risk their lives on operations which they knew were extremely hazardous. In the summer of 1953 the citizens of East Berlin made a valiant effort to throw off their Soviet yoke. But it was fruitless without the help of the West. President Eisenhower, who had just been elected the previous November on the platform of ending the Korean conflict, just wouldn’t take the steps to provide the aid that was needed. He would not risk the possibility of hostilities with the Soviets, especially since the Korean War was still going on although in its final stages.</p>
+<p>-46-</p>
+<p>We spent another Christmas in Munich in 1953, much more accustomed to the weather and the people. I bought Ronnie an HO gauge train for a present , although he was still pretty young but his dad and his dad’s friends certainly had a good time with it. We had continued doing all the visiting that we could, including a visit to the concentration camp at Dachau, on the outskirts of Munich, a very sobering experience. Our maid, Lee, had been the wife of a former SS officer and she, like most Germans, claimed complete ignorance of the existence of such a concentration camp. Maybe so, it is difficult to know where the truth lies.</p>
+<p>Our overseas tours were not without problems. As one could expect Americans abroad were always fair targets for theft and burglary and one night we had our sterling silver Stolen while we were asleep in the house. Although, we remain unconvinced that our maid, Lee, did’nt have something to do with providing information to the thieves, we came out of the affair in good shape. The insurance company reimbursed us for the full value of the silver service which we had received as a wedding present. With that money we bought a larger service at the PX of a different pattern which we never used while in Germany since the military furnished silver service with the houses. When we returned to Virginia we were able to exchange the International pattern with the Wallace Rose Point we had previously owned plus additional place settings which we did’nt have before.</p>
+<p>Our family planning continued and we found out late in 1953 that Marion was pregnant. Since the baby was due in March 1954 we took some trips while Marion was expecting even though the weather conditions were not the best. In early 1954 we took a train instead of driving to Paris to see the sights there. It was a bitter cold winter, the coldest that Europe had experienced in 75 years so we kept pretty well bundled up and inside as much as we could. However, we saw the usual Paris sights, such as the Bifel Tower, Notre Dame, Napoleon’s tomb, and Maxim’s and enjoyed the French cuisine very much. Our hotel room had just one tiny radiator so we took hot baths to keep warm when we were not out seeing the town. I almost lost my camera there, leaving it at a restaurant and grabbing a taxi to the railroad station. Fortunately, there was a little time left So I got a taxi to take me back, pick up the camera and still make it before the departure time.</p>
+<p>Our third child was born on March 17, 1954. There seemed to be no other choice but to call her Patricia, being St.&nbsp;Patrick’s day, and also the birthday of several of her uncles. The trip to the 98th General on a cold winter morning very early was uneventful although somewhat hazardous and Marion delivered without any problems. Since</p>
+<p>-47-</p>
+<p>we had a new maid by this time, by the name of Isolde, it was much easier for Marion than on the births of the other two children. We blessed Patty at the Munich branch on the first Sunday in May, 1954. In the spring of 1954 I had been promoted to the grade of GS-12. Economically things were much better since, in addition to the increased income, our housing was provided for us. In May after Marion had regained all of her strength we took a trip by car to Heidleberg, Cologne, and on into Belgium and Holland. We went across the channel to England and were able to spend a few days with our friends, the Mabey’s, whom we knew from BYU, and who were doing graduate study at Oxford. We visited the usual things, tower of London, London bridge, etc. and were able to take in some of the theatrical plays such as”The King and I”. We were there on the occasion of the return of the Queen and her husband from a six month round the world tour of the dwindling British Empire, although we didn’t see them since we opted instead to see a play, something which amazed some of the English people who don’t quite understand Americans and their lack of concern for royalty. On our way home we stopped to see the famous “Nuts” monument at Bastogne, France where Gen.&nbsp;McAullife rendered that remark to the Germans during the Battle of the Bulge when they wanted him to surrender his position. Shortly, after our return to Munich I was able to obtain the address in Zurich of my first cousin, Anna, so during the Memorial Day weekend, May 29-31, Marion and I and two of our children, Ron and Gail, drove to Zurich and had a delightful visit with the members of my Mother’s family who were still alive in Switzerland, including besides Anna and her husband, Karl, my cousin Rudolf and wife, and my Uncle Rudolf, the only remaining member of Mother’s immediate family. They even managed, during the short time we were there, to make up a small photo album of our visit with pictures of all the members of the family. Since our time was growing short, we squeezed ina couple of other visits that we wanted to make, such as a trip to Rothenburg, a thousand-year old city, which retained much of its original charm, such as the city walls and tiled roofs. We saw the traditional Shepherd’s Dance just as it was performed ten centuries ago. We were especially delighted to visit the city of Salzburg in Austria, just a few hours drive along the Autobahn from Munich. During the latter part of 1954 it became increasingly apparent that we had to change our operational tactics vis a vis the Soviets. Many significant events had taken place in Europe and the Soviet Union, not the least of which was the death of Stalin and the subsequent cult of personality which Krushchev and some of the other old line Bolsheviks tried to | -48-</p>
+<p>continue. I found during the last few months that I was 3 being asked to doa variety of tasks outside of my regular f operational sphere of interest such as maintaining liaison with the American Committee for the Liberation of Europe e (AMCOMBLIB) then a CIA-sponsored entity. Our World War II infiltration tactics just weren’t successful. In one way or another all the agents we sent in by air, sea or land were | compromised and the results weren’t worth the efforts. . Also, with Krushchev, the Soviet Union was gradually opening up so that a few people could travel legally into it. PART FOUR After several farewell parties, one of which was given by a delightful L.D.S. couple named Bob and Grace Douglass (He was an Army dentist and she was from So. Africa),we were on our way home. We had booked passage on the new superliner, the S.S. United States, and traveled to Paris, being able to have a brief layover in Zurich enroute where we saw Anna and Karl again at the airport. After a few days of sightseeing in Paris with the family, we took the boat-train to LeHavre to board the ship. Our crossing was quite uneventful, the North Atlantic being quite cold and gusty even though it was August, but we enjoyed the relaxation and the sea air and Ron and Gail were at least Old enough to appreciate the luxury of the travel. Patty, of course, was less than six months old and still had to be fed a special formula because she was allergic to regular milk. After our arrival and disembarcation in New York, the family separated. I had to go to Headquarters in Washington, D.C. to check in before going on home leave. Marion took the children on the airplane for what she thought was going to be a short flight to Kansas City where Helen and Jay Jeppsen were located (Jay still being in dental school). As it turned out their plane developed some trouble and had to put down in Pittsburgh where Marion struggled with the two Older children anda young baby for several hours with very inadequate facilities, before continuing on to kK.C. O€ course, I was blissfully unaware of their predicament, having taken a short flight to Washington, D.C., checked in at Headquarters, bought a new Ford 2 door sedan and took off to join my family. We divided our home leave between Utah and California, going to the latter to visit Ila and Howard, Martin and Betty and Loverna and her family as well as give our kids a chance to see the beach. In late September we started our return trip to the Washington D.C. area not Knowing where we were going to live but anxious to return and try to buy us a house, having saved up some money while overseas For this purpose. We took an apartment in Glassmanor, an apartment complex in Maryland, within fairly easy commuting distance of my work, (the offices still being -—49-</p>
+<p>located along the reflecting pool by the Lincoln Memorial). From there we began our search for a new house. Typically, the prices were higher than we had been led to believe, but eventually we found one that we liked in a new development called Franconia Estates, just a few miles from Alexandria, Virginia. The price for the house was $18,500 plus closing costs on aV.A. loan, at 4.5% interest, about three or four thousand more than we ever thought we would have to pay, but as it turned out a very good investment for us. We moved into the house at 905 Sable Drive in late November, 1954. It was a split-level house with three small bedrooms, living room, dining room, kitchen, and a den downstairs by the laundry room, as well as a two car garage. We immediately became active in the Alexandria Ward of the then Washington Stake where we met ina school building while a new chapel was being constructed on King St.&nbsp;in Alexandria. Most of our spare time was spent in working on the many finishing phases of the chapel, principally doing painting and staining of woodwork. Wendell Thorne was the Bishop of the ward. Upon completion of the chapel, it was dedicated on June 19, 1955 by Ezra Taft Benson, a member of the Quorum of the Twelve, who also was the Secretary of Agriculture in the Eisenhower administration. In August the bishopric was reorganized and the new Bishop, Joe Dunn, an FBI agent, chose me as his second counselor- much to my surprise since we had only been in the Ward since the previous November. I was ordained a High Priest by Ezra Taft Benson on August 7, 1955, making my priesthood line of authority as follows: Virgil Lehi Harris…ordained a High Priest by Ezra Taft Benson, 7 August 1955. Ezra Taft Benson…ordained an Apostol by Heber J. Grant, Oct.&nbsp;7, 1943. Heber J. Grant…ordained an Apostol by George Q. Cannon, Oct.&nbsp;16, 1882. George Q. Cannon…ordained an Apostol by Brigham Young, Aug.&nbsp;26, 1860. Brigham Young…ordained an Apostol by the Three Witnesses of the Book of Mormon (Oliver Cowdery, David Whitmer, and Martin Harris), Feb.&nbsp;14, 1835. The Three Witnesses were called by divine revelation to select and ordain the first twelve apostols of the restored Church and were set apart for this purpose by the First Presidency of the Church (Joseph Smith, Frederick G. Williams, and Sidney Rigdon) on Feb.&nbsp;14, 1845. Joseph Smith, Jr…waS ordained an Apostol by Peter, James, and John (D.&amp;C.27:12) ordained by Jesus Christ, sent from God. -50-</p>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/clarkruttinger\.info\/UncleVirgilBot\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Chapter 5: The CIA</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Source records: 5–5</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Date confidence: low</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Boundary confidence: needs_review</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>CHAPTER FIVE</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>PART ONE</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>This next part will be devoted to the period of time</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>that I was employed at the Central Intelligence Agency. The</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>C.I.A. was chartered in 1947 and was an outgrowth of the</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Office of Strategic Services, the military intelligence</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>component during World War II. Many of the officers who were</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>with O.S.S. simply stayed on after the war and most all of</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>them became the heads of divisions and branches in the new</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>civilian intelligence service.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Upon receiving my clearance after many months of</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>anxious waiting, we got in our old 1939 Buick and headed</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>back to Shanks Village to pick up our belongings and to</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>dispose of our rather meager furnishings. The trip back was</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>pretty much like the one going to Utah, all kinds of</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>problems with the car, primarily an engine that overheated</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>So we coasted down hills so that the engine would cool off.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Eventually we made it back to New York, sold our furniture</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>and packed our car full of clothes, books and what have you</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>and headed for Washington, D.C. somewhat apprehensive as to</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>what we would encounter but at least glad to have some</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>employment of a professional nature. Our trip to Washington</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>was not without incident, however. In those days we had to</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>cross the Delaware River on a ferry boat. We got on the</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>ferry boat all right but when trying to get off, we found</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>that the battery on the old Buick was about gone so we had</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>to be pushed to get off the ferry boat. Such embarrassment</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>one has to go through when you don't have any money. I</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>reported for duty on October 23, 1950 as a GS-7, the general</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>entry grade of people with at least a Master's degree. The</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>pay was only $3875 annually but at least it was a regular</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>job. We found some temporary quarters on I St. right smack</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>in the middle of Washington, D.C. in an area which was</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>occupied primarily with blacks. It was convenient to</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>transportation to work and we had already found us an</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>apartment in Virginia which was under construction so we</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>knew we wouldn't be camping for too long.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>My initial assignments with the Agency were varied</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>and, of course, I was intrigued with the secrecy of</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>everything. We were just gearing up for a major intelligence</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>effort against the Soviets from a base in Germany. By this</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>date the Soviets had made it abundantly clear that they were</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>going to pursue an expansionist policy, having already taken</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Over much of eastern Europe. I was immediately put to work</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>writing up the projects for utilization of Russian and other</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>Soviet ethnic groups as targets for penetration of the</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>Soviet Union. I wrote projects for the utilization of the</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>N.T.S. (Nationalnaya Trudovoya Soyuz) an emigre organization</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>of Great Russians. Many of the ethnic groups opposed to</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>communism fled the Soviet Union during and after World War</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>II, and the members of the N.T.S. consisted of a large group</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>-38-</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>of military age people who had taken advantage of the</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>opportunity to get out of a totalitarian regime. They</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>represented a tremendous pool of highly-motivated people who</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>were interested in doing anything they could to overthrow</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>the oppressive leaders of the Soviet nation. The projects</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>which I wrote contained not only the operational objectives,</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>such as how, when, where, and why the organization was to be</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>used, but also the financial particulars, including the</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>budgetary estimates, schedules of payments, and methods for</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>effecting payments, all of which was supposed to be done in</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>a clandestine manner. Other organizations utilized were the</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>Belorussian national groups, Lithuanians, Latvians,</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>Estonians, and Ukrainians, all of whom had their own</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>nationalistic interests to pursue. In most cases’ the</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>operational objectives were to obtain personnel through</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>these organizations who would serve as agents’ for</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>penetration into the Soviet Union and who would be trained</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>and controlled by the U.S. intelligence service. Also,</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>these groups were used as propaganda vehicles’ through</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>various media techniques, such as newspapers, periodicals,</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>and radio broadcasts to influence public policy.</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>While the foregoing was the major part of my function</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>as an assistant to the branch chief, I was also involved in</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>another very interesting project for which I had personal</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>responsiblity. This was a project to procure former PT boats</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>to serve as a means of infiltration into the Soviet Union</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>from its various peripheries. In order to do this it was</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>necessary to work through an effective cutout (a person or</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>organization which could not be identified as buying for the</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>U.S. government). We used a retired naval Captain who had</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>extensive contacts and who set up a corporation ostensibly</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>to buy used PT boats for wealthy clients who wanted to use</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>them as pleasure craft (since the building of yachts and</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>vessels like that had been terminated because of the war.)</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>It was my responsibility, in addition to the handling of all</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>the administrative and budgetary aspects of the project, to</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>Oversee the purchase and overhauling of these craft for our</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>particular purpose. The project was budgeted for several</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>million dollars and if we needed more all I had to to was</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>write up a supplementary request.</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>The object of the overhaul was to make the craft</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>Superfast for high speed crossings of certain waters</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>peripheral to the Soviet Union, such as the Black and Baltic</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>Seas. Many of the decisions as to what and how to do it were</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>left up to me, which was ironical because my naval</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>experience had been confined mostly to naval schools and</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>work as an electronic technician on an aircraft carrier.</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>After the PT boats were equipped to our specifications, I</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>had to arrange to ship them to various staging areas in as ,</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>secure manner as possible to avoid detection of their</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>existence and especially their intended use for intelligence</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>Purposes. This was done primarily in coordination with</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>-39-</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>naval intelligence. Another important aspect of this project</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>was in making arrangements for the recruitment of third</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>national crews to man the converted PT boats since they</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>obviously couldn't be manned by American personnel.</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>Consequently, I had to devise a project for field personnel</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>. to recruit, train, and fund agents’ for this purpose. All in</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>all, a total of about six converted PT boats were shipped to</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>various parts of the world, such as the Baltic, Black Sea,</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>and the Far East.</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>Concurrent with the PT procurment program, I was also</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>responsible for managing from headquarters, the staging of</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>the clandestine aircraft operating out of southern Europe</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>into Germany and then into the Soviet Union. My job was to</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>arrange with the U.S. Air Force for logistical handling of</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>the two aircraft, before, during and after a clandestine</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>Flight. One can best appreciate the significance of my work</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>in just the air and maritime fields by the fact that upon</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>my departure for the field (Germany) in June of 1952, my</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>projects became the responsibility of an entire division in</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>the Clandestine Services. This division was headed by a</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>retired Rear-Admiral, another Naval officer, two Air Force</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>colonels, and several senior (GS 12-GS 14) civilians. I</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>never had the heart to tell the Rear Admiral (who was once a</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>flag officer on the U.S.S.Wasp) that I had only been an</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>enlisted man in the Navy. In our conversations, he always</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>had to refer to the capability of "we former Navy officers"</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>to switch our talents to civilian activities.</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>During the almost two years we spent in Washington,</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>D.C. area before going overseas, we attended the Falls</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>Church ward of the then Washington Stake which covered all</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>of Virginia, Maryland, anda part of Pennsylvania. Marion</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>and I co-taught a Sunday School class (the ten year olds-</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>which was a good way to find out what went on in members</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>homes). By this time Marion was pregnant with our second</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>enild, Gail, who was born on June 30, 1951. What a</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>difference a couple of years’ makes! When Ron was born</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>Marion was kept in the hospital for about ten days, with</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>Gail she was home in two or three days. I was in a carpool</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>with another CIA man, Hugh Fleischer. It was my turn to</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>drive on June 30th so when Marion started in labor in the</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>morning I called Hugh , picked him up at his home, drove him</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>into the office (the Clandestine Services were located in</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>some WWI type converted barracks called I,J, K and L</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>buildings along side the reflecting pool near the Lincoln</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>Memorial), then drove Marion to Arlington Hospital. The</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>doctor was anxiously awaiting us, having been called before</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>we left home. It was a good thing too because Gail was born</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>in about a half-hour after we arrived at the hospital.</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>-40-</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>Of course, we had long since moved into the Willston</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>apartments at Seven Corners in Falls Church, Virginia.</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>Initially we occupied a one bedroom apartment on one of the</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>upper floors which cost us $88.00 a month rent, but with the</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>birth of Gail we were able to obtain a two bedroom apartment</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>on the ground floor. A few weeks after Gail was born, I</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>received a frantic telephone call from Marion saying that</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>Gail had been dropped by her brother and his little friend</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>and was really banged up. When I got to the doctor's office</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>she looked pretty bad, but the healing power of infants is</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>great, within a few days one could barely tell anything had</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>happened to her. We were fortunate in these early days in</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>the Washington area to be close to Marion's two sisters,</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>Edith and Mildred and their families, both of whom lived in</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>the Arlington area. They helped us a lot in making the</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>transition from the academic to the professional public</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>service world.</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>After much travail with our old 1939 Buick and</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>getting promotions regularly, we bought a little Studebaker</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>called a Starlite coupe, which we enjoyed very much. In June</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>1952, my assignment to the field came through. It was to</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>the Combined Soviet Operations Base in Munich, Germany.</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>After leaving our apartment and getting our furniture packed</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>for shipment overseas, we drove to Utah and California for a</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>vacation. While in California, in addition to visiting</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>relatives, Ila, Martin, Loverna and their families, I took</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>the opportunity to call on my old college chum, Bill Gay,</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>was was by then the Chief of Staff for Howard Hughes, a very</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>impressive position with a lot of power. He suggested that</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>I might want to work for him when I returned from overseas.</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>PART TWO</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>The housing Situation overseas, particularly in</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>Germany, was pretty bad so I had to go to the field ahead of</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>my family to await the time when housing would be available.</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>I returned to Washington driving our little coupe with a</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>young couple and their child who needed transportation to</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>that area, while Marion and the two children stayed with her</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>family in Provo. I arrived in Germany in early August and</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>lived in a bachelor apartment in McGraw Kasern until mid-</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>September when Marion arrived with Ronald and Gail, after</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>traveling via train and airplane from Provo, a big task in</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>those days. We lived temporarily in a small apartment of an</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>officer who was on home leave (Al Galcius) until our</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>furniture arrived when we moved to a house at Sabineschmidt</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>Str. 12, one of many German quarters taken over by the</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>allied occupation forces. Ron was only three and a half at</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>the time and was awfully glad to see toys and household</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>furniture which he could recognize.</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>We attended a German branch of the church, although</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>after sacrament services, the Americans attended classes</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>-4)-</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>which were conducted in English. The German saints were</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>still suffering a lot as a result of the war and didn't have</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>much in terms of assets but they were very generous. On one</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>occasion, shortly after we arrived, we were at a branch</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>dinner and the only thing being served was a weisswurst, a</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>large white sausage, filled with gristle and fat. I managed</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>to choke mine down as did Marion but there was no way we</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>could get our young children to do so. Of course, this went</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>over like a lead balloon with the Germans who felt fortunate</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>to have anything to eat at all. There were a lot of L.D.§</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>servicemen in Munich and we became close friends with many</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>of them. One of them ,Robert Bolinder, married a German</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>girl named Gertrude. He later became the president and C.E.O</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>of the Albertson'food chain operating out of Boise, Idaho.</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>We also took advantage of the sight-seeing available to uS,</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>being right in the midst of beautiful Bavaria and close to</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>the Austrian alps and the famous ski resorts of southern</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>Germany such as Garmisch.</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>My operational and supervisory activities in Munich</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>came under the auspices of what was known as the Combined</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>Soviet Operations Base (i.e a combination of the Office of</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>Special Operations and the Office of Policy Coordination,</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>latter being a fancy word for psychological warfare and</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>political propaganda). It was headed by Harry Rositzke, my</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>former division chief in the States, with David E. Murphy as</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>his deputy, latter having been my branch chief in</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>Washington. The main function of this base was to launch</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>Clandestine operations into the Soviet Union and the Eastern</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>European countries, although most of the latter took place</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>from the Berlin base. This was done by whatever means one</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>could devise, overland, air drop, or sea infiltration.</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>Mostly, we were involved in the recruitment and training of</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>agents to be air-dropped into the Soviet Union much as</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>agents had been sent in during World War II to try to</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>recruit partisan groups inside the target country. My</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>particular responsibility was to work with dissident ethnic</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>groups such as the Belorussians, Ukrainians, and</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>Lithuanians. I was a section chief, with responsiblity for</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>the supervision of approximately 12-14 other officers, as</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>well as running my own operations, principally with the BNR</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>(the Belorussian National Republic) leaders and the people</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>they could manage to recruit to return to their homeland and</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>try to set up a base of operations there. I had been</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>promoted to GS-11 while still in Washington (about the</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>equivalent of an Army captain) and early in 1954 was</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>promoted to grade GS-12 (roughly equivalent to a Major.)</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>I tried to maintain a clandestine relationship with a</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>variety of high-level officials of dissident emigre groups,</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>Such as the president and his chief operating officer of the</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>Belorussian National Republic in exile, certain Lithuanian</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>leaders, also in exile, many of whom were former cabinet</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>officers in the legitimate government of Lithuania before it</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>—-42?-</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>was invaded by the Soviets ( e.g. the ministers of foreign</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>affairs, finance and agriculture). It was difficult to keep</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>things on a clandestine basis since their national pride</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>would not permit the type of relationship tradional in the</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>intelligence business. I remember on one occasion driving to</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>Regensburg to meet my Lithuanian contacts, only to find that</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>they had arranged a luncheon for all their associates to</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>meet me. To them I was just a representative of the U. S.</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>Government who was the source of funding for some of the</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>activities which they wanted to run themselves but did'nt</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>have the where-with-all or know-how to do. I'm sure that</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> situations of this type resulted in my name being on the</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>roster of the K.G.B. early in my career.</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>We took advantage of the fact that we were living in</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>Europe to do as much sightseeing as possible. There were a</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>lot of beautiful lakes and villages close to Munich and</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>Austria was just a couple of hours drive on the autobahn.</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>Lake Tegernsee and Lake Chiemsee were especially nice to</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>visit as was the famous ski resort areas of the Alps,</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>Garmisch-Partenkirken where the winter Olympics were held at</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>one time before WWII, I believe in 1936. While my weekday</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>workdays were very long, I did manage to get away for short</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>trips with the family on weekends and holidays. My first</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>trip away from Munich was an operational one which required</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>me to go to Brussels in November 1952 to consult on an</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>operational activity involving our station there, since it</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>was in Brussels that the B.N.R. maintained its headquarters.</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>About all I really remember about that trip was how cold it</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>was in Brussels being, as it is, very close to the English</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>Channel. Marion and I also managed to get away for a few</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>days to visit with Peter and Mary Brescia in Nurnberg, the</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>home of Nazism. Peter was in my graduating class of the</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>Columbia University School of International Affairs. He was</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>in the State Department assigned to Nurnberg as a HICOG</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>representative (High Commissioner for Germany). It was very</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>interesting to see some of the places where Hitler had first</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>consolidated his rise to power.</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>Christmas in Munich was quite an event for us, our</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>first in Germany, and the home of so many of our Christmas</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>carols such as O Tannenbaum (Oh, Christmas Tree). The</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>Germans were still valiantly trying to recover from the war</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>so most of them didn't have much but one could feel the</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>Christmas spirit very much and , of course, the cold weather</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>and snow helped in that regard. We did most of our shopping</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>in the Post Exchange (the PX) since prices were so much</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>better for us. The exchange rate between the dollar and the</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>Deuschmark was four to one and strictly controlled although</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>it was not representative of the mark's true value, which</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>was closer to 4.25 to one dollar. I recall going to the PX</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>with Ron and buying a clock for Marion, only to have him</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>announce when we got home that Daddy had told him that he</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>wasn't supposed to tell her that we had bought her a clock</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>For Christmas.</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>—43-</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>In early February 1953, Orin and Rita Parker came to</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>visit us. They were stationed in Athens, Greece with an</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>organization known as AFME ( American Friends of the Middle</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>East). Rita was pregnant and did not want to nor was it</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>recommended that she have a baby in a hospital in Athens so</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>they had arranged to have the birth take place in Germany</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>where she could have the attention of the Army Field</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>hospital located in Munich. We had known the Parkers for</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>many years. Rita was from Idaho Falls, Idaho and was in the</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>Same ward as I was. My sister, Ila, used to babysit her on</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>occasion. Orin and Rita were both at B.Y.U. with us, in many</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>of the same clubs and organizations and Orin and I graduated</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>From B.Y.U. in the same graduating class. Time dragged on</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>the pregnancy as it frequently does with the first child and</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>Orin had some business to conduct in some other city, I</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>believe it was Vienna. Of course, while he as away was just</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>the time that young Jeff decided to make his entrance into</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>the world, so Marion and I ended up rushing Rita to the 98th</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>Field Hospital a few hours before Orin was scheduled to</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>return. He got a message at the airport to go directly to</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>the hospital where his wife was having a baby, which also</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>happened to be Marion's’ birthday, February 12th. Quite a</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>way to celebrate one's birthday.</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>It was during the winter of 1952-1953 that we were</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>able to make our first trip to Garmisch and visit by cable</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>car the famous Zugspitz, a towering mountain peak from which</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>one could see part of the Austrian, Swiss and Italian Alps.</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>We also managed ae short trip to Oberammergau, the site of</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>the world-famous passion play (held every ten years and this</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>wasn't the year, however). We also took a quick trip to</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>Heidelberg with a few of the servicemen who were in the</span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>Munich L.D.S. group. We had the advantage of having a car</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>available to us, something which was still quite a luxury in</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>Germany in the early fifties, although there were already</span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>quite a few Volkswagen beetles running around , affordable</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>only to a limited number of the German people. Gasoline was</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>also at a premium. We were allocated so much through the</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>military Post Exchange system and it was very inexpensive</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>compared to what the Germans had to pay for the limited</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>Supply on the open market, about 25 cents per gallon as I</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>recall.</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>PART THREE</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>After a winter of extensive operational activity,</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>primarily training and preparing for infiltration by air</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>into the Soviet Union, many groups of the emigre recruits</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>which I mentioned earlier, I finally was able to take a</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>real vacation with Marion and another couple, Marvin and</span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>Gayla Green. Marvin Green was an Army captain and one of</span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>—-44-</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>4</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span></span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>the L.D.S8. Chaplains assigned to the large military</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>contingent in Munich, the headquarters for the Southern Area</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>Command. Our car, the Starlite coupe, wasn't very big but we</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>loaded our luggage plus as many five gallon containers of</span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>gasoline as we could into its trunk and took off for Italy</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>on April 29, 1953 with a lot of snow still on the ground in</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>Germany and Austria but after we passed through the Brenner</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>Pass and into the Italian Alps and down into Italy, the</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>weather was spring-like. We arrived in Venice, hired a</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>gondola taxi, and was greeted when we reached the Metropole</span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>Hotel with a literal red carpet being rolled down the steps</span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>right to the edge of the gondola. Our visit covered all the</span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>usual sights Venice, St. Mark's Cathedral, the Palace of the</span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>Dognas (dukes), the Bridge of Sighs, and Lido beach.</span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>From Venice we drove to Florence, arriving there on</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>April 30th. The next morning we woke up to a tremendous</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>noise in the plaza below where there was a huge crowd for a</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>political demonstration. Only then did it occur to us that</span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>it was May Day, the traditional Labor Day in Europe and the</span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>day on which most of the leftist groups show their political</span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>muscle. In Florence, we visited many of the famous art</span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>galleries since by this time most of the paintings taken</span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>from them during the war had been returned and were</span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>) available again for viewing by the public. Evidence of</span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>wartime damage to some of the Italian cities was quite</span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>apparent, however. We then headed for Rome, stopping enroute</span>
+<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>to see the tower of Pisa. In Rome we stayed at the Victoria</span>
+<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>Hotel and in a few short days visited the Roman Forum, the</span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>Coloseum, the Catacombs where the early Christians secreted</span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>themselves, the Roman baths, the Pantheon, and , of course,</span>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>the famous St. Peter's cathedral, the Vatican museum, and</span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>the Sistine chapel to see Michaelangelo's famous paintings.</span>
+<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>After Rome, we traveled to Livorno (Leghorn) to</span>
+<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>resupply our gasoline at the PX there, then spent two days</span>
+<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>at Viareggio on the Thyrrenian Sea, even braving the cold</span>
+<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>water to get a little bit of the feel of the ocean. We</span>
+<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>stopped for some sight-seeing in Genoa, principally to see</span>
+<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a>its famous cathedral and the statue of Christopher Columbus</span>
+<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>(who was a Genoese). We returned via the Swiss Alps where</span>
+<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>it was still winter, stopping at a delightful pension in</span>
+<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>Silvaplana not far from St. Moritz, where we had a plateful</span>
+<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>of steaks served family style and comforters on our beds</span>
+<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>with about six inches of down in them. That night, however,</span>
+<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>because the temperature was quite a bit below freezing, I</span>
+<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>had to drain the water from the car.</span>
+<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a>One of our short trips was to Vienna, Austria for</span>
+<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a>which one had to receive permission since it involved</span>
+<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a>traveling through the Soviet Zone of East Germany ona</span>
+<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>Special train. Once on board it took a long time getting</span>
+<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>Started because someone's passport was out of order. It</span>
+<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>turned out to be Marion's, which, of course, wasn't out of</span>
+<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>-45-</span>
+<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>order at all, except that someone had just neglected to put</span>
+<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>down one of the zeroes which preceded the actually number.</span>
+<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>The Soviets typically using any sort of excuse to try to</span>
+<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>frustrate the Americans. Our visit to this fabulous city was</span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>exciting and ina couple of days we saw the opera house, St.</span>
+<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>Stephan's cathedral, the Capuchen church and the Hapsburg</span>
+<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>tombs, Schoenbrunn Palace, the wine gardens of Grunzing, the</span>
+<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>home of Beethoven, and statues of such reknown composers as</span>
+<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>Mozart, Straus, and Haydn. ’</span>
+<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>One weekend in July (July 11-12) we drove to Landshut</span>
+<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>for the reenactment of the Royal wedding (Hochzeit) between</span>
+<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>George of Landshut, Bavaria and Hedwig, a Polish princess,</span>
+<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>which took place in 1475. Everything was made as authentic</span>
+<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>as possible, the carriage for the bride and groom, the</span>
+<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>costumes, the entertainment and the food. There was a</span>
+<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>festival ground with knights engaged in tilting and lance</span>
+<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>fighting, and some delicious 15th century barbecued fish.</span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>Some of the people who were with us_ on this trip were</span>
+<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>servicemen Evan Judd and Ed Speight, Dale and Marie Gray (an</span>
+<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>army dentist) and the Wierdt's (Charlotte and Leonard, a non-</span>
+<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a>member Air Force colonel). Also took a quick trip to the</span>
+<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a>Bodensee (Lake Constance) to Lindau, Ulm and the castle at</span>
+<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a>Neu Schwanstein, and went to see the violin makers at</span>
+<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a>Mittenwald.</span>
+<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a>The dictator of the Soviet Union , Joseph V. Stalin,</span>
+<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a>died in early 1953 and we anticipated that his death would</span>
+<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a>cause some changes if not an upheaval in the Soviet Union.</span>
+<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a>This was true to a certain extent but it did not occur as</span>
+<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a>rapidly as we thought it might. Our operational activity of</span>
+<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a>infiltrating the U.S.S:.R continued although we were</span>
+<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a>experiencing a lot of failures. The control of the K.G.B</span>
+<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a>was so extensive that almost all, and eventually all, of the</span>
+<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a>teams that we sent in were compromised. We had managed to</span>
+<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a>maintain WT contact with some of them but in spite of that</span>
+<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a>contact we always had to consider the possibility that they</span>
+<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a>had come under hostile control. When it served their</span>
+<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a>purposes the Soviets would publish in Pravda the accounts of</span>
+<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a>the arrest, trial and often the execution of the "spies"</span>
+<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a>that the U. S. Intelligence Service had sent in to subvert</span>
+<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a>their citizens. Much of this, of course, was to discourage</span>
+<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a>other people from being recruited to send in. It did have</span>
+<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a>its effects although, to their credit, their were still some</span>
+<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a>highly motivated young men who would knowingly risk their</span>
+<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a>lives on operations which they knew were extremely</span>
+<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a>hazardous. In the summer of 1953 the citizens of East Berlin</span>
+<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a>made a valiant effort to throw off their Soviet yoke. But it</span>
+<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a>was fruitless without the help of the West. President</span>
+<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a>Eisenhower, who had just been elected the previous November</span>
+<span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a>on the platform of ending the Korean conflict, just wouldn't</span>
+<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a>take the steps to provide the aid that was needed. He would</span>
+<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a>not risk the possibility of hostilities with the Soviets,</span>
+<span id="cb1-497"><a href="#cb1-497" aria-hidden="true" tabindex="-1"></a>especially since the Korean War was still going on although</span>
+<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a>in its final stages.</span>
+<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a>-46-</span>
+<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a>We spent another Christmas in Munich in 1953, much</span>
+<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a>more accustomed to the weather and the people. I bought</span>
+<span id="cb1-504"><a href="#cb1-504" aria-hidden="true" tabindex="-1"></a>Ronnie an HO gauge train for a present , although he was</span>
+<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a>still pretty young but his dad and his dad's friends</span>
+<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a>certainly had a good time with it. We had continued doing</span>
+<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a>all the visiting that we could, including a visit to the</span>
+<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a>concentration camp at Dachau, on the outskirts of Munich, a</span>
+<span id="cb1-509"><a href="#cb1-509" aria-hidden="true" tabindex="-1"></a>very sobering experience. Our maid, Lee, had been the wife</span>
+<span id="cb1-510"><a href="#cb1-510" aria-hidden="true" tabindex="-1"></a>of a former SS officer and she, like most Germans, claimed</span>
+<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a>complete ignorance of the existence of such a concentration</span>
+<span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a>camp. Maybe so, it is difficult to know where the truth</span>
+<span id="cb1-513"><a href="#cb1-513" aria-hidden="true" tabindex="-1"></a>lies.</span>
+<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a>Our overseas tours were not without problems. As one</span>
+<span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a>could expect Americans abroad were always fair targets for</span>
+<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a>theft and burglary and one night we had our sterling silver</span>
+<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a>Stolen while we were asleep in the house. Although, we</span>
+<span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a>remain unconvinced that our maid, Lee, did'nt have something</span>
+<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a>to do with providing information to the thieves, we came out</span>
+<span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a>of the affair in good shape. The insurance company</span>
+<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a>reimbursed us for the full value of the silver service which</span>
+<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a>we had received as a wedding present. With that money we</span>
+<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a>bought a larger service at the PX of a different pattern</span>
+<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a>which we never used while in Germany since the military</span>
+<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a>furnished silver service with the houses. When we returned</span>
+<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a>to Virginia we were able to exchange the International</span>
+<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a>pattern with the Wallace Rose Point we had previously owned</span>
+<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>plus additional place settings which we did'nt have before.</span>
+<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>Our family planning continued and we found out late</span>
+<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a>in 1953 that Marion was pregnant. Since the baby was due in</span>
+<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>March 1954 we took some trips while Marion was expecting</span>
+<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>even though the weather conditions were not the best. In</span>
+<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a>early 1954 we took a train instead of driving to Paris to</span>
+<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a>see the sights there. It was a bitter cold winter, the</span>
+<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a>coldest that Europe had experienced in 75 years so we kept</span>
+<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a>pretty well bundled up and inside as much as we could.</span>
+<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a>However, we saw the usual Paris sights, such as the Bifel</span>
+<span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a>Tower, Notre Dame, Napoleon's tomb, and Maxim's and enjoyed</span>
+<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a>the French cuisine very much. Our hotel room had just one</span>
+<span id="cb1-542"><a href="#cb1-542" aria-hidden="true" tabindex="-1"></a>tiny radiator so we took hot baths to keep warm when we were</span>
+<span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a>not out seeing the town. I almost lost my camera there,</span>
+<span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a>leaving it at a restaurant and grabbing a taxi to the</span>
+<span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a>railroad station. Fortunately, there was a little time left</span>
+<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a>So I got a taxi to take me back, pick up the camera and</span>
+<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a>still make it before the departure time.</span>
+<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a>Our third child was born on March 17, 1954. There</span>
+<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a>seemed to be no other choice but to call her Patricia, being</span>
+<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a>St. Patrick's day, and also the birthday of several of her</span>
+<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a>uncles. The trip to the 98th General on a cold winter</span>
+<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a>morning very early was uneventful although somewhat</span>
+<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a>hazardous and Marion delivered without any problems. Since</span>
+<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a>-47-</span>
+<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a>we had a new maid by this time, by the name of Isolde, it</span>
+<span id="cb1-559"><a href="#cb1-559" aria-hidden="true" tabindex="-1"></a>was much easier for Marion than on the births of the other</span>
+<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a>two children. We blessed Patty at the Munich branch on the</span>
+<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a>first Sunday in May, 1954. In the spring of 1954 I had been</span>
+<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a>promoted to the grade of GS-12. Economically things were</span>
+<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a>much better since, in addition to the increased income, our</span>
+<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a>housing was provided for us.</span>
+<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>In May after Marion had regained all of her strength</span>
+<span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a>we took a trip by car to Heidleberg, Cologne, and on into</span>
+<span id="cb1-567"><a href="#cb1-567" aria-hidden="true" tabindex="-1"></a>Belgium and Holland. We went across the channel to England</span>
+<span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a>and were able to spend a few days with our friends, the</span>
+<span id="cb1-569"><a href="#cb1-569" aria-hidden="true" tabindex="-1"></a>Mabey's, whom we knew from BYU, and who were doing graduate</span>
+<span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a>study at Oxford. We visited the usual things, tower of</span>
+<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a>London, London bridge, etc. and were able to take in some of</span>
+<span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a>the theatrical plays such as"The King and I". We were there</span>
+<span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a>on the occasion of the return of the Queen and her husband</span>
+<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a>from a six month round the world tour of the dwindling</span>
+<span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a>British Empire, although we didn't see them since we opted</span>
+<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a>instead to see a play, something which amazed some of the</span>
+<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a>English people who don't quite understand Americans and</span>
+<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a>their lack of concern for royalty. On our way home we</span>
+<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a>stopped to see the famous "Nuts" monument at Bastogne,</span>
+<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a>France where Gen. McAullife rendered that remark to the</span>
+<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a>Germans during the Battle of the Bulge when they wanted him</span>
+<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a>to surrender his position.</span>
+<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a>Shortly, after our return to Munich I was able to</span>
+<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a>obtain the address in Zurich of my first cousin, Anna, so</span>
+<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a>during the Memorial Day weekend, May 29-31, Marion and I and</span>
+<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a>two of our children, Ron and Gail, drove to Zurich and had</span>
+<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a>a delightful visit with the members of my Mother's family</span>
+<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a>who were still alive in Switzerland, including besides Anna</span>
+<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a>and her husband, Karl, my cousin Rudolf and wife, and my</span>
+<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a>Uncle Rudolf, the only remaining member of Mother's</span>
+<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a>immediate family. They even managed, during the short time</span>
+<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a>we were there, to make up a small photo album of our visit</span>
+<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a>with pictures of all the members of the family.</span>
+<span id="cb1-594"><a href="#cb1-594" aria-hidden="true" tabindex="-1"></a>Since our time was growing short, we squeezed ina</span>
+<span id="cb1-595"><a href="#cb1-595" aria-hidden="true" tabindex="-1"></a>couple of other visits that we wanted to make, such as a</span>
+<span id="cb1-596"><a href="#cb1-596" aria-hidden="true" tabindex="-1"></a>trip to Rothenburg, a thousand-year old city, which retained</span>
+<span id="cb1-597"><a href="#cb1-597" aria-hidden="true" tabindex="-1"></a>much of its original charm, such as the city walls and tiled</span>
+<span id="cb1-598"><a href="#cb1-598" aria-hidden="true" tabindex="-1"></a>roofs. We saw the traditional Shepherd's Dance just as it</span>
+<span id="cb1-599"><a href="#cb1-599" aria-hidden="true" tabindex="-1"></a>was performed ten centuries ago. We were especially</span>
+<span id="cb1-600"><a href="#cb1-600" aria-hidden="true" tabindex="-1"></a>delighted to visit the city of Salzburg in Austria, just a</span>
+<span id="cb1-601"><a href="#cb1-601" aria-hidden="true" tabindex="-1"></a>few hours drive along the Autobahn from Munich.</span>
+<span id="cb1-602"><a href="#cb1-602" aria-hidden="true" tabindex="-1"></a>During the latter part of 1954 it became increasingly</span>
+<span id="cb1-603"><a href="#cb1-603" aria-hidden="true" tabindex="-1"></a>apparent that we had to change our operational tactics vis a</span>
+<span id="cb1-604"><a href="#cb1-604" aria-hidden="true" tabindex="-1"></a>vis the Soviets. Many significant events had taken place in</span>
+<span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a>Europe and the Soviet Union, not the least of which was the</span>
+<span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a>death of Stalin and the subsequent cult of personality which</span>
+<span id="cb1-607"><a href="#cb1-607" aria-hidden="true" tabindex="-1"></a>Krushchev and some of the other old line Bolsheviks tried to</span>
+<span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> -48-</span>
+<span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a>continue. I found during the last few months that I was</span>
+<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a>3 being asked to doa variety of tasks outside of my regular</span>
+<span id="cb1-612"><a href="#cb1-612" aria-hidden="true" tabindex="-1"></a>f operational sphere of interest such as maintaining liaison</span>
+<span id="cb1-613"><a href="#cb1-613" aria-hidden="true" tabindex="-1"></a>with the American Committee for the Liberation of Europe</span>
+<span id="cb1-614"><a href="#cb1-614" aria-hidden="true" tabindex="-1"></a>e (AMCOMBLIB) then a CIA-sponsored entity. Our World War II</span>
+<span id="cb1-615"><a href="#cb1-615" aria-hidden="true" tabindex="-1"></a>infiltration tactics just weren't successful. In one way or</span>
+<span id="cb1-616"><a href="#cb1-616" aria-hidden="true" tabindex="-1"></a>another all the agents we sent in by air, sea or land were</span>
+<span id="cb1-617"><a href="#cb1-617" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> compromised and the results weren't worth the efforts.</span>
+<span id="cb1-618"><a href="#cb1-618" aria-hidden="true" tabindex="-1"></a>. Also, with Krushchev, the Soviet Union was gradually opening</span>
+<span id="cb1-619"><a href="#cb1-619" aria-hidden="true" tabindex="-1"></a>up so that a few people could travel legally into it.</span>
+<span id="cb1-620"><a href="#cb1-620" aria-hidden="true" tabindex="-1"></a>PART FOUR</span>
+<span id="cb1-621"><a href="#cb1-621" aria-hidden="true" tabindex="-1"></a>After several farewell parties, one of which was</span>
+<span id="cb1-622"><a href="#cb1-622" aria-hidden="true" tabindex="-1"></a>given by a delightful L.D.S. couple named Bob and Grace</span>
+<span id="cb1-623"><a href="#cb1-623" aria-hidden="true" tabindex="-1"></a>Douglass (He was an Army dentist and she was from So.</span>
+<span id="cb1-624"><a href="#cb1-624" aria-hidden="true" tabindex="-1"></a>Africa),we were on our way home. We had booked passage on</span>
+<span id="cb1-625"><a href="#cb1-625" aria-hidden="true" tabindex="-1"></a>the new superliner, the S.S. United States, and traveled to</span>
+<span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a>Paris, being able to have a brief layover in Zurich enroute</span>
+<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a>where we saw Anna and Karl again at the airport. After a few</span>
+<span id="cb1-628"><a href="#cb1-628" aria-hidden="true" tabindex="-1"></a>days of sightseeing in Paris with the family, we took the</span>
+<span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a>boat-train to LeHavre to board the ship. Our crossing was</span>
+<span id="cb1-630"><a href="#cb1-630" aria-hidden="true" tabindex="-1"></a>quite uneventful, the North Atlantic being quite cold and</span>
+<span id="cb1-631"><a href="#cb1-631" aria-hidden="true" tabindex="-1"></a>gusty even though it was August, but we enjoyed the</span>
+<span id="cb1-632"><a href="#cb1-632" aria-hidden="true" tabindex="-1"></a>relaxation and the sea air and Ron and Gail were at least</span>
+<span id="cb1-633"><a href="#cb1-633" aria-hidden="true" tabindex="-1"></a>Old enough to appreciate the luxury of the travel. Patty,</span>
+<span id="cb1-634"><a href="#cb1-634" aria-hidden="true" tabindex="-1"></a>of course, was less than six months old and still had to be</span>
+<span id="cb1-635"><a href="#cb1-635" aria-hidden="true" tabindex="-1"></a>fed a special formula because she was allergic to regular</span>
+<span id="cb1-636"><a href="#cb1-636" aria-hidden="true" tabindex="-1"></a>milk.</span>
+<span id="cb1-637"><a href="#cb1-637" aria-hidden="true" tabindex="-1"></a>After our arrival and disembarcation in New York, the</span>
+<span id="cb1-638"><a href="#cb1-638" aria-hidden="true" tabindex="-1"></a>family separated. I had to go to Headquarters in Washington,</span>
+<span id="cb1-639"><a href="#cb1-639" aria-hidden="true" tabindex="-1"></a>D.C. to check in before going on home leave. Marion took</span>
+<span id="cb1-640"><a href="#cb1-640" aria-hidden="true" tabindex="-1"></a>the children on the airplane for what she thought was going</span>
+<span id="cb1-641"><a href="#cb1-641" aria-hidden="true" tabindex="-1"></a>to be a short flight to Kansas City where Helen and Jay</span>
+<span id="cb1-642"><a href="#cb1-642" aria-hidden="true" tabindex="-1"></a>Jeppsen were located (Jay still being in dental school). As</span>
+<span id="cb1-643"><a href="#cb1-643" aria-hidden="true" tabindex="-1"></a>it turned out their plane developed some trouble and had to</span>
+<span id="cb1-644"><a href="#cb1-644" aria-hidden="true" tabindex="-1"></a>put down in Pittsburgh where Marion struggled with the two</span>
+<span id="cb1-645"><a href="#cb1-645" aria-hidden="true" tabindex="-1"></a>Older children anda young baby for several hours with very</span>
+<span id="cb1-646"><a href="#cb1-646" aria-hidden="true" tabindex="-1"></a>inadequate facilities, before continuing on to kK.C. O€</span>
+<span id="cb1-647"><a href="#cb1-647" aria-hidden="true" tabindex="-1"></a>course, I was blissfully unaware of their predicament,</span>
+<span id="cb1-648"><a href="#cb1-648" aria-hidden="true" tabindex="-1"></a>having taken a short flight to Washington, D.C., checked in</span>
+<span id="cb1-649"><a href="#cb1-649" aria-hidden="true" tabindex="-1"></a>at Headquarters, bought a new Ford 2 door sedan and took off</span>
+<span id="cb1-650"><a href="#cb1-650" aria-hidden="true" tabindex="-1"></a>to join my family.</span>
+<span id="cb1-651"><a href="#cb1-651" aria-hidden="true" tabindex="-1"></a>We divided our home leave between Utah and</span>
+<span id="cb1-652"><a href="#cb1-652" aria-hidden="true" tabindex="-1"></a>California, going to the latter to visit Ila and Howard,</span>
+<span id="cb1-653"><a href="#cb1-653" aria-hidden="true" tabindex="-1"></a>Martin and Betty and Loverna and her family as well as give</span>
+<span id="cb1-654"><a href="#cb1-654" aria-hidden="true" tabindex="-1"></a>our kids a chance to see the beach. In late September we</span>
+<span id="cb1-655"><a href="#cb1-655" aria-hidden="true" tabindex="-1"></a>started our return trip to the Washington D.C. area not</span>
+<span id="cb1-656"><a href="#cb1-656" aria-hidden="true" tabindex="-1"></a>Knowing where we were going to live but anxious to return</span>
+<span id="cb1-657"><a href="#cb1-657" aria-hidden="true" tabindex="-1"></a>and try to buy us a house, having saved up some money while</span>
+<span id="cb1-658"><a href="#cb1-658" aria-hidden="true" tabindex="-1"></a>overseas For this purpose. We took an apartment in</span>
+<span id="cb1-659"><a href="#cb1-659" aria-hidden="true" tabindex="-1"></a>Glassmanor, an apartment complex in Maryland, within fairly</span>
+<span id="cb1-660"><a href="#cb1-660" aria-hidden="true" tabindex="-1"></a>easy commuting distance of my work, (the offices still being</span>
+<span id="cb1-661"><a href="#cb1-661" aria-hidden="true" tabindex="-1"></a>-—49-</span>
+<span id="cb1-662"><a href="#cb1-662" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-663"><a href="#cb1-663" aria-hidden="true" tabindex="-1"></a>located along the reflecting pool by the Lincoln Memorial).</span>
+<span id="cb1-664"><a href="#cb1-664" aria-hidden="true" tabindex="-1"></a>From there we began our search for a new house. Typically,</span>
+<span id="cb1-665"><a href="#cb1-665" aria-hidden="true" tabindex="-1"></a>the prices were higher than we had been led to believe, but</span>
+<span id="cb1-666"><a href="#cb1-666" aria-hidden="true" tabindex="-1"></a>eventually we found one that we liked in a new development</span>
+<span id="cb1-667"><a href="#cb1-667" aria-hidden="true" tabindex="-1"></a>called Franconia Estates, just a few miles from Alexandria,</span>
+<span id="cb1-668"><a href="#cb1-668" aria-hidden="true" tabindex="-1"></a>Virginia. The price for the house was $18,500 plus closing</span>
+<span id="cb1-669"><a href="#cb1-669" aria-hidden="true" tabindex="-1"></a>costs on aV.A. loan, at 4.5% interest, about three or four</span>
+<span id="cb1-670"><a href="#cb1-670" aria-hidden="true" tabindex="-1"></a>thousand more than we ever thought we would have to pay, but</span>
+<span id="cb1-671"><a href="#cb1-671" aria-hidden="true" tabindex="-1"></a>as it turned out a very good investment for us. We moved</span>
+<span id="cb1-672"><a href="#cb1-672" aria-hidden="true" tabindex="-1"></a>into the house at 905 Sable Drive in late November, 1954. It</span>
+<span id="cb1-673"><a href="#cb1-673" aria-hidden="true" tabindex="-1"></a>was a split-level house with three small bedrooms, living</span>
+<span id="cb1-674"><a href="#cb1-674" aria-hidden="true" tabindex="-1"></a>room, dining room, kitchen, and a den downstairs by the</span>
+<span id="cb1-675"><a href="#cb1-675" aria-hidden="true" tabindex="-1"></a>laundry room, as well as a two car garage.</span>
+<span id="cb1-676"><a href="#cb1-676" aria-hidden="true" tabindex="-1"></a>We immediately became active in the Alexandria Ward</span>
+<span id="cb1-677"><a href="#cb1-677" aria-hidden="true" tabindex="-1"></a>of the then Washington Stake where we met ina school</span>
+<span id="cb1-678"><a href="#cb1-678" aria-hidden="true" tabindex="-1"></a>building while a new chapel was being constructed on King</span>
+<span id="cb1-679"><a href="#cb1-679" aria-hidden="true" tabindex="-1"></a>St. in Alexandria. Most of our spare time was spent in</span>
+<span id="cb1-680"><a href="#cb1-680" aria-hidden="true" tabindex="-1"></a>working on the many finishing phases of the chapel,</span>
+<span id="cb1-681"><a href="#cb1-681" aria-hidden="true" tabindex="-1"></a>principally doing painting and staining of woodwork.</span>
+<span id="cb1-682"><a href="#cb1-682" aria-hidden="true" tabindex="-1"></a>Wendell Thorne was the Bishop of the ward. Upon completion</span>
+<span id="cb1-683"><a href="#cb1-683" aria-hidden="true" tabindex="-1"></a>of the chapel, it was dedicated on June 19, 1955 by Ezra</span>
+<span id="cb1-684"><a href="#cb1-684" aria-hidden="true" tabindex="-1"></a>Taft Benson, a member of the Quorum of the Twelve, who also</span>
+<span id="cb1-685"><a href="#cb1-685" aria-hidden="true" tabindex="-1"></a>was the Secretary of Agriculture in the Eisenhower</span>
+<span id="cb1-686"><a href="#cb1-686" aria-hidden="true" tabindex="-1"></a>administration. In August the bishopric was reorganized and</span>
+<span id="cb1-687"><a href="#cb1-687" aria-hidden="true" tabindex="-1"></a>the new Bishop, Joe Dunn, an FBI agent, chose me as his</span>
+<span id="cb1-688"><a href="#cb1-688" aria-hidden="true" tabindex="-1"></a>second counselor- much to my surprise since we had only been</span>
+<span id="cb1-689"><a href="#cb1-689" aria-hidden="true" tabindex="-1"></a>in the Ward since the previous November. I was ordained a</span>
+<span id="cb1-690"><a href="#cb1-690" aria-hidden="true" tabindex="-1"></a>High Priest by Ezra Taft Benson on August 7, 1955, making my</span>
+<span id="cb1-691"><a href="#cb1-691" aria-hidden="true" tabindex="-1"></a>priesthood line of authority as follows:</span>
+<span id="cb1-692"><a href="#cb1-692" aria-hidden="true" tabindex="-1"></a>Virgil Lehi Harris...ordained a High Priest by Ezra</span>
+<span id="cb1-693"><a href="#cb1-693" aria-hidden="true" tabindex="-1"></a>Taft Benson, 7 August 1955.</span>
+<span id="cb1-694"><a href="#cb1-694" aria-hidden="true" tabindex="-1"></a>Ezra Taft Benson...ordained an Apostol by Heber J.</span>
+<span id="cb1-695"><a href="#cb1-695" aria-hidden="true" tabindex="-1"></a>Grant, Oct. 7, 1943.</span>
+<span id="cb1-696"><a href="#cb1-696" aria-hidden="true" tabindex="-1"></a>Heber J. Grant...ordained an Apostol by George Q.</span>
+<span id="cb1-697"><a href="#cb1-697" aria-hidden="true" tabindex="-1"></a>Cannon, Oct. 16, 1882.</span>
+<span id="cb1-698"><a href="#cb1-698" aria-hidden="true" tabindex="-1"></a>George Q. Cannon...ordained an Apostol by Brigham</span>
+<span id="cb1-699"><a href="#cb1-699" aria-hidden="true" tabindex="-1"></a>Young, Aug. 26, 1860.</span>
+<span id="cb1-700"><a href="#cb1-700" aria-hidden="true" tabindex="-1"></a>Brigham Young...ordained an Apostol by the Three</span>
+<span id="cb1-701"><a href="#cb1-701" aria-hidden="true" tabindex="-1"></a>Witnesses of the Book of Mormon (Oliver Cowdery, David</span>
+<span id="cb1-702"><a href="#cb1-702" aria-hidden="true" tabindex="-1"></a>Whitmer, and Martin Harris), Feb. 14, 1835.</span>
+<span id="cb1-703"><a href="#cb1-703" aria-hidden="true" tabindex="-1"></a>The Three Witnesses were called by divine revelation</span>
+<span id="cb1-704"><a href="#cb1-704" aria-hidden="true" tabindex="-1"></a>to select and ordain the first twelve apostols of the</span>
+<span id="cb1-705"><a href="#cb1-705" aria-hidden="true" tabindex="-1"></a>restored Church and were set apart for this purpose by the</span>
+<span id="cb1-706"><a href="#cb1-706" aria-hidden="true" tabindex="-1"></a>First Presidency of the Church (Joseph Smith, Frederick G.</span>
+<span id="cb1-707"><a href="#cb1-707" aria-hidden="true" tabindex="-1"></a>Williams, and Sidney Rigdon) on Feb. 14, 1845. Joseph Smith,</span>
+<span id="cb1-708"><a href="#cb1-708" aria-hidden="true" tabindex="-1"></a>Jr...waS ordained an Apostol by Peter, James, and John</span>
+<span id="cb1-709"><a href="#cb1-709" aria-hidden="true" tabindex="-1"></a>(D.&amp;C.27:12) ordained by Jesus Christ, sent from God.</span>
+<span id="cb1-710"><a href="#cb1-710" aria-hidden="true" tabindex="-1"></a>-50-</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Uncle Virgil memoir analysis project</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

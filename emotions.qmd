@@ -1,0 +1,42 @@
+---
+title: "Emotion Analysis"
+---
+
+```{r}
+#| label: emotions-load
+#| echo: false
+library(readr)
+library(dplyr)
+library(ggplot2)
+if (!file.exists("data/processed/nrc_emotions_by_chapter.csv")) {
+  source("R/02_sentiment_analysis.R")
+}
+emotions <- read_csv("data/processed/nrc_emotions_by_chapter.csv", show_col_types = FALSE)
+```
+
+The emotion layer uses the NRC lexicon categories: anger, anticipation, disgust, fear, joy, sadness, surprise, trust, positive, and negative.
+
+## Emotion counts by chapter
+
+```{r}
+#| echo: false
+emotions %>%
+  filter(!sentiment %in% c("positive", "negative")) %>%
+  ggplot(aes(x = reorder(chapter_title, chapter), y = n, fill = sentiment)) +
+  geom_col() +
+  coord_flip() +
+  labs(x = NULL, y = "Word matches", fill = "Emotion", title = "NRC emotion profile by chapter") +
+  theme_minimal()
+```
+
+## Dominant emotion per chapter
+
+```{r}
+#| echo: false
+emotions %>%
+  filter(!sentiment %in% c("positive", "negative")) %>%
+  group_by(chapter, chapter_title) %>%
+  slice_max(n, n = 1, with_ties = FALSE) %>%
+  ungroup() %>%
+  select(chapter, chapter_title, dominant_emotion = sentiment, count = n)
+```

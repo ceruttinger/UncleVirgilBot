@@ -1,0 +1,59 @@
+---
+title: "Uncle Virgil Memoir Analysis"
+subtitle: "A Quarto rebuild of the biography text-analysis and chatbot project"
+---
+
+```{r}
+#| label: load-index-data
+#| echo: false
+library(readr)
+library(dplyr)
+metadata <- read_csv("data/chapter_metadata.csv", show_col_types = FALSE)
+stats <- read_csv("data/processed/chapter_stats.csv", show_col_types = FALSE)
+```
+
+This site analyzes the Uncle Virgil memoir as a digital humanities corpus. The first rebuild focuses on four things:
+
+1. preserving the cleaned OCR corpus,
+2. structuring the memoir by chapter,
+3. rebuilding text analysis in reproducible R scripts,
+4. adding search and a future-ready chatbot interface.
+
+## Current corpus status
+
+```{r}
+#| echo: false
+stats %>%
+  filter(chapter != 12) %>%
+  summarise(
+    chapters = n(),
+    total_words = sum(word_count, na.rm = TRUE),
+    total_characters = sum(char_count, na.rm = TRUE)
+  )
+```
+
+## Chapter word counts
+
+```{r}
+#| echo: false
+library(ggplot2)
+stats %>%
+  filter(chapter != 12) %>%
+  ggplot(aes(x = reorder(chapter_title, chapter), y = word_count)) +
+  geom_col() +
+  coord_flip() +
+  labs(x = NULL, y = "Words", title = "Chapter length by word count") +
+  theme_minimal()
+```
+
+## Rebuild roadmap
+
+The Shiny app has been replaced conceptually with a static Quarto front end. The model-driven bot should sit behind a backend API rather than inside the static site.
+
+```text
+Quarto static site
+  -> local search index
+  -> optional AWS API Gateway endpoint
+  -> Lambda retrieval function
+  -> future model layer
+```

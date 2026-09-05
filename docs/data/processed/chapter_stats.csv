@@ -1,0 +1,13 @@
+chapter,chapter_title,approx_start_year,approx_end_year,life_stage,primary_locations,date_confidence,boundary_confidence,source_record_start,source_record_end,source_records,heading_records,word_count,char_count
+1,Earliest Memories,1922,1934,Childhood and early adolescence,"Idaho Falls, ID; Mesa, AZ; Pomona, CA",medium,medium,1,1,1,1,3592,19745
+2,The Teenage Period,1935,1942,"Teenage years, early work, first marriage","Idaho Falls, ID; Pomona, CA; Salt Lake City, UT",medium,medium,2,2,1,1,3811,21043
+3,World War Two,1942,1945,Military service,U.S. Navy; Treasure Island; Logan; Corpus Christi; Quonset Point; USS Wasp; Pacific theater,high,medium,3,3,1,1,2732,15556
+4,My College Years BYU and Colombia,1946,1951,"College, remarriage, church service, early family formation","Idaho Falls, ID; Provo, UT; BYU; Colombia",low,needs_review,4,4,1,1,4315,24399
+5,The CIA,1951,1958,Early intelligence career,"Washington, DC area; Munich; Europe; CIA assignments",low,needs_review,5,5,1,1,6482,36730
+6,Montevideo Uruguay,1958,1962,Foreign service assignment,"Montevideo, Uruguay; Paraguay; Brazil/Argentina border region",low,needs_review,6,6,1,1,3946,22418
+7,Headquarters Duty,1962,1965,Headquarters and family life,"Washington, DC area; Virginia; Utah/California home leave",low,needs_review,7,7,1,1,3938,22410
+8,Rio De Janeiro,1965,1968,Foreign service assignment,"Rio de Janeiro, Brazil",low,needs_review,8,8,1,1,3136,17046
+9,The McLean Va. Years,1968,1970,Family and career in Virginia,"McLean, VA; Washington, DC area",low,needs_review,9,9,1,1,1313,7612
+10,Making a Career Change,1970,1975,Personnel management career transition,"Washington, DC area; CIA personnel management staff",medium,medium,10,10,1,1,2694,15842
+11,Post Rio to Retirement,1975,1984,Later career and retirement transition,"Washington, DC area; Virginia; later family/travel locations",low,needs_review,11,11,1,1,3532,20044
+12,Full Text,NA,NA,Reference view,All locations,not_applicable,not_applicable,1,11,11,11,39491,222865

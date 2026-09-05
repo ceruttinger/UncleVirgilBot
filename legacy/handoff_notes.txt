@@ -1,0 +1,22 @@
+What the app is supposed to do:
+- text analysis of a biography that ive generated in R and R shiny
+
+How I currently run it:
+-locally from Rstudio
+
+What works:
+-all f it works except for the Uncle Virgil bot component
+
+What is broken or unfinished:
+-Uncle Virgil Bot and adding additional text analysis 
+
+Current error messages:
+-
+
+What I want help finishing:
+-
+deploy to git and my portfolio pagedeploy to git and my portfolio page
+
+Deployment goal:
+- deploy to git and my portfolio page
+

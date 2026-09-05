@@ -1,0 +1,36 @@
+---
+title: "Chapters"
+---
+
+```{r}
+#| label: chapters-load
+#| echo: false
+library(readr)
+library(dplyr)
+library(DT)
+metadata <- read_csv("data/chapter_metadata.csv", show_col_types = FALSE)
+stats <- read_csv("data/processed/chapter_stats.csv", show_col_types = FALSE)
+chapter_table <- metadata %>%
+  left_join(stats %>% select(chapter, word_count, char_count), by = "chapter") %>%
+  select(chapter, chapter_title, approx_start_year, approx_end_year, life_stage,
+         primary_locations, word_count, date_confidence, notes)
+```
+
+This table is the first version of the chapter metadata layer. The year ranges are initial estimates and should be reviewed against the memoir before final timeline claims.
+
+```{r}
+#| echo: false
+datatable(chapter_table, options = list(pageLength = 12, scrollX = TRUE))
+```
+
+## Chapter files
+
+The chapter-split text files are generated into:
+
+```text
+data/processed/chapters/chapter_01.md
+...
+data/processed/chapters/chapter_11.md
+```
+
+Chapter 12 is a full-text reference and is excluded from timeline charts by default.

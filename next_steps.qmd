@@ -1,0 +1,53 @@
+---
+title: "What Comes Next"
+---
+
+## Immediate next steps
+
+1. **Rebuild the corpus from raw `.rds` or PDFs.**  
+   The current `corpus_data.json` appears to be missing many numbers/dates because the old setup script removed numbers before export. This blocks serious timeline work.
+
+2. **Review chapter boundaries.**  
+   Use the Corpus QA page to inspect source records, heading detection, OCR issues, and year candidates.
+
+3. **Improve OCR cleanup without destroying historical wording.**  
+   Keep a raw text layer, a lightly cleaned reading layer, and a normalized search layer. Do not destructively stem/remove numbers in the canonical text.
+
+4. **Restore real NRC and AFINN lexicons.**  
+   The current fallback keeps the site rendering, but the final version should use cached official sentiment lexicons.
+
+5. **Add named entities.**  
+   Extract people, places, organizations, dates, ships, universities, church institutions, and government agencies.
+
+6. **Add topic modeling and chapter similarity.**  
+   These will reveal thematic movement across childhood, war, education, CIA career, foreign assignments, family, and retirement.
+
+7. **Add AWS backend retrieval.**  
+   Move retrieval behind API Gateway/Lambda so the browser does not need to expose the full corpus.
+
+8. **Add model-generated answers with citations.**  
+   The chatbot should retrieve source passages first, then generate answers grounded in chapter/passage citations.
+
+## Practical order
+
+```bash
+# 1. recover better source text
+mkdir -p data/raw_scans
+# copy CH-01.rds ... CH-11.rds into data/raw_scans/
+Rscript R/00_rebuild_raw_text_from_rds.R
+
+# 2. rebuild analysis data
+Rscript R/render_all.R
+
+# 3. preview the site
+quarto preview
+```
+
+Then wire AWS:
+
+```bash
+# package Lambda from backend/aws/lambda_basic_rag/
+# upload search_index.json to S3
+# create API Gateway /ask
+# add endpoint URL to assets/js/chatbot-config.js
+```

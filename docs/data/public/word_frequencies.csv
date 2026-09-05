@@ -1,0 +1,901 @@
+chapter,chapter_title,word,n,font_size
+1,Earliest Memories,mother,18,3.4
+1,Earliest Memories,family,14,2.71
+1,Earliest Memories,idaho,14,2.71
+1,Earliest Memories,recall,14,2.71
+1,Earliest Memories,school,14,2.71
+1,Earliest Memories,time,14,2.71
+1,Earliest Memories,house,13,2.53
+1,Earliest Memories,richard,13,2.53
+1,Earliest Memories,arizona,11,2.19
+1,Earliest Memories,falls,11,2.19
+1,Earliest Memories,lived,10,2.01
+1,Earliest Memories,carmen,8,1.67
+1,Earliest Memories,mesa,8,1.67
+1,Earliest Memories,period,8,1.67
+1,Earliest Memories,temple,8,1.67
+1,Earliest Memories,uncle,8,1.67
+1,Earliest Memories,brother,7,1.49
+1,Earliest Memories,depression,7,1.49
+1,Earliest Memories,remember,7,1.49
+1,Earliest Memories,apparently,6,1.32
+1,Earliest Memories,church,6,1.32
+1,Earliest Memories,emerson,6,1.32
+1,Earliest Memories,father,6,1.32
+1,Earliest Memories,occasion,6,1.32
+1,Earliest Memories,stayed,6,1.32
+1,Earliest Memories,aunt,5,1.15
+1,Earliest Memories,children,5,1.15
+1,Earliest Memories,ila,5,1.15
+1,Earliest Memories,martin,5,1.15
+1,Earliest Memories,rose,5,1.15
+1,Earliest Memories,salmon,5,1.15
+1,Earliest Memories,utah,5,1.15
+1,Earliest Memories,army,4,0.97
+1,Earliest Memories,car,4,0.97
+1,Earliest Memories,coming,4,0.97
+1,Earliest Memories,day,4,0.97
+1,Earliest Memories,harris,4,0.97
+1,Earliest Memories,life,4,0.97
+1,Earliest Memories,poor,4,0.97
+1,Earliest Memories,roosevelt,4,0.97
+1,Earliest Memories,sarah,4,0.97
+1,Earliest Memories,sol,4,0.97
+1,Earliest Memories,suffered,4,0.97
+1,Earliest Memories,black,3,0.8
+1,Earliest Memories,child,3,0.8
+1,Earliest Memories,coal,3,0.8
+1,Earliest Memories,cold,3,0.8
+1,Earliest Memories,cotton,3,0.8
+1,Earliest Memories,couple,3,0.8
+1,Earliest Memories,decided,3,0.8
+1,Earliest Memories,died,3,0.8
+1,Earliest Memories,elected,3,0.8
+1,Earliest Memories,food,3,0.8
+1,Earliest Memories,garden,3,0.8
+1,Earliest Memories,grew,3,0.8
+1,Earliest Memories,heard,3,0.8
+1,Earliest Memories,home,3,0.8
+1,Earliest Memories,hoover,3,0.8
+1,Earliest Memories,ice,3,0.8
+1,Earliest Memories,imagine,3,0.8
+1,Earliest Memories,joined,3,0.8
+1,Earliest Memories,kids,3,0.8
+1,Earliest Memories,located,3,0.8
+1,Earliest Memories,loverna,3,0.8
+1,Earliest Memories,married,3,0.8
+1,Earliest Memories,mother's,3,0.8
+1,Earliest Memories,move,3,0.8
+1,Earliest Memories,moved,3,0.8
+1,Earliest Memories,owned,3,0.8
+1,Earliest Memories,photograph,3,0.8
+1,Earliest Memories,return,3,0.8
+1,Earliest Memories,river,3,0.8
+1,Earliest Memories,sand,3,0.8
+1,Earliest Memories,shortly,3,0.8
+1,Earliest Memories,sister,3,0.8
+2,The Teenage Period,school,26,3.4
+2,The Teenage Period,time,16,2.27
+2,The Teenage Period,idaho,12,1.82
+2,The Teenage Period,lake,11,1.7
+2,The Teenage Period,office,11,1.7
+2,The Teenage Period,salt,11,1.7
+2,The Teenage Period,falls,9,1.48
+2,The Teenage Period,jack,9,1.48
+2,The Teenage Period,war,9,1.48
+2,The Teenage Period,joyce,8,1.37
+2,The Teenage Period,pretty,8,1.37
+2,The Teenage Period,ward,8,1.37
+2,The Teenage Period,activities,7,1.25
+2,The Teenage Period,college,7,1.25
+2,The Teenage Period,job,7,1.25
+2,The Teenage Period,lot,7,1.25
+2,The Teenage Period,married,7,1.25
+2,The Teenage Period,house,6,1.14
+2,The Teenage Period,loverna,6,1.14
+2,The Teenage Period,city,5,1.03
+2,The Teenage Period,days,5,1.03
+2,The Teenage Period,friends,5,1.03
+2,The Teenage Period,meat,5,1.03
+2,The Teenage Period,pay,5,1.03
+2,The Teenage Period,received,5,1.03
+2,The Teenage Period,reuel,5,1.03
+2,The Teenage Period,telephone,5,1.03
+2,The Teenage Period,training,5,1.03
+2,The Teenage Period,boss,4,0.91
+2,The Teenage Period,california,4,0.91
+2,The Teenage Period,called,4,0.91
+2,The Teenage Period,church,4,0.91
+2,The Teenage Period,cleaning,4,0.91
+2,The Teenage Period,day,4,0.91
+2,The Teenage Period,divorce,4,0.91
+2,The Teenage Period,eventually,4,0.91
+2,The Teenage Period,family,4,0.91
+2,The Teenage Period,involved,4,0.91
+2,The Teenage Period,japan,4,0.91
+2,The Teenage Period,marriage,4,0.91
+2,The Teenage Period,mother,4,0.91
+2,The Teenage Period,opportunity,4,0.91
+2,The Teenage Period,pomona,4,0.91
+2,The Teenage Period,recall,4,0.91
+2,The Teenage Period,returned,4,0.91
+2,The Teenage Period,student,4,0.91
+2,The Teenage Period,summer,4,0.91
+2,The Teenage Period,union,4,0.91
+2,The Teenage Period,week,4,0.91
+2,The Teenage Period,activity,3,0.8
+2,The Teenage Period,afford,3,0.8
+2,The Teenage Period,air,3,0.8
+2,The Teenage Period,attended,3,0.8
+2,The Teenage Period,britain,3,0.8
+2,The Teenage Period,charge,3,0.8
+2,The Teenage Period,coal,3,0.8
+2,The Teenage Period,coops,3,0.8
+2,The Teenage Period,dad,3,0.8
+2,The Teenage Period,debate,3,0.8
+2,The Teenage Period,dec,3,0.8
+2,The Teenage Period,electric,3,0.8
+2,The Teenage Period,employment,3,0.8
+2,The Teenage Period,equipment,3,0.8
+2,The Teenage Period,farm,3,0.8
+2,The Teenage Period,food,3,0.8
+2,The Teenage Period,germany,3,0.8
+2,The Teenage Period,graduation,3,0.8
+2,The Teenage Period,harris,3,0.8
+2,The Teenage Period,hotel,3,0.8
+2,The Teenage Period,ina,3,0.8
+2,The Teenage Period,indaba,3,0.8
+2,The Teenage Period,installer,3,0.8
+2,The Teenage Period,island,3,0.8
+2,The Teenage Period,junior,3,0.8
+2,The Teenage Period,kelley,3,0.8
+3,World War Two,ship,21,3.4
+3,World War Two,japanese,16,2.68
+3,World War Two,war,11,1.96
+3,World War Two,wasp,11,1.96
+3,World War Two,carrier,10,1.81
+3,World War Two,training,9,1.67
+3,World War Two,aircraft,8,1.52
+3,World War Two,navy,7,1.38
+3,World War Two,force,6,1.23
+3,World War Two,time,6,1.23
+3,World War Two,aboard,5,1.09
+3,World War Two,boston,5,1.09
+3,World War Two,china,5,1.09
+3,World War Two,damage,5,1.09
+3,World War Two,deck,5,1.09
+3,World War Two,electronics,5,1.09
+3,World War Two,hit,5,1.09
+3,World War Two,home,5,1.09
+3,World War Two,planes,5,1.09
+3,World War Two,task,5,1.09
+3,World War Two,air,4,0.94
+3,World War Two,assigned,4,0.94
+3,World War Two,atomic,4,0.94
+3,World War Two,bremerton,4,0.94
+3,World War Two,cruise,4,0.94
+3,World War Two,duty,4,0.94
+3,World War Two,family,4,0.94
+3,World War Two,history,4,0.94
+3,World War Two,island,4,0.94
+3,World War Two,pacific,4,0.94
+3,World War Two,president,4,0.94
+3,World War Two,repairs,4,0.94
+3,World War Two,roosevelt,4,0.94
+3,World War Two,sea,4,0.94
+3,World War Two,ships,4,0.94
+3,World War Two,train,4,0.94
+3,World War Two,world,4,0.94
+3,World War Two,battle,3,0.8
+3,World War Two,bomb,3,0.8
+3,World War Two,called,3,0.8
+3,World War Two,church,3,0.8
+3,World War Two,college,3,0.8
+3,World War Two,couple,3,0.8
+3,World War Two,damaged,3,0.8
+3,World War Two,decided,3,0.8
+3,World War Two,discharged,3,0.8
+3,World War Two,extensive,3,0.8
+3,World War Two,fortunately,3,0.8
+3,World War Two,harbor,3,0.8
+3,World War Two,idaho,3,0.8
+3,World War Two,indo,3,0.8
+3,World War Two,islands,3,0.8
+3,World War Two,john,3,0.8
+3,World War Two,land,3,0.8
+3,World War Two,library,3,0.8
+3,World War Two,line,3,0.8
+3,World War Two,mainland,3,0.8
+3,World War Two,march,3,0.8
+3,World War Two,married,3,0.8
+3,World War Two,pearl,3,0.8
+3,World War Two,philippine,3,0.8
+3,World War Two,political,3,0.8
+3,World War Two,pretty,3,0.8
+3,World War Two,providence,3,0.8
+3,World War Two,quonset,3,0.8
+3,World War Two,radar,3,0.8
+3,World War Two,recall,3,0.8
+3,World War Two,received,3,0.8
+3,World War Two,returned,3,0.8
+3,World War Two,school,3,0.8
+3,World War Two,servicemen,3,0.8
+3,World War Two,services,3,0.8
+3,World War Two,shakedown,3,0.8
+3,World War Two,south,3,0.8
+3,World War Two,utah,3,0.8
+4,My College Years BYU and Colombia,marion,20,3.4
+4,My College Years BYU and Colombia,time,17,2.94
+4,My College Years BYU and Colombia,international,16,2.79
+4,My College Years BYU and Colombia,president,16,2.79
+4,My College Years BYU and Colombia,york,16,2.79
+4,My College Years BYU and Colombia,university,14,2.48
+4,My College Years BYU and Colombia,falls,12,2.18
+4,My College Years BYU and Colombia,idaho,12,2.18
+4,My College Years BYU and Colombia,school,12,2.18
+4,My College Years BYU and Colombia,affairs,10,1.87
+4,My College Years BYU and Colombia,city,10,1.87
+4,My College Years BYU and Colombia,shanks,10,1.87
+4,My College Years BYU and Colombia,columbia,9,1.72
+4,My College Years BYU and Colombia,byu,8,1.56
+4,My College Years BYU and Colombia,lot,8,1.56
+4,My College Years BYU and Colombia,relations,8,1.56
+4,My College Years BYU and Colombia,friends,7,1.41
+4,My College Years BYU and Colombia,manhattan,7,1.41
+4,My College Years BYU and Colombia,apartment,6,1.26
+4,My College Years BYU and Colombia,job,6,1.26
+4,My College Years BYU and Colombia,lived,6,1.26
+4,My College Years BYU and Colombia,mother,6,1.26
+4,My College Years BYU and Colombia,opportunity,6,1.26
+4,My College Years BYU and Colombia,received,6,1.26
+4,My College Years BYU and Colombia,russian,6,1.26
+4,My College Years BYU and Colombia,started,6,1.26
+4,My College Years BYU and Colombia,students,6,1.26
+4,My College Years BYU and Colombia,summer,6,1.26
+4,My College Years BYU and Colombia,utah,6,1.26
+4,My College Years BYU and Colombia,village,6,1.26
+4,My College Years BYU and Colombia,ward,6,1.26
+4,My College Years BYU and Colombia,club,5,1.11
+4,My College Years BYU and Colombia,clubs,5,1.11
+4,My College Years BYU and Colombia,conference,5,1.11
+4,My College Years BYU and Colombia,found,5,1.11
+4,My College Years BYU and Colombia,graduation,5,1.11
+4,My College Years BYU and Colombia,home,5,1.11
+4,My College Years BYU and Colombia,ila,5,1.11
+4,My College Years BYU and Colombia,journal,5,1.11
+4,My College Years BYU and Colombia,nations,5,1.11
+4,My College Years BYU and Colombia,provo,5,1.11
+4,My College Years BYU and Colombia,stayed,5,1.11
+4,My College Years BYU and Colombia,vice,5,1.11
+4,My College Years BYU and Colombia,visit,5,1.11
+4,My College Years BYU and Colombia,war,5,1.11
+4,My College Years BYU and Colombia,attended,4,0.95
+4,My College Years BYU and Colombia,building,4,0.95
+4,My College Years BYU and Colombia,car,4,0.95
+4,My College Years BYU and Colombia,class,4,0.95
+4,My College Years BYU and Colombia,clearance,4,0.95
+4,My College Years BYU and Colombia,college,4,0.95
+4,My College Years BYU and Colombia,day,4,0.95
+4,My College Years BYU and Colombia,eventually,4,0.95
+4,My College Years BYU and Colombia,family,4,0.95
+4,My College Years BYU and Colombia,field,4,0.95
+4,My College Years BYU and Colombia,hospital,4,0.95
+4,My College Years BYU and Colombia,immediately,4,0.95
+4,My College Years BYU and Colombia,lake,4,0.95
+4,My College Years BYU and Colombia,marion's,4,0.95
+4,My College Years BYU and Colombia,months,4,0.95
+4,My College Years BYU and Colombia,north,4,0.95
+4,My College Years BYU and Colombia,people,4,0.95
+4,My College Years BYU and Colombia,political,4,0.95
+4,My College Years BYU and Colombia,required,4,0.95
+4,My College Years BYU and Colombia,salt,4,0.95
+4,My College Years BYU and Colombia,situation,4,0.95
+4,My College Years BYU and Colombia,smith,4,0.95
+4,My College Years BYU and Colombia,stay,4,0.95
+4,My College Years BYU and Colombia,truman,4,0.95
+4,My College Years BYU and Colombia,united,4,0.95
+4,My College Years BYU and Colombia,west,4,0.95
+4,My College Years BYU and Colombia,activities,3,0.8
+4,My College Years BYU and Colombia,advertising,3,0.8
+4,My College Years BYU and Colombia,awhile,3,0.8
+4,My College Years BYU and Colombia,boyd,3,0.8
+5,The CIA,marion,21,3.4
+5,The CIA,soviet,19,3.08
+5,The CIA,time,16,2.59
+5,The CIA,germany,14,2.26
+5,The CIA,munich,14,2.26
+5,The CIA,trip,13,2.1
+5,The CIA,union,13,2.1
+5,The CIA,washington,13,2.1
+5,The CIA,days,12,1.94
+5,The CIA,family,12,1.94
+5,The CIA,home,12,1.94
+5,The CIA,visit,11,1.78
+5,The CIA,people,10,1.61
+5,The CIA,war,10,1.61
+5,The CIA,air,9,1.45
+5,The CIA,famous,9,1.45
+5,The CIA,gail,9,1.45
+5,The CIA,intelligence,9,1.45
+5,The CIA,operational,9,1.45
+5,The CIA,world,9,1.45
+5,The CIA,apartment,8,1.29
+5,The CIA,car,8,1.29
+5,The CIA,clandestine,8,1.29
+5,The CIA,house,8,1.29
+5,The CIA,ordained,8,1.29
+5,The CIA,short,8,1.29
+5,The CIA,couple,7,1.12
+5,The CIA,europe,7,1.12
+5,The CIA,hospital,7,1.12
+5,The CIA,lot,7,1.12
+5,The CIA,operations,7,1.12
+5,The CIA,service,7,1.12
+5,The CIA,soviets,7,1.12
+5,The CIA,arrived,6,0.96
+5,The CIA,base,6,0.96
+5,The CIA,called,6,0.96
+5,The CIA,chief,6,0.96
+5,The CIA,children,6,0.96
+5,The CIA,christmas,6,0.96
+5,The CIA,church,6,0.96
+5,The CIA,city,6,0.96
+5,The CIA,cold,6,0.96
+5,The CIA,drove,6,0.96
+5,The CIA,field,6,0.96
+5,The CIA,found,6,0.96
+5,The CIA,overseas,6,0.96
+5,The CIA,project,6,0.96
+5,The CIA,return,6,0.96
+5,The CIA,train,6,0.96
+5,The CIA,winter,6,0.96
+5,The CIA,agents,5,0.8
+5,The CIA,alps,5,0.8
+5,The CIA,apostol,5,0.8
+5,The CIA,army,5,0.8
+5,The CIA,august,5,0.8
+5,The CIA,boats,5,0.8
+5,The CIA,born,5,0.8
+5,The CIA,bought,5,0.8
+5,The CIA,branch,5,0.8
+5,The CIA,close,5,0.8
+5,The CIA,day,5,0.8
+5,The CIA,german,5,0.8
+5,The CIA,germans,5,0.8
+5,The CIA,headed,5,0.8
+5,The CIA,headquarters,5,0.8
+5,The CIA,june,5,0.8
+5,The CIA,managed,5,0.8
+5,The CIA,military,5,0.8
+5,The CIA,national,5,0.8
+5,The CIA,naval,5,0.8
+5,The CIA,office,5,0.8
+5,The CIA,officer,5,0.8
+5,The CIA,orin,5,0.8
+5,The CIA,pretty,5,0.8
+5,The CIA,returned,5,0.8
+6,Montevideo Uruguay,uruguay,22,3.4
+6,Montevideo Uruguay,soviet,15,2.44
+6,Montevideo Uruguay,time,13,2.17
+6,Montevideo Uruguay,branch,11,1.89
+6,Montevideo Uruguay,uruguayan,11,1.89
+6,Montevideo Uruguay,montevideo,9,1.62
+6,Montevideo Uruguay,called,8,1.48
+6,Montevideo Uruguay,chief,8,1.48
+6,Montevideo Uruguay,pretty,8,1.48
+6,Montevideo Uruguay,trip,8,1.48
+6,Montevideo Uruguay,people,7,1.35
+6,Montevideo Uruguay,returned,7,1.35
+6,Montevideo Uruguay,soviets,7,1.35
+6,Montevideo Uruguay,weeks,7,1.35
+6,Montevideo Uruguay,operational,6,1.21
+6,Montevideo Uruguay,relations,6,1.21
+6,Montevideo Uruguay,tour,6,1.21
+6,Montevideo Uruguay,activities,5,1.07
+6,Montevideo Uruguay,argentina,5,1.07
+6,Montevideo Uruguay,bob,5,1.07
+6,Montevideo Uruguay,elder,5,1.07
+6,Montevideo Uruguay,family,5,1.07
+6,Montevideo Uruguay,house,5,1.07
+6,Montevideo Uruguay,kimball,5,1.07
+6,Montevideo Uruguay,left,5,1.07
+6,Montevideo Uruguay,mission,5,1.07
+6,Montevideo Uruguay,money,5,1.07
+6,Montevideo Uruguay,paraguay,5,1.07
+6,Montevideo Uruguay,personnel,5,1.07
+6,Montevideo Uruguay,president,5,1.07
+6,Montevideo Uruguay,station,5,1.07
+6,Montevideo Uruguay,wife,5,1.07
+6,Montevideo Uruguay,action,4,0.94
+6,Montevideo Uruguay,activity,4,0.94
+6,Montevideo Uruguay,arrived,4,0.94
+6,Montevideo Uruguay,athens,4,0.94
+6,Montevideo Uruguay,baltic,4,0.94
+6,Montevideo Uruguay,bishopric,4,0.94
+6,Montevideo Uruguay,bus,4,0.94
+6,Montevideo Uruguay,countries,4,0.94
+6,Montevideo Uruguay,country,4,0.94
+6,Montevideo Uruguay,diplomatic,4,0.94
+6,Montevideo Uruguay,embassy,4,0.94
+6,Montevideo Uruguay,home,4,0.94
+6,Montevideo Uruguay,kids,4,0.94
+6,Montevideo Uruguay,late,4,0.94
+6,Montevideo Uruguay,leave,4,0.94
+6,Montevideo Uruguay,leaving,4,0.94
+6,Montevideo Uruguay,school,4,0.94
+6,Montevideo Uruguay,successful,4,0.94
+6,Montevideo Uruguay,summer,4,0.94
+6,Montevideo Uruguay,transferred,4,0.94
+6,Montevideo Uruguay,visit,4,0.94
+6,Montevideo Uruguay,war,4,0.94
+6,Montevideo Uruguay,washington,4,0.94
+6,Montevideo Uruguay,wool,4,0.94
+6,Montevideo Uruguay,age,3,0.8
+6,Montevideo Uruguay,album,3,0.8
+6,Montevideo Uruguay,alexandria,3,0.8
+6,Montevideo Uruguay,american,3,0.8
+6,Montevideo Uruguay,assigned,3,0.8
+6,Montevideo Uruguay,attended,3,0.8
+6,Montevideo Uruguay,baptized,3,0.8
+6,Montevideo Uruguay,boat,3,0.8
+6,Montevideo Uruguay,brazil,3,0.8
+6,Montevideo Uruguay,british,3,0.8
+6,Montevideo Uruguay,cars,3,0.8
+6,Montevideo Uruguay,cattle,3,0.8
+6,Montevideo Uruguay,chapel,3,0.8
+6,Montevideo Uruguay,church,3,0.8
+6,Montevideo Uruguay,colonel,3,0.8
+6,Montevideo Uruguay,counselor,3,0.8
+6,Montevideo Uruguay,couple,3,0.8
+6,Montevideo Uruguay,demand,3,0.8
+6,Montevideo Uruguay,friends,3,0.8
+7,Headquarters Duty,soviet,18,3.4
+7,Headquarters Duty,time,17,3.23
+7,Headquarters Duty,ward,15,2.88
+7,Headquarters Duty,chief,13,2.53
+7,Headquarters Duty,information,12,2.36
+7,Headquarters Duty,intelligence,12,2.36
+7,Headquarters Duty,marion,12,2.36
+7,Headquarters Duty,operations,10,2.01
+7,Headquarters Duty,branch,9,1.84
+7,Headquarters Duty,children,9,1.84
+7,Headquarters Duty,division,9,1.84
+7,Headquarters Duty,lot,9,1.84
+7,Headquarters Duty,home,8,1.67
+7,Headquarters Duty,soviets,8,1.67
+7,Headquarters Duty,union,7,1.49
+7,Headquarters Duty,car,6,1.32
+7,Headquarters Duty,eventually,6,1.32
+7,Headquarters Duty,family,6,1.32
+7,Headquarters Duty,house,6,1.32
+7,Headquarters Duty,involved,6,1.32
+7,Headquarters Duty,operational,6,1.32
+7,Headquarters Duty,patty,6,1.32
+7,Headquarters Duty,result,6,1.32
+7,Headquarters Duty,summer,6,1.32
+7,Headquarters Duty,united,6,1.32
+7,Headquarters Duty,age,5,1.15
+7,Headquarters Duty,automobile,5,1.15
+7,Headquarters Duty,falls,5,1.15
+7,Headquarters Duty,lee,5,1.15
+7,Headquarters Duty,military,5,1.15
+7,Headquarters Duty,oswald,5,1.15
+7,Headquarters Duty,penkovsky,5,1.15
+7,Headquarters Duty,received,5,1.15
+7,Headquarters Duty,ron,5,1.15
+7,Headquarters Duty,school,5,1.15
+7,Headquarters Duty,station,5,1.15
+7,Headquarters Duty,trip,5,1.15
+7,Headquarters Duty,vacation,5,1.15
+7,Headquarters Duty,activity,4,0.97
+7,Headquarters Duty,book,4,0.97
+7,Headquarters Duty,british,4,0.97
+7,Headquarters Duty,cars,4,0.97
+7,Headquarters Duty,church,4,0.97
+7,Headquarters Duty,fall,4,0.97
+7,Headquarters Duty,hilton,4,0.97
+7,Headquarters Duty,left,4,0.97
+7,Headquarters Duty,living,4,0.97
+7,Headquarters Duty,mclean,4,0.97
+7,Headquarters Duty,missile,4,0.97
+7,Headquarters Duty,president,4,0.97
+7,Headquarters Duty,provided,4,0.97
+7,Headquarters Duty,providing,4,0.97
+7,Headquarters Duty,range,4,0.97
+7,Headquarters Duty,remember,4,0.97
+7,Headquarters Duty,scheduled,4,0.97
+7,Headquarters Duty,sister,4,0.97
+7,Headquarters Duty,uruguay,4,0.97
+7,Headquarters Duty,utah,4,0.97
+7,Headquarters Duty,visit,4,0.97
+7,Headquarters Duty,washington,4,0.97
+7,Headquarters Duty,agency,3,0.8
+7,Headquarters Duty,arlington,3,0.8
+7,Headquarters Duty,assignment,3,0.8
+7,Headquarters Duty,atlantic,3,0.8
+7,Headquarters Duty,built,3,0.8
+7,Headquarters Duty,called,3,0.8
+7,Headquarters Duty,capability,3,0.8
+7,Headquarters Duty,city,3,0.8
+7,Headquarters Duty,coming,3,0.8
+7,Headquarters Duty,component,3,0.8
+7,Headquarters Duty,constructed,3,0.8
+7,Headquarters Duty,contest,3,0.8
+7,Headquarters Duty,continued,3,0.8
+7,Headquarters Duty,contracted,3,0.8
+7,Headquarters Duty,dave,3,0.8
+8,Rio De Janeiro,rio,26,3.4
+8,Rio De Janeiro,time,13,1.93
+8,Rio De Janeiro,janeiro,9,1.48
+8,Rio De Janeiro,lot,9,1.48
+8,Rio De Janeiro,marion,8,1.37
+8,Rio De Janeiro,soviet,8,1.37
+8,Rio De Janeiro,house,7,1.25
+8,Rio De Janeiro,street,7,1.25
+8,Rio De Janeiro,visit,7,1.25
+8,Rio De Janeiro,brazilian,6,1.14
+8,Rio De Janeiro,called,6,1.14
+8,Rio De Janeiro,church,6,1.14
+8,Rio De Janeiro,american,5,1.03
+8,Rio De Janeiro,branch,5,1.03
+8,Rio De Janeiro,children,5,1.03
+8,Rio De Janeiro,day,5,1.03
+8,Rio De Janeiro,embassy,5,1.03
+8,Rio De Janeiro,found,5,1.03
+8,Rio De Janeiro,june,5,1.03
+8,Rio De Janeiro,utah,5,1.03
+8,Rio De Janeiro,water,5,1.03
+8,Rio De Janeiro,access,4,0.91
+8,Rio De Janeiro,brazil,4,0.91
+8,Rio De Janeiro,contact,4,0.91
+8,Rio De Janeiro,family,4,0.91
+8,Rio De Janeiro,girl,4,0.91
+8,Rio De Janeiro,held,4,0.91
+8,Rio De Janeiro,invited,4,0.91
+8,Rio De Janeiro,marion's,4,0.91
+8,Rio De Janeiro,montevideo,4,0.91
+8,Rio De Janeiro,named,4,0.91
+8,Rio De Janeiro,ocean,4,0.91
+8,Rio De Janeiro,official,4,0.91
+8,Rio De Janeiro,operational,4,0.91
+8,Rio De Janeiro,people,4,0.91
+8,Rio De Janeiro,president,4,0.91
+8,Rio De Janeiro,school,4,0.91
+8,Rio De Janeiro,social,4,0.91
+8,Rio De Janeiro,spent,4,0.91
+8,Rio De Janeiro,stayed,4,0.91
+8,Rio De Janeiro,balcony,3,0.8
+8,Rio De Janeiro,belonged,3,0.8
+8,Rio De Janeiro,brazilians,3,0.8
+8,Rio De Janeiro,christmas,3,0.8
+8,Rio De Janeiro,city,3,0.8
+8,Rio De Janeiro,close,3,0.8
+8,Rio De Janeiro,club,3,0.8
+8,Rio De Janeiro,commercial,3,0.8
+8,Rio De Janeiro,construction,3,0.8
+8,Rio De Janeiro,couple,3,0.8
+8,Rio De Janeiro,dog,3,0.8
+8,Rio De Janeiro,duty,3,0.8
+8,Rio De Janeiro,elder,3,0.8
+8,Rio De Janeiro,evans,3,0.8
+8,Rio De Janeiro,eve,3,0.8
+8,Rio De Janeiro,eventually,3,0.8
+8,Rio De Janeiro,finally,3,0.8
+8,Rio De Janeiro,hilton,3,0.8
+8,Rio De Janeiro,hotel,3,0.8
+8,Rio De Janeiro,ina,3,0.8
+8,Rio De Janeiro,leave,3,0.8
+8,Rio De Janeiro,lived,3,0.8
+8,Rio De Janeiro,lunch,3,0.8
+8,Rio De Janeiro,office,3,0.8
+8,Rio De Janeiro,period,3,0.8
+8,Rio De Janeiro,prior,3,0.8
+8,Rio De Janeiro,rent,3,0.8
+8,Rio De Janeiro,returned,3,0.8
+8,Rio De Janeiro,returning,3,0.8
+8,Rio De Janeiro,ron,3,0.8
+8,Rio De Janeiro,section,3,0.8
+8,Rio De Janeiro,sedoff,3,0.8
+8,Rio De Janeiro,soviets,3,0.8
+8,Rio De Janeiro,station,3,0.8
+8,Rio De Janeiro,strike,3,0.8
+9,The McLean Va. Years,time,7,3.4
+9,The McLean Va. Years,president,6,2.97
+9,The McLean Va. Years,soviet,6,2.97
+9,The McLean Va. Years,chief,5,2.53
+9,The McLean Va. Years,mission,5,2.53
+9,The McLean Va. Years,operational,5,2.53
+9,The McLean Va. Years,people,5,2.53
+9,The McLean Va. Years,division,4,2.1
+9,The McLean Va. Years,home,4,2.1
+9,The McLean Va. Years,marion,4,2.1
+9,The McLean Va. Years,mclean,4,2.1
+9,The McLean Va. Years,position,4,2.1
+9,The McLean Va. Years,black,3,1.67
+9,The McLean Va. Years,called,3,1.67
+9,The McLean Va. Years,family,3,1.67
+9,The McLean Va. Years,found,3,1.67
+9,The McLean Va. Years,house,3,1.67
+9,The McLean Va. Years,nsa,3,1.67
+9,The McLean Va. Years,rio,3,1.67
+9,The McLean Va. Years,ron,3,1.67
+9,The McLean Va. Years,spent,3,1.67
+9,The McLean Va. Years,activities,2,1.23
+9,The McLean Va. Years,activity,2,1.23
+9,The McLean Va. Years,agency,2,1.23
+9,The McLean Va. Years,assignment,2,1.23
+9,The McLean Va. Years,branch,2,1.23
+9,The McLean Va. Years,branches,2,1.23
+9,The McLean Va. Years,brazil,2,1.23
+9,The McLean Va. Years,collection,2,1.23
+9,The McLean Va. Years,considerable,2,1.23
+9,The McLean Va. Years,dark,2,1.23
+9,The McLean Va. Years,department,2,1.23
+9,The McLean Va. Years,deputy,2,1.23
+9,The McLean Va. Years,drive,2,1.23
+9,The McLean Va. Years,election,2,1.23
+9,The McLean Va. Years,eventually,2,1.23
+9,The McLean Va. Years,extra,2,1.23
+9,The McLean Va. Years,freeway,2,1.23
+9,The McLean Va. Years,individuals,2,1.23
+9,The McLean Va. Years,information,2,1.23
+9,The McLean Va. Years,kennedy,2,1.23
+9,The McLean Va. Years,kensington,2,1.23
+9,The McLean Va. Years,killed,2,1.23
+9,The McLean Va. Years,kimball,2,1.23
+9,The McLean Va. Years,lake,2,1.23
+9,The McLean Va. Years,language,2,1.23
+9,The McLean Va. Years,leader,2,1.23
+9,The McLean Va. Years,left,2,1.23
+9,The McLean Va. Years,lodging,2,1.23
+9,The McLean Va. Years,lot,2,1.23
+9,The McLean Va. Years,military,2,1.23
+9,The McLean Va. Years,national,2,1.23
+9,The McLean Va. Years,operations,2,1.23
+9,The McLean Va. Years,proper,2,1.23
+9,The McLean Va. Years,ranging,2,1.23
+9,The McLean Va. Years,received,2,1.23
+9,The McLean Va. Years,required,2,1.23
+9,The McLean Va. Years,return,2,1.23
+9,The McLean Va. Years,run,2,1.23
+9,The McLean Va. Years,salt,2,1.23
+9,The McLean Va. Years,temple,2,1.23
+9,The McLean Va. Years,union,2,1.23
+9,The McLean Va. Years,united,2,1.23
+9,The McLean Va. Years,utah,2,1.23
+9,The McLean Va. Years,vietnam,2,1.23
+9,The McLean Va. Years,york,2,1.23
+9,The McLean Va. Years,abroad,1,0.8
+9,The McLean Va. Years,administration,1,0.8
+9,The McLean Va. Years,adopted,1,0.8
+9,The McLean Va. Years,adventure,1,0.8
+9,The McLean Va. Years,affecting,1,0.8
+9,The McLean Va. Years,agencies,1,0.8
+9,The McLean Va. Years,amount,1,0.8
+9,The McLean Va. Years,angeles,1,0.8
+9,The McLean Va. Years,apartments,1,0.8
+10,Making a Career Change,officers,24,3.4
+10,Making a Career Change,staff,17,2.57
+10,Making a Career Change,personnel,16,2.45
+10,Making a Career Change,evaluation,15,2.34
+10,Making a Career Change,officer,13,2.1
+10,Making a Career Change,boards,12,1.98
+10,Making a Career Change,people,11,1.86
+10,Making a Career Change,time,11,1.86
+10,Making a Career Change,board,9,1.63
+10,Making a Career Change,counseling,9,1.63
+10,Making a Career Change,level,9,1.63
+10,Making a Career Change,operations,8,1.51
+10,Making a Career Change,process,8,1.51
+10,Making a Career Change,career,7,1.39
+10,Making a Career Change,intelligence,7,1.39
+10,Making a Career Change,system,7,1.39
+10,Making a Career Change,careers,6,1.27
+10,Making a Career Change,foreign,6,1.27
+10,Making a Career Change,senior,6,1.27
+10,Making a Career Change,service,6,1.27
+10,Making a Career Change,agency,5,1.15
+10,Making a Career Change,called,5,1.15
+10,Making a Career Change,director,5,1.15
+10,Making a Career Change,grades,5,1.15
+10,Making a Career Change,period,5,1.15
+10,Making a Career Change,program,5,1.15
+10,Making a Career Change,retirement,5,1.15
+10,Making a Career Change,constantly,4,1.04
+10,Making a Career Change,deputy,4,1.04
+10,Making a Career Change,difficult,4,1.04
+10,Making a Career Change,directorate,4,1.04
+10,Making a Career Change,entire,4,1.04
+10,Making a Career Change,grade,4,1.04
+10,Making a Career Change,lot,4,1.04
+10,Making a Career Change,promoted,4,1.04
+10,Making a Career Change,review,4,1.04
+10,Making a Career Change,selection,4,1.04
+10,Making a Career Change,served,4,1.04
+10,Making a Career Change,action,3,0.92
+10,Making a Career Change,change,3,0.92
+10,Making a Career Change,chief,3,0.92
+10,Making a Career Change,cia,3,0.92
+10,Making a Career Change,circumstances,3,0.92
+10,Making a Career Change,colby,3,0.92
+10,Making a Career Change,concept,3,0.92
+10,Making a Career Change,convened,3,0.92
+10,Making a Career Change,dealing,3,0.92
+10,Making a Career Change,directorates,3,0.92
+10,Making a Career Change,effort,3,0.92
+10,Making a Career Change,equitable,3,0.92
+10,Making a Career Change,establish,3,0.92
+10,Making a Career Change,existed,3,0.92
+10,Making a Career Change,experience,3,0.92
+10,Making a Career Change,female,3,0.92
+10,Making a Career Change,force,3,0.92
+10,Making a Career Change,found,3,0.92
+10,Making a Career Change,looked,3,0.92
+10,Making a Career Change,major,3,0.92
+10,Making a Career Change,management,3,0.92
+10,Making a Career Change,person,3,0.92
+10,Making a Career Change,plans,3,0.92
+10,Making a Career Change,regular,3,0.92
+10,Making a Career Change,respect,3,0.92
+10,Making a Career Change,schlesinger,3,0.92
+10,Making a Career Change,started,3,0.92
+10,Making a Career Change,success,3,0.92
+10,Making a Career Change,trainees,3,0.92
+10,Making a Career Change,weeks,3,0.92
+10,Making a Career Change,world,3,0.92
+10,Making a Career Change,agency's,2,0.8
+10,Making a Career Change,appointed,2,0.8
+10,Making a Career Change,assignment,2,0.8
+10,Making a Career Change,automatic,2,0.8
+10,Making a Career Change,basis,2,0.8
+10,Making a Career Change,briefings,2,0.8
+11,Post Rio to Retirement,time,17,3.4
+11,Post Rio to Retirement,company,12,2.47
+11,Post Rio to Retirement,lot,11,2.29
+11,Post Rio to Retirement,washington,11,2.29
+11,Post Rio to Retirement,temple,9,1.91
+11,Post Rio to Retirement,family,8,1.73
+11,Post Rio to Retirement,home,8,1.73
+11,Post Rio to Retirement,homes,8,1.73
+11,Post Rio to Retirement,involved,8,1.73
+11,Post Rio to Retirement,research,8,1.73
+11,Post Rio to Retirement,school,8,1.73
+11,Post Rio to Retirement,ward,8,1.73
+11,Post Rio to Retirement,called,7,1.54
+11,Post Rio to Retirement,decided,7,1.54
+11,Post Rio to Retirement,hilton,7,1.54
+11,Post Rio to Retirement,activities,6,1.36
+11,Post Rio to Retirement,christmas,6,1.36
+11,Post Rio to Retirement,government,6,1.36
+11,Post Rio to Retirement,land,6,1.36
+11,Post Rio to Retirement,president,6,1.36
+11,Post Rio to Retirement,agency,5,1.17
+11,Post Rio to Retirement,business,5,1.17
+11,Post Rio to Retirement,children,5,1.17
+11,Post Rio to Retirement,friends,5,1.17
+11,Post Rio to Retirement,ron,5,1.17
+11,Post Rio to Retirement,special,5,1.17
+11,Post Rio to Retirement,summer,5,1.17
+11,Post Rio to Retirement,virginia,5,1.17
+11,Post Rio to Retirement,california,4,0.99
+11,Post Rio to Retirement,church,4,0.99
+11,Post Rio to Retirement,continued,4,0.99
+11,Post Rio to Retirement,development,4,0.99
+11,Post Rio to Retirement,enjoyed,4,0.99
+11,Post Rio to Retirement,initially,4,0.99
+11,Post Rio to Retirement,july,4,0.99
+11,Post Rio to Retirement,lake,4,0.99
+11,Post Rio to Retirement,leadership,4,0.99
+11,Post Rio to Retirement,left,4,0.99
+11,Post Rio to Retirement,marion,4,0.99
+11,Post Rio to Retirement,married,4,0.99
+11,Post Rio to Retirement,mclean,4,0.99
+11,Post Rio to Retirement,people,4,0.99
+11,Post Rio to Retirement,purchased,4,0.99
+11,Post Rio to Retirement,required,4,0.99
+11,Post Rio to Retirement,service,4,0.99
+11,Post Rio to Retirement,stock,4,0.99
+11,Post Rio to Retirement,sunday,4,0.99
+11,Post Rio to Retirement,visit,4,0.99
+11,Post Rio to Retirement,adminstration,3,0.8
+11,Post Rio to Retirement,april,3,0.8
+11,Post Rio to Retirement,beach,3,0.8
+11,Post Rio to Retirement,bit,3,0.8
+11,Post Rio to Retirement,cabin,3,0.8
+11,Post Rio to Retirement,chapter,3,0.8
+11,Post Rio to Retirement,college,3,0.8
+11,Post Rio to Retirement,construction,3,0.8
+11,Post Rio to Retirement,crows,3,0.8
+11,Post Rio to Retirement,cruise,3,0.8
+11,Post Rio to Retirement,dedication,3,0.8
+11,Post Rio to Retirement,doctors,3,0.8
+11,Post Rio to Retirement,due,3,0.8
+11,Post Rio to Retirement,gail,3,0.8
+11,Post Rio to Retirement,growth,3,0.8
+11,Post Rio to Retirement,howard,3,0.8
+11,Post Rio to Retirement,hunt,3,0.8
+11,Post Rio to Retirement,jim,3,0.8
+11,Post Rio to Retirement,june,3,0.8
+11,Post Rio to Retirement,kenny,3,0.8
+11,Post Rio to Retirement,major,3,0.8
+11,Post Rio to Retirement,management,3,0.8
+11,Post Rio to Retirement,mine,3,0.8
+11,Post Rio to Retirement,named,3,0.8
+11,Post Rio to Retirement,nest,3,0.8
+11,Post Rio to Retirement,nixon,3,0.8
+11,Post Rio to Retirement,november,3,0.8
+12,Full Text,time,147,3.4
+12,Full Text,school,82,2.06
+12,Full Text,marion,72,1.85
+12,Full Text,soviet,70,1.81
+12,Full Text,family,64,1.69
+12,Full Text,lot,62,1.65
+12,Full Text,home,53,1.46
+12,Full Text,president,53,1.46
+12,Full Text,house,51,1.42
+12,Full Text,people,50,1.4
+12,Full Text,ward,49,1.38
+12,Full Text,called,47,1.34
+12,Full Text,idaho,45,1.3
+12,Full Text,falls,43,1.25
+12,Full Text,war,43,1.25
+12,Full Text,washington,41,1.21
+12,Full Text,visit,39,1.17
+12,Full Text,chief,38,1.15
+12,Full Text,church,38,1.15
+12,Full Text,intelligence,37,1.13
+12,Full Text,officers,37,1.13
+12,Full Text,trip,36,1.11
+12,Full Text,children,35,1.09
+12,Full Text,pretty,35,1.09
+12,Full Text,utah,35,1.09
+12,Full Text,branch,34,1.07
+12,Full Text,rio,34,1.07
+12,Full Text,city,33,1.05
+12,Full Text,eventually,32,1.03
+12,Full Text,mother,32,1.03
+12,Full Text,operational,32,1.03
+12,Full Text,returned,32,1.03
+12,Full Text,summer,32,1.03
+12,Full Text,activities,31,1.01
+12,Full Text,operations,31,1.01
+12,Full Text,service,31,1.01
+12,Full Text,union,31,1.01
+12,Full Text,involved,30,0.99
+12,Full Text,york,30,0.99
+12,Full Text,day,29,0.97
+12,Full Text,found,29,0.97
+12,Full Text,left,29,0.97
+12,Full Text,office,29,0.97
+12,Full Text,personnel,29,0.97
+12,Full Text,world,29,0.97
+12,Full Text,days,28,0.94
+12,Full Text,period,28,0.94
+12,Full Text,friends,27,0.92
+12,Full Text,recall,27,0.92
+12,Full Text,soviets,27,0.92
+12,Full Text,started,27,0.92
+12,Full Text,car,26,0.9
+12,Full Text,lake,26,0.9
+12,Full Text,lived,26,0.9
+12,Full Text,received,26,0.9
+12,Full Text,ship,26,0.9
+12,Full Text,uruguay,26,0.9
+12,Full Text,officer,25,0.88
+12,Full Text,staff,25,0.88
+12,Full Text,opportunity,24,0.86
+12,Full Text,return,24,0.86
+12,Full Text,ron,24,0.86
+12,Full Text,spent,24,0.86
+12,Full Text,christmas,23,0.84
+12,Full Text,international,23,0.84
+12,Full Text,job,23,0.84
+12,Full Text,station,23,0.84
+12,Full Text,stayed,23,0.84
+12,Full Text,activity,22,0.82
+12,Full Text,agency,22,0.82
+12,Full Text,june,22,0.82
+12,Full Text,temple,22,0.82
+12,Full Text,united,22,0.82
+12,Full Text,couple,21,0.8
+12,Full Text,decided,21,0.8

@@ -1,0 +1,45 @@
+---
+title: "Timeline"
+---
+
+```{r}
+#| label: timeline-load
+#| echo: false
+library(readr)
+library(dplyr)
+library(ggplot2)
+metadata <- read_csv("data/chapter_metadata.csv", show_col_types = FALSE)
+stats <- read_csv("data/processed/chapter_stats.csv", show_col_types = FALSE)
+if (!file.exists("data/processed/sentiment_by_chapter.csv")) {
+  source("R/02_sentiment_analysis.R")
+}
+sentiment <- read_csv("data/processed/sentiment_by_chapter.csv", show_col_types = FALSE)
+```
+
+This page uses the starter chapter metadata as a timeline scaffold. Treat these years as draft metadata until reviewed against the source text.
+
+```{r}
+#| echo: false
+timeline <- metadata %>%
+  filter(include_in_timeline == TRUE) %>%
+  left_join(stats %>% select(chapter, word_count), by = "chapter") %>%
+  left_join(sentiment %>% select(chapter, net_bing_sentiment, afinn_score), by = "chapter") %>%
+  mutate(midpoint_year = (as.numeric(approx_start_year) + as.numeric(approx_end_year)) / 2)
+
+timeline %>%
+  ggplot(aes(x = midpoint_year, y = net_bing_sentiment, label = chapter)) +
+  geom_line() +
+  geom_point() +
+  geom_text(nudge_y = 5, check_overlap = TRUE) +
+  labs(x = "Approximate midpoint year", y = "Net Bing sentiment", title = "Draft sentiment timeline") +
+  theme_minimal()
+```
+
+## Metadata needing review
+
+```{r}
+#| echo: false
+metadata %>%
+  filter(include_in_timeline == TRUE) %>%
+  select(chapter, chapter_title, approx_start_year, approx_end_year, date_confidence, notes)
+```

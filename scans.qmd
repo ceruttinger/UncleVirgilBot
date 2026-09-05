@@ -1,0 +1,45 @@
+---
+title: "Scanned PDFs"
+---
+
+This page links to the original scanned chapter PDFs.
+
+The OCR text powers the analysis pages and search. The scanned PDFs preserve the original source pages so readers can inspect the memoir as scanned.
+
+::: callout-warning
+If this site is public, these PDFs are public too. For a private family version, the PDFs should eventually move to private AWS S3 storage with signed links.
+:::
+
+```{r}
+#| label: pdf-load
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(dplyr)
+
+if (!file.exists("data/public/pdf_manifest.csv")) {
+  source("R/06_build_pdf_manifest.R")
+}
+
+pdfs <- readr::read_csv("data/public/pdf_manifest.csv", show_col_types = FALSE)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+if (nrow(pdfs) == 0) {
+  cat("No PDFs found. Put chapter PDFs in `assets/pdf/`, then run `Rscript R/06_build_pdf_manifest.R`.")
+} else {
+  pdfs <- pdfs |> arrange(chapter)
+
+  for (i in seq_len(nrow(pdfs))) {
+    title <- ifelse(is.na(pdfs$chapter_title[i]), "", pdfs$chapter_title[i])
+
+    cat("\n\n## Chapter ", pdfs$chapter[i], ": ", title, "\n\n", sep = "")
+    cat("[Open scanned PDF](", pdfs$url[i], "){target=\"_blank\"}\n\n", sep = "")
+  }
+}
+```

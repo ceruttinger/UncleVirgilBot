@@ -1,0 +1,51 @@
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+
+.env/
+.venv/
+venv/
+myenv/
+__pycache__/
+*.pyc
+
+*.zip
+*.tar.gz
+*.rds
+*.RData
+*.rda
+
+# Keep raw/private scans out of public repo unless deliberately added
+data/raw_scans/
+data/private/
+
+# Quarto/R build outputs
+docs/.quarto/
+.quarto/
+_freeze/
+
+/.quarto/
+**/*.quarto_ipynb
+
+# Local / RStudio junk
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+
+# Python / environment junk
+.env/
+myenv/
+venv/
+.venv/
+
+# Archives
+*.zip
+*.tar.gz
+
+# Raw rebuild sources - keep local unless intentionally publishing
+data/raw_scans/
+*.rds

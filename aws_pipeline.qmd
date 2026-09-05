@@ -1,0 +1,105 @@
+---
+title: "AWS + AI Pipeline"
+---
+
+This page describes the production path: keep Quarto as the public reading/analysis layer, then add an AWS-hosted retrieval and model layer for actual AI answers.
+
+## Recommended architecture
+
+```text
+Quarto static site
+  ├── pages, charts, word clouds, PDF viewer
+  └── chatbot page
+          |
+          v
+AWS API Gateway /ask
+          |
+          v
+Lambda orchestrator
+          ├── validate request
+          ├── retrieve relevant chunks
+          ├── call model
+          ├── attach source citations
+          └── log usage safely
+          |
+          v
+S3 / Bedrock Knowledge Base / OpenSearch / PostgreSQL+pgvector
+```
+
+## Option A: AWS-native managed RAG
+
+Best when you want fewer moving parts inside AWS.
+
+```text
+S3 source bucket
+  → Bedrock Knowledge Base
+  → managed ingestion/chunking/embedding/indexing
+  → RetrieveAndGenerate
+  → answer with citations
+```
+
+Use this if you want AWS to handle most of the retrieval stack.
+
+## Option B: Custom lightweight RAG
+
+Best for this memoir project while it is still small.
+
+```text
+R/Quarto build
+  → data/public/search_index.json
+  → upload to S3
+  → Lambda loads JSON
+  → simple lexical retrieval
+  → model prompt with top passages
+```
+
+This is cheaper and easier to reason about at first. Later we can replace the retrieval layer with Bedrock Knowledge Base, OpenSearch Serverless, Aurora/Postgres pgvector, or OpenAI vector stores.
+
+## Option C: OpenAI model behind AWS Lambda
+
+```text
+Quarto chatbot UI
+  → API Gateway
+  → Lambda
+  → S3 retrieval
+  → OpenAI Responses API
+  → answer + citations
+```
+
+API keys stay in AWS Secrets Manager or Lambda environment variables. Never put model keys in browser JavaScript or in the public repo.
+
+## Repo pieces added
+
+```text
+backend/aws/
+├── README.md
+├── lambda_basic_rag/
+│   ├── lambda_function.py
+│   ├── requirements.txt
+│   └── sample_event.json
+├── ingest/
+│   ├── build_bedrock_kb_documents.py
+│   └── README.md
+└── terraform_skeleton/
+    ├── main.tf
+    ├── variables.tf
+    └── README.md
+```
+
+## First AWS milestone
+
+1. Keep the Quarto site on GitHub Pages or S3/CloudFront.
+2. Upload `data/public/search_index.json` to S3.
+3. Deploy Lambda with the `lambda_basic_rag` code.
+4. Create an API Gateway `/ask` endpoint.
+5. Update `assets/js/chatbot-config.js` with that endpoint.
+6. Confirm answers include chapter/passage citations.
+
+## Later AWS milestone
+
+Replace local JSON retrieval with one of these:
+
+- Bedrock Knowledge Base for managed RAG.
+- OpenSearch Serverless vector index if you want custom retrieval control.
+- Aurora/Postgres with pgvector if you also want relational tables and SQL joins.
+- Neptune/graph later if the family/person/place/event network becomes central.

@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>chapter_11 – Uncle Virgil Bot</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-f10e0ff7b47c76990a11197da8be0964.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="stylesheet" href="../../../assets/css/styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Uncle Virgil Bot</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../chapters.html"> 
+<span class="menu-text">Chapters</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../sentiment.html"> 
+<span class="menu-text">Sentiment</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../emotions.html"> 
+<span class="menu-text">Emotions</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../wordclouds.html"> 
+<span class="menu-text">Word Clouds</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../timeline.html"> 
+<span class="menu-text">Timeline</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../corpus_review.html"> 
+<span class="menu-text">Corpus QA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../scans.html"> 
+<span class="menu-text">Scanned PDFs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../search.html"> 
+<span class="menu-text">Search</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../chatbot.html"> 
+<span class="menu-text">Chatbot</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../next_steps.html"> 
+<span class="menu-text">Next Steps</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../aws_pipeline.html"> 
+<span class="menu-text">AWS Pipeline</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#chapter-11-post-rio-to-retirement" id="toc-chapter-11-post-rio-to-retirement" class="nav-link active" data-scroll-target="#chapter-11-post-rio-to-retirement">Chapter 11: Post Rio to Retirement</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7"></h1></header><div class="quarto-title-block"><div class="quarto-title-tools-only"><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+
+
+
+
+<section id="chapter-11-post-rio-to-retirement" class="level1">
+<h1>Chapter 11: Post Rio to Retirement</h1>
+<ul>
+<li>Source records: 11–11</li>
+<li>Date confidence: low</li>
+<li>Boundary confidence: needs_review</li>
+</ul>
+<p>GHAPTER ELEVEN Post-Rio to Retirement</p>
+<p>CHAPTER ELEVEN</p>
+<p>I’ll return now to about 1968 and include some of the activities in which our family was engaged during the period of time that I was in the Personnel Management Staff as related in the foregoing chapter (TEN).</p>
+<p>In July 1968, I rented a cabin from Hugh Tovar in Seven Springs, Pennsylvania. It was a nice cabin in the woods and near a lot of recreational facilities. It rained some of the time that we were there but we had brought books and games in case of such an occurence and enjoyed the relaxation. We went swimming in a pool with a very high Slide and a little beach. Hilton, Patty and I went fishing and got Hilton hooked on being a fisherman. Most of the family went horseback riding as well and were extremely stiff after not having done this before or , at least, for a long time. We held our own sacrament and testimony meeting and it was a very special occasion for the family.</p>
+<p>During the summer we bought a piece of land ata place called Lake of the Woods, which was about a 75 minute drive from McLean. The lake was man-made but contained about 500 acres of water. As a bribe for purchasing a waterfront lot, we were “given” a little Snark sailboat and the family really enjoyed getting involved in sailing as well as some of the other amenities available, such as golfing, swimming, and fishing. We even had the entire McLean Ward down there for ae ward outing the following Summer. As it turned out we never did build on the site, although we had some intentions of doing so.</p>
+<p>AS I have mentioned in other parts of this history, 1968 was a violent year in the United States. Opposition to the Vietnam War cause a lot of demonstrations but other things occurred which contributed to the national trauma. Martin Luther King, the civil rights leader, was assassinated on April 4 in Memphis, Causing riots in various cities in the United States, including Washington, D.C. Then on June 5th , U. S. Senator Robert F. Kennedy was shot and mortally wounded in Los Angeles while on a campaign Crip.</p>
+<p>In August Soviet troops invaded Czechoslovakia, to end Alexander Dubcek’s’ liberal reforms and the Soviet Bloc continued to strengthen itself with the addition of this former stalwart from the ranks of the democratic nations. All of this contributed to a vicious election Campaign which waS won in November by Richard mM. Nixon, former Vice- President under Eisenhower.</p>
+<p>Late in 1968, while she was in her Senior year at | Langley High in Virginia, Gail had quite a rude awakening. She wanted to go the BYU but found that it wouldn’t accept -§83-</p>
+<p>her because her grades were too low, due to the considerable goofing off she had down while we were in Rio de Janeiro. She then decided she would go to another school away from home whose requirements were’t so high. We explained that we couldn’t afford to send her away other than to the Y, since we also had Ron on a mission. Living at home and attending a local college was the last thing that she wanted to do at this stage of her life, so she buckled down and raised her grades sufficient to where the Y would accept her on a probationary basis.</p>
+<p>Some years ago Milan Smith, President of the Washington D.C Stake had the foresight to push for a location for eventual construction of a temple in the Washington, D.C. area. One was finally purchased and we Spent some of our Saturdays cleaning brush and debris from this site which was on a hill in Kensington, Md. In December 1968, Hugh. B. Brown of the First Presidency and other dignataries, such as Julian Lowe, Milan Smith, and J.Willard Marriott, participated in a ground-breaking ceremony which was pretty well attended in spite of it being a cold, bitter day. Construction on the temple didn’t start immediately but</p>
+<p>it was finished in 1974.</p>
+<p>In early 1969, I needed to get some foundation in Statistics because of the work that I was doing for the Personnel Management Staff, so the Agency sent me to a night course in that subject at American University in Washington, D.C. It was quite a challenge to me since it had been a long time since I had attended any formal classes at a university and even longer since I had to do any Algebra. I made out all right in it, even though I suffered an age handicap.</p>
+<p>In July, 1969, Pam Jeppsen, came to visit us. During her stay we went camping on our lot at Lake of the Woods and it was while we were there that Neil Armstrong and Edwin Aldrin became the first men to walk on the moon (July 20). There were several large television screens set up at the main lodge so that people could witness this spectacular occurence. In August of that year, we also went to the , pageant at the Hill Cumorah, the first time that Hilton had had an opportunity to be with us. We also had a visit this year from our friends Matt and Vivian Olson, whom we knew at the Y and also in the Alexandia Ward.</p>
+<p>In 1970 I started experiencing some problems with my back. I don’t know how or what happened to cause the pain in my lower spine but I spent a lot of time with doctors, initially with a chiropractor, Moir Bowman, who eventually admitted that there wasn’t much more he could do for me and</p>
+<div class="line-block">I took my X-rays to an orthopedic surgeon who sent me for a</div>
+<p>. lot of physical therapy work, none of which was ever very effective. -84-</p>
+<p>In late 1969 and early 1970, some friends of mine were active in the formation of a land development company called Growth Land. Initially, my interest was as a stock holder since I had, along with my brother, Martin, purchased a block of the unregistered shares. Later, however, as a result of the enthusiasm attached to the home-building concept of a small Utah company called Research Homes, Growth Land merged with Research Homes and formed a nationwide company. Unfortunately, I got too involved in the activities of the company and its principal officers (mainly because of a promise to hire me upon my early retirement for which I was eligible in 1972). I sold much of the letter stock to a lot of friends of mine in the company (about $250,000 worth) which probably would have been great had the company succeeded. One of the major projects of Research Homes was a development known as Crows Nest Harbour. It was under construction in Stafford County about sixty miles from Washington, D.C. In addition to the stock of Research Homes, I got involved, along with a number of my CIA associates, in the purchase of some two acre lots at the Crows Nest Harbour project which was located at the confluence of the Potomac River and Potomac Creek, an area rich in tradition. It was said that this was the area where Captain John Smith romanced Pocahantas, the Indian princess. [I organized a small sub-chapter S corporation along with Ken Hampton, Tom Robertson and Jim Burson, the latter two colleagues of mine at C.I.A. We planned to sub-divide the four lots which we purchased contiguously (a total of more than eight acres) into one-half acre home sites. This never did materialized due to the failure of some of the projects and the eventual demise of Research Homes in 1974. Hilton was very involved in Boy’s Club’ football during this year. He belonged to a team called the Chinese Bandits and it won the championship that year. He demonstrated a lot of speed even though he was tall and lanky for his nine years of age. He continued to play football in this league for several seasons. During the summer of 1971, a girl named Dorrie Nelson came to spend the summer with us while she worked in Washington,D.cC. She was a beautiful girl and very gracious and we enjoyed having her with us. The only problem we encountered was with boy friends, who would date her and then spend hours saying goodbye. She eventually married Michael Sherrill. They live in California and we exchange Christmas greetings with them every year although we haven’t seen them for many years. In spite of my busy schedule at work, I managed to : get to the Father’s and Son’s outings with Hilton, as I had with Ron when we were in the States. In 1971, Hilton and I Started a tradition of carving our initials ina special tree down in Prince William forest and having a -85-</p>
+<p>talk anda prayer together. We drewa map so that each year we could locate the particular tree which was Special to us. By the time we left Virginia, however, the tree’s bark had peeled quite a bit from the growth.</p>
+<p>When we were first in the Alexandria Ward, our bishop waS a man named Wendell Thorne. His wife was named Harriet. They lived right across the street from the Gerald Ford Family and took care of some of their children for them. In October 1971 the Thornes decided to move to Florida and</p>
+<div class="line-block">Frank and Lela Kimball helda Special going away party at</div>
+<p>their house for the Thornes. Besides us the George Goolds and the O’Bryants were there to Say Bon Voyage to the Thornes.</p>
+<p>My sister, Loverna, passed away in December 1971. All of the children except her youngest, Kenny, were either married or out on their own. We decided to take Kenny into , our home in Virginia and he got there to start school just after Christmas. It was pretty difficult for him to adjust to a new area and find new friends, although we tried to help him out as much as_ possible. He finished out the remainder of the school year and then decided to return to California to stay with a family that he had known for a longer period of time. It worked out all right and Kenny is now working for the Forestry Service and is married and has a family of three daughters. Unfortunately, after he returned to California he became inactive in the Church and still won’t have anything to do with it.</p>
+<p>The most eventful and far-reaching thing that occurred in 1972 didn’t involve anything that I did but I am recording it in my history so that my posterity will know that I was in the Washington, D.C. area at the time that it took place. Five burglars were arrested on June 17, 1972 in the Democratic National Committees headquarters at the Watergate office building in Washington, D.C. They were later identified as hirelings of the Committee to Reelect</p>
+<p>. the President (Nixon) and began an affair which resulted in Nixon nearly being impeached in 1974 and led to his Subsequent resignation. My interest was somewhat personal in that one of the persons behind the scene in this affair was Edward Howard Hunt who was the C.I.A. Station Chief in Montevideo during my tour there. Those of us at the Agency at the time (Hunt had already left the Agency by then) were initially just amused since we knew that Howard Hunt didn’t have any special talents for Surreptitious entry. Certainly not based upon his experience with the Agency. Although some operations required such attempts while Howard was the Station Chief in Montevideo, he was not directly involved.</p>
+<dl>
+<dt>, During 1973 I had continuing problems with my back</dt>
+<dd>
+and tried almost every doctor I could. In January of that year an acupuncture clinic opened in Washington, D.C. Since it was supervised by an M.D.&nbsp;and the acupuncturists were
+</dd>
+</dl>
+<p>-86-</p>
+<p>doctors trained in Taiwan, I decided to try it. I Suppose I went to about six sessions and, although relaxing, the upshot was that my back still bothered me. However, they did successfully cure a bad case of bursitis that I had in my left shoulder. It was interesting to see how many people, desperate to get relief, came from all over the northeast area of the U. 8S. It did some of them some good and had become popular because during Nixon’s visit to China, a journalist for the New York Times (Reston) had had to have emergency surgery while in China and acupuncture was the accepted anesthetic for him.</p>
+<p>This year I continued making mistakes in my investments, having put about $10,000 in 1970 in Research Homes, which by this time was pretty shaky. One of the members of the Church that I had known for quite a long time and who had been a Bishop of the Arlington Ward, started a business called PO-JO where pinball machines were used to play golf (using golf’s scoring method) and using billiard balls. The business failed miserably and I lost about $5000.</p>
+<p>In April we flew out to the West for Ron’s wedding to Diana Farrell. We initially went to Salt Lake and Provo then took Rhoda Jones’ car to San Clemente, California, Diana’s home. They were married on April 25,1973 in the Los Angeles temple. Ron and Gail also graduated from college in May 1973 and Ron was accepted into the charter class of the new J. Rueben Clark Law School at B.Y.U.</p>
+<p>Although limited in my activity because of my disability, I had already been contacted prior to my retirement on June 30, 1973 by Leadership Systems, Inc, a management firm located in Silver Spring, Maryland. Leadership Systems used people like me as consultants and counselors For a skill discovery workshop, to _ help individuals discover for themselves’ the leadership skills and abilities which they had or might develop to make themselves more effective in their chosen careers. I worked for LSI somewhat sporactically from July 1973 up to the time that we decided to move to Arizona. Most of the clientel were organizations of the U. S. Government such as Small Business Adminstration, U. S§. Forest Service, Office of Education, Bureau of Mines, Dept. of Labor, General Service Adminstration, the Army Materiel Command, the Environmental Protection Agency and the Federal Aviation Adminstration. Working with these various segments of the government provided me with an opportunity to learn about and gain some insights as to the problems, activities and attitudes involved in various government entities. Although having worked for the government in C.I.A, I knew little about other components except for those’ involved someway or another in military , foreign service or intelligence</p>
+<p>activities. It certainly helped me to broaden my perspective of what was going on in the U. S. Government and I really —~87- |</p>
+<p>got a better insight as to the dedication of many government employees. Many of these people gave up potentially good careers in the academic world or in business in order to serve their country and regrettably often don’t get the recognition for the sacrifices they make.</p>
+<p>AS a result of my long involvement with the company and upon insistence of several large stockholders, I was elected to serve as a member of the Board of Directors of Research Homes, Inc.&nbsp;in November of 1973. I didn’t have much of a chance to contribute any of my practical experience to the company, however. By this time the company was in very serious financial difficulties for several reasons. In October, O.P.E.C.(the Organization of Petroleum Exporting Countries), had begun the curtailment of oil shipments to industrial nations and a major energy crisis developed. It soon had its effect on companies that were in the land development business , especially when they owned parcels of</p>
+<p>land which required a lot of automobile travel to reach, such as the Crows Nest Harbor development, the major project of RHI. It required more than an hour’s travel from Washington, D. C.</p>
+<p>For Christmas 1973 we reversed the usual process wherein the college kids flew back to Virginia for the holidays. Instead , since Ron, his wife Diana, Gail, and Pat were all at the Y , we (Marion, Hilton and I) took a student charter plane arranged by students of Eastern universities returning home to the Utah area for the holidays.</p>
+<p>From 1970 to 1973 I served as the Sunday School President of the McLean Ward, having been released as the High Priest Group leader. I had Hal Milner and Amos Wright (a retired Army colonel) as my assistants. In those days the Sunday School superintendent (or president) had a lot more to do with staffing the organization that he does today. The president was also directly responsible for the Jr.&nbsp;Sunday School, headed by a Jr.&nbsp;Sunday School coordinator, which in our case was Nola Lowe, Julian Lowes’s wife. This was one of the most enjoyable assignments I have ever had since I particulary loved visiting the classes of the small children. On one occasion we decided to have each member of the class of four year olds bring a Christmas present to donate to some unfortunate child (not in the Church). I was thrilled at the faces of the children as they placed their presents in the bag for us to take to the needy children. It is something that I will always remember since their faces Showed that they felt that they were really sharing and feeling the Spirit of Christmas, and any parent or grandparent knows how four-year olds love the thoughts of Christmas.</p>
+<p>= The year 1974 didn’t start out very well. After making the rounds of all kinds of doctors, chiropractors, osteopaths, neurologists, acupuncturists, and orthopedic</p>
+<p>-88-</p>
+<p>Surgeons, I finally was convinced that I needed to have Surgery done on my back. So in January 1974 I underwent a double laminectomy on sacrolumbar disks L4 and LS5. The surgery went O.K. and it appeared for several months that it had been successful. However, it is something which I regret having done.</p>
+<p>Barly in February and as part of my convalescence, I went on a cruise to the West Indies on a yacht owned by James W. Dyer, Chairman of the Board of Research Homes, Inc., who having made several million dollars on a previous stock venture of a toy company, liked the good life. I had known Jim since my days in the Alexandria Ward bishopric in 1955, when Jim was selling Renoware from door-to-door. There were several other officers of the company with us and ostensibly the cruise was to let them get away and think about the future of the company which was in very sad straits. Regretably not much of real problem-solving took place. I enjoyed the cruise and the visit to such fabled places as Martinique but I could tell that my back problem was still with me by the time we returned. One favorable factor of the trip was that I made some money on the sale of</p>
+<p>some bags of silver coins which I had purchased on margin</p>
+<p>during the summer of 1973 and which reached a then record price in early Feb.&nbsp;1974. As I recall I made a profit of about $11,000, thinking that I would sell half of my</p>
+<p>holdings since I would be out of touch for a week or so and in this case my timing was perfect. The day after I sold five bags of coins, the market turned around and dropped a Gollar per ounce of silver.</p>
+<div class="line-block">During this year I continued doing some consulting</div>
+<p>work for Leadership Systems, Inc.&nbsp;although my activities were cut back quite a bit. fTheral O’Bryant and I dida</p>
+<p>workshop together with the air controllers at the Leesburg, | Virginia center and I learned a lot about the stresses and strains connected with that activity. I did some traveling as well to places like Kansas City and Dallas. The only vacation that the family had was one at Rehobeth Beach in Maryland where we and the O’Bryants rented a cabin owned by the sister of Ells Knudson, a member of the McLean Ward. We had a good time at the beach although quite a bit of the</p>
+<p>: time was spent reading and playing party games due to rainy weather.</p>
+<p>In the Fall of 1974, the long-awaited completion came to the Washington, D.C. temple. We were all very much engaged in activities involved in the dedication which took place on November 20, 1974. Marion, particularly, worked with a group which was responsible for the distribution of tickets and it was a very demanding calling. There was a</p>
+<p>» | ~—o7=</p>
+<div class="line-block">film made of the events surrounding the dedication of the</div>
+<div class="line-block">temple and the work of the ticket group was included. If one</div>
+<div class="line-block">, can get to see it they would see Marion in the film. We both</div>
+<div class="line-block">served as guides in various parts of the temple which</div>
+<p>required us to learn certain facts and data about the temple</p>
+<p>. as well as give information on the church. Of course, it was</p>
+<p>7 mandatory that the temple be staffed and I was called as an</p>
+<p>officiator at the temple. Marion was not called because we</p>
+<p>still had a child at home. I served in this capacity until . shortly before we left for Arizona in 1975.</p>
+<p>-§30&lt; ,</p>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/clarkruttinger\.info\/UncleVirgilBot\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Chapter 11: Post Rio to Retirement</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Source records: 11–11</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Date confidence: low</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Boundary confidence: needs_review</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>GHAPTER ELEVEN</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Post-Rio to Retirement</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>CHAPTER ELEVEN</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>I'll return now to about 1968 and include some of the</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>activities in which our family was engaged during the period</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>of time that I was in the Personnel Management Staff as</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>related in the foregoing chapter (TEN).</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>In July 1968, I rented a cabin from Hugh Tovar in</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Seven Springs, Pennsylvania. It was a nice cabin in the</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>woods and near a lot of recreational facilities. It rained</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>some of the time that we were there but we had brought books</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>and games in case of such an occurence and enjoyed the</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>relaxation. We went swimming in a pool with a very high</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Slide and a little beach. Hilton, Patty and I went fishing</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>and got Hilton hooked on being a fisherman. Most of the</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>family went horseback riding as well and were extremely</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>stiff after not having done this before or , at least, for a</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>long time. We held our own sacrament and testimony meeting</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>and it was a very special occasion for the family.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>During the summer we bought a piece of land ata</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>place called Lake of the Woods, which was about a 75 minute</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>drive from McLean. The lake was man-made but contained</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>about 500 acres of water. As a bribe for purchasing a</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>waterfront lot, we were "given" a little Snark sailboat and</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>the family really enjoyed getting involved in sailing as</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>well as some of the other amenities available, such as</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>golfing, swimming, and fishing. We even had the entire</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>McLean Ward down there for ae ward outing the following</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Summer. As it turned out we never did build on the site,</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>although we had some intentions of doing so.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>AS I have mentioned in other parts of this history,</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>1968 was a violent year in the United States. Opposition to</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>the Vietnam War cause a lot of demonstrations but other</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>things occurred which contributed to the national trauma.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Martin Luther King, the civil rights leader, was</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>assassinated on April 4 in Memphis, Causing riots in various</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>cities in the United States, including Washington, D.C.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>Then on June 5th , U. S. Senator Robert F. Kennedy was shot</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>and mortally wounded in Los Angeles while on a campaign</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>Crip.</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>In August Soviet troops invaded Czechoslovakia, to</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>end Alexander Dubcek's' liberal reforms and the Soviet Bloc</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>continued to strengthen itself with the addition of this</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>former stalwart from the ranks of the democratic nations.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>All of this contributed to a vicious election Campaign which</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>waS won in November by Richard mM. Nixon, former Vice-</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>President under Eisenhower.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>Late in 1968, while she was in her Senior year at</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Langley High in Virginia, Gail had quite a rude awakening.</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>She wanted to go the BYU but found that it wouldn't accept</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>-§83-</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>her because her grades were too low, due to the considerable</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>goofing off she had down while we were in Rio de Janeiro.</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>She then decided she would go to another school away from</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>home whose requirements were't so high. We explained that we</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>couldn't afford to send her away other than to the Y, since</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>we also had Ron on a mission. Living at home and attending a</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>local college was the last thing that she wanted to do at</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>this stage of her life, so she buckled down and raised her</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>grades sufficient to where the Y would accept her on a</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>probationary basis.</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>Some years ago Milan Smith, President of the</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>Washington D.C Stake had the foresight to push for a</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>location for eventual construction of a temple in the</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>Washington, D.C. area. One was finally purchased and we</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>Spent some of our Saturdays cleaning brush and debris from</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>this site which was on a hill in Kensington, Md. In December</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>1968, Hugh. B. Brown of the First Presidency and other</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>dignataries, such as Julian Lowe, Milan Smith, and J.Willard</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>Marriott, participated in a ground-breaking ceremony which</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>was pretty well attended in spite of it being a cold, bitter</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>day. Construction on the temple didn't start immediately but</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>it was finished in 1974.</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>In early 1969, I needed to get some foundation in</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>Statistics because of the work that I was doing for the</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>Personnel Management Staff, so the Agency sent me to a night</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>course in that subject at American University in Washington,</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>D.C. It was quite a challenge to me since it had been a long</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>time since I had attended any formal classes at a university</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>and even longer since I had to do any Algebra. I made out</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>all right in it, even though I suffered an age handicap.</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>In July, 1969, Pam Jeppsen, came to visit us. During</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>her stay we went camping on our lot at Lake of the Woods and</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>it was while we were there that Neil Armstrong and Edwin</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>Aldrin became the first men to walk on the moon (July 20).</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>There were several large television screens set up at the</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>main lodge so that people could witness this spectacular</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>occurence. In August of that year, we also went to the ,</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>pageant at the Hill Cumorah, the first time that Hilton had</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>had an opportunity to be with us. We also had a visit this</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>year from our friends Matt and Vivian Olson, whom we knew at</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>the Y and also in the Alexandia Ward.</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>In 1970 I started experiencing some problems with my</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>back. I don't know how or what happened to cause the pain in</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>my lower spine but I spent a lot of time with doctors,</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>initially with a chiropractor, Moir Bowman, who eventually</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>admitted that there wasn't much more he could do for me and</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> I took my X-rays to an orthopedic surgeon who sent me for a</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>. lot of physical therapy work, none of which was ever very</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>effective.</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>-84-</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>In late 1969 and early 1970, some friends of mine</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>were active in the formation of a land development company</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>called Growth Land. Initially, my interest was as a stock</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>holder since I had, along with my brother, Martin, purchased</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>a block of the unregistered shares. Later, however, as a</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>result of the enthusiasm attached to the home-building</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>concept of a small Utah company called Research Homes,</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>Growth Land merged with Research Homes and formed a</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>nationwide company. Unfortunately, I got too involved in the</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>activities of the company and its principal officers (mainly</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>because of a promise to hire me upon my early retirement for</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>which I was eligible in 1972). I sold much of the letter</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>stock to a lot of friends of mine in the company (about</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>$250,000 worth) which probably would have been great had the</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>company succeeded. One of the major projects of Research</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>Homes was a development known as Crows Nest Harbour. It was</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>under construction in Stafford County about sixty miles from</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>Washington, D.C. In addition to the stock of Research Homes,</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>I got involved, along with a number of my CIA associates, in</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>the purchase of some two acre lots at the Crows Nest Harbour</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>project which was located at the confluence of the Potomac</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>River and Potomac Creek, an area rich in tradition. It was</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>said that this was the area where Captain John Smith</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>romanced Pocahantas, the Indian princess.</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>[I organized a small sub-chapter S corporation along</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>with Ken Hampton, Tom Robertson and Jim Burson, the latter</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>two colleagues of mine at C.I.A. We planned to sub-divide</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>the four lots which we purchased contiguously (a total of</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>more than eight acres) into one-half acre home sites. This</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>never did materialized due to the failure of some of the</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>projects and the eventual demise of Research Homes in 1974.</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>Hilton was very involved in Boy's Club’ football</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>during this year. He belonged to a team called the Chinese</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>Bandits and it won the championship that year. He</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>demonstrated a lot of speed even though he was tall and</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>lanky for his nine years of age. He continued to play</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>football in this league for several seasons.</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>During the summer of 1971, a girl named Dorrie Nelson</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>came to spend the summer with us while she worked in</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>Washington,D.cC. She was a beautiful girl and very gracious</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>and we enjoyed having her with us. The only problem we</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>encountered was with boy friends, who would date her and</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>then spend hours saying goodbye. She eventually married</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>Michael Sherrill. They live in California and we exchange</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>Christmas greetings with them every year although we haven't</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>seen them for many years.</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>In spite of my busy schedule at work, I managed to</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>: get to the Father's and Son's outings with Hilton, as I had</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>with Ron when we were in the States. In 1971, Hilton and I</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>Started a tradition of carving our initials ina special</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>tree down in Prince William forest and having a</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>-85-</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>talk anda prayer together. We drewa map so that each year</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>we could locate the particular tree which was Special to us.</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>By the time we left Virginia, however, the tree's bark had</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>peeled quite a bit from the growth.</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>When we were first in the Alexandria Ward, our bishop</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>waS a man named Wendell Thorne. His wife was named Harriet.</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>They lived right across the street from the Gerald Ford</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>Family and took care of some of their children for them. In</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>October 1971 the Thornes decided to move to Florida and</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Frank and Lela Kimball helda Special going away party at</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>their house for the Thornes. Besides us the George Goolds</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>and the O'Bryants were there to Say Bon Voyage to the</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>Thornes.</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>My sister, Loverna, passed away in December 1971.</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>All of the children except her youngest, Kenny, were either</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>married or out on their own. We decided to take Kenny into ,</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>our home in Virginia and he got there to start school just</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>after Christmas. It was pretty difficult for him to adjust</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>to a new area and find new friends, although we tried to</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>help him out as much as_ possible. He finished out the</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>remainder of the school year and then decided to return to</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>California to stay with a family that he had known for a</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>longer period of time. It worked out all right and Kenny is</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>now working for the Forestry Service and is married and has</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>a family of three daughters. Unfortunately, after he</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>returned to California he became inactive in the Church and</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>still won't have anything to do with it.</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>The most eventful and far-reaching thing that</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>occurred in 1972 didn't involve anything that I did but I am</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>recording it in my history so that my posterity will know</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>that I was in the Washington, D.C. area at the time that it</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>took place. Five burglars were arrested on June 17, 1972 in</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>the Democratic National Committees headquarters at the</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>Watergate office building in Washington, D.C. They were</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>later identified as hirelings of the Committee to Reelect</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>. the President (Nixon) and began an affair which resulted in</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>Nixon nearly being impeached in 1974 and led to his</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>Subsequent resignation. My interest was somewhat personal in</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>that one of the persons behind the scene in this affair was</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>Edward Howard Hunt who was the C.I.A. Station Chief in</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>Montevideo during my tour there. Those of us at the Agency</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>at the time (Hunt had already left the Agency by then) were</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>initially just amused since we knew that Howard Hunt didn't</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>have any special talents for Surreptitious entry. Certainly</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>not based upon his experience with the Agency. Although</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>some operations required such attempts while Howard was the</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>Station Chief in Montevideo, he was not directly involved.</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>, During 1973 I had continuing problems with my back</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>: and tried almost every doctor I could. In January of that</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>year an acupuncture clinic opened in Washington, D.C. Since</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>it was supervised by an M.D. and the acupuncturists were</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>-86-</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>doctors trained in Taiwan, I decided to try it. I Suppose I</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>went to about six sessions and, although relaxing, the</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>upshot was that my back still bothered me. However, they</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>did successfully cure a bad case of bursitis that I had in</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>my left shoulder. It was interesting to see how many people,</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>desperate to get relief, came from all over the northeast</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>area of the U. 8S. It did some of them some good and had</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>become popular because during Nixon's visit to China, a</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>journalist for the New York Times (Reston) had had to have</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>emergency surgery while in China and acupuncture was the</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>accepted anesthetic for him.</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>This year I continued making mistakes in my</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>investments, having put about $10,000 in 1970 in Research</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>Homes, which by this time was pretty shaky. One of the</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>members of the Church that I had known for quite a long time</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>and who had been a Bishop of the Arlington Ward, started a</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>business called PO-JO where pinball machines were used to</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>play golf (using golf's scoring method) and using billiard</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>balls. The business failed miserably and I lost about $5000.</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>In April we flew out to the West for Ron's wedding to</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>Diana Farrell. We initially went to Salt Lake and Provo then</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>took Rhoda Jones' car to San Clemente, California, Diana's</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>home. They were married on April 25,1973 in the Los Angeles</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>temple. Ron and Gail also graduated from college in May 1973</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>and Ron was accepted into the charter class of the new J.</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>Rueben Clark Law School at B.Y.U.</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>Although limited in my activity because of my</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>disability, I had already been contacted prior to my</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>retirement on June 30, 1973 by Leadership Systems, Inc, a</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>management firm located in Silver Spring, Maryland.</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>Leadership Systems used people like me as consultants and</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>counselors For a skill discovery workshop, to _ help</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>individuals discover for themselves’ the leadership skills</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>and abilities which they had or might develop to make</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>themselves more effective in their chosen careers. I worked</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>for LSI somewhat sporactically from July 1973 up to the time</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>that we decided to move to Arizona. Most of the clientel</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>were organizations of the U. S. Government such as Small</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>Business Adminstration, U. S§. Forest Service, Office of</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>Education, Bureau of Mines, Dept. of Labor, General Service</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>Adminstration, the Army Materiel Command, the Environmental</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>Protection Agency and the Federal Aviation Adminstration.</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>Working with these various segments of the government</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>provided me with an opportunity to learn about and gain some</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>insights as to the problems, activities and attitudes</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>involved in various government entities. Although having</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>worked for the government in C.I.A, I knew little about</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>other components except for those’ involved someway or</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>another in military , foreign service or intelligence</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>activities. It certainly helped me to broaden my perspective</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>of what was going on in the U. S. Government and I really</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>—~87-</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span></span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>got a better insight as to the dedication of many government</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>employees. Many of these people gave up potentially good</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>careers in the academic world or in business in order to</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>serve their country and regrettably often don't get the</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>recognition for the sacrifices they make.</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>AS a result of my long involvement with the company</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>and upon insistence of several large stockholders, I was</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>elected to serve as a member of the Board of Directors of</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>Research Homes, Inc. in November of 1973. I didn't have much</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>of a chance to contribute any of my practical experience to</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>the company, however. By this time the company was in very</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>serious financial difficulties for several reasons. In</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>October, O.P.E.C.(the Organization of Petroleum Exporting</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>Countries), had begun the curtailment of oil shipments to</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>industrial nations and a major energy crisis developed. It</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>soon had its effect on companies that were in the land</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>development business , especially when they owned parcels of</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>land which required a lot of automobile travel to reach,</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>such as the Crows Nest Harbor development, the major project</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>of RHI. It required more than an hour's travel from</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>Washington, D. C.</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>For Christmas 1973 we reversed the usual process</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>wherein the college kids flew back to Virginia for the</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>holidays. Instead , since Ron, his wife Diana, Gail, and Pat</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>were all at the Y , we (Marion, Hilton and I) took a student</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>charter plane arranged by students of Eastern universities</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>returning home to the Utah area for the holidays.</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>From 1970 to 1973 I served as the Sunday School</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>President of the McLean Ward, having been released as the</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>High Priest Group leader. I had Hal Milner and Amos Wright</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>(a retired Army colonel) as my assistants. In those days the</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>Sunday School superintendent (or president) had a lot more</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>to do with staffing the organization that he does today. The</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>president was also directly responsible for the Jr. Sunday</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>School, headed by a Jr. Sunday School coordinator, which in</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>our case was Nola Lowe, Julian Lowes's wife. This was one of</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>the most enjoyable assignments I have ever had since I</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>particulary loved visiting the classes of the small</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>children. On one occasion we decided to have each member of</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>the class of four year olds bring a Christmas present to</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>donate to some unfortunate child (not in the Church). I was</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>thrilled at the faces of the children as they placed their</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>presents in the bag for us to take to the needy children. It</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>is something that I will always remember since their faces</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>Showed that they felt that they were really sharing and</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>feeling the Spirit of Christmas, and any parent or</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>grandparent knows how four-year olds love the thoughts of</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>Christmas.</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>= The year 1974 didn't start out very well. After</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>making the rounds of all kinds of doctors, chiropractors,</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>osteopaths, neurologists, acupuncturists, and orthopedic</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>-88-</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>Surgeons, I finally was convinced that I needed to have</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>Surgery done on my back. So in January 1974 I underwent a</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>double laminectomy on sacrolumbar disks L4 and LS5. The</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>surgery went O.K. and it appeared for several months that it</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>had been successful. However, it is something which I regret</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>having done.</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>Barly in February and as part of my convalescence, I</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>went on a cruise to the West Indies on a yacht owned by</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>James W. Dyer, Chairman of the Board of Research Homes,</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>Inc., who having made several million dollars on a previous</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>stock venture of a toy company, liked the good life. I had</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>known Jim since my days in the Alexandria Ward bishopric in</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>1955, when Jim was selling Renoware from door-to-door. There</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>were several other officers of the company with us and</span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>ostensibly the cruise was to let them get away and think</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>about the future of the company which was in very sad</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>straits. Regretably not much of real problem-solving took</span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>place. I enjoyed the cruise and the visit to such fabled</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>places as Martinique but I could tell that my back problem</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>was still with me by the time we returned. One favorable</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>factor of the trip was that I made some money on the sale of</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>some bags of silver coins which I had purchased on margin</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>during the summer of 1973 and which reached a then record</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>price in early Feb. 1974. As I recall I made a profit of</span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>about $11,000, thinking that I would sell half of my</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>holdings since I would be out of touch for a week or so and</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>in this case my timing was perfect. The day after I sold</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>five bags of coins, the market turned around and dropped a</span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>Gollar per ounce of silver.</span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> During this year I continued doing some consulting</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>work for Leadership Systems, Inc. although my activities</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>were cut back quite a bit. fTheral O'Bryant and I dida</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>workshop together with the air controllers at the Leesburg, |</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>Virginia center and I learned a lot about the stresses and</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>strains connected with that activity. I did some traveling</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>as well to places like Kansas City and Dallas. The only</span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>vacation that the family had was one at Rehobeth Beach in</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>Maryland where we and the O'Bryants rented a cabin owned by</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>the sister of Ells Knudson, a member of the McLean Ward. We</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>had a good time at the beach although quite a bit of the</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>: time was spent reading and playing party games due to rainy</span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>weather.</span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>In the Fall of 1974, the long-awaited completion came</span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>to the Washington, D.C. temple. We were all very much</span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>engaged in activities involved in the dedication which took</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>place on November 20, 1974. Marion, particularly, worked</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>with a group which was responsible for the distribution of</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>tickets and it was a very demanding calling. There was a</span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>»</span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> ~—o7=</span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> film made of the events surrounding the dedication of the</span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> temple and the work of the ticket group was included. If one</span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> , can get to see it they would see Marion in the film. We both</span>
+<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> served as guides in various parts of the temple which</span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>required us to learn certain facts and data about the temple</span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>. as well as give information on the church. Of course, it was</span>
+<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>7 mandatory that the temple be staffed and I was called as an</span>
+<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>officiator at the temple. Marion was not called because we</span>
+<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>still had a child at home. I served in this capacity until</span>
+<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>. shortly before we left for Arizona in 1975.</span>
+<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>-§30&lt; ,</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Uncle Virgil memoir analysis project</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

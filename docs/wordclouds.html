@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Word Clouds – Uncle Virgil Bot</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-f10e0ff7b47c76990a11197da8be0964.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Uncle Virgil Bot</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./chapters.html"> 
+<span class="menu-text">Chapters</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./sentiment.html"> 
+<span class="menu-text">Sentiment</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./emotions.html"> 
+<span class="menu-text">Emotions</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./wordclouds.html" aria-current="page"> 
+<span class="menu-text">Word Clouds</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./timeline.html"> 
+<span class="menu-text">Timeline</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./corpus_review.html"> 
+<span class="menu-text">Corpus QA</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./scans.html"> 
+<span class="menu-text">Scanned PDFs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./search.html"> 
+<span class="menu-text">Search</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./chatbot.html"> 
+<span class="menu-text">Chatbot</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./next_steps.html"> 
+<span class="menu-text">Next Steps</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./aws_pipeline.html"> 
+<span class="menu-text">AWS Pipeline</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#chapter-1-earliest-memories" id="toc-chapter-1-earliest-memories" class="nav-link active" data-scroll-target="#chapter-1-earliest-memories">Chapter 1: Earliest Memories</a></li>
+  <li><a href="#chapter-2-the-teenage-period" id="toc-chapter-2-the-teenage-period" class="nav-link" data-scroll-target="#chapter-2-the-teenage-period">Chapter 2: The Teenage Period</a></li>
+  <li><a href="#chapter-3-world-war-two" id="toc-chapter-3-world-war-two" class="nav-link" data-scroll-target="#chapter-3-world-war-two">Chapter 3: World War Two</a></li>
+  <li><a href="#chapter-4-my-college-years-byu-and-colombia" id="toc-chapter-4-my-college-years-byu-and-colombia" class="nav-link" data-scroll-target="#chapter-4-my-college-years-byu-and-colombia">Chapter 4: My College Years BYU and Colombia</a></li>
+  <li><a href="#chapter-5-the-cia" id="toc-chapter-5-the-cia" class="nav-link" data-scroll-target="#chapter-5-the-cia">Chapter 5: The CIA</a></li>
+  <li><a href="#chapter-6-montevideo-uruguay" id="toc-chapter-6-montevideo-uruguay" class="nav-link" data-scroll-target="#chapter-6-montevideo-uruguay">Chapter 6: Montevideo Uruguay</a></li>
+  <li><a href="#chapter-7-headquarters-duty" id="toc-chapter-7-headquarters-duty" class="nav-link" data-scroll-target="#chapter-7-headquarters-duty">Chapter 7: Headquarters Duty</a></li>
+  <li><a href="#chapter-8-rio-de-janeiro" id="toc-chapter-8-rio-de-janeiro" class="nav-link" data-scroll-target="#chapter-8-rio-de-janeiro">Chapter 8: Rio De Janeiro</a></li>
+  <li><a href="#chapter-9-the-mclean-va.-years" id="toc-chapter-9-the-mclean-va.-years" class="nav-link" data-scroll-target="#chapter-9-the-mclean-va.-years">Chapter 9: The McLean Va. Years</a></li>
+  <li><a href="#chapter-10-making-a-career-change" id="toc-chapter-10-making-a-career-change" class="nav-link" data-scroll-target="#chapter-10-making-a-career-change">Chapter 10: Making a Career Change</a></li>
+  <li><a href="#chapter-11-post-rio-to-retirement" id="toc-chapter-11-post-rio-to-retirement" class="nav-link" data-scroll-target="#chapter-11-post-rio-to-retirement">Chapter 11: Post Rio to Retirement</a></li>
+  <li><a href="#chapter-12-full-text" id="toc-chapter-12-full-text" class="nav-link" data-scroll-target="#chapter-12-full-text">Chapter 12: Full Text</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Word Clouds</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Word clouds are a fast visual way to see repeated vocabulary by chapter. They are not deep analysis by themselves, but they are useful for exploring tone, setting, names, institutions, and recurring themes.</p>
+<p>The word size is based on frequency within each chapter after removing common stop words.</p>
+<section id="chapter-1-earliest-memories" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-1-earliest-memories">Chapter 1: Earliest Memories</h2>
+<div class="wordcloud-box">
+<p><span class="wordcloud-word" style="font-size:3.4rem" title="mother: 18">mother</span> <span class="wordcloud-word" style="font-size:2.71rem" title="family: 14">family</span> <span class="wordcloud-word" style="font-size:2.71rem" title="idaho: 14">idaho</span> <span class="wordcloud-word" style="font-size:2.71rem" title="recall: 14">recall</span> <span class="wordcloud-word" style="font-size:2.71rem" title="school: 14">school</span> <span class="wordcloud-word" style="font-size:2.71rem" title="time: 14">time</span> <span class="wordcloud-word" style="font-size:2.53rem" title="house: 13">house</span> <span class="wordcloud-word" style="font-size:2.53rem" title="richard: 13">richard</span> <span class="wordcloud-word" style="font-size:2.19rem" title="arizona: 11">arizona</span> <span class="wordcloud-word" style="font-size:2.19rem" title="falls: 11">falls</span> <span class="wordcloud-word" style="font-size:2.01rem" title="lived: 10">lived</span> <span class="wordcloud-word" style="font-size:1.67rem" title="carmen: 8">carmen</span> <span class="wordcloud-word" style="font-size:1.67rem" title="mesa: 8">mesa</span> <span class="wordcloud-word" style="font-size:1.67rem" title="period: 8">period</span> <span class="wordcloud-word" style="font-size:1.67rem" title="temple: 8">temple</span> <span class="wordcloud-word" style="font-size:1.67rem" title="uncle: 8">uncle</span> <span class="wordcloud-word" style="font-size:1.49rem" title="brother: 7">brother</span> <span class="wordcloud-word" style="font-size:1.49rem" title="depression: 7">depression</span> <span class="wordcloud-word" style="font-size:1.49rem" title="remember: 7">remember</span> <span class="wordcloud-word" style="font-size:1.32rem" title="apparently: 6">apparently</span> <span class="wordcloud-word" style="font-size:1.32rem" title="church: 6">church</span> <span class="wordcloud-word" style="font-size:1.32rem" title="emerson: 6">emerson</span> <span class="wordcloud-word" style="font-size:1.32rem" title="father: 6">father</span> <span class="wordcloud-word" style="font-size:1.32rem" title="occasion: 6">occasion</span> <span class="wordcloud-word" style="font-size:1.32rem" title="stayed: 6">stayed</span> <span class="wordcloud-word" style="font-size:1.15rem" title="aunt: 5">aunt</span> <span class="wordcloud-word" style="font-size:1.15rem" title="children: 5">children</span> <span class="wordcloud-word" style="font-size:1.15rem" title="ila: 5">ila</span> <span class="wordcloud-word" style="font-size:1.15rem" title="martin: 5">martin</span> <span class="wordcloud-word" style="font-size:1.15rem" title="rose: 5">rose</span> <span class="wordcloud-word" style="font-size:1.15rem" title="salmon: 5">salmon</span> <span class="wordcloud-word" style="font-size:1.15rem" title="utah: 5">utah</span> <span class="wordcloud-word" style="font-size:0.97rem" title="army: 4">army</span> <span class="wordcloud-word" style="font-size:0.97rem" title="car: 4">car</span> <span class="wordcloud-word" style="font-size:0.97rem" title="coming: 4">coming</span> <span class="wordcloud-word" style="font-size:0.97rem" title="day: 4">day</span> <span class="wordcloud-word" style="font-size:0.97rem" title="harris: 4">harris</span> <span class="wordcloud-word" style="font-size:0.97rem" title="life: 4">life</span> <span class="wordcloud-word" style="font-size:0.97rem" title="poor: 4">poor</span> <span class="wordcloud-word" style="font-size:0.97rem" title="roosevelt: 4">roosevelt</span> <span class="wordcloud-word" style="font-size:0.97rem" title="sarah: 4">sarah</span> <span class="wordcloud-word" style="font-size:0.97rem" title="sol: 4">sol</span> <span class="wordcloud-word" style="font-size:0.97rem" title="suffered: 4">suffered</span> <span class="wordcloud-word" style="font-size:0.8rem" title="black: 3">black</span> <span class="wordcloud-word" style="font-size:0.8rem" title="child: 3">child</span> <span class="wordcloud-word" style="font-size:0.8rem" title="coal: 3">coal</span> <span class="wordcloud-word" style="font-size:0.8rem" title="cold: 3">cold</span> <span class="wordcloud-word" style="font-size:0.8rem" title="cotton: 3">cotton</span> <span class="wordcloud-word" style="font-size:0.8rem" title="couple: 3">couple</span> <span class="wordcloud-word" style="font-size:0.8rem" title="decided: 3">decided</span> <span class="wordcloud-word" style="font-size:0.8rem" title="died: 3">died</span> <span class="wordcloud-word" style="font-size:0.8rem" title="elected: 3">elected</span> <span class="wordcloud-word" style="font-size:0.8rem" title="food: 3">food</span> <span class="wordcloud-word" style="font-size:0.8rem" title="garden: 3">garden</span> <span class="wordcloud-word" style="font-size:0.8rem" title="grew: 3">grew</span> <span class="wordcloud-word" style="font-size:0.8rem" title="heard: 3">heard</span> <span class="wordcloud-word" style="font-size:0.8rem" title="home: 3">home</span> <span class="wordcloud-word" style="font-size:0.8rem" title="hoover: 3">hoover</span> <span class="wordcloud-word" style="font-size:0.8rem" title="ice: 3">ice</span> <span class="wordcloud-word" style="font-size:0.8rem" title="imagine: 3">imagine</span> <span class="wordcloud-word" style="font-size:0.8rem" title="joined: 3">joined</span> <span class="wordcloud-word" style="font-size:0.8rem" title="kids: 3">kids</span> <span class="wordcloud-word" style="font-size:0.8rem" title="located: 3">located</span> <span class="wordcloud-word" style="font-size:0.8rem" title="loverna: 3">loverna</span> <span class="wordcloud-word" style="font-size:0.8rem" title="married: 3">married</span> <span class="wordcloud-word" style="font-size:0.8rem" title="mother's: 3">mother’s</span> <span class="wordcloud-word" style="font-size:0.8rem" title="move: 3">move</span> <span class="wordcloud-word" style="font-size:0.8rem" title="moved: 3">moved</span> <span class="wordcloud-word" style="font-size:0.8rem" title="owned: 3">owned</span> <span class="wordcloud-word" style="font-size:0.8rem" title="photograph: 3">photograph</span> <span class="wordcloud-word" style="font-size:0.8rem" title="return: 3">return</span> <span class="wordcloud-word" style="font-size:0.8rem" title="river: 3">river</span> <span class="wordcloud-word" style="font-size:0.8rem" title="sand: 3">sand</span> <span class="wordcloud-word" style="font-size:0.8rem" title="shortly: 3">shortly</span> <span class="wordcloud-word" style="font-size:0.8rem" title="sister: 3">sister</span></p>
+</div>
+</section>
+<section id="chapter-2-the-teenage-period" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-2-the-teenage-period">Chapter 2: The Teenage Period</h2>
+<div class="wordcloud-box">
+<p><span class="wordcloud-word" style="font-size:3.4rem" title="school: 26">school</span> <span class="wordcloud-word" style="font-size:2.27rem" title="time: 16">time</span> <span class="wordcloud-word" style="font-size:1.82rem" title="idaho: 12">idaho</span> <span class="wordcloud-word" style="font-size:1.7rem" title="lake: 11">lake</span> <span class="wordcloud-word" style="font-size:1.7rem" title="office: 11">office</span> <span class="wordcloud-word" style="font-size:1.7rem" title="salt: 11">salt</span> <span class="wordcloud-word" style="font-size:1.48rem" title="falls: 9">falls</span> <span class="wordcloud-word" style="font-size:1.48rem" title="jack: 9">jack</span> <span class="wordcloud-word" style="font-size:1.48rem" title="war: 9">war</span> <span class="wordcloud-word" style="font-size:1.37rem" title="joyce: 8">joyce</span> <span class="wordcloud-word" style="font-size:1.37rem" title="pretty: 8">pretty</span> <span class="wordcloud-word" style="font-size:1.37rem" title="ward: 8">ward</span> <span class="wordcloud-word" style="font-size:1.25rem" title="activities: 7">activities</span> <span class="wordcloud-word" style="font-size:1.25rem" title="college: 7">college</span> <span class="wordcloud-word" style="font-size:1.25rem" title="job: 7">job</span> <span class="wordcloud-word" style="font-size:1.25rem" title="lot: 7">lot</span> <span class="wordcloud-word" style="font-size:1.25rem" title="married: 7">married</span> <span class="wordcloud-word" style="font-size:1.14rem" title="house: 6">house</span> <span class="wordcloud-word" style="font-size:1.14rem" title="loverna: 6">loverna</span> <span class="wordcloud-word" style="font-size:1.03rem" title="city: 5">city</span> <span class="wordcloud-word" style="font-size:1.03rem" title="days: 5">days</span> <span class="wordcloud-word" style="font-size:1.03rem" title="friends: 5">friends</span> <span class="wordcloud-word" style="font-size:1.03rem" title="meat: 5">meat</span> <span class="wordcloud-word" style="font-size:1.03rem" title="pay: 5">pay</span> <span class="wordcloud-word" style="font-size:1.03rem" title="received: 5">received</span> <span class="wordcloud-word" style="font-size:1.03rem" title="reuel: 5">reuel</span> <span class="wordcloud-word" style="font-size:1.03rem" title="telephone: 5">telephone</span> <span class="wordcloud-word" style="font-size:1.03rem" title="training: 5">training</span> <span class="wordcloud-word" style="font-size:0.91rem" title="boss: 4">boss</span> <span class="wordcloud-word" style="font-size:0.91rem" title="california: 4">california</span> <span class="wordcloud-word" style="font-size:0.91rem" title="called: 4">called</span> <span class="wordcloud-word" style="font-size:0.91rem" title="church: 4">church</span> <span class="wordcloud-word" style="font-size:0.91rem" title="cleaning: 4">cleaning</span> <span class="wordcloud-word" style="font-size:0.91rem" title="day: 4">day</span> <span class="wordcloud-word" style="font-size:0.91rem" title="divorce: 4">divorce</span> <span class="wordcloud-word" style="font-size:0.91rem" title="eventually: 4">eventually</span> <span class="wordcloud-word" style="font-size:0.91rem" title="family: 4">family</span> <span class="wordcloud-word" style="font-size:0.91rem" title="involved: 4">involved</span> <span class="wordcloud-word" style="font-size:0.91rem" title="japan: 4">japan</span> <span class="wordcloud-word" style="font-size:0.91rem" title="marriage: 4">marriage</span> <span class="wordcloud-word" style="font-size:0.91rem" title="mother: 4">mother</span> <span class="wordcloud-word" style="font-size:0.91rem" title="opportunity: 4">opportunity</span> <span class="wordcloud-word" style="font-size:0.91rem" title="pomona: 4">pomona</span> <span class="wordcloud-word" style="font-size:0.91rem" title="recall: 4">recall</span> <span class="wordcloud-word" style="font-size:0.91rem" title="returned: 4">returned</span> <span class="wordcloud-word" style="font-size:0.91rem" title="student: 4">student</span> <span class="wordcloud-word" style="font-size:0.91rem" title="summer: 4">summer</span> <span class="wordcloud-word" style="font-size:0.91rem" title="union: 4">union</span> <span class="wordcloud-word" style="font-size:0.91rem" title="week: 4">week</span> <span class="wordcloud-word" style="font-size:0.8rem" title="activity: 3">activity</span> <span class="wordcloud-word" style="font-size:0.8rem" title="afford: 3">afford</span> <span class="wordcloud-word" style="font-size:0.8rem" title="air: 3">air</span> <span class="wordcloud-word" style="font-size:0.8rem" title="attended: 3">attended</span> <span class="wordcloud-word" style="font-size:0.8rem" title="britain: 3">britain</span> <span class="wordcloud-word" style="font-size:0.8rem" title="charge: 3">charge</span> <span class="wordcloud-word" style="font-size:0.8rem" title="coal: 3">coal</span> <span class="wordcloud-word" style="font-size:0.8rem" title="coops: 3">coops</span> <span class="wordcloud-word" style="font-size:0.8rem" title="dad: 3">dad</span> <span class="wordcloud-word" style="font-size:0.8rem" title="debate: 3">debate</span> <span class="wordcloud-word" style="font-size:0.8rem" title="dec: 3">dec</span> <span class="wordcloud-word" style="font-size:0.8rem" title="electric: 3">electric</span> <span class="wordcloud-word" style="font-size:0.8rem" title="employment: 3">employment</span> <span class="wordcloud-word" style="font-size:0.8rem" title="equipment: 3">equipment</span> <span class="wordcloud-word" style="font-size:0.8rem" title="farm: 3">farm</span> <span class="wordcloud-word" style="font-size:0.8rem" title="food: 3">food</span> <span class="wordcloud-word" style="font-size:0.8rem" title="germany: 3">germany</span> <span class="wordcloud-word" style="font-size:0.8rem" title="graduation: 3">graduation</span> <span class="wordcloud-word" style="font-size:0.8rem" title="harris: 3">harris</span> <span class="wordcloud-word" style="font-size:0.8rem" title="hotel: 3">hotel</span> <span class="wordcloud-word" style="font-size:0.8rem" title="ina: 3">ina</span> <span class="wordcloud-word" style="font-size:0.8rem" title="indaba: 3">indaba</span> <span class="wordcloud-word" style="font-size:0.8rem" title="installer: 3">installer</span> <span class="wordcloud-word" style="font-size:0.8rem" title="island: 3">island</span> <span class="wordcloud-word" style="font-size:0.8rem" title="junior: 3">junior</span> <span class="wordcloud-word" style="font-size:0.8rem" title="kelley: 3">kelley</span></p>
+</div>
+</section>
+<section id="chapter-3-world-war-two" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-3-world-war-two">Chapter 3: World War Two</h2>
+<div class="wordcloud-box">
+<p><span class="wordcloud-word" style="font-size:3.4rem" title="ship: 21">ship</span> <span class="wordcloud-word" style="font-size:2.68rem" title="japanese: 16">japanese</span> <span class="wordcloud-word" style="font-size:1.96rem" title="war: 11">war</span> <span class="wordcloud-word" style="font-size:1.96rem" title="wasp: 11">wasp</span> <span class="wordcloud-word" style="font-size:1.81rem" title="carrier: 10">carrier</span> <span class="wordcloud-word" style="font-size:1.67rem" title="training: 9">training</span> <span class="wordcloud-word" style="font-size:1.52rem" title="aircraft: 8">aircraft</span> <span class="wordcloud-word" style="font-size:1.38rem" title="navy: 7">navy</span> <span class="wordcloud-word" style="font-size:1.23rem" title="force: 6">force</span> <span class="wordcloud-word" style="font-size:1.23rem" title="time: 6">time</span> <span class="wordcloud-word" style="font-size:1.09rem" title="aboard: 5">aboard</span> <span class="wordcloud-word" style="font-size:1.09rem" title="boston: 5">boston</span> <span class="wordcloud-word" style="font-size:1.09rem" title="china: 5">china</span> <span class="wordcloud-word" style="font-size:1.09rem" title="damage: 5">damage</span> <span class="wordcloud-word" style="font-size:1.09rem" title="deck: 5">deck</span> <span class="wordcloud-word" style="font-size:1.09rem" title="electronics: 5">electronics</span> <span class="wordcloud-word" style="font-size:1.09rem" title="hit: 5">hit</span> <span class="wordcloud-word" style="font-size:1.09rem" title="home: 5">home</span> <span class="wordcloud-word" style="font-size:1.09rem" title="planes: 5">planes</span> <span class="wordcloud-word" style="font-size:1.09rem" title="task: 5">task</span> <span class="wordcloud-word" style="font-size:0.94rem" title="air: 4">air</span> <span class="wordcloud-word" style="font-size:0.94rem" title="assigned: 4">assigned</span> <span class="wordcloud-word" style="font-size:0.94rem" title="atomic: 4">atomic</span> <span class="wordcloud-word" style="font-size:0.94rem" title="bremerton: 4">bremerton</span> <span class="wordcloud-word" style="font-size:0.94rem" title="cruise: 4">cruise</span> <span class="wordcloud-word" style="font-size:0.94rem" title="duty: 4">duty</span> <span class="wordcloud-word" style="font-size:0.94rem" title="family: 4">family</span> <span class="wordcloud-word" style="font-size:0.94rem" title="history: 4">history</span> <span class="wordcloud-word" style="font-size:0.94rem" title="island: 4">island</span> <span class="wordcloud-word" style="font-size:0.94rem" title="pacific: 4">pacific</span> <span class="wordcloud-word" style="font-size:0.94rem" title="president: 4">president</span> <span class="wordcloud-word" style="font-size:0.94rem" title="repairs: 4">repairs</span> <span class="wordcloud-word" style="font-size:0.94rem" title="roosevelt: 4">roosevelt</span> <span class="wordcloud-word" style="font-size:0.94rem" title="sea: 4">sea</span> <span class="wordcloud-word" style="font-size:0.94rem" title="ships: 4">ships</span> <span class="wordcloud-word" style="font-size:0.94rem" title="train: 4">train</span> <span class="wordcloud-word" style="font-size:0.94rem" title="world: 4">world</span> <span class="wordcloud-word" style="font-size:0.8rem" title="battle: 3">battle</span> <span class="wordcloud-word" style="font-size:0.8rem" title="bomb: 3">bomb</span> <span class="wordcloud-word" style="font-size:0.8rem" title="called: 3">called</span> <span class="wordcloud-word" style="font-size:0.8rem" title="church: 3">church</span> <span class="wordcloud-word" style="font-size:0.8rem" title="college: 3">college</span> <span class="wordcloud-word" style="font-size:0.8rem" title="couple: 3">couple</span> <span class="wordcloud-word" style="font-size:0.8rem" title="damaged: 3">damaged</span> <span class="wordcloud-word" style="font-size:0.8rem" title="decided: 3">decided</span> <span class="wordcloud-word" style="font-size:0.8rem" title="discharged: 3">discharged</span> <span class="wordcloud-word" style="font-size:0.8rem" title="extensive: 3">extensive</span> <span class="wordcloud-word" style="font-size:0.8rem" title="fortunately: 3">fortunately</span> <span class="wordcloud-word" style="font-size:0.8rem" title="harbor: 3">harbor</span> <span class="wordcloud-word" style="font-size:0.8rem" title="idaho: 3">idaho</span> <span class="wordcloud-word" style="font-size:0.8rem" title="indo: 3">indo</span> <span class="wordcloud-word" style="font-size:0.8rem" title="islands: 3">islands</span> <span class="wordcloud-word" style="font-size:0.8rem" title="john: 3">john</span> <span class="wordcloud-word" style="font-size:0.8rem" title="land: 3">land</span> <span class="wordcloud-word" style="font-size:0.8rem" title="library: 3">library</span> <span class="wordcloud-word" style="font-size:0.8rem" title="line: 3">line</span> <span class="wordcloud-word" style="font-size:0.8rem" title="mainland: 3">mainland</span> <span class="wordcloud-word" style="font-size:0.8rem" title="march: 3">march</span> <span class="wordcloud-word" style="font-size:0.8rem" title="married: 3">married</span> <span class="wordcloud-word" style="font-size:0.8rem" title="pearl: 3">pearl</span> <span class="wordcloud-word" style="font-size:0.8rem" title="philippine: 3">philippine</span> <span class="wordcloud-word" style="font-size:0.8rem" title="political: 3">political</span> <span class="wordcloud-word" style="font-size:0.8rem" title="pretty: 3">pretty</span> <span class="wordcloud-word" style="font-size:0.8rem" title="providence: 3">providence</span> <span class="wordcloud-word" style="font-size:0.8rem" title="quonset: 3">quonset</span> <span class="wordcloud-word" style="font-size:0.8rem" title="radar: 3">radar</span> <span class="wordcloud-word" style="font-size:0.8rem" title="recall: 3">recall</span> <span class="wordcloud-word" style="font-size:0.8rem" title="received: 3">received</span> <span class="wordcloud-word" style="font-size:0.8rem" title="returned: 3">returned</span> <span class="wordcloud-word" style="font-size:0.8rem" title="school: 3">school</span> <span class="wordcloud-word" style="font-size:0.8rem" title="servicemen: 3">servicemen</span> <span class="wordcloud-word" style="font-size:0.8rem" title="services: 3">services</span> <span class="wordcloud-word" style="font-size:0.8rem" title="shakedown: 3">shakedown</span> <span class="wordcloud-word" style="font-size:0.8rem" title="south: 3">south</span> <span class="wordcloud-word" style="font-size:0.8rem" title="utah: 3">utah</span></p>
+</div>
+</section>
+<section id="chapter-4-my-college-years-byu-and-colombia" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-4-my-college-years-byu-and-colombia">Chapter 4: My College Years BYU and Colombia</h2>
+<div class="wordcloud-box">
+<p><span class="wordcloud-word" style="font-size:3.4rem" title="marion: 20">marion</span> <span class="wordcloud-word" style="font-size:2.94rem" title="time: 17">time</span> <span class="wordcloud-word" style="font-size:2.79rem" title="international: 16">international</span> <span class="wordcloud-word" style="font-size:2.79rem" title="president: 16">president</span> <span class="wordcloud-word" style="font-size:2.79rem" title="york: 16">york</span> <span class="wordcloud-word" style="font-size:2.48rem" title="university: 14">university</span> <span class="wordcloud-word" style="font-size:2.18rem" title="falls: 12">falls</span> <span class="wordcloud-word" style="font-size:2.18rem" title="idaho: 12">idaho</span> <span class="wordcloud-word" style="font-size:2.18rem" title="school: 12">school</span> <span class="wordcloud-word" style="font-size:1.87rem" title="affairs: 10">affairs</span> <span class="wordcloud-word" style="font-size:1.87rem" title="city: 10">city</span> <span class="wordcloud-word" style="font-size:1.87rem" title="shanks: 10">shanks</span> <span class="wordcloud-word" style="font-size:1.72rem" title="columbia: 9">columbia</span> <span class="wordcloud-word" style="font-size:1.56rem" title="byu: 8">byu</span> <span class="wordcloud-word" style="font-size:1.56rem" title="lot: 8">lot</span> <span class="wordcloud-word" style="font-size:1.56rem" title="relations: 8">relations</span> <span class="wordcloud-word" style="font-size:1.41rem" title="friends: 7">friends</span> <span class="wordcloud-word" style="font-size:1.41rem" title="manhattan: 7">manhattan</span> <span class="wordcloud-word" style="font-size:1.26rem" title="apartment: 6">apartment</span> <span class="wordcloud-word" style="font-size:1.26rem" title="job: 6">job</span> <span class="wordcloud-word" style="font-size:1.26rem" title="lived: 6">lived</span> <span class="wordcloud-word" style="font-size:1.26rem" title="mother: 6">mother</span> <span class="wordcloud-word" style="font-size:1.26rem" title="opportunity: 6">opportunity</span> <span class="wordcloud-word" style="font-size:1.26rem" title="received: 6">received</span> <span class="wordcloud-word" style="font-size:1.26rem" title="russian: 6">russian</span> <span class="wordcloud-word" style="font-size:1.26rem" title="started: 6">started</span> <span class="wordcloud-word" style="font-size:1.26rem" title="students: 6">students</span> <span class="wordcloud-word" style="font-size:1.26rem" title="summer: 6">summer</span> <span class="wordcloud-word" style="font-size:1.26rem" title="utah: 6">utah</span> <span class="wordcloud-word" style="font-size:1.26rem" title="village: 6">village</span> <span class="wordcloud-word" style="font-size:1.26rem" title="ward: 6">ward</span> <span class="wordcloud-word" style="font-size:1.11rem" title="club: 5">club</span> <span class="wordcloud-word" style="font-size:1.11rem" title="clubs: 5">clubs</span> <span class="wordcloud-word" style="font-size:1.11rem" title="conference: 5">conference</span> <span class="wordcloud-word" style="font-size:1.11rem" title="found: 5">found</span> <span class="wordcloud-word" style="font-size:1.11rem" title="graduation: 5">graduation</span> <span class="wordcloud-word" style="font-size:1.11rem" title="home: 5">home</span> <span class="wordcloud-word" style="font-size:1.11rem" title="ila: 5">ila</span> <span class="wordcloud-word" style="font-size:1.11rem" title="journal: 5">journal</span> <span class="wordcloud-word" style="font-size:1.11rem" title="nations: 5">nations</span> <span class="wordcloud-word" style="font-size:1.11rem" title="provo: 5">provo</span> <span class="wordcloud-word" style="font-size:1.11rem" title="stayed: 5">stayed</span> <span class="wordcloud-word" style="font-size:1.11rem" title="vice: 5">vice</span> <span class="wordcloud-word" style="font-size:1.11rem" title="visit: 5">visit</span> <span class="wordcloud-word" style="font-size:1.11rem" title="war: 5">war</span> <span class="wordcloud-word" style="font-size:0.95rem" title="attended: 4">attended</span> <span class="wordcloud-word" style="font-size:0.95rem" title="building: 4">building</span> <span class="wordcloud-word" style="font-size:0.95rem" title="car: 4">car</span> <span class="wordcloud-word" style="font-size:0.95rem" title="class: 4">class</span> <span class="wordcloud-word" style="font-size:0.95rem" title="clearance: 4">clearance</span> <span class="wordcloud-word" style="font-size:0.95rem" title="college: 4">college</span> <span class="wordcloud-word" style="font-size:0.95rem" title="day: 4">day</span> <span class="wordcloud-word" style="font-size:0.95rem" title="eventually: 4">eventually</span> <span class="wordcloud-word" style="font-size:0.95rem" title="family: 4">family</span> <span class="wordcloud-word" style="font-size:0.95rem" title="field: 4">field</span> <span class="wordcloud-word" style="font-size:0.95rem" title="hospital: 4">hospital</span> <span class="wordcloud-word" style="font-size:0.95rem" title="immediately: 4">immediately</span> <span class="wordcloud-word" style="font-size:0.95rem" title="lake: 4">lake</span> <span class="wordcloud-word" style="font-size:0.95rem" title="marion's: 4">marion’s</span> <span class="wordcloud-word" style="font-size:0.95rem" title="months: 4">months</span> <span class="wordcloud-word" style="font-size:0.95rem" title="north: 4">north</span> <span class="wordcloud-word" style="font-size:0.95rem" title="people: 4">people</span> <span class="wordcloud-word" style="font-size:0.95rem" title="political: 4">political</span> <span class="wordcloud-word" style="font-size:0.95rem" title="required: 4">required</span> <span class="wordcloud-word" style="font-size:0.95rem" title="salt: 4">salt</span> <span class="wordcloud-word" style="font-size:0.95rem" title="situation: 4">situation</span> <span class="wordcloud-word" style="font-size:0.95rem" title="smith: 4">smith</span> <span class="wordcloud-word" style="font-size:0.95rem" title="stay: 4">stay</span> <span class="wordcloud-word" style="font-size:0.95rem" title="truman: 4">truman</span> <span class="wordcloud-word" style="font-size:0.95rem" title="united: 4">united</span> <span class="wordcloud-word" style="font-size:0.95rem" title="west: 4">west</span> <span class="wordcloud-word" style="font-size:0.8rem" title="activities: 3">activities</span> <span class="wordcloud-word" style="font-size:0.8rem" title="advertising: 3">advertising</span> <span class="wordcloud-word" style="font-size:0.8rem" title="awhile: 3">awhile</span> <span class="wordcloud-word" style="font-size:0.8rem" title="boyd: 3">boyd</span></p>
+</div>
+</section>
+<section id="chapter-5-the-cia" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-5-the-cia">Chapter 5: The CIA</h2>
+<div class="wordcloud-box">
+<p><span class="wordcloud-word" style="font-size:3.4rem" title="marion: 21">marion</span> <span class="wordcloud-word" style="font-size:3.08rem" title="soviet: 19">soviet</span> <span class="wordcloud-word" style="font-size:2.59rem" title="time: 16">time</span> <span class="wordcloud-word" style="font-size:2.26rem" title="germany: 14">germany</span> <span class="wordcloud-word" style="font-size:2.26rem" title="munich: 14">munich</span> <span class="wordcloud-word" style="font-size:2.1rem" title="trip: 13">trip</span> <span class="wordcloud-word" style="font-size:2.1rem" title="union: 13">union</span> <span class="wordcloud-word" style="font-size:2.1rem" title="washington: 13">washington</span> <span class="wordcloud-word" style="font-size:1.94rem" title="days: 12">days</span> <span class="wordcloud-word" style="font-size:1.94rem" title="family: 12">family</span> <span class="wordcloud-word" style="font-size:1.94rem" title="home: 12">home</span> <span class="wordcloud-word" style="font-size:1.78rem" title="visit: 11">visit</span> <span class="wordcloud-word" style="font-size:1.61rem" title="people: 10">people</span> <span class="wordcloud-word" style="font-size:1.61rem" title="war: 10">war</span> <span class="wordcloud-word" style="font-size:1.45rem" title="air: 9">air</span> <span class="wordcloud-word" style="font-size:1.45rem" title="famous: 9">famous</span> <span class="wordcloud-word" style="font-size:1.45rem" title="gail: 9">gail</span> <span class="wordcloud-word" style="font-size:1.45rem" title="intelligence: 9">intelligence</span> <span class="wordcloud-word" style="font-size:1.45rem" title="operational: 9">operational</span> <span class="wordcloud-word" style="font-size:1.45rem" title="world: 9">world</span> <span class="wordcloud-word" style="font-size:1.29rem" title="apartment: 8">apartment</span> <span class="wordcloud-word" style="font-size:1.29rem" title="car: 8">car</span> <span class="wordcloud-word" style="font-size:1.29rem" title="clandestine: 8">clandestine</span> <span class="wordcloud-word" style="font-size:1.29rem" title="house: 8">house</span> <span class="wordcloud-word" style="font-size:1.29rem" title="ordained: 8">ordained</span> <span class="wordcloud-word" style="font-size:1.29rem" title="short: 8">short</span> <span class="wordcloud-word" style="font-size:1.12rem" title="couple: 7">couple</span> <span class="wordcloud-word" style="font-size:1.12rem" title="europe: 7">europe</span> <span class="wordcloud-word" style="font-size:1.12rem" title="hospital: 7">hospital</span> <span class="wordcloud-word" style="font-size:1.12rem" title="lot: 7">lot</span> <span class="wordcloud-word" style="font-size:1.12rem" title="operations: 7">operations</span> <span class="wordcloud-word" style="font-size:1.12rem" title="service: 7">service</span> <span class="wordcloud-word" style="font-size:1.12rem" title="soviets: 7">soviets</span> <span class="wordcloud-word" style="font-size:0.96rem" title="arrived: 6">arrived</span> <span class="wordcloud-word" style="font-size:0.96rem" title="base: 6">base</span> <span class="wordcloud-word" style="font-size:0.96rem" title="called: 6">called</span> <span class="wordcloud-word" style="font-size:0.96rem" title="chief: 6">chief</span> <span class="wordcloud-word" style="font-size:0.96rem" title="children: 6">children</span> <span class="wordcloud-word" style="font-size:0.96rem" title="christmas: 6">christmas</span> <span class="wordcloud-word" style="font-size:0.96rem" title="church: 6">church</span> <span class="wordcloud-word" style="font-size:0.96rem" title="city: 6">city</span> <span class="wordcloud-word" style="font-size:0.96rem" title="cold: 6">cold</span> <span class="wordcloud-word" style="font-size:0.96rem" title="drove: 6">drove</span> <span class="wordcloud-word" style="font-size:0.96rem" title="field: 6">field</span> <span class="wordcloud-word" style="font-size:0.96rem" title="found: 6">found</span> <span class="wordcloud-word" style="font-size:0.96rem" title="overseas: 6">overseas</span> <span class="wordcloud-word" style="font-size:0.96rem" title="project: 6">project</span> <span class="wordcloud-word" style="font-size:0.96rem" title="return: 6">return</span> <span class="wordcloud-word" style="font-size:0.96rem" title="train: 6">train</span> <span class="wordcloud-word" style="font-size:0.96rem" title="winter: 6">winter</span> <span class="wordcloud-word" style="font-size:0.8rem" title="agents: 5">agents</span> <span class="wordcloud-word" style="font-size:0.8rem" title="alps: 5">alps</span> <span class="wordcloud-word" style="font-size:0.8rem" title="apostol: 5">apostol</span> <span class="wordcloud-word" style="font-size:0.8rem" title="army: 5">army</span> <span class="wordcloud-word" style="font-size:0.8rem" title="august: 5">august</span> <span class="wordcloud-word" style="font-size:0.8rem" title="boats: 5">boats</span> <span class="wordcloud-word" style="font-size:0.8rem" title="born: 5">born</span> <span class="wordcloud-word" style="font-size:0.8rem" title="bought: 5">bought</span> <span class="wordcloud-word" style="font-size:0.8rem" title="branch: 5">branch</span> <span class="wordcloud-word" style="font-size:0.8rem" title="close: 5">close</span> <span class="wordcloud-word" style="font-size:0.8rem" title="day: 5">day</span> <span class="wordcloud-word" style="font-size:0.8rem" title="german: 5">german</span> <span class="wordcloud-word" style="font-size:0.8rem" title="germans: 5">germans</span> <span class="wordcloud-word" style="font-size:0.8rem" title="headed: 5">headed</span> <span class="wordcloud-word" style="font-size:0.8rem" title="headquarters: 5">headquarters</span> <span class="wordcloud-word" style="font-size:0.8rem" title="june: 5">june</span> <span class="wordcloud-word" style="font-size:0.8rem" title="managed: 5">managed</span> <span class="wordcloud-word" style="font-size:0.8rem" title="military: 5">military</span> <span class="wordcloud-word" style="font-size:0.8rem" title="national: 5">national</span> <span class="wordcloud-word" style="font-size:0.8rem" title="naval: 5">naval</span> <span class="wordcloud-word" style="font-size:0.8rem" title="office: 5">office</span> <span class="wordcloud-word" style="font-size:0.8rem" title="officer: 5">officer</span> <span class="wordcloud-word" style="font-size:0.8rem" title="orin: 5">orin</span> <span class="wordcloud-word" style="font-size:0.8rem" title="pretty: 5">pretty</span> <span class="wordcloud-word" style="font-size:0.8rem" title="returned: 5">returned</span></p>
+</div>
+</section>
+<section id="chapter-6-montevideo-uruguay" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-6-montevideo-uruguay">Chapter 6: Montevideo Uruguay</h2>
+<div class="wordcloud-box">
+<p><span class="wordcloud-word" style="font-size:3.4rem" title="uruguay: 22">uruguay</span> <span class="wordcloud-word" style="font-size:2.44rem" title="soviet: 15">soviet</span> <span class="wordcloud-word" style="font-size:2.17rem" title="time: 13">time</span> <span class="wordcloud-word" style="font-size:1.89rem" title="branch: 11">branch</span> <span class="wordcloud-word" style="font-size:1.89rem" title="uruguayan: 11">uruguayan</span> <span class="wordcloud-word" style="font-size:1.62rem" title="montevideo: 9">montevideo</span> <span class="wordcloud-word" style="font-size:1.48rem" title="called: 8">called</span> <span class="wordcloud-word" style="font-size:1.48rem" title="chief: 8">chief</span> <span class="wordcloud-word" style="font-size:1.48rem" title="pretty: 8">pretty</span> <span class="wordcloud-word" style="font-size:1.48rem" title="trip: 8">trip</span> <span class="wordcloud-word" style="font-size:1.35rem" title="people: 7">people</span> <span class="wordcloud-word" style="font-size:1.35rem" title="returned: 7">returned</span> <span class="wordcloud-word" style="font-size:1.35rem" title="soviets: 7">soviets</span> <span class="wordcloud-word" style="font-size:1.35rem" title="weeks: 7">weeks</span> <span class="wordcloud-word" style="font-size:1.21rem" title="operational: 6">operational</span> <span class="wordcloud-word" style="font-size:1.21rem" title="relations: 6">relations</span> <span class="wordcloud-word" style="font-size:1.21rem" title="tour: 6">tour</span> <span class="wordcloud-word" style="font-size:1.07rem" title="activities: 5">activities</span> <span class="wordcloud-word" style="font-size:1.07rem" title="argentina: 5">argentina</span> <span class="wordcloud-word" style="font-size:1.07rem" title="bob: 5">bob</span> <span class="wordcloud-word" style="font-size:1.07rem" title="elder: 5">elder</span> <span class="wordcloud-word" style="font-size:1.07rem" title="family: 5">family</span> <span class="wordcloud-word" style="font-size:1.07rem" title="house: 5">house</span> <span class="wordcloud-word" style="font-size:1.07rem" title="kimball: 5">kimball</span> <span class="wordcloud-word" style="font-size:1.07rem" title="left: 5">left</span> <span class="wordcloud-word" style="font-size:1.07rem" title="mission: 5">mission</span> <span class="wordcloud-word" style="font-size:1.07rem" title="money: 5">money</span> <span class="wordcloud-word" style="font-size:1.07rem" title="paraguay: 5">paraguay</span> <span class="wordcloud-word" style="font-size:1.07rem" title="personnel: 5">personnel</span> <span class="wordcloud-word" style="font-size:1.07rem" title="president: 5">president</span> <span class="wordcloud-word" style="font-size:1.07rem" title="station: 5">station</span> <span class="wordcloud-word" style="font-size:1.07rem" title="wife: 5">wife</span> <span class="wordcloud-word" style="font-size:0.94rem" title="action: 4">action</span> <span class="wordcloud-word" style="font-size:0.94rem" title="activity: 4">activity</span> <span class="wordcloud-word" style="font-size:0.94rem" title="arrived: 4">arrived</span> <span class="wordcloud-word" style="font-size:0.94rem" title="athens: 4">athens</span> <span class="wordcloud-word" style="font-size:0.94rem" title="baltic: 4">baltic</span> <span class="wordcloud-word" style="font-size:0.94rem" title="bishopric: 4">bishopric</span> <span class="wordcloud-word" style="font-size:0.94rem" title="bus: 4">bus</span> <span class="wordcloud-word" style="font-size:0.94rem" title="countries: 4">countries</span> <span class="wordcloud-word" style="font-size:0.94rem" title="country: 4">country</span> <span class="wordcloud-word" style="font-size:0.94rem" title="diplomatic: 4">diplomatic</span> <span class="wordcloud-word" style="font-size:0.94rem" title="embassy: 4">embassy</span> <span class="wordcloud-word" style="font-size:0.94rem" title="home: 4">home</span> <span class="wordcloud-word" style="font-size:0.94rem" title="kids: 4">kids</span> <span class="wordcloud-word" style="font-size:0.94rem" title="late: 4">late</span> <span class="wordcloud-word" style="font-size:0.94rem" title="leave: 4">leave</span> <span class="wordcloud-word" style="font-size:0.94rem" title="leaving: 4">leaving</span> <span class="wordcloud-word" style="font-size:0.94rem" title="school: 4">school</span> <span class="wordcloud-word" style="font-size:0.94rem" title="successful: 4">successful</span> <span class="wordcloud-word" style="font-size:0.94rem" title="summer: 4">summer</span> <span class="wordcloud-word" style="font-size:0.94rem" title="transferred: 4">transferred</span> <span class="wordcloud-word" style="font-size:0.94rem" title="visit: 4">visit</span> <span class="wordcloud-word" style="font-size:0.94rem" title="war: 4">war</span> <span class="wordcloud-word" style="font-size:0.94rem" title="washington: 4">washington</span> <span class="wordcloud-word" style="font-size:0.94rem" title="wool: 4">wool</span> <span class="wordcloud-word" style="font-size:0.8rem" title="age: 3">age</span> <span class="wordcloud-word" style="font-size:0.8rem" title="album: 3">album</span> <span class="wordcloud-word" style="font-size:0.8rem" title="alexandria: 3">alexandria</span> <span class="wordcloud-word" style="font-size:0.8rem" title="american: 3">american</span> <span class="wordcloud-word" style="font-size:0.8rem" title="assigned: 3">assigned</span> <span class="wordcloud-word" style="font-size:0.8rem" title="attended: 3">attended</span> <span class="wordcloud-word" style="font-size:0.8rem" title="baptized: 3">baptized</span> <span class="wordcloud-word" style="font-size:0.8rem" title="boat: 3">boat</span> <span class="wordcloud-word" style="font-size:0.8rem" title="brazil: 3">brazil</span> <span class="wordcloud-word" style="font-size:0.8rem" title="british: 3">british</span> <span class="wordcloud-word" style="font-size:0.8rem" title="cars: 3">cars</span> <span class="wordcloud-word" style="font-size:0.8rem" title="cattle: 3">cattle</span> <span class="wordcloud-word" style="font-size:0.8rem" title="chapel: 3">chapel</span> <span class="wordcloud-word" style="font-size:0.8rem" title="church: 3">church</span> <span class="wordcloud-word" style="font-size:0.8rem" title="colonel: 3">colonel</span> <span class="wordcloud-word" style="font-size:0.8rem" title="counselor: 3">counselor</span> <span class="wordcloud-word" style="font-size:0.8rem" title="couple: 3">couple</span> <span class="wordcloud-word" style="font-size:0.8rem" title="demand: 3">demand</span> <span class="wordcloud-word" style="font-size:0.8rem" title="friends: 3">friends</span></p>
+</div>
+</section>
+<section id="chapter-7-headquarters-duty" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-7-headquarters-duty">Chapter 7: Headquarters Duty</h2>
+<div class="wordcloud-box">
+<p><span class="wordcloud-word" style="font-size:3.4rem" title="soviet: 18">soviet</span> <span class="wordcloud-word" style="font-size:3.23rem" title="time: 17">time</span> <span class="wordcloud-word" style="font-size:2.88rem" title="ward: 15">ward</span> <span class="wordcloud-word" style="font-size:2.53rem" title="chief: 13">chief</span> <span class="wordcloud-word" style="font-size:2.36rem" title="information: 12">information</span> <span class="wordcloud-word" style="font-size:2.36rem" title="intelligence: 12">intelligence</span> <span class="wordcloud-word" style="font-size:2.36rem" title="marion: 12">marion</span> <span class="wordcloud-word" style="font-size:2.01rem" title="operations: 10">operations</span> <span class="wordcloud-word" style="font-size:1.84rem" title="branch: 9">branch</span> <span class="wordcloud-word" style="font-size:1.84rem" title="children: 9">children</span> <span class="wordcloud-word" style="font-size:1.84rem" title="division: 9">division</span> <span class="wordcloud-word" style="font-size:1.84rem" title="lot: 9">lot</span> <span class="wordcloud-word" style="font-size:1.67rem" title="home: 8">home</span> <span class="wordcloud-word" style="font-size:1.67rem" title="soviets: 8">soviets</span> <span class="wordcloud-word" style="font-size:1.49rem" title="union: 7">union</span> <span class="wordcloud-word" style="font-size:1.32rem" title="car: 6">car</span> <span class="wordcloud-word" style="font-size:1.32rem" title="eventually: 6">eventually</span> <span class="wordcloud-word" style="font-size:1.32rem" title="family: 6">family</span> <span class="wordcloud-word" style="font-size:1.32rem" title="house: 6">house</span> <span class="wordcloud-word" style="font-size:1.32rem" title="involved: 6">involved</span> <span class="wordcloud-word" style="font-size:1.32rem" title="operational: 6">operational</span> <span class="wordcloud-word" style="font-size:1.32rem" title="patty: 6">patty</span> <span class="wordcloud-word" style="font-size:1.32rem" title="result: 6">result</span> <span class="wordcloud-word" style="font-size:1.32rem" title="summer: 6">summer</span> <span class="wordcloud-word" style="font-size:1.32rem" title="united: 6">united</span> <span class="wordcloud-word" style="font-size:1.15rem" title="age: 5">age</span> <span class="wordcloud-word" style="font-size:1.15rem" title="automobile: 5">automobile</span> <span class="wordcloud-word" style="font-size:1.15rem" title="falls: 5">falls</span> <span class="wordcloud-word" style="font-size:1.15rem" title="lee: 5">lee</span> <span class="wordcloud-word" style="font-size:1.15rem" title="military: 5">military</span> <span class="wordcloud-word" style="font-size:1.15rem" title="oswald: 5">oswald</span> <span class="wordcloud-word" style="font-size:1.15rem" title="penkovsky: 5">penkovsky</span> <span class="wordcloud-word" style="font-size:1.15rem" title="received: 5">received</span> <span class="wordcloud-word" style="font-size:1.15rem" title="ron: 5">ron</span> <span class="wordcloud-word" style="font-size:1.15rem" title="school: 5">school</span> <span class="wordcloud-word" style="font-size:1.15rem" title="station: 5">station</span> <span class="wordcloud-word" style="font-size:1.15rem" title="trip: 5">trip</span> <span class="wordcloud-word" style="font-size:1.15rem" title="vacation: 5">vacation</span> <span class="wordcloud-word" style="font-size:0.97rem" title="activity: 4">activity</span> <span class="wordcloud-word" style="font-size:0.97rem" title="book: 4">book</span> <span class="wordcloud-word" style="font-size:0.97rem" title="british: 4">british</span> <span class="wordcloud-word" style="font-size:0.97rem" title="cars: 4">cars</span> <span class="wordcloud-word" style="font-size:0.97rem" title="church: 4">church</span> <span class="wordcloud-word" style="font-size:0.97rem" title="fall: 4">fall</span> <span class="wordcloud-word" style="font-size:0.97rem" title="hilton: 4">hilton</span> <span class="wordcloud-word" style="font-size:0.97rem" title="left: 4">left</span> <span class="wordcloud-word" style="font-size:0.97rem" title="living: 4">living</span> <span class="wordcloud-word" style="font-size:0.97rem" title="mclean: 4">mclean</span> <span class="wordcloud-word" style="font-size:0.97rem" title="missile: 4">missile</span> <span class="wordcloud-word" style="font-size:0.97rem" title="president: 4">president</span> <span class="wordcloud-word" style="font-size:0.97rem" title="provided: 4">provided</span> <span class="wordcloud-word" style="font-size:0.97rem" title="providing: 4">providing</span> <span class="wordcloud-word" style="font-size:0.97rem" title="range: 4">range</span> <span class="wordcloud-word" style="font-size:0.97rem" title="remember: 4">remember</span> <span class="wordcloud-word" style="font-size:0.97rem" title="scheduled: 4">scheduled</span> <span class="wordcloud-word" style="font-size:0.97rem" title="sister: 4">sister</span> <span class="wordcloud-word" style="font-size:0.97rem" title="uruguay: 4">uruguay</span> <span class="wordcloud-word" style="font-size:0.97rem" title="utah: 4">utah</span> <span class="wordcloud-word" style="font-size:0.97rem" title="visit: 4">visit</span> <span class="wordcloud-word" style="font-size:0.97rem" title="washington: 4">washington</span> <span class="wordcloud-word" style="font-size:0.8rem" title="agency: 3">agency</span> <span class="wordcloud-word" style="font-size:0.8rem" title="arlington: 3">arlington</span> <span class="wordcloud-word" style="font-size:0.8rem" title="assignment: 3">assignment</span> <span class="wordcloud-word" style="font-size:0.8rem" title="atlantic: 3">atlantic</span> <span class="wordcloud-word" style="font-size:0.8rem" title="built: 3">built</span> <span class="wordcloud-word" style="font-size:0.8rem" title="called: 3">called</span> <span class="wordcloud-word" style="font-size:0.8rem" title="capability: 3">capability</span> <span class="wordcloud-word" style="font-size:0.8rem" title="city: 3">city</span> <span class="wordcloud-word" style="font-size:0.8rem" title="coming: 3">coming</span> <span class="wordcloud-word" style="font-size:0.8rem" title="component: 3">component</span> <span class="wordcloud-word" style="font-size:0.8rem" title="constructed: 3">constructed</span> <span class="wordcloud-word" style="font-size:0.8rem" title="contest: 3">contest</span> <span class="wordcloud-word" style="font-size:0.8rem" title="continued: 3">continued</span> <span class="wordcloud-word" style="font-size:0.8rem" title="contracted: 3">contracted</span> <span class="wordcloud-word" style="font-size:0.8rem" title="dave: 3">dave</span></p>
+</div>
+</section>
+<section id="chapter-8-rio-de-janeiro" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-8-rio-de-janeiro">Chapter 8: Rio De Janeiro</h2>
+<div class="wordcloud-box">
+<p><span class="wordcloud-word" style="font-size:3.4rem" title="rio: 26">rio</span> <span class="wordcloud-word" style="font-size:1.93rem" title="time: 13">time</span> <span class="wordcloud-word" style="font-size:1.48rem" title="janeiro: 9">janeiro</span> <span class="wordcloud-word" style="font-size:1.48rem" title="lot: 9">lot</span> <span class="wordcloud-word" style="font-size:1.37rem" title="marion: 8">marion</span> <span class="wordcloud-word" style="font-size:1.37rem" title="soviet: 8">soviet</span> <span class="wordcloud-word" style="font-size:1.25rem" title="house: 7">house</span> <span class="wordcloud-word" style="font-size:1.25rem" title="street: 7">street</span> <span class="wordcloud-word" style="font-size:1.25rem" title="visit: 7">visit</span> <span class="wordcloud-word" style="font-size:1.14rem" title="brazilian: 6">brazilian</span> <span class="wordcloud-word" style="font-size:1.14rem" title="called: 6">called</span> <span class="wordcloud-word" style="font-size:1.14rem" title="church: 6">church</span> <span class="wordcloud-word" style="font-size:1.03rem" title="american: 5">american</span> <span class="wordcloud-word" style="font-size:1.03rem" title="branch: 5">branch</span> <span class="wordcloud-word" style="font-size:1.03rem" title="children: 5">children</span> <span class="wordcloud-word" style="font-size:1.03rem" title="day: 5">day</span> <span class="wordcloud-word" style="font-size:1.03rem" title="embassy: 5">embassy</span> <span class="wordcloud-word" style="font-size:1.03rem" title="found: 5">found</span> <span class="wordcloud-word" style="font-size:1.03rem" title="june: 5">june</span> <span class="wordcloud-word" style="font-size:1.03rem" title="utah: 5">utah</span> <span class="wordcloud-word" style="font-size:1.03rem" title="water: 5">water</span> <span class="wordcloud-word" style="font-size:0.91rem" title="access: 4">access</span> <span class="wordcloud-word" style="font-size:0.91rem" title="brazil: 4">brazil</span> <span class="wordcloud-word" style="font-size:0.91rem" title="contact: 4">contact</span> <span class="wordcloud-word" style="font-size:0.91rem" title="family: 4">family</span> <span class="wordcloud-word" style="font-size:0.91rem" title="girl: 4">girl</span> <span class="wordcloud-word" style="font-size:0.91rem" title="held: 4">held</span> <span class="wordcloud-word" style="font-size:0.91rem" title="invited: 4">invited</span> <span class="wordcloud-word" style="font-size:0.91rem" title="marion's: 4">marion’s</span> <span class="wordcloud-word" style="font-size:0.91rem" title="montevideo: 4">montevideo</span> <span class="wordcloud-word" style="font-size:0.91rem" title="named: 4">named</span> <span class="wordcloud-word" style="font-size:0.91rem" title="ocean: 4">ocean</span> <span class="wordcloud-word" style="font-size:0.91rem" title="official: 4">official</span> <span class="wordcloud-word" style="font-size:0.91rem" title="operational: 4">operational</span> <span class="wordcloud-word" style="font-size:0.91rem" title="people: 4">people</span> <span class="wordcloud-word" style="font-size:0.91rem" title="president: 4">president</span> <span class="wordcloud-word" style="font-size:0.91rem" title="school: 4">school</span> <span class="wordcloud-word" style="font-size:0.91rem" title="social: 4">social</span> <span class="wordcloud-word" style="font-size:0.91rem" title="spent: 4">spent</span> <span class="wordcloud-word" style="font-size:0.91rem" title="stayed: 4">stayed</span> <span class="wordcloud-word" style="font-size:0.8rem" title="balcony: 3">balcony</span> <span class="wordcloud-word" style="font-size:0.8rem" title="belonged: 3">belonged</span> <span class="wordcloud-word" style="font-size:0.8rem" title="brazilians: 3">brazilians</span> <span class="wordcloud-word" style="font-size:0.8rem" title="christmas: 3">christmas</span> <span class="wordcloud-word" style="font-size:0.8rem" title="city: 3">city</span> <span class="wordcloud-word" style="font-size:0.8rem" title="close: 3">close</span> <span class="wordcloud-word" style="font-size:0.8rem" title="club: 3">club</span> <span class="wordcloud-word" style="font-size:0.8rem" title="commercial: 3">commercial</span> <span class="wordcloud-word" style="font-size:0.8rem" title="construction: 3">construction</span> <span class="wordcloud-word" style="font-size:0.8rem" title="couple: 3">couple</span> <span class="wordcloud-word" style="font-size:0.8rem" title="dog: 3">dog</span> <span class="wordcloud-word" style="font-size:0.8rem" title="duty: 3">duty</span> <span class="wordcloud-word" style="font-size:0.8rem" title="elder: 3">elder</span> <span class="wordcloud-word" style="font-size:0.8rem" title="evans: 3">evans</span> <span class="wordcloud-word" style="font-size:0.8rem" title="eve: 3">eve</span> <span class="wordcloud-word" style="font-size:0.8rem" title="eventually: 3">eventually</span> <span class="wordcloud-word" style="font-size:0.8rem" title="finally: 3">finally</span> <span class="wordcloud-word" style="font-size:0.8rem" title="hilton: 3">hilton</span> <span class="wordcloud-word" style="font-size:0.8rem" title="hotel: 3">hotel</span> <span class="wordcloud-word" style="font-size:0.8rem" title="ina: 3">ina</span> <span class="wordcloud-word" style="font-size:0.8rem" title="leave: 3">leave</span> <span class="wordcloud-word" style="font-size:0.8rem" title="lived: 3">lived</span> <span class="wordcloud-word" style="font-size:0.8rem" title="lunch: 3">lunch</span> <span class="wordcloud-word" style="font-size:0.8rem" title="office: 3">office</span> <span class="wordcloud-word" style="font-size:0.8rem" title="period: 3">period</span> <span class="wordcloud-word" style="font-size:0.8rem" title="prior: 3">prior</span> <span class="wordcloud-word" style="font-size:0.8rem" title="rent: 3">rent</span> <span class="wordcloud-word" style="font-size:0.8rem" title="returned: 3">returned</span> <span class="wordcloud-word" style="font-size:0.8rem" title="returning: 3">returning</span> <span class="wordcloud-word" style="font-size:0.8rem" title="ron: 3">ron</span> <span class="wordcloud-word" style="font-size:0.8rem" title="section: 3">section</span> <span class="wordcloud-word" style="font-size:0.8rem" title="sedoff: 3">sedoff</span> <span class="wordcloud-word" style="font-size:0.8rem" title="soviets: 3">soviets</span> <span class="wordcloud-word" style="font-size:0.8rem" title="station: 3">station</span> <span class="wordcloud-word" style="font-size:0.8rem" title="strike: 3">strike</span></p>
+</div>
+</section>
+<section id="chapter-9-the-mclean-va.-years" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-9-the-mclean-va.-years">Chapter 9: The McLean Va. Years</h2>
+<div class="wordcloud-box">
+<p><span class="wordcloud-word" style="font-size:3.4rem" title="time: 7">time</span> <span class="wordcloud-word" style="font-size:2.97rem" title="president: 6">president</span> <span class="wordcloud-word" style="font-size:2.97rem" title="soviet: 6">soviet</span> <span class="wordcloud-word" style="font-size:2.53rem" title="chief: 5">chief</span> <span class="wordcloud-word" style="font-size:2.53rem" title="mission: 5">mission</span> <span class="wordcloud-word" style="font-size:2.53rem" title="operational: 5">operational</span> <span class="wordcloud-word" style="font-size:2.53rem" title="people: 5">people</span> <span class="wordcloud-word" style="font-size:2.1rem" title="division: 4">division</span> <span class="wordcloud-word" style="font-size:2.1rem" title="home: 4">home</span> <span class="wordcloud-word" style="font-size:2.1rem" title="marion: 4">marion</span> <span class="wordcloud-word" style="font-size:2.1rem" title="mclean: 4">mclean</span> <span class="wordcloud-word" style="font-size:2.1rem" title="position: 4">position</span> <span class="wordcloud-word" style="font-size:1.67rem" title="black: 3">black</span> <span class="wordcloud-word" style="font-size:1.67rem" title="called: 3">called</span> <span class="wordcloud-word" style="font-size:1.67rem" title="family: 3">family</span> <span class="wordcloud-word" style="font-size:1.67rem" title="found: 3">found</span> <span class="wordcloud-word" style="font-size:1.67rem" title="house: 3">house</span> <span class="wordcloud-word" style="font-size:1.67rem" title="nsa: 3">nsa</span> <span class="wordcloud-word" style="font-size:1.67rem" title="rio: 3">rio</span> <span class="wordcloud-word" style="font-size:1.67rem" title="ron: 3">ron</span> <span class="wordcloud-word" style="font-size:1.67rem" title="spent: 3">spent</span> <span class="wordcloud-word" style="font-size:1.23rem" title="activities: 2">activities</span> <span class="wordcloud-word" style="font-size:1.23rem" title="activity: 2">activity</span> <span class="wordcloud-word" style="font-size:1.23rem" title="agency: 2">agency</span> <span class="wordcloud-word" style="font-size:1.23rem" title="assignment: 2">assignment</span> <span class="wordcloud-word" style="font-size:1.23rem" title="branch: 2">branch</span> <span class="wordcloud-word" style="font-size:1.23rem" title="branches: 2">branches</span> <span class="wordcloud-word" style="font-size:1.23rem" title="brazil: 2">brazil</span> <span class="wordcloud-word" style="font-size:1.23rem" title="collection: 2">collection</span> <span class="wordcloud-word" style="font-size:1.23rem" title="considerable: 2">considerable</span> <span class="wordcloud-word" style="font-size:1.23rem" title="dark: 2">dark</span> <span class="wordcloud-word" style="font-size:1.23rem" title="department: 2">department</span> <span class="wordcloud-word" style="font-size:1.23rem" title="deputy: 2">deputy</span> <span class="wordcloud-word" style="font-size:1.23rem" title="drive: 2">drive</span> <span class="wordcloud-word" style="font-size:1.23rem" title="election: 2">election</span> <span class="wordcloud-word" style="font-size:1.23rem" title="eventually: 2">eventually</span> <span class="wordcloud-word" style="font-size:1.23rem" title="extra: 2">extra</span> <span class="wordcloud-word" style="font-size:1.23rem" title="freeway: 2">freeway</span> <span class="wordcloud-word" style="font-size:1.23rem" title="individuals: 2">individuals</span> <span class="wordcloud-word" style="font-size:1.23rem" title="information: 2">information</span> <span class="wordcloud-word" style="font-size:1.23rem" title="kennedy: 2">kennedy</span> <span class="wordcloud-word" style="font-size:1.23rem" title="kensington: 2">kensington</span> <span class="wordcloud-word" style="font-size:1.23rem" title="killed: 2">killed</span> <span class="wordcloud-word" style="font-size:1.23rem" title="kimball: 2">kimball</span> <span class="wordcloud-word" style="font-size:1.23rem" title="lake: 2">lake</span> <span class="wordcloud-word" style="font-size:1.23rem" title="language: 2">language</span> <span class="wordcloud-word" style="font-size:1.23rem" title="leader: 2">leader</span> <span class="wordcloud-word" style="font-size:1.23rem" title="left: 2">left</span> <span class="wordcloud-word" style="font-size:1.23rem" title="lodging: 2">lodging</span> <span class="wordcloud-word" style="font-size:1.23rem" title="lot: 2">lot</span> <span class="wordcloud-word" style="font-size:1.23rem" title="military: 2">military</span> <span class="wordcloud-word" style="font-size:1.23rem" title="national: 2">national</span> <span class="wordcloud-word" style="font-size:1.23rem" title="operations: 2">operations</span> <span class="wordcloud-word" style="font-size:1.23rem" title="proper: 2">proper</span> <span class="wordcloud-word" style="font-size:1.23rem" title="ranging: 2">ranging</span> <span class="wordcloud-word" style="font-size:1.23rem" title="received: 2">received</span> <span class="wordcloud-word" style="font-size:1.23rem" title="required: 2">required</span> <span class="wordcloud-word" style="font-size:1.23rem" title="return: 2">return</span> <span class="wordcloud-word" style="font-size:1.23rem" title="run: 2">run</span> <span class="wordcloud-word" style="font-size:1.23rem" title="salt: 2">salt</span> <span class="wordcloud-word" style="font-size:1.23rem" title="temple: 2">temple</span> <span class="wordcloud-word" style="font-size:1.23rem" title="union: 2">union</span> <span class="wordcloud-word" style="font-size:1.23rem" title="united: 2">united</span> <span class="wordcloud-word" style="font-size:1.23rem" title="utah: 2">utah</span> <span class="wordcloud-word" style="font-size:1.23rem" title="vietnam: 2">vietnam</span> <span class="wordcloud-word" style="font-size:1.23rem" title="york: 2">york</span> <span class="wordcloud-word" style="font-size:0.8rem" title="abroad: 1">abroad</span> <span class="wordcloud-word" style="font-size:0.8rem" title="administration: 1">administration</span> <span class="wordcloud-word" style="font-size:0.8rem" title="adopted: 1">adopted</span> <span class="wordcloud-word" style="font-size:0.8rem" title="adventure: 1">adventure</span> <span class="wordcloud-word" style="font-size:0.8rem" title="affecting: 1">affecting</span> <span class="wordcloud-word" style="font-size:0.8rem" title="agencies: 1">agencies</span> <span class="wordcloud-word" style="font-size:0.8rem" title="amount: 1">amount</span> <span class="wordcloud-word" style="font-size:0.8rem" title="angeles: 1">angeles</span> <span class="wordcloud-word" style="font-size:0.8rem" title="apartments: 1">apartments</span></p>
+</div>
+</section>
+<section id="chapter-10-making-a-career-change" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-10-making-a-career-change">Chapter 10: Making a Career Change</h2>
+<div class="wordcloud-box">
+<p><span class="wordcloud-word" style="font-size:3.4rem" title="officers: 24">officers</span> <span class="wordcloud-word" style="font-size:2.57rem" title="staff: 17">staff</span> <span class="wordcloud-word" style="font-size:2.45rem" title="personnel: 16">personnel</span> <span class="wordcloud-word" style="font-size:2.34rem" title="evaluation: 15">evaluation</span> <span class="wordcloud-word" style="font-size:2.1rem" title="officer: 13">officer</span> <span class="wordcloud-word" style="font-size:1.98rem" title="boards: 12">boards</span> <span class="wordcloud-word" style="font-size:1.86rem" title="people: 11">people</span> <span class="wordcloud-word" style="font-size:1.86rem" title="time: 11">time</span> <span class="wordcloud-word" style="font-size:1.63rem" title="board: 9">board</span> <span class="wordcloud-word" style="font-size:1.63rem" title="counseling: 9">counseling</span> <span class="wordcloud-word" style="font-size:1.63rem" title="level: 9">level</span> <span class="wordcloud-word" style="font-size:1.51rem" title="operations: 8">operations</span> <span class="wordcloud-word" style="font-size:1.51rem" title="process: 8">process</span> <span class="wordcloud-word" style="font-size:1.39rem" title="career: 7">career</span> <span class="wordcloud-word" style="font-size:1.39rem" title="intelligence: 7">intelligence</span> <span class="wordcloud-word" style="font-size:1.39rem" title="system: 7">system</span> <span class="wordcloud-word" style="font-size:1.27rem" title="careers: 6">careers</span> <span class="wordcloud-word" style="font-size:1.27rem" title="foreign: 6">foreign</span> <span class="wordcloud-word" style="font-size:1.27rem" title="senior: 6">senior</span> <span class="wordcloud-word" style="font-size:1.27rem" title="service: 6">service</span> <span class="wordcloud-word" style="font-size:1.15rem" title="agency: 5">agency</span> <span class="wordcloud-word" style="font-size:1.15rem" title="called: 5">called</span> <span class="wordcloud-word" style="font-size:1.15rem" title="director: 5">director</span> <span class="wordcloud-word" style="font-size:1.15rem" title="grades: 5">grades</span> <span class="wordcloud-word" style="font-size:1.15rem" title="period: 5">period</span> <span class="wordcloud-word" style="font-size:1.15rem" title="program: 5">program</span> <span class="wordcloud-word" style="font-size:1.15rem" title="retirement: 5">retirement</span> <span class="wordcloud-word" style="font-size:1.04rem" title="constantly: 4">constantly</span> <span class="wordcloud-word" style="font-size:1.04rem" title="deputy: 4">deputy</span> <span class="wordcloud-word" style="font-size:1.04rem" title="difficult: 4">difficult</span> <span class="wordcloud-word" style="font-size:1.04rem" title="directorate: 4">directorate</span> <span class="wordcloud-word" style="font-size:1.04rem" title="entire: 4">entire</span> <span class="wordcloud-word" style="font-size:1.04rem" title="grade: 4">grade</span> <span class="wordcloud-word" style="font-size:1.04rem" title="lot: 4">lot</span> <span class="wordcloud-word" style="font-size:1.04rem" title="promoted: 4">promoted</span> <span class="wordcloud-word" style="font-size:1.04rem" title="review: 4">review</span> <span class="wordcloud-word" style="font-size:1.04rem" title="selection: 4">selection</span> <span class="wordcloud-word" style="font-size:1.04rem" title="served: 4">served</span> <span class="wordcloud-word" style="font-size:0.92rem" title="action: 3">action</span> <span class="wordcloud-word" style="font-size:0.92rem" title="change: 3">change</span> <span class="wordcloud-word" style="font-size:0.92rem" title="chief: 3">chief</span> <span class="wordcloud-word" style="font-size:0.92rem" title="cia: 3">cia</span> <span class="wordcloud-word" style="font-size:0.92rem" title="circumstances: 3">circumstances</span> <span class="wordcloud-word" style="font-size:0.92rem" title="colby: 3">colby</span> <span class="wordcloud-word" style="font-size:0.92rem" title="concept: 3">concept</span> <span class="wordcloud-word" style="font-size:0.92rem" title="convened: 3">convened</span> <span class="wordcloud-word" style="font-size:0.92rem" title="dealing: 3">dealing</span> <span class="wordcloud-word" style="font-size:0.92rem" title="directorates: 3">directorates</span> <span class="wordcloud-word" style="font-size:0.92rem" title="effort: 3">effort</span> <span class="wordcloud-word" style="font-size:0.92rem" title="equitable: 3">equitable</span> <span class="wordcloud-word" style="font-size:0.92rem" title="establish: 3">establish</span> <span class="wordcloud-word" style="font-size:0.92rem" title="existed: 3">existed</span> <span class="wordcloud-word" style="font-size:0.92rem" title="experience: 3">experience</span> <span class="wordcloud-word" style="font-size:0.92rem" title="female: 3">female</span> <span class="wordcloud-word" style="font-size:0.92rem" title="force: 3">force</span> <span class="wordcloud-word" style="font-size:0.92rem" title="found: 3">found</span> <span class="wordcloud-word" style="font-size:0.92rem" title="looked: 3">looked</span> <span class="wordcloud-word" style="font-size:0.92rem" title="major: 3">major</span> <span class="wordcloud-word" style="font-size:0.92rem" title="management: 3">management</span> <span class="wordcloud-word" style="font-size:0.92rem" title="person: 3">person</span> <span class="wordcloud-word" style="font-size:0.92rem" title="plans: 3">plans</span> <span class="wordcloud-word" style="font-size:0.92rem" title="regular: 3">regular</span> <span class="wordcloud-word" style="font-size:0.92rem" title="respect: 3">respect</span> <span class="wordcloud-word" style="font-size:0.92rem" title="schlesinger: 3">schlesinger</span> <span class="wordcloud-word" style="font-size:0.92rem" title="started: 3">started</span> <span class="wordcloud-word" style="font-size:0.92rem" title="success: 3">success</span> <span class="wordcloud-word" style="font-size:0.92rem" title="trainees: 3">trainees</span> <span class="wordcloud-word" style="font-size:0.92rem" title="weeks: 3">weeks</span> <span class="wordcloud-word" style="font-size:0.92rem" title="world: 3">world</span> <span class="wordcloud-word" style="font-size:0.8rem" title="agency's: 2">agency’s</span> <span class="wordcloud-word" style="font-size:0.8rem" title="appointed: 2">appointed</span> <span class="wordcloud-word" style="font-size:0.8rem" title="assignment: 2">assignment</span> <span class="wordcloud-word" style="font-size:0.8rem" title="automatic: 2">automatic</span> <span class="wordcloud-word" style="font-size:0.8rem" title="basis: 2">basis</span> <span class="wordcloud-word" style="font-size:0.8rem" title="briefings: 2">briefings</span></p>
+</div>
+</section>
+<section id="chapter-11-post-rio-to-retirement" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-11-post-rio-to-retirement">Chapter 11: Post Rio to Retirement</h2>
+<div class="wordcloud-box">
+<p><span class="wordcloud-word" style="font-size:3.4rem" title="time: 17">time</span> <span class="wordcloud-word" style="font-size:2.47rem" title="company: 12">company</span> <span class="wordcloud-word" style="font-size:2.29rem" title="lot: 11">lot</span> <span class="wordcloud-word" style="font-size:2.29rem" title="washington: 11">washington</span> <span class="wordcloud-word" style="font-size:1.91rem" title="temple: 9">temple</span> <span class="wordcloud-word" style="font-size:1.73rem" title="family: 8">family</span> <span class="wordcloud-word" style="font-size:1.73rem" title="home: 8">home</span> <span class="wordcloud-word" style="font-size:1.73rem" title="homes: 8">homes</span> <span class="wordcloud-word" style="font-size:1.73rem" title="involved: 8">involved</span> <span class="wordcloud-word" style="font-size:1.73rem" title="research: 8">research</span> <span class="wordcloud-word" style="font-size:1.73rem" title="school: 8">school</span> <span class="wordcloud-word" style="font-size:1.73rem" title="ward: 8">ward</span> <span class="wordcloud-word" style="font-size:1.54rem" title="called: 7">called</span> <span class="wordcloud-word" style="font-size:1.54rem" title="decided: 7">decided</span> <span class="wordcloud-word" style="font-size:1.54rem" title="hilton: 7">hilton</span> <span class="wordcloud-word" style="font-size:1.36rem" title="activities: 6">activities</span> <span class="wordcloud-word" style="font-size:1.36rem" title="christmas: 6">christmas</span> <span class="wordcloud-word" style="font-size:1.36rem" title="government: 6">government</span> <span class="wordcloud-word" style="font-size:1.36rem" title="land: 6">land</span> <span class="wordcloud-word" style="font-size:1.36rem" title="president: 6">president</span> <span class="wordcloud-word" style="font-size:1.17rem" title="agency: 5">agency</span> <span class="wordcloud-word" style="font-size:1.17rem" title="business: 5">business</span> <span class="wordcloud-word" style="font-size:1.17rem" title="children: 5">children</span> <span class="wordcloud-word" style="font-size:1.17rem" title="friends: 5">friends</span> <span class="wordcloud-word" style="font-size:1.17rem" title="ron: 5">ron</span> <span class="wordcloud-word" style="font-size:1.17rem" title="special: 5">special</span> <span class="wordcloud-word" style="font-size:1.17rem" title="summer: 5">summer</span> <span class="wordcloud-word" style="font-size:1.17rem" title="virginia: 5">virginia</span> <span class="wordcloud-word" style="font-size:0.99rem" title="california: 4">california</span> <span class="wordcloud-word" style="font-size:0.99rem" title="church: 4">church</span> <span class="wordcloud-word" style="font-size:0.99rem" title="continued: 4">continued</span> <span class="wordcloud-word" style="font-size:0.99rem" title="development: 4">development</span> <span class="wordcloud-word" style="font-size:0.99rem" title="enjoyed: 4">enjoyed</span> <span class="wordcloud-word" style="font-size:0.99rem" title="initially: 4">initially</span> <span class="wordcloud-word" style="font-size:0.99rem" title="july: 4">july</span> <span class="wordcloud-word" style="font-size:0.99rem" title="lake: 4">lake</span> <span class="wordcloud-word" style="font-size:0.99rem" title="leadership: 4">leadership</span> <span class="wordcloud-word" style="font-size:0.99rem" title="left: 4">left</span> <span class="wordcloud-word" style="font-size:0.99rem" title="marion: 4">marion</span> <span class="wordcloud-word" style="font-size:0.99rem" title="married: 4">married</span> <span class="wordcloud-word" style="font-size:0.99rem" title="mclean: 4">mclean</span> <span class="wordcloud-word" style="font-size:0.99rem" title="people: 4">people</span> <span class="wordcloud-word" style="font-size:0.99rem" title="purchased: 4">purchased</span> <span class="wordcloud-word" style="font-size:0.99rem" title="required: 4">required</span> <span class="wordcloud-word" style="font-size:0.99rem" title="service: 4">service</span> <span class="wordcloud-word" style="font-size:0.99rem" title="stock: 4">stock</span> <span class="wordcloud-word" style="font-size:0.99rem" title="sunday: 4">sunday</span> <span class="wordcloud-word" style="font-size:0.99rem" title="visit: 4">visit</span> <span class="wordcloud-word" style="font-size:0.8rem" title="adminstration: 3">adminstration</span> <span class="wordcloud-word" style="font-size:0.8rem" title="april: 3">april</span> <span class="wordcloud-word" style="font-size:0.8rem" title="beach: 3">beach</span> <span class="wordcloud-word" style="font-size:0.8rem" title="bit: 3">bit</span> <span class="wordcloud-word" style="font-size:0.8rem" title="cabin: 3">cabin</span> <span class="wordcloud-word" style="font-size:0.8rem" title="chapter: 3">chapter</span> <span class="wordcloud-word" style="font-size:0.8rem" title="college: 3">college</span> <span class="wordcloud-word" style="font-size:0.8rem" title="construction: 3">construction</span> <span class="wordcloud-word" style="font-size:0.8rem" title="crows: 3">crows</span> <span class="wordcloud-word" style="font-size:0.8rem" title="cruise: 3">cruise</span> <span class="wordcloud-word" style="font-size:0.8rem" title="dedication: 3">dedication</span> <span class="wordcloud-word" style="font-size:0.8rem" title="doctors: 3">doctors</span> <span class="wordcloud-word" style="font-size:0.8rem" title="due: 3">due</span> <span class="wordcloud-word" style="font-size:0.8rem" title="gail: 3">gail</span> <span class="wordcloud-word" style="font-size:0.8rem" title="growth: 3">growth</span> <span class="wordcloud-word" style="font-size:0.8rem" title="howard: 3">howard</span> <span class="wordcloud-word" style="font-size:0.8rem" title="hunt: 3">hunt</span> <span class="wordcloud-word" style="font-size:0.8rem" title="jim: 3">jim</span> <span class="wordcloud-word" style="font-size:0.8rem" title="june: 3">june</span> <span class="wordcloud-word" style="font-size:0.8rem" title="kenny: 3">kenny</span> <span class="wordcloud-word" style="font-size:0.8rem" title="major: 3">major</span> <span class="wordcloud-word" style="font-size:0.8rem" title="management: 3">management</span> <span class="wordcloud-word" style="font-size:0.8rem" title="mine: 3">mine</span> <span class="wordcloud-word" style="font-size:0.8rem" title="named: 3">named</span> <span class="wordcloud-word" style="font-size:0.8rem" title="nest: 3">nest</span> <span class="wordcloud-word" style="font-size:0.8rem" title="nixon: 3">nixon</span> <span class="wordcloud-word" style="font-size:0.8rem" title="november: 3">november</span></p>
+</div>
+</section>
+<section id="chapter-12-full-text" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-12-full-text">Chapter 12: Full Text</h2>
+<div class="wordcloud-box">
+<p><span class="wordcloud-word" style="font-size:3.4rem" title="time: 147">time</span> <span class="wordcloud-word" style="font-size:2.06rem" title="school: 82">school</span> <span class="wordcloud-word" style="font-size:1.85rem" title="marion: 72">marion</span> <span class="wordcloud-word" style="font-size:1.81rem" title="soviet: 70">soviet</span> <span class="wordcloud-word" style="font-size:1.69rem" title="family: 64">family</span> <span class="wordcloud-word" style="font-size:1.65rem" title="lot: 62">lot</span> <span class="wordcloud-word" style="font-size:1.46rem" title="home: 53">home</span> <span class="wordcloud-word" style="font-size:1.46rem" title="president: 53">president</span> <span class="wordcloud-word" style="font-size:1.42rem" title="house: 51">house</span> <span class="wordcloud-word" style="font-size:1.4rem" title="people: 50">people</span> <span class="wordcloud-word" style="font-size:1.38rem" title="ward: 49">ward</span> <span class="wordcloud-word" style="font-size:1.34rem" title="called: 47">called</span> <span class="wordcloud-word" style="font-size:1.3rem" title="idaho: 45">idaho</span> <span class="wordcloud-word" style="font-size:1.25rem" title="falls: 43">falls</span> <span class="wordcloud-word" style="font-size:1.25rem" title="war: 43">war</span> <span class="wordcloud-word" style="font-size:1.21rem" title="washington: 41">washington</span> <span class="wordcloud-word" style="font-size:1.17rem" title="visit: 39">visit</span> <span class="wordcloud-word" style="font-size:1.15rem" title="chief: 38">chief</span> <span class="wordcloud-word" style="font-size:1.15rem" title="church: 38">church</span> <span class="wordcloud-word" style="font-size:1.13rem" title="intelligence: 37">intelligence</span> <span class="wordcloud-word" style="font-size:1.13rem" title="officers: 37">officers</span> <span class="wordcloud-word" style="font-size:1.11rem" title="trip: 36">trip</span> <span class="wordcloud-word" style="font-size:1.09rem" title="children: 35">children</span> <span class="wordcloud-word" style="font-size:1.09rem" title="pretty: 35">pretty</span> <span class="wordcloud-word" style="font-size:1.09rem" title="utah: 35">utah</span> <span class="wordcloud-word" style="font-size:1.07rem" title="branch: 34">branch</span> <span class="wordcloud-word" style="font-size:1.07rem" title="rio: 34">rio</span> <span class="wordcloud-word" style="font-size:1.05rem" title="city: 33">city</span> <span class="wordcloud-word" style="font-size:1.03rem" title="eventually: 32">eventually</span> <span class="wordcloud-word" style="font-size:1.03rem" title="mother: 32">mother</span> <span class="wordcloud-word" style="font-size:1.03rem" title="operational: 32">operational</span> <span class="wordcloud-word" style="font-size:1.03rem" title="returned: 32">returned</span> <span class="wordcloud-word" style="font-size:1.03rem" title="summer: 32">summer</span> <span class="wordcloud-word" style="font-size:1.01rem" title="activities: 31">activities</span> <span class="wordcloud-word" style="font-size:1.01rem" title="operations: 31">operations</span> <span class="wordcloud-word" style="font-size:1.01rem" title="service: 31">service</span> <span class="wordcloud-word" style="font-size:1.01rem" title="union: 31">union</span> <span class="wordcloud-word" style="font-size:0.99rem" title="involved: 30">involved</span> <span class="wordcloud-word" style="font-size:0.99rem" title="york: 30">york</span> <span class="wordcloud-word" style="font-size:0.97rem" title="day: 29">day</span> <span class="wordcloud-word" style="font-size:0.97rem" title="found: 29">found</span> <span class="wordcloud-word" style="font-size:0.97rem" title="left: 29">left</span> <span class="wordcloud-word" style="font-size:0.97rem" title="office: 29">office</span> <span class="wordcloud-word" style="font-size:0.97rem" title="personnel: 29">personnel</span> <span class="wordcloud-word" style="font-size:0.97rem" title="world: 29">world</span> <span class="wordcloud-word" style="font-size:0.94rem" title="days: 28">days</span> <span class="wordcloud-word" style="font-size:0.94rem" title="period: 28">period</span> <span class="wordcloud-word" style="font-size:0.92rem" title="friends: 27">friends</span> <span class="wordcloud-word" style="font-size:0.92rem" title="recall: 27">recall</span> <span class="wordcloud-word" style="font-size:0.92rem" title="soviets: 27">soviets</span> <span class="wordcloud-word" style="font-size:0.92rem" title="started: 27">started</span> <span class="wordcloud-word" style="font-size:0.9rem" title="car: 26">car</span> <span class="wordcloud-word" style="font-size:0.9rem" title="lake: 26">lake</span> <span class="wordcloud-word" style="font-size:0.9rem" title="lived: 26">lived</span> <span class="wordcloud-word" style="font-size:0.9rem" title="received: 26">received</span> <span class="wordcloud-word" style="font-size:0.9rem" title="ship: 26">ship</span> <span class="wordcloud-word" style="font-size:0.9rem" title="uruguay: 26">uruguay</span> <span class="wordcloud-word" style="font-size:0.88rem" title="officer: 25">officer</span> <span class="wordcloud-word" style="font-size:0.88rem" title="staff: 25">staff</span> <span class="wordcloud-word" style="font-size:0.86rem" title="opportunity: 24">opportunity</span> <span class="wordcloud-word" style="font-size:0.86rem" title="return: 24">return</span> <span class="wordcloud-word" style="font-size:0.86rem" title="ron: 24">ron</span> <span class="wordcloud-word" style="font-size:0.86rem" title="spent: 24">spent</span> <span class="wordcloud-word" style="font-size:0.84rem" title="christmas: 23">christmas</span> <span class="wordcloud-word" style="font-size:0.84rem" title="international: 23">international</span> <span class="wordcloud-word" style="font-size:0.84rem" title="job: 23">job</span> <span class="wordcloud-word" style="font-size:0.84rem" title="station: 23">station</span> <span class="wordcloud-word" style="font-size:0.84rem" title="stayed: 23">stayed</span> <span class="wordcloud-word" style="font-size:0.82rem" title="activity: 22">activity</span> <span class="wordcloud-word" style="font-size:0.82rem" title="agency: 22">agency</span> <span class="wordcloud-word" style="font-size:0.82rem" title="june: 22">june</span> <span class="wordcloud-word" style="font-size:0.82rem" title="temple: 22">temple</span> <span class="wordcloud-word" style="font-size:0.82rem" title="united: 22">united</span> <span class="wordcloud-word" style="font-size:0.8rem" title="couple: 21">couple</span> <span class="wordcloud-word" style="font-size:0.8rem" title="decided: 21">decided</span></p>
+</div>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/clarkruttinger\.info\/UncleVirgilBot\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Word Clouds"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Word clouds are a fast visual way to see repeated vocabulary by chapter. They are not deep analysis by themselves, but they are useful for exploring tone, setting, names, institutions, and recurring themes.</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>The word size is based on frequency within each chapter after removing common stop words.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: wordcloud-load</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmltools)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(<span class="st">"data/public/word_frequencies.csv"</span>)) {</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">"R/05_build_word_frequencies.R"</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>word_freq <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"data/public/word_frequencies.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: asis</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">nrow</span>(word_freq) <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"No word frequency data found. Run `Rscript R/05_build_word_frequencies.R`."</span>)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  chapters <span class="ot">&lt;-</span> word_freq <span class="sc">|&gt;</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">distinct</span>(chapter, chapter_title) <span class="sc">|&gt;</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(chapter)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(chapters))) {</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    ch <span class="ot">&lt;-</span> chapters<span class="sc">$</span>chapter[i]</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    title <span class="ot">&lt;-</span> chapters<span class="sc">$</span>chapter_title[i]</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    rows <span class="ot">&lt;-</span> word_freq <span class="sc">|&gt;</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>(chapter <span class="sc">==</span> ch) <span class="sc">|&gt;</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>      <span class="fu">arrange</span>(<span class="fu">desc</span>(n), word)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n\n</span><span class="st">## Chapter "</span>, ch, <span class="st">": "</span>, <span class="fu">htmlEscape</span>(title), <span class="st">"</span><span class="sc">\n\n</span><span class="st">"</span>, <span class="at">sep =</span> <span class="st">""</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"&lt;div class=</span><span class="sc">\"</span><span class="st">wordcloud-box</span><span class="sc">\"</span><span class="st">&gt;</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (j <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(rows))) {</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>        <span class="st">"&lt;span class=</span><span class="sc">\"</span><span class="st">wordcloud-word</span><span class="sc">\"</span><span class="st"> style=</span><span class="sc">\"</span><span class="st">font-size:"</span>,</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>        rows<span class="sc">$</span>font_size[j],</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>        <span class="st">"rem</span><span class="sc">\"</span><span class="st"> title=</span><span class="sc">\"</span><span class="st">"</span>,</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>        <span class="fu">htmlEscape</span>(rows<span class="sc">$</span>word[j]),</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>        <span class="st">": "</span>,</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>        rows<span class="sc">$</span>n[j],</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="sc">\"</span><span class="st">&gt;"</span>,</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>        <span class="fu">htmlEscape</span>(rows<span class="sc">$</span>word[j]),</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>        <span class="st">"&lt;/span&gt;</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>        <span class="at">sep =</span> <span class="st">""</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"&lt;/div&gt;</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Uncle Virgil memoir analysis project</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

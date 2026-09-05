@@ -1,0 +1,66 @@
+---
+title: "Word Clouds"
+---
+
+Word clouds are a fast visual way to see repeated vocabulary by chapter. They are not deep analysis by themselves, but they are useful for exploring tone, setting, names, institutions, and recurring themes.
+
+The word size is based on frequency within each chapter after removing common stop words.
+
+```{r}
+#| label: wordcloud-load
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(dplyr)
+library(htmltools)
+
+if (!file.exists("data/public/word_frequencies.csv")) {
+  source("R/05_build_word_frequencies.R")
+}
+
+word_freq <- readr::read_csv("data/public/word_frequencies.csv", show_col_types = FALSE)
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+if (nrow(word_freq) == 0) {
+  cat("No word frequency data found. Run `Rscript R/05_build_word_frequencies.R`.")
+} else {
+  chapters <- word_freq |>
+    distinct(chapter, chapter_title) |>
+    arrange(chapter)
+
+  for (i in seq_len(nrow(chapters))) {
+    ch <- chapters$chapter[i]
+    title <- chapters$chapter_title[i]
+
+    rows <- word_freq |>
+      filter(chapter == ch) |>
+      arrange(desc(n), word)
+
+    cat("\n\n## Chapter ", ch, ": ", htmlEscape(title), "\n\n", sep = "")
+    cat("<div class=\"wordcloud-box\">\n")
+
+    for (j in seq_len(nrow(rows))) {
+      cat(
+        "<span class=\"wordcloud-word\" style=\"font-size:",
+        rows$font_size[j],
+        "rem\" title=\"",
+        htmlEscape(rows$word[j]),
+        ": ",
+        rows$n[j],
+        "\">",
+        htmlEscape(rows$word[j]),
+        "</span>\n",
+        sep = ""
+      )
+    }
+
+    cat("</div>\n")
+  }
+}
+```
