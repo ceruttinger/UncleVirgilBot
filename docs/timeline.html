@@ -199,8 +199,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#extracted-year-candidates" id="toc-extracted-year-candidates" class="nav-link active" data-scroll-target="#extracted-year-candidates">Extracted year candidates</a></li>
-  <li><a href="#metadata-needing-review" id="toc-metadata-needing-review" class="nav-link" data-scroll-target="#metadata-needing-review">Metadata needing review</a></li>
+  <li><a href="#chapter-date-ranges" id="toc-chapter-date-ranges" class="nav-link active" data-scroll-target="#chapter-date-ranges">Chapter date ranges</a></li>
+  <li><a href="#how-to-read-this" id="toc-how-to-read-this" class="nav-link" data-scroll-target="#how-to-read-this">How to read this</a></li>
   </ul>
 </nav>
     </div>
@@ -226,49 +226,179 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This page uses the starter chapter metadata as a timeline scaffold. Treat these years as draft metadata until reviewed against the source text.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>**Source warning:**  Current corpus_data.json appears to be missing many dates/years, likely because setup.R removed numbers before exporting JSON. Rebuild from raw RDS/PDF with R/00_rebuild_raw_text_from_rds.R or R/00_ocr_scanned_pdfs.R before final timeline work.</code></pre>
-</div>
-</div>
+<p>The timeline below uses <strong>curated chapter date ranges</strong> from <code>data/chapter_metadata.csv</code>, not raw year extraction alone.</p>
+<p>That distinction matters. The OCR/RDS rebuild now recovers years, but a memoir chapter can mention years outside the life period being narrated. For example, a childhood chapter may mention a later anniversary, a publication date, or a retrospective comment. Those years are useful evidence, but they should not automatically define the chapter’s time range.</p>
+<section id="chapter-date-ranges" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-date-ranges">Chapter date ranges</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="timeline_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="timeline_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<section id="extracted-year-candidates" class="level2">
-<h2 class="anchored" data-anchor-id="extracted-year-candidates">Extracted year candidates</h2>
-<p>If this table is thin or empty, rebuild from raw <code>.rds</code> or scanned PDFs. The existing JSON source may have had numbers removed before export.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>No year candidates found in the current text source.</code></pre>
-</div>
-</div>
 </section>
-<section id="metadata-needing-review" class="level2">
-<h2 class="anchored" data-anchor-id="metadata-needing-review">Metadata needing review</h2>
+<section id="how-to-read-this" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-read-this">How to read this</h2>
+<ul>
+<li><strong>Start/end years</strong> are human-curated approximations based on the chapter’s main narrative period.</li>
+<li><strong>Year candidates</strong> are machine-detected years found inside the OCR text.</li>
+<li>A candidate year outside the curated range is not automatically wrong; it may be historical background, a retrospective reference, or OCR noise.</li>
+<li>Chapter 12 is excluded from the chart because it is the synthetic full-text aggregate.</li>
+</ul>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 11 × 7
-   chapter chapter_title       approx_start_year approx_end_year date_confidence
-     &lt;dbl&gt; &lt;chr&gt;                           &lt;dbl&gt;           &lt;dbl&gt; &lt;chr&gt;          
- 1       1 Earliest Memories                1922            1934 medium         
- 2       2 The Teenage Period               1935            1942 medium         
- 3       3 World War Two                    1942            1945 high           
- 4       4 My College Years B…              1946            1951 low            
- 5       5 The CIA                          1951            1958 low            
- 6       6 Montevideo Uruguay               1958            1962 low            
- 7       7 Headquarters Duty                1962            1965 low            
- 8       8 Rio De Janeiro                   1965            1968 low            
- 9       9 The McLean Va. Yea…              1968            1970 low            
-10      10 Making a Career Ch…              1970            1975 medium         
-11      11 Post Rio to Retire…              1975            1984 low            
-# ℹ 2 more variables: timeline_review_status &lt;chr&gt;, notes &lt;chr&gt;</code></pre>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 10%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 12%">
+<col style="width: 29%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">chapter</th>
+<th style="text-align: left;">chapter_title</th>
+<th style="text-align: right;">approx_start_year</th>
+<th style="text-align: right;">approx_end_year</th>
+<th style="text-align: left;">life_stage</th>
+<th style="text-align: left;">location</th>
+<th style="text-align: right;">word_count</th>
+<th style="text-align: right;">year_count</th>
+<th style="text-align: left;">year_candidates</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Earliest Memories</td>
+<td style="text-align: right;">1916</td>
+<td style="text-align: right;">1935</td>
+<td style="text-align: left;">Childhood</td>
+<td style="text-align: left;">Idaho Falls ID; Mesa AZ; Logan UT; Salt Lake City UT</td>
+<td style="text-align: right;">3695</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">1916; 1917; 1918; 1924; 1926; 1927; 1928; 1977; 1929; 1930; 1932; 1940; 1933; 1934; 1935</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">The Teenage Period</td>
+<td style="text-align: right;">1934</td>
+<td style="text-align: right;">1943</td>
+<td style="text-align: left;">Teenage years</td>
+<td style="text-align: left;">Idaho Falls ID; Pomona CA; Salt Lake City UT</td>
+<td style="text-align: right;">3896</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">1934; 1980; 1936; 1937; 1939; 1940; 1988; 1941; 1942; 1943; 1945</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">World War Two</td>
+<td style="text-align: right;">1942</td>
+<td style="text-align: right;">1945</td>
+<td style="text-align: left;">Military service</td>
+<td style="text-align: left;">Treasure Island CA; Logan UT; Corpus Christi TX; Quonset Point RI; USS Wasp; Pacific Theater</td>
+<td style="text-align: right;">2760</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">1942; 1943; 1944; 1986; 1945</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">My College Years BYU and Colombia</td>
+<td style="text-align: right;">1946</td>
+<td style="text-align: right;">1953</td>
+<td style="text-align: left;">College and graduate education</td>
+<td style="text-align: left;">Provo UT; New York City NY; Colombia</td>
+<td style="text-align: right;">4368</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">1946; 1947; 1948; 1939; 1932; 1949; 1950; 1953; 1952</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">The CIA</td>
+<td style="text-align: right;">1950</td>
+<td style="text-align: right;">1955</td>
+<td style="text-align: left;">CIA entry and early intelligence career</td>
+<td style="text-align: left;">Washington DC area; Guatemala; headquarters</td>
+<td style="text-align: right;">6498</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">1947; 1939; 1950; 1952; 1951; 1954; 1936; 1953; 1955; 1943; 1882; 1860; 1835; 1845</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">Montevideo Uruguay</td>
+<td style="text-align: right;">1955</td>
+<td style="text-align: right;">1959</td>
+<td style="text-align: left;">Foreign service</td>
+<td style="text-align: left;">Montevideo Uruguay</td>
+<td style="text-align: right;">3963</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">1955; 1956; 1957; 1969; 1958; 1930; 1940; 1950; 1959; 1982</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">Headquarters Duty</td>
+<td style="text-align: right;">1960</td>
+<td style="text-align: right;">1965</td>
+<td style="text-align: left;">Headquarters assignment</td>
+<td style="text-align: left;">McLean VA; Washington DC area</td>
+<td style="text-align: right;">3974</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">1960; 1961; 1963; 1965; 1962; 1950; 1964</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">Rio De Janeiro</td>
+<td style="text-align: right;">1965</td>
+<td style="text-align: right;">1966</td>
+<td style="text-align: left;">Foreign service</td>
+<td style="text-align: left;">Rio de Janeiro Brazil</td>
+<td style="text-align: right;">3157</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">1965; 1966; 1988</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">The McLean Va. Years</td>
+<td style="text-align: right;">1964</td>
+<td style="text-align: right;">1968</td>
+<td style="text-align: left;">Virginia years</td>
+<td style="text-align: left;">McLean VA</td>
+<td style="text-align: right;">1321</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">1964; 1968</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">Making a Career Change</td>
+<td style="text-align: right;">1968</td>
+<td style="text-align: right;">1973</td>
+<td style="text-align: left;">Career transition</td>
+<td style="text-align: left;">United States; Washington DC area</td>
+<td style="text-align: right;">2726</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">1968; 1973; 1969; 1971; 1972</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">Post Rio to Retirement</td>
+<td style="text-align: right;">1968</td>
+<td style="text-align: right;">1975</td>
+<td style="text-align: left;">Later career and retirement</td>
+<td style="text-align: left;">United States; Washington DC area; post-Rio locations</td>
+<td style="text-align: right;">3580</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">1968; 1974; 1969; 1970; 1972; 1971; 1973; 1955; 1975</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -729,78 +859,75 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Timeline"</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: timeline-load</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(<span class="st">"data/processed/chapter_stats.csv"</span>)) {</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">"R/01_prepare_corpus.R"</span>)</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(<span class="st">"data/processed/sentiment_by_chapter.csv"</span>)) {</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">"R/02_sentiment_analysis.R"</span>)</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>metadata <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/chapter_metadata.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>stats <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/processed/chapter_stats.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>sentiment <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/processed/sentiment_by_chapter.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/processed/year_candidates_by_chapter.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>build_summary <span class="ot">&lt;-</span> jsonlite<span class="sc">::</span><span class="fu">read_json</span>(<span class="st">"data/processed/build_summary.json"</span>)</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>This page uses the starter chapter metadata as a timeline scaffold. Treat these years as draft metadata until reviewed against the source text.</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"**Source warning:** "</span>, build_summary<span class="sc">$</span>source_warning)</span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>timeline <span class="ot">&lt;-</span> metadata <span class="sc">%&gt;%</span></span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(include_in_timeline <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(stats <span class="sc">%&gt;%</span> <span class="fu">select</span>(chapter, word_count), <span class="at">by =</span> <span class="st">"chapter"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(sentiment <span class="sc">%&gt;%</span> <span class="fu">select</span>(chapter, net_bing_sentiment, afinn_score), <span class="at">by =</span> <span class="st">"chapter"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">midpoint_year =</span> (<span class="fu">as.numeric</span>(approx_start_year) <span class="sc">+</span> <span class="fu">as.numeric</span>(approx_end_year)) <span class="sc">/</span> <span class="dv">2</span>)</span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>timeline <span class="sc">%&gt;%</span></span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> midpoint_year, <span class="at">y =</span> net_bing_sentiment, <span class="at">label =</span> chapter)) <span class="sc">+</span></span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">nudge_y =</span> <span class="dv">5</span>, <span class="at">check_overlap =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Approximate midpoint year"</span>, <span class="at">y =</span> <span class="st">"Net Bing sentiment"</span>, <span class="at">title =</span> <span class="st">"Draft sentiment timeline"</span>) <span class="sc">+</span></span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="fu">## Extracted year candidates</span></span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>If this table is thin or empty, rebuild from raw <span class="in">`.rds`</span> or scanned PDFs. The existing JSON source may have had numbers removed before export.</span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">nrow</span>(years) <span class="sc">==</span> <span class="dv">0</span>) {</span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"No year candidates found in the current text source."</span>)</span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>  DT<span class="sc">::</span><span class="fu">datatable</span>(years, <span class="at">rownames =</span> <span class="cn">FALSE</span>, <span class="at">filter =</span> <span class="st">"top"</span>, <span class="at">options =</span> <span class="fu">list</span>(<span class="at">pageLength =</span> <span class="dv">10</span>, <span class="at">scrollX =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## Metadata needing review</span></span>
-<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>metadata <span class="sc">%&gt;%</span></span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(include_in_timeline <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(chapter, chapter_title, approx_start_year, approx_end_year, date_confidence, timeline_review_status, notes)</span>
-<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Timeline"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>The timeline below uses **curated chapter date ranges** from <span class="in">`data/chapter_metadata.csv`</span>, not raw year extraction alone.</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>That distinction matters. The OCR/RDS rebuild now recovers years, but a memoir chapter can mention years outside the life period being narrated. For example, a childhood chapter may mention a later anniversary, a publication date, or a retrospective comment. Those years are useful evidence, but they should not automatically define the chapter's time range.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: timeline-load</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(<span class="st">"data/public/chapter_timeline.csv"</span>)) {</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">source</span>(<span class="st">"R/08_build_timeline_table.R"</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>timeline <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"data/public/chapter_timeline.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(chapter <span class="sc">!=</span> <span class="dv">12</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Chapter date ranges</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(timeline, <span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">reorder</span>(timeline_label, <span class="fu">desc</span>(chapter)))) <span class="sc">+</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> approx_start_year, <span class="at">xend =</span> approx_end_year, <span class="at">yend =</span> <span class="fu">reorder</span>(timeline_label, <span class="fu">desc</span>(chapter))), <span class="at">linewidth =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> approx_start_year), <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> approx_end_year), <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Approximate year range"</span>,</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Curated memoir timeline by chapter"</span>,</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Ranges are approximate and should be reviewed against the scans."</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## How to read this</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Start/end years** are human-curated approximations based on the chapter's main narrative period.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Year candidates** are machine-detected years found inside the OCR text.</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A candidate year outside the curated range is not automatically wrong; it may be historical background, a retrospective reference, or OCR noise.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Chapter 12 is excluded from the chart because it is the synthetic full-text aggregate.</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>timeline <span class="sc">|&gt;</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    chapter,</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>    chapter_title,</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    approx_start_year,</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    approx_end_year,</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    life_stage,</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    location,</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    word_count,</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    year_count,</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    year_candidates</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

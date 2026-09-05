@@ -2,71 +2,68 @@
 title: "Timeline"
 ---
 
+The timeline below uses **curated chapter date ranges** from `data/chapter_metadata.csv`, not raw year extraction alone.
+
+That distinction matters. The OCR/RDS rebuild now recovers years, but a memoir chapter can mention years outside the life period being narrated. For example, a childhood chapter may mention a later anniversary, a publication date, or a retrospective comment. Those years are useful evidence, but they should not automatically define the chapter's time range.
+
 ```{r}
 #| label: timeline-load
 #| echo: false
+#| message: false
+#| warning: false
+
 library(readr)
 library(dplyr)
 library(ggplot2)
-library(DT)
-library(jsonlite)
+library(knitr)
 
-if (!file.exists("data/processed/chapter_stats.csv")) {
-  source("R/01_prepare_corpus.R")
-}
-if (!file.exists("data/processed/sentiment_by_chapter.csv")) {
-  source("R/02_sentiment_analysis.R")
+if (!file.exists("data/public/chapter_timeline.csv")) {
+  source("R/08_build_timeline_table.R")
 }
 
-metadata <- read_csv("data/chapter_metadata.csv", show_col_types = FALSE)
-stats <- read_csv("data/processed/chapter_stats.csv", show_col_types = FALSE)
-sentiment <- read_csv("data/processed/sentiment_by_chapter.csv", show_col_types = FALSE)
-years <- read_csv("data/processed/year_candidates_by_chapter.csv", show_col_types = FALSE)
-build_summary <- jsonlite::read_json("data/processed/build_summary.json")
+timeline <- readr::read_csv("data/public/chapter_timeline.csv", show_col_types = FALSE) |>
+  filter(chapter != 12)
 ```
 
-This page uses the starter chapter metadata as a timeline scaffold. Treat these years as draft metadata until reviewed against the source text.
+## Chapter date ranges
 
 ```{r}
 #| echo: false
-cat("**Source warning:** ", build_summary$source_warning)
-```
 
-```{r}
-#| echo: false
-timeline <- metadata %>%
-  filter(include_in_timeline == TRUE) %>%
-  left_join(stats %>% select(chapter, word_count), by = "chapter") %>%
-  left_join(sentiment %>% select(chapter, net_bing_sentiment, afinn_score), by = "chapter") %>%
-  mutate(midpoint_year = (as.numeric(approx_start_year) + as.numeric(approx_end_year)) / 2)
-
-timeline %>%
-  ggplot(aes(x = midpoint_year, y = net_bing_sentiment, label = chapter)) +
-  geom_line() +
-  geom_point() +
-  geom_text(nudge_y = 5, check_overlap = TRUE) +
-  labs(x = "Approximate midpoint year", y = "Net Bing sentiment", title = "Draft sentiment timeline") +
+ggplot(timeline, aes(y = reorder(timeline_label, desc(chapter)))) +
+  geom_segment(aes(x = approx_start_year, xend = approx_end_year, yend = reorder(timeline_label, desc(chapter))), linewidth = 4) +
+  geom_point(aes(x = approx_start_year), size = 2) +
+  geom_point(aes(x = approx_end_year), size = 2) +
+  labs(
+    x = "Approximate year range",
+    y = NULL,
+    title = "Curated memoir timeline by chapter",
+    subtitle = "Ranges are approximate and should be reviewed against the scans."
+  ) +
   theme_minimal()
 ```
 
-## Extracted year candidates
+## How to read this
 
-If this table is thin or empty, rebuild from raw `.rds` or scanned PDFs. The existing JSON source may have had numbers removed before export.
-
-```{r}
-#| echo: false
-if (nrow(years) == 0) {
-  cat("No year candidates found in the current text source.")
-} else {
-  DT::datatable(years, rownames = FALSE, filter = "top", options = list(pageLength = 10, scrollX = TRUE))
-}
-```
-
-## Metadata needing review
+- **Start/end years** are human-curated approximations based on the chapter's main narrative period.
+- **Year candidates** are machine-detected years found inside the OCR text.
+- A candidate year outside the curated range is not automatically wrong; it may be historical background, a retrospective reference, or OCR noise.
+- Chapter 12 is excluded from the chart because it is the synthetic full-text aggregate.
 
 ```{r}
 #| echo: false
-metadata %>%
-  filter(include_in_timeline == TRUE) %>%
-  select(chapter, chapter_title, approx_start_year, approx_end_year, date_confidence, timeline_review_status, notes)
+
+timeline |>
+  select(
+    chapter,
+    chapter_title,
+    approx_start_year,
+    approx_end_year,
+    life_stage,
+    location,
+    word_count,
+    year_count,
+    year_candidates
+  ) |>
+  knitr::kable()
 ```

@@ -21,3 +21,7 @@ if (file.exists("R/07_build_corpus_summary.R")) {
 }
 
 message("Done.")
+
+if (file.exists("R/08_build_timeline_table.R")) {
+  source("R/08_build_timeline_table.R")
+}

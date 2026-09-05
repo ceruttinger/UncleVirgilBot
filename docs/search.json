@@ -221,7 +221,7 @@
     "href": "timeline.html",
     "title": "Timeline",
     "section": "",
-    "text": "This page uses the starter chapter metadata as a timeline scaffold. Treat these years as draft metadata until reviewed against the source text.\n**Source warning:**  Current corpus_data.json appears to be missing many dates/years, likely because setup.R removed numbers before exporting JSON. Rebuild from raw RDS/PDF with R/00_rebuild_raw_text_from_rds.R or R/00_ocr_scanned_pdfs.R before final timeline work."
+    "text": "The timeline below uses curated chapter date ranges from data/chapter_metadata.csv, not raw year extraction alone.\nThat distinction matters. The OCR/RDS rebuild now recovers years, but a memoir chapter can mention years outside the life period being narrated. For example, a childhood chapter may mention a later anniversary, a publication date, or a retrospective comment. Those years are useful evidence, but they should not automatically define the chapter’s time range."
   },
   {
     "objectID": "timeline.html#extracted-year-candidates",
@@ -600,5 +600,19 @@
     "title": "Scanned PDFs",
     "section": "Chapter 11: Post Rio to Retirement",
     "text": "Chapter 11: Post Rio to Retirement\nOpen scanned PDF"
+  },
+  {
+    "objectID": "timeline.html#chapter-date-ranges",
+    "href": "timeline.html#chapter-date-ranges",
+    "title": "Timeline",
+    "section": "Chapter date ranges",
+    "text": "Chapter date ranges"
+  },
+  {
+    "objectID": "timeline.html#how-to-read-this",
+    "href": "timeline.html#how-to-read-this",
+    "title": "Timeline",
+    "section": "How to read this",
+    "text": "How to read this\n\nStart/end years are human-curated approximations based on the chapter’s main narrative period.\nYear candidates are machine-detected years found inside the OCR text.\nA candidate year outside the curated range is not automatically wrong; it may be historical background, a retrospective reference, or OCR noise.\nChapter 12 is excluded from the chart because it is the synthetic full-text aggregate.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nchapter\nchapter_title\napprox_start_year\napprox_end_year\nlife_stage\nlocation\nword_count\nyear_count\nyear_candidates\n\n\n\n\n1\nEarliest Memories\n1916\n1935\nChildhood\nIdaho Falls ID; Mesa AZ; Logan UT; Salt Lake City UT\n3695\n15\n1916; 1917; 1918; 1924; 1926; 1927; 1928; 1977; 1929; 1930; 1932; 1940; 1933; 1934; 1935\n\n\n2\nThe Teenage Period\n1934\n1943\nTeenage years\nIdaho Falls ID; Pomona CA; Salt Lake City UT\n3896\n11\n1934; 1980; 1936; 1937; 1939; 1940; 1988; 1941; 1942; 1943; 1945\n\n\n3\nWorld War Two\n1942\n1945\nMilitary service\nTreasure Island CA; Logan UT; Corpus Christi TX; Quonset Point RI; USS Wasp; Pacific Theater\n2760\n5\n1942; 1943; 1944; 1986; 1945\n\n\n4\nMy College Years BYU and Colombia\n1946\n1953\nCollege and graduate education\nProvo UT; New York City NY; Colombia\n4368\n9\n1946; 1947; 1948; 1939; 1932; 1949; 1950; 1953; 1952\n\n\n5\nThe CIA\n1950\n1955\nCIA entry and early intelligence career\nWashington DC area; Guatemala; headquarters\n6498\n14\n1947; 1939; 1950; 1952; 1951; 1954; 1936; 1953; 1955; 1943; 1882; 1860; 1835; 1845\n\n\n6\nMontevideo Uruguay\n1955\n1959\nForeign service\nMontevideo Uruguay\n3963\n10\n1955; 1956; 1957; 1969; 1958; 1930; 1940; 1950; 1959; 1982\n\n\n7\nHeadquarters Duty\n1960\n1965\nHeadquarters assignment\nMcLean VA; Washington DC area\n3974\n7\n1960; 1961; 1963; 1965; 1962; 1950; 1964\n\n\n8\nRio De Janeiro\n1965\n1966\nForeign service\nRio de Janeiro Brazil\n3157\n3\n1965; 1966; 1988\n\n\n9\nThe McLean Va. Years\n1964\n1968\nVirginia years\nMcLean VA\n1321\n2\n1964; 1968\n\n\n10\nMaking a Career Change\n1968\n1973\nCareer transition\nUnited States; Washington DC area\n2726\n5\n1968; 1973; 1969; 1971; 1972\n\n\n11\nPost Rio to Retirement\n1968\n1975\nLater career and retirement\nUnited States; Washington DC area; post-Rio locations\n3580\n9\n1968; 1974; 1969; 1970; 1972; 1971; 1973; 1955; 1975"
   }
 ]
