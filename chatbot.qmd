@@ -1,22 +1,74 @@
 ---
 title: "Uncle Virgil Bot"
+page-layout: full
+toc: false
+execute:
+  echo: false
 ---
 
-This is the chatbot shell. It works locally as passage retrieval. After the AWS endpoint is deployed, copy `assets/js/chatbot-config.example.js` to `assets/js/chatbot-config.js` and set the API Gateway `/ask` URL. The browser should never contain a model API key.
+::: {.callout-note title="Static retrieval prototype"}
+This page is the bridge between the memoir analysis site and the future AI chatbot. It does **not** call an external AI model yet. Instead, it searches the citation-ready passage index and returns relevant memoir passages with chapter and passage citations.
+:::
 
-<div class="chat-card">
-  <label for="uv-chat-input"><strong>Ask about the memoir</strong></label>
-  <textarea id="uv-chat-input" rows="3" placeholder="Example: What does Virgil say about his time in Montevideo?"></textarea>
-  <button id="uv-chat-button">Ask</button>
+```{=html}
+<div class="uvbot-page" id="uvbot-page">
+  <section class="uvbot-search-card" aria-labelledby="uvbot-title">
+    <h2 id="uvbot-title">Ask about the memoir</h2>
+    <p class="uvbot-help">
+      Type a person, place, date, chapter topic, or question. You can also use the topic buttons below:
+      each topic opens suggested searches under the buttons. Click a suggestion to load it into the search box,
+      edit it if needed, then press <strong>Ask / search passages</strong>.
+    </p>
+
+    <label class="uvbot-label" for="uvbot-question">Question or search terms</label>
+    <input
+      id="uvbot-question"
+      class="uvbot-input"
+      type="search"
+      autocomplete="off"
+      placeholder="Example: Central Intelligence Agency"
+    />
+
+    <div class="uvbot-actions" aria-label="Search actions">
+      <button type="button" id="uvbot-search" class="uvbot-primary">Ask / search passages</button>
+      <button type="button" id="uvbot-clear" class="uvbot-secondary">Clear</button>
+    </div>
+
+    <p class="uvbot-topic-instructions">Choose a topic to show editable search suggestions:</p>
+    <div class="uvbot-topic-row" id="uvbot-topic-row" aria-label="Topic buttons">
+      <button type="button" class="uvbot-topic-button" data-topic="cia">CIA / Cold War</button>
+      <button type="button" class="uvbot-topic-button" data-topic="family">Family</button>
+      <button type="button" class="uvbot-topic-button" data-topic="places">Places</button>
+      <button type="button" class="uvbot-topic-button" data-topic="wwii">World War II</button>
+      <button type="button" class="uvbot-topic-button" data-topic="south-america">South America posts</button>
+      <button type="button" class="uvbot-topic-button" data-topic="college">College years</button>
+    </div>
+
+    <div id="uvbot-suggestions" class="uvbot-suggestions" hidden></div>
+  </section>
+
+  <section class="uvbot-results-section" aria-labelledby="uvbot-results-title">
+    <h2 id="uvbot-results-title">Retrieved passages</h2>
+    <p class="uvbot-help">Showing the strongest citation-ready matches from the passage index.</p>
+
+    <div id="uvbot-result-status" class="uvbot-status-grid" aria-live="polite">
+      <div class="uvbot-stat-card"><span class="uvbot-stat-label">Search</span><strong class="uvbot-stat-value">None yet</strong></div>
+      <div class="uvbot-stat-card"><span class="uvbot-stat-label">Matches</span><strong class="uvbot-stat-value">0</strong></div>
+      <div class="uvbot-stat-card"><span class="uvbot-stat-label">Index</span><strong class="uvbot-stat-value">Loading passage index...</strong></div>
+      <div class="uvbot-stat-card"><span class="uvbot-stat-label">Reminder</span><strong class="uvbot-stat-value">Suggestions are editable before search.</strong></div>
+    </div>
+
+    <div id="uvbot-results" class="uvbot-results-grid"></div>
+  </section>
+
+  <section class="uvbot-instructions">
+    <h2>How to read this page</h2>
+    <p>
+      This is a <strong>retrieval layer</strong>, not a full chatbot. The current page finds likely passages and gives
+      citation-ready references. The next backend version will use the same passage index to generate narrative answers
+      with citations.
+    </p>
+  </section>
 </div>
-
-<div id="uv-chat-status" class="muted"></div>
-<div id="uv-chat-answer"></div>
-<div id="uv-chat-sources"></div>
-
-<script>
-  // Local-only retrieval by default. Do not put API keys here.
-  window.UNCLE_VIRGILBOT_API_ENDPOINT = window.UNCLE_VIRGILBOT_API_ENDPOINT || "";
-</script>
-<script src="assets/js/chatbot-config.js"></script>
-<script src="assets/js/chatbot.js"></script>
+<script src="assets/js/static_citation_bot.js"></script>
+```

@@ -49,3 +49,7 @@ venv/
 # Raw rebuild sources - keep local unless intentionally publishing
 data/raw_scans/
 *.rds
+
+# Local patch backups
+.patch_backups/
+*.bak*
