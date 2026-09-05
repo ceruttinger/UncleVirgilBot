@@ -1,0 +1,65 @@
+---
+title: "Named Entities"
+---
+
+Named entities are the people, places, organizations, dates, and other proper references that structure the memoir.
+
+For this project, entity extraction is intentionally treated as a **candidate-and-review workflow**. OCR is noisy, family names are domain-specific, and the source text may be lower-case in places, so a generic named-entity model would miss important names and hallucinate others.
+
+## How to read this page
+
+- **Entity registry**: one row per candidate entity across the memoir.
+- **Entity mentions**: chapter-level mentions of each entity.
+- **Dates**: four-digit year candidates. These need review because some years are chapter-period dates while others are historical background or later reflection.
+- **Review status**: starts as `candidate`. Later we will promote trusted entities to `accepted` and remove false positives.
+
+```{r}
+#| label: entities-load
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(dplyr)
+library(DT)
+
+if (!file.exists("data/public/entity_registry.csv") || !file.exists("data/public/entity_mentions.csv")) {
+  source("R/09_extract_named_entities.R")
+}
+
+registry <- readr::read_csv("data/public/entity_registry.csv", show_col_types = FALSE)
+mentions <- readr::read_csv("data/public/entity_mentions.csv", show_col_types = FALSE)
+summary <- readr::read_csv("data/public/entity_summary.csv", show_col_types = FALSE)
+```
+
+## Entity counts by type
+
+```{r}
+#| echo: false
+DT::datatable(summary, rownames = FALSE, options = list(pageLength = 10))
+```
+
+## Top entities
+
+```{r}
+#| echo: false
+registry |>
+  arrange(desc(total_count)) |>
+  select(entity_type, canonical_entity, total_count, chapters, extraction_methods, review_status) |>
+  head(100) |>
+  DT::datatable(rownames = FALSE, options = list(pageLength = 25, scrollX = TRUE))
+```
+
+## Chapter-level mentions
+
+```{r}
+#| echo: false
+mentions |>
+  select(chapter, chapter_title, entity_type, canonical_entity, count, extraction_method, review_status) |>
+  arrange(chapter, entity_type, desc(count), canonical_entity) |>
+  DT::datatable(rownames = FALSE, options = list(pageLength = 25, scrollX = TRUE))
+```
+
+## What comes next
+
+The next improvement is to manually edit `data/entity_seeds.csv` and add names, places, institutions, and events that the automatic pass missed. After that, we can promote reviewed rows into a durable entity registry for the graph database and chatbot retrieval layer.

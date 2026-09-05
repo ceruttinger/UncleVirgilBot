@@ -1,0 +1,139 @@
+entity_text,canonical_entity,entity_type,notes
+Idaho Falls,Idaho Falls,Place,Early childhood and later family setting
+Lone Pine,Lone Pine,Place,Homestead area east of Idaho Falls
+Mesa,Mesa,Place,Arizona childhood period
+Arizona,Arizona,Place,State/geographic setting
+Tooele,Tooele,Place,Utah family stop en route
+Logan,Logan,Place,Utah family and church context
+Utah,Utah,Place,State/geographic setting
+Salt Lake City,Salt Lake City,Place,Work church college and family setting
+Clarkston,Clarkston,Place,Martin Harris grave site
+Soda Springs,Soda Springs,Place,Idaho trip location
+Salmon,Salmon,Place,Idaho family visit location
+Idaho,Idaho,Place,State/geographic setting
+Pomona,Pomona,Place,California teenage period
+California,California,Place,State/geographic setting
+Balboa Beach,Balboa Beach,Place,School outing
+Victor,Victor,Place,Idaho pea picking location
+Teton,Teton Mountains,Place,Mountain setting near Victor
+San Francisco,San Francisco,Place,Worlds Fair and naval training
+Treasure Island,Treasure Island,Place,Worlds Fair and boot camp
+Corpus Christi,Corpus Christi,Place,Naval training
+Quonset Point,Quonset Point,Place,Naval assignment
+Rhode Island,Rhode Island,Place,State/geographic setting
+Providence,Providence,Place,Ancestor research setting
+Boston,Boston,Place,Shipyard and historical sites
+Concord,Concord,Place,American Revolution site
+Bunker Hill,Bunker Hill,Place,American Revolution site
+Lexington,Lexington,Place,American Revolution site
+Caribbean,Caribbean,Place,Shakedown cruise
+Panama Canal,Panama Canal,Place,Naval transit
+San Diego,San Diego,Place,Naval transit
+Hawaii,Hawaii,Place,Pacific theater
+Pearl Harbor,Pearl Harbor,Place,Pacific theater / war memory
+Marcus Island,Marcus Island,Place,Pacific theater
+South China Sea,South China Sea,Place,Pacific theater
+Indochina,Indochina,Place,Pacific theater historical setting
+Vietnam,Vietnam,Place,Later name for Indochina
+Philippine Islands,Philippine Islands,Place,Richard and WWII context
+Philippines,Philippines,Place,Richard and WWII context
+Marianas,Marianas Islands,Place,Pacific theater
+Japan,Japan,Place,Pacific theater
+Bremerton,Bremerton,Place,Ship repair location
+Washington,Washington,Place,State/geographic setting
+Montevideo,Montevideo,Place,Foreign service post
+Uruguay,Uruguay,Place,Foreign service post
+Rio De Janeiro,Rio De Janeiro,Place,Foreign service post
+Rio,Rio De Janeiro,Place,Short form for Rio De Janeiro
+McLean,McLean Virginia,Place,Virginia home years
+Virginia,Virginia,Place,State/geographic setting
+BYU,Brigham Young University,Organization,College years
+Brigham Young University,Brigham Young University,Organization,College years
+Columbia,Columbia University,Organization,Graduate education
+Columbia University,Columbia University,Organization,Graduate education
+CIA,Central Intelligence Agency,Organization,Career institution
+Central Intelligence Agency,Central Intelligence Agency,Organization,Career institution
+U.S. Navy,U.S. Navy,Organization,Military service
+US Navy,U.S. Navy,Organization,Military service
+Navy,U.S. Navy,Organization,Military service
+USS Wasp,USS Wasp,Organization,Ship / military unit
+Wasp,USS Wasp,Organization,Short form for USS Wasp
+Western Electric,Western Electric,Organization,Pre-war employer
+Mountain States Telephone,Mountain States Telephone and Telegraph,Organization,Telephone company context
+Mountain States Telephone and Telegraph,Mountain States Telephone and Telegraph,Organization,Telephone company context
+Presiding Bishop,Presiding Bishop's Office,Organization,LDS church office
+Presiding Bishop's Office,Presiding Bishop's Office,Organization,LDS church office
+CWA,Communications Workers of America,Organization,Union
+Communications Workers of America,Communications Workers of America,Organization,Union
+LDS Church,Church of Jesus Christ of Latter-day Saints,Organization,Religious institution
+Church of Jesus Christ of Latter Day Saints,Church of Jesus Christ of Latter-day Saints,Organization,Religious institution
+Church of Jesus Christ of Latter-day Saints,Church of Jesus Christ of Latter-day Saints,Organization,Religious institution
+Arizona Temple,Arizona Temple,Organization/Place,Temple context
+Mesa Temple,Mesa Temple,Organization/Place,Temple context
+Idaho Falls Temple,Idaho Falls Temple,Organization/Place,Temple context
+Lincoln School,Lincoln School,Organization,School
+Eastside Grammar School,Eastside Grammar School,Organization,School
+Riverside Grammar School,Riverside Grammar School,Organization,School
+Idaho Falls High,Idaho Falls High School,Organization,School
+Pomona High School,Pomona High School,Organization,School
+Ila Rose,Ila Rose,Person,Sister/family member
+Loverna,Loverna,Person,Sister/family member
+Martin,Martin,Person,Brother/family member
+Richard,Richard,Person,Brother/family member
+Mary Anderson,Mary Anderson,Person,Family source
+Maryette Rice Harris Standley,Maryette Rice Harris Standley,Person,Grandmother/family history
+Solomon Webster Harris,Solomon Webster Harris,Person,Grandfather/family history
+Solomon R Harris,Solomon R. Harris,Person,Uncle/family member
+Sol Harris,Solomon R. Harris,Person,Short form for uncle Sol
+Aunt Sarah,Sarah Harris,Person,Family member
+Sarah,Sarah Harris,Person,Family member
+Clifford,Clifford,Person,Adopted son of Sol and Sarah
+Henry Guyaz,Henry Guyaz,Person,Uncle/family member
+Lucy Guyaz,Lucy Guyaz,Person,Aunt/family member
+Nathan Harris,Nathan Harris,Person,Cousin/lawyer story
+Franklin D Roosevelt,Franklin D. Roosevelt,Person,U.S. President historical context
+Roosevelt,Franklin D. Roosevelt,Person,Short form for Franklin D Roosevelt
+Herbert Hoover,Herbert Hoover,Person,U.S. President historical context
+Hoover,Herbert Hoover,Person,Short form for Herbert Hoover
+Reed Smoot,Reed Smoot,Person,Senator/church figure historical context
+Heber J Grant,Heber J. Grant,Person,LDS president
+Anthony W Ivins,Anthony W. Ivins,Person,LDS church leader
+David O McKay,David O. McKay,Person,LDS church leader
+George Albert Smith,George Albert Smith,Person,LDS church leader
+John A Widtsoe,John A. Widtsoe,Person,LDS church leader
+Richard R Lyman,Richard R. Lyman,Person,LDS church leader
+Rudger Clawson,Rudger Clawson,Person,LDS church leader
+Joseph Fielding Smith,Joseph Fielding Smith,Person,LDS church leader
+J Golden Kimball,J. Golden Kimball,Person,LDS church leader
+Sylvester Q Cannon,Sylvester Q. Cannon,Person,LDS church leader
+George F Richards,George F. Richards,Person,LDS church leader
+Stephen L Richards,Stephen L. Richards,Person,LDS church leader
+Spencer W Kimball,Spencer W. Kimball,Person,LDS church leader
+Louis F Nuffer,Louis F. Nuffer,Person,Bishop/teacher
+Vern L Brown,Vern L. Brown,Person,Bishopric member
+Martin Harris,Martin Harris,Person,Great grandfather / LDS history
+Wiley Snarr,Wiley Snarr,Person,Farm employer/church connection
+Al Harris,Al Harris,Person,Brother-in-law
+Lester Allan Harris,Lester Allan Harris,Person,Brother-in-law full name
+Joyce McNeill,Joyce McNeill,Person,First wife
+Jack Kelley,Jack Kelley,Person,Friend
+Reuel Neilson,Reuel Neilson,Person,Friend
+Revel Neilson,Reuel Neilson,Person,OCR/spelling variant for Reuel Neilson
+Wilmer Norton,Wilmer Norton,Person,Friend
+Harold Price,Harold Price,Person,Friend
+Rulon Price,Rulon Price,Person,Friend
+Melvin Olsen,Melvin Olsen,Person,Friend
+Maria del Carmen Stevens,Maria del Carmen Stevens,Person,Richard's wife
+Carmen,Carmen Stevens,Person,Short form for Maria del Carmen Stevens
+Heber Austin,Heber Austin,Person,Stake president
+T J Hurley,T. J. Hurley,Person,Western Electric boss
+TJ Hurley,T. J. Hurley,Person,Variant without spaces
+Elwood Heiner,Elwood Heiner,Person,Elders quorum president
+Tony Martin,Tony Martin,Person,Singer/naval training reference
+Cyd Charisse,Cyd Charisse,Person,Actor/dancer reference
+Tyrone Power,Tyrone Power,Person,Actor/naval instructor reference
+Roger Williams,Roger Williams,Person,Providence historical reference
+Raymond Spruance,Raymond Spruance,Person,Admiral WWII context
+John S McCain,John S. McCain,Person,Admiral WWII context
+Harry Truman,Harry Truman,Person,U.S. President historical context
+Marion,Marion,Person,Later spouse/family reference

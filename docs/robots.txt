@@ -1,1 +1,1 @@
-Sitemap: https://clarkruttinger.info/UncleVirgilBot/sitemap.xml
+Sitemap: https://ceruttinger.github.io/UncleVirgilBot/sitemap.xml

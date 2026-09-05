@@ -1,7 +1,7 @@
 # Chapter 9: The McLean Va. Years
 
 - Source records: 9–9
-- Date confidence: low
+- Date confidence: medium
 - Boundary confidence: needs_review
 
 GHAPTER NINE _

@@ -2,22 +2,17 @@ project:
   type: website
   output-dir: docs
   resources:
-    - data/public/search_index.json
-    - data/public/word_frequencies.json
-    - data/public/pdf_manifest.json
+    - data/public/**
+    - data/processed/*.csv
+    - data/processed/*.json
     - data/chapter_metadata.csv
-    - data/processed/chapter_stats.csv
-    - data/processed/word_frequencies.csv
-    - data/processed/build_summary.json
-    - data/processed/corpus_records_review.csv
-    - data/processed/chapter_boundary_review.csv
-    - data/processed/ocr_review.csv
-    - data/processed/year_candidates_by_chapter.csv
-    - assets/pdf/
+    - assets/pdf/**
+    - assets/js/**
+    - assets/css/**
 
 website:
   title: "Uncle Virgil Bot"
-  site-url: "https://clarkruttinger.info/UncleVirgilBot/"
+  site-url: "https://ceruttinger.github.io/UncleVirgilBot/"
   navbar:
     left:
       - href: index.qmd
@@ -34,6 +29,8 @@ website:
         text: Timeline
       - href: corpus_review.qmd
         text: Corpus QA
+      - href: entities.qmd
+        text: Entities
       - href: scans.qmd
         text: Scanned PDFs
       - href: search.qmd
@@ -58,11 +55,7 @@ format:
     include-in-header: assets/html/noindex.html
     code-fold: true
     code-tools: true
+
 execute:
   warning: false
   message: false
-
-
-resources:
-  - assets/pdf/**
-  - data/public/**

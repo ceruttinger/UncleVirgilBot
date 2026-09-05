@@ -1,27 +1,26 @@
 message("Rebuilding UncleVirgilBot data products...")
 
-if (file.exists("R/00_rebuild_raw_text_from_rds.R")) {
-  source("R/00_rebuild_raw_text_from_rds.R")
+run_if_exists <- function(path) {
+  if (file.exists(path)) {
+    message("Running ", path)
+    source(path, local = FALSE)
+  } else {
+    message("Skipping missing script: ", path)
+  }
 }
 
-source("R/01_prepare_corpus.R")
-source("R/02_sentiment_analysis.R")
-source("R/03_build_search_index.R")
+run_if_exists("R/00_rebuild_raw_text_from_rds.R")
+run_if_exists("R/01_prepare_corpus.R")
+run_if_exists("R/02_sentiment_analysis.R")
+run_if_exists("R/03_build_search_index.R")
 
-if (file.exists("R/05_build_word_frequencies.R")) {
-  source("R/05_build_word_frequencies.R")
-}
+# Both names have been used during patch iterations. Run whichever exists.
+run_if_exists("R/05_build_word_frequencies.R")
+run_if_exists("R/05_wordclouds.R")
 
-if (file.exists("R/06_build_pdf_manifest.R")) {
-  source("R/06_build_pdf_manifest.R")
-}
-
-if (file.exists("R/07_build_corpus_summary.R")) {
-  source("R/07_build_corpus_summary.R")
-}
+run_if_exists("R/06_build_pdf_manifest.R")
+run_if_exists("R/07_build_corpus_summary.R")
+run_if_exists("R/08_build_timeline_table.R")
+run_if_exists("R/09_extract_named_entities.R")
 
 message("Done.")
-
-if (file.exists("R/08_build_timeline_table.R")) {
-  source("R/08_build_timeline_table.R")
-}

@@ -1,0 +1,158 @@
+library(readr)
+library(dplyr)
+library(stringr)
+library(tidyr)
+library(purrr)
+library(jsonlite)
+
+dir.create("data/processed", recursive = TRUE, showWarnings = FALSE)
+dir.create("data/public", recursive = TRUE, showWarnings = FALSE)
+
+if (!file.exists("data/processed/chapter_text.csv")) {
+  message("chapter_text.csv not found. Running R/01_prepare_corpus.R first.")
+  source("R/01_prepare_corpus.R")
+}
+
+chapters <- readr::read_csv("data/processed/chapter_text.csv", show_col_types = FALSE)
+seeds <- readr::read_csv("data/entity_seeds.csv", show_col_types = FALSE)
+
+required_chapter_cols <- c("chapter", "chapter_title", "text")
+missing_chapter_cols <- setdiff(required_chapter_cols, names(chapters))
+if (length(missing_chapter_cols) > 0) {
+  stop("chapter_text.csv is missing required columns: ", paste(missing_chapter_cols, collapse = ", "))
+}
+
+required_seed_cols <- c("entity_text", "canonical_entity", "entity_type")
+missing_seed_cols <- setdiff(required_seed_cols, names(seeds))
+if (length(missing_seed_cols) > 0) {
+  stop("data/entity_seeds.csv is missing required columns: ", paste(missing_seed_cols, collapse = ", "))
+}
+
+escape_regex <- function(x) {
+  str_replace_all(x, "([][{}()+*^$|\\\\?.])", "\\\\\\1")
+}
+
+count_phrase <- function(text, phrase) {
+  pattern <- paste0("\\\\b", escape_regex(phrase), "\\\\b")
+  stringr::str_count(text, regex(pattern, ignore_case = TRUE))
+}
+
+make_entity_id <- function(entity_type, canonical_entity) {
+  type_stub <- entity_type |>
+    str_to_lower() |>
+    str_replace_all("[^a-z0-9]+", "_") |>
+    str_replace_all("^_|_$", "") |>
+    str_sub(1, 16)
+
+  name_stub <- canonical_entity |>
+    str_to_lower() |>
+    str_replace_all("[^a-z0-9]+", "_") |>
+    str_replace_all("^_|_$", "") |>
+    str_sub(1, 48)
+
+  paste(type_stub, name_stub, sep = "__")
+}
+
+# Seed/gazetteer extraction: reliable for lower-case OCR and family-specific names.
+seed_hits <- tidyr::crossing(
+  chapters |> select(chapter, chapter_title, text),
+  seeds |> mutate(entity_text = as.character(entity_text))
+) |>
+  mutate(count = purrr::map2_int(text, entity_text, count_phrase)) |>
+  filter(count > 0) |>
+  transmute(
+    entity_id = make_entity_id(entity_type, canonical_entity),
+    entity_text = entity_text,
+    canonical_entity = canonical_entity,
+    entity_type = entity_type,
+    chapter = chapter,
+    chapter_title = chapter_title,
+    count = count,
+    extraction_method = "seed_gazetteer",
+    review_status = "candidate",
+    notes = notes
+  )
+
+# Date/year extraction: years are treated as Date entities at the chapter level.
+year_hits <- chapters |>
+  transmute(chapter, chapter_title, year = str_extract_all(text, "\\b(?:18|19|20)\\d{2}\\b")) |>
+  tidyr::unnest(year, keep_empty = FALSE) |>
+  count(chapter, chapter_title, year, name = "count") |>
+  transmute(
+    entity_id = make_entity_id("Date", year),
+    entity_text = year,
+    canonical_entity = year,
+    entity_type = "Date",
+    chapter = chapter,
+    chapter_title = chapter_title,
+    count = count,
+    extraction_method = "year_regex",
+    review_status = "candidate",
+    notes = "Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+  )
+
+# Optional capitalization pass. It will help only if the source text preserved case.
+extract_capitalized_phrases <- function(x) {
+  hits <- str_extract_all(
+    x,
+    "\\b[A-Z][a-z]+(?:\\s+(?:[A-Z]\\.?\\s+)?[A-Z][a-z]+){1,3}\\b"
+  )[[1]]
+  hits <- hits[!str_detect(hits, "^(Chapter|Part|The|This|That|There|After|During|Before|When|While|From|Upon|Because|Although)\\b")]
+  unique(hits)
+}
+
+cap_hits <- chapters |>
+  transmute(chapter, chapter_title, phrase = purrr::map(text, extract_capitalized_phrases)) |>
+  tidyr::unnest(phrase, keep_empty = FALSE) |>
+  count(chapter, chapter_title, phrase, name = "count") |>
+  filter(!str_to_lower(phrase) %in% str_to_lower(seed_hits$entity_text)) |>
+  transmute(
+    entity_id = make_entity_id("Unclassified", phrase),
+    entity_text = phrase,
+    canonical_entity = phrase,
+    entity_type = "Unclassified",
+    chapter = chapter,
+    chapter_title = chapter_title,
+    count = count,
+    extraction_method = "capitalized_phrase_regex",
+    review_status = "candidate",
+    notes = "Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+  )
+
+entity_mentions <- bind_rows(seed_hits, year_hits, cap_hits) |>
+  arrange(chapter, entity_type, canonical_entity)
+
+entity_registry <- entity_mentions |>
+  group_by(entity_id, canonical_entity, entity_type, review_status) |>
+  summarise(
+    total_count = sum(count, na.rm = TRUE),
+    chapters = paste(sort(unique(chapter)), collapse = "; "),
+    extraction_methods = paste(sort(unique(extraction_method)), collapse = "; "),
+    notes = paste(sort(unique(na.omit(notes))), collapse = " | "),
+    .groups = "drop"
+  ) |>
+  arrange(entity_type, desc(total_count), canonical_entity)
+
+entity_summary <- entity_registry |>
+  count(entity_type, name = "entity_count") |>
+  arrange(desc(entity_count), entity_type)
+
+readr::write_csv(entity_mentions, "data/processed/entity_mentions.csv")
+readr::write_csv(entity_registry, "data/processed/entity_registry.csv")
+readr::write_csv(entity_summary, "data/processed/entity_summary.csv")
+
+readr::write_csv(entity_mentions, "data/public/entity_mentions.csv")
+readr::write_csv(entity_registry, "data/public/entity_registry.csv")
+readr::write_csv(entity_summary, "data/public/entity_summary.csv")
+
+jsonlite::write_json(entity_mentions, "data/public/entity_mentions.json", pretty = TRUE, auto_unbox = TRUE)
+jsonlite::write_json(entity_registry, "data/public/entity_registry.json", pretty = TRUE, auto_unbox = TRUE)
+jsonlite::write_json(entity_summary, "data/public/entity_summary.json", pretty = TRUE, auto_unbox = TRUE)
+
+message("Wrote entity outputs:")
+message("- data/processed/entity_mentions.csv")
+message("- data/processed/entity_registry.csv")
+message("- data/processed/entity_summary.csv")
+message("- data/public/entity_mentions.json")
+message("- data/public/entity_registry.json")
+message("- data/public/entity_summary.json")

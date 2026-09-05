@@ -1,7 +1,7 @@
 # Chapter 4: My College Years BYU and Colombia
 
 - Source records: 4–4
-- Date confidence: low
+- Date confidence: medium
 - Boundary confidence: needs_review
 
 ia 7

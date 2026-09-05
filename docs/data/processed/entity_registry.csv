@@ -1,0 +1,941 @@
+entity_id,canonical_entity,entity_type,review_status,total_count,chapters,extraction_methods,notes
+date__1973,1973,Date,candidate,24,10; 11; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1945,1945,Date,candidate,20,2; 3; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1948,1948,Date,candidate,20,4; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1961,1961,Date,candidate,18,7; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1968,1968,Date,candidate,18,9; 10; 11; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1953,1953,Date,candidate,16,4; 5; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1954,1954,Date,candidate,16,5; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1974,1974,Date,candidate,16,11; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1939,1939,Date,candidate,14,2; 4; 5; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1950,1950,Date,candidate,14,4; 5; 6; 7; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1955,1955,Date,candidate,14,5; 6; 11; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1965,1965,Date,candidate,14,7; 8; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1966,1966,Date,candidate,14,8; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1947,1947,Date,candidate,12,4; 5; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1932,1932,Date,candidate,10,1; 4; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1940,1940,Date,candidate,10,1; 2; 6; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1942,1942,Date,candidate,10,2; 3; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1952,1952,Date,candidate,10,4; 5; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1959,1959,Date,candidate,10,6; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1960,1960,Date,candidate,10,7; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1963,1963,Date,candidate,10,7; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1969,1969,Date,candidate,10,6; 10; 11; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1971,1971,Date,candidate,10,10; 11; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1929,1929,Date,candidate,8,1; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1930,1930,Date,candidate,8,1; 6; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1943,1943,Date,candidate,8,2; 3; 5; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1946,1946,Date,candidate,8,4; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1949,1949,Date,candidate,8,4; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1956,1956,Date,candidate,8,6; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1958,1958,Date,candidate,8,6; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1962,1962,Date,candidate,8,7; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1964,1964,Date,candidate,8,7; 9; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1970,1970,Date,candidate,8,11; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1972,1972,Date,candidate,8,10; 11; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1934,1934,Date,candidate,6,1; 2; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1941,1941,Date,candidate,6,2; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1988,1988,Date,candidate,6,2; 8; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1924,1924,Date,candidate,4,1; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1926,1926,Date,candidate,4,1; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1927,1927,Date,candidate,4,1; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1936,1936,Date,candidate,4,2; 5; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1957,1957,Date,candidate,4,6; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1835,1835,Date,candidate,2,5; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1845,1845,Date,candidate,2,5; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1860,1860,Date,candidate,2,5; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1882,1882,Date,candidate,2,5; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1916,1916,Date,candidate,2,1; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1917,1917,Date,candidate,2,1; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1918,1918,Date,candidate,2,1; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1928,1928,Date,candidate,2,1; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1933,1933,Date,candidate,2,1; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1935,1935,Date,candidate,2,1; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1937,1937,Date,candidate,2,2; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1944,1944,Date,candidate,2,3; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1951,1951,Date,candidate,2,5; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1975,1975,Date,candidate,2,11; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1977,1977,Date,candidate,2,1; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1980,1980,Date,candidate,2,2; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1982,1982,Date,candidate,2,6; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+date__1986,1986,Date,candidate,2,3; 12,year_regex,"Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+organization__u_s_navy,U.S. Navy,Organization,candidate,66,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Military service
+organization__columbia_university,Columbia University,Organization,candidate,52,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Graduate education
+organization__uss_wasp,USS Wasp,Organization,candidate,52,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Ship / military unit | Short form for USS Wasp
+organization__brigham_young_university,Brigham Young University,Organization,candidate,43,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,College years
+organization__church_of_jesus_christ_of_latter_day_saints,Church of Jesus Christ of Latter-day Saints,Organization,candidate,40,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Religious institution
+organization__central_intelligence_agency,Central Intelligence Agency,Organization,candidate,38,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Career institution
+organization__communications_workers_of_america,Communications Workers of America,Organization,candidate,24,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Union
+organization__mountain_states_telephone_and_telegraph,Mountain States Telephone and Telegraph,Organization,candidate,24,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Telephone company context
+organization__presiding_bishop_s_office,Presiding Bishop's Office,Organization,candidate,24,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,LDS church office
+organization__western_electric,Western Electric,Organization,candidate,16,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Pre-war employer
+organization__idaho_falls_high_school,Idaho Falls High School,Organization,candidate,15,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,School
+organization__eastside_grammar_school,Eastside Grammar School,Organization,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,School
+organization__lincoln_school,Lincoln School,Organization,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,School
+organization__pomona_high_school,Pomona High School,Organization,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,School
+organization__riverside_grammar_school,Riverside Grammar School,Organization,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,School
+organization_pla__arizona_temple,Arizona Temple,Organization/Place,candidate,14,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Temple context
+organization_pla__idaho_falls_temple,Idaho Falls Temple,Organization/Place,candidate,14,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Temple context
+organization_pla__mesa_temple,Mesa Temple,Organization/Place,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Temple context
+person__marion,Marion,Person,candidate,177,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Later spouse/family reference
+person__franklin_d_roosevelt,Franklin D. Roosevelt,Person,candidate,45,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Short form for Franklin D Roosevelt | U.S. President historical context
+person__richard,Richard,Person,candidate,45,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Brother/family member
+person__martin,Martin,Person,candidate,39,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Brother/family member
+person__sarah_harris,Sarah Harris,Person,candidate,36,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Family member
+person__loverna,Loverna,Person,candidate,33,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Sister/family member
+person__herbert_hoover,Herbert Hoover,Person,candidate,28,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Short form for Herbert Hoover | U.S. President historical context
+person__carmen_stevens,Carmen Stevens,Person,candidate,26,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Short form for Maria del Carmen Stevens
+person__ila_rose,Ila Rose,Person,candidate,25,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Sister/family member
+person__reuel_neilson,Reuel Neilson,Person,candidate,24,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Friend | OCR/spelling variant for Reuel Neilson
+person__solomon_r_harris,Solomon R. Harris,Person,candidate,24,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Short form for uncle Sol | Uncle/family member
+person__t_j_hurley,T. J. Hurley,Person,candidate,24,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Variant without spaces | Western Electric boss
+person__heber_j_grant,Heber J. Grant,Person,candidate,16,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,LDS president
+person__jack_kelley,Jack Kelley,Person,candidate,16,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Friend
+person__joyce_mcneill,Joyce McNeill,Person,candidate,16,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,First wife
+person__martin_harris,Martin Harris,Person,candidate,14,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Great grandfather / LDS history
+person__melvin_olsen,Melvin Olsen,Person,candidate,14,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Friend
+person__solomon_webster_harris,Solomon Webster Harris,Person,candidate,13,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Grandfather/family history
+person__spencer_w_kimball,Spencer W. Kimball,Person,candidate,13,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,LDS church leader
+person__al_harris,Al Harris,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Brother-in-law
+person__anthony_w_ivins,Anthony W. Ivins,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,LDS church leader
+person__clifford,Clifford,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Adopted son of Sol and Sarah
+person__cyd_charisse,Cyd Charisse,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Actor/dancer reference
+person__david_o_mckay,David O. McKay,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,LDS church leader
+person__elwood_heiner,Elwood Heiner,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Elders quorum president
+person__george_albert_smith,George Albert Smith,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,LDS church leader
+person__george_f_richards,George F. Richards,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,LDS church leader
+person__harold_price,Harold Price,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Friend
+person__harry_truman,Harry Truman,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,U.S. President historical context
+person__heber_austin,Heber Austin,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Stake president
+person__henry_guyaz,Henry Guyaz,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Uncle/family member
+person__j_golden_kimball,J. Golden Kimball,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,LDS church leader
+person__john_a_widtsoe,John A. Widtsoe,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,LDS church leader
+person__john_s_mccain,John S. McCain,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Admiral WWII context
+person__joseph_fielding_smith,Joseph Fielding Smith,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,LDS church leader
+person__lester_allan_harris,Lester Allan Harris,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Brother-in-law full name
+person__louis_f_nuffer,Louis F. Nuffer,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Bishop/teacher
+person__lucy_guyaz,Lucy Guyaz,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Aunt/family member
+person__maria_del_carmen_stevens,Maria del Carmen Stevens,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Richard's wife
+person__mary_anderson,Mary Anderson,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Family source
+person__maryette_rice_harris_standley,Maryette Rice Harris Standley,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Grandmother/family history
+person__nathan_harris,Nathan Harris,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Cousin/lawyer story
+person__raymond_spruance,Raymond Spruance,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Admiral WWII context
+person__reed_smoot,Reed Smoot,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Senator/church figure historical context
+person__richard_r_lyman,Richard R. Lyman,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,LDS church leader
+person__roger_williams,Roger Williams,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Providence historical reference
+person__rudger_clawson,Rudger Clawson,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,LDS church leader
+person__rulon_price,Rulon Price,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Friend
+person__stephen_l_richards,Stephen L. Richards,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,LDS church leader
+person__sylvester_q_cannon,Sylvester Q. Cannon,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,LDS church leader
+person__tony_martin,Tony Martin,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Singer/naval training reference
+person__tyrone_power,Tyrone Power,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Actor/naval instructor reference
+person__vern_l_brown,Vern L. Brown,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Bishopric member
+person__wiley_snarr,Wiley Snarr,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Farm employer/church connection
+person__wilmer_norton,Wilmer Norton,Person,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Friend
+place__rio_de_janeiro,Rio De Janeiro,Place,candidate,108,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Foreign service post | Short form for Rio De Janeiro
+place__idaho,Idaho,Place,candidate,97,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,State/geographic setting
+place__washington,Washington,Place,candidate,85,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,State/geographic setting
+place__idaho_falls,Idaho Falls,Place,candidate,72,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Early childhood and later family setting
+place__utah,Utah,Place,candidate,71,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,State/geographic setting
+place__uruguay,Uruguay,Place,candidate,61,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Foreign service post
+place__virginia,Virginia,Place,candidate,40,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,State/geographic setting
+place__arizona,Arizona,Place,candidate,39,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,State/geographic setting
+place__california,California,Place,candidate,38,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,State/geographic setting
+place__montevideo,Montevideo,Place,candidate,38,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Foreign service post
+place__mclean_virginia,McLean Virginia,Place,candidate,35,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Virginia home years
+place__mesa,Mesa,Place,candidate,26,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Arizona childhood period
+place__salt_lake_city,Salt Lake City,Place,candidate,26,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Work church college and family setting
+place__japan,Japan,Place,candidate,24,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Pacific theater
+place__boston,Boston,Place,candidate,20,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Shipyard and historical sites
+place__logan,Logan,Place,candidate,20,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Utah family and church context
+place__salmon,Salmon,Place,candidate,20,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Idaho family visit location
+place__pearl_harbor,Pearl Harbor,Place,candidate,19,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Pacific theater / war memory
+place__vietnam,Vietnam,Place,candidate,19,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Later name for Indochina
+place__bremerton,Bremerton,Place,candidate,18,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Ship repair location
+place__corpus_christi,Corpus Christi,Place,candidate,18,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Naval training
+place__pomona,Pomona,Place,candidate,18,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,California teenage period
+place__philippines,Philippines,Place,candidate,16,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Richard and WWII context
+place__providence,Providence,Place,candidate,16,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Ancestor research setting
+place__san_francisco,San Francisco,Place,candidate,16,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Worlds Fair and naval training
+place__philippine_islands,Philippine Islands,Place,candidate,15,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Richard and WWII context
+place__treasure_island,Treasure Island,Place,candidate,15,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Worlds Fair and boot camp
+place__quonset_point,Quonset Point,Place,candidate,14,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Naval assignment
+place__south_china_sea,South China Sea,Place,candidate,14,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Pacific theater
+place__concord,Concord,Place,candidate,13,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,American Revolution site
+place__hawaii,Hawaii,Place,candidate,13,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Pacific theater
+place__rhode_island,Rhode Island,Place,candidate,13,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,State/geographic setting
+place__balboa_beach,Balboa Beach,Place,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,School outing
+place__bunker_hill,Bunker Hill,Place,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,American Revolution site
+place__caribbean,Caribbean,Place,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Shakedown cruise
+place__clarkston,Clarkston,Place,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Martin Harris grave site
+place__indochina,Indochina,Place,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Pacific theater historical setting
+place__lexington,Lexington,Place,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,American Revolution site
+place__lone_pine,Lone Pine,Place,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Homestead area east of Idaho Falls
+place__marcus_island,Marcus Island,Place,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Pacific theater
+place__marianas_islands,Marianas Islands,Place,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Pacific theater
+place__panama_canal,Panama Canal,Place,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Naval transit
+place__san_diego,San Diego,Place,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Naval transit
+place__soda_springs,Soda Springs,Place,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Idaho trip location
+place__teton_mountains,Teton Mountains,Place,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Mountain setting near Victor
+place__tooele,Tooele,Place,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Utah family stop en route
+place__victor,Victor,Place,candidate,12,1; 2; 3; 4; 5; 6; 7; 8; 9; 10; 11; 12,seed_gazetteer,Idaho pea picking location
+unclassified__united_states,United States,Unclassified,candidate,9,1; 2; 4; 5; 6; 7; 9; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__new_york,New York,Unclassified,candidate,7,1; 4; 5; 6; 7; 8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__soviet_union,Soviet Union,Unclassified,candidate,7,4; 5; 6; 7; 8; 9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_august,In August,Unclassified,candidate,6,2; 5; 6; 7; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__rhoda_jones,Rhoda Jones,Unclassified,candidate,6,4; 6; 7; 8; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__sunday_school,Sunday School,Unclassified,candidate,6,2; 5; 8; 9; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__alexandria_ward,Alexandria Ward,Unclassified,candidate,5,5; 6; 7; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__world_war,World War,Unclassified,candidate,5,2; 3; 4; 5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__air_force,Air Force,Unclassified,candidate,4,4; 5; 6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__clandestine_services,Clandestine Services,Unclassified,candidate,4,5; 9; 10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__heber_j_grant,Heber J. Grant,Unclassified,candidate,4,1; 3; 5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_march,In March,Unclassified,candidate,4,3; 6; 7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_may,In May,Unclassified,candidate,4,5; 7; 8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__jesus_christ,Jesus Christ,Unclassified,candidate,4,1; 5; 7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__julian_lowe,Julian Lowe,Unclassified,candidate,4,7; 8; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__on_april,On April,Unclassified,candidate,4,1; 3; 6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__salt_lake,Salt Lake,Unclassified,candidate,4,2; 9; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__arlington_ward,Arlington Ward,Unclassified,candidate,3,7; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__atlantic_ocean,Atlantic Ocean,Unclassified,candidate,3,1; 3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__branch_chief,Branch Chief,Unclassified,candidate,3,6; 7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__combined_soviet_operations_base,"Combined
+Soviet Operations Base",Unclassified,candidate,3,5; 7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__commercial_section,Commercial Section,Unclassified,candidate,3,7; 8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__deputy_chief,Deputy Chief,Unclassified,candidate,3,6; 7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__deputy_director,Deputy Director,Unclassified,candidate,3,9; 10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__dottie_burton,Dottie Burton,Unclassified,candidate,3,6; 8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__dwight_d_eisenhower,Dwight D. Eisenhower,Unclassified,candidate,3,4; 9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__elder_lee,Elder Lee,Unclassified,candidate,3,6; 7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__falls_church,Falls Church,Unclassified,candidate,3,5; 7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__far_east,Far East,Unclassified,candidate,3,5; 6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__first_presidency,First Presidency,Unclassified,candidate,3,5; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__for_christmas,For Christmas,Unclassified,candidate,3,5; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__foreign_service,Foreign Service,Unclassified,candidate,3,8; 10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__franklin_d_roosevelt,Franklin D. Roosevelt,Unclassified,candidate,3,1; 4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__high_school,"High
+School",Unclassified,candidate,3,1; 2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__high_school,High School,Unclassified,candidate,3,2; 3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__hill_cumorah,Hill Cumorah,Unclassified,candidate,3,7; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__howard_hughes,Howard Hughes,Unclassified,candidate,3,4; 5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__howard_hunt,Howard Hunt,Unclassified,candidate,3,6; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_december,In December,Unclassified,candidate,3,8; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_january,In January,Unclassified,candidate,3,9; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_november,In November,Unclassified,candidate,3,6; 7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__international_development,"International
+Development",Unclassified,candidate,3,6; 8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__international_affairs,International Affairs,Unclassified,candidate,3,4; 5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__joe_dunn,Joe Dunn,Unclassified,candidate,3,5; 6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__joseph_smith,Joseph Smith,Unclassified,candidate,3,4; 5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__kansas_city,Kansas City,Unclassified,candidate,3,5; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__los_angeles,Los Angeles,Unclassified,candidate,3,9; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__lyndon_johnson,Lyndon Johnson,Unclassified,candidate,3,7; 9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__martin_luther_king,Martin Luther King,Unclassified,candidate,3,9; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__new_york_city,New York City,Unclassified,candidate,3,4; 6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__personnel_management_staff,Personnel Management Staff,Unclassified,candidate,3,10; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__richard_m_nixon,Richard M. Nixon,Unclassified,candidate,3,4; 6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__sable_drive,Sable Drive,Unclassified,candidate,3,5; 7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__salt_lake_city,"Salt Lake
+City",Unclassified,candidate,3,1; 4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__sao_paulo,Sao Paulo,Unclassified,candidate,3,8; 9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__shanks_village,Shanks Village,Unclassified,candidate,3,4; 5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__soviet_embassy,Soviet Embassy,Unclassified,candidate,3,7; 8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__stake_president,Stake President,Unclassified,candidate,3,2; 4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__state_department,State Department,Unclassified,candidate,3,5; 8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__station_chief,Station Chief,Unclassified,candidate,3,6; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__strategic_services,Strategic Services,Unclassified,candidate,3,4; 5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__united_states,"United
+States",Unclassified,candidate,3,1; 9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__utah_state_agricultural_college,"Utah State Agricultural
+College",Unclassified,candidate,3,2; 3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__vietnam_war,Vietnam War,Unclassified,candidate,3,9; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__wendell_thorne,Wendell Thorne,Unclassified,candidate,3,5; 11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__aaronic_priesthood,Aaronic Priesthood,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__acting_branch_chief,Acting Branch Chief,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__admiral_raymond_spruance,Admiral Raymond Spruance,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__al_capone,Al Capone,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__al_galcius,Al Galcius,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__alexander_dubcek,Alexander Dubcek,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__alexandia_ward,Alexandia Ward,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__alfred_h_nichols,Alfred H. Nichols,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__ambassador_woodward,"Ambassador
+Woodward",Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__american_committee,American Committee,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__american_embassy,American Embassy,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__american_foreign_policy,"American Foreign
+Policy",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__american_friends,American Friends,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__american_revolution,American Revolution,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__american_university,American University,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__amos_wright,Amos Wright,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__and_columbic,And Columbic,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__andres_puyol,Andres Puyol,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__angel_moroni,Angel Moroni,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__anna_karenina,Anna Karenina,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__another_american,Another American,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__anthony_w_ivins,Anthony W. Ivins,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__aristogiden_carvalho,Aristogiden Carvalho,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__arlington_hospital,Arlington Hospital,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__army_field,Army Field,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__army_lt,Army Lt,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__army_materiel_command,Army Materiel Command,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__asiatic_pacific_ribbon,Asiatic Pacific Ribbon,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__assistant_secretary,Assistant Secretary,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__at_patrice_lamumba_university,"At Patrice Lamumba
+University",Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__atlantic_charter,Atlantic Charter,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__atlantic_city,Atlantic City,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__aunt_lucille,"Aunt
+Lucille",Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__aunt_pearl,"Aunt
+Pearl",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__aunt_edith,Aunt Edith,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__aunt_lucy_guyaz,Aunt Lucy Guyaz,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__baltic_seas,"Baltic
+Seas",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__baltic_states,Baltic States,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__bell_jr,Bell Jr,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__bell_telephone,Bell Telephone,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__belorussian_national_republic,Belorussian National Republic,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__benedict_arnold,Benedict Arnold,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__betty_swantek,Betty Swantek,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__bifel_tower,"Bifel
+Tower",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__bill_cates,Bill Cates,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__bill_colby,Bill Colby,Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__bill_gay,Bill Gay,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__billy_moore,Billy Moore,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__black_sea,Black Sea,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__blackwater_falls,"Blackwater
+Falls",Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__blind_bull,Blind Bull,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__blue_key,Blue Key,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__bob_wells,"Bob
+Wells",Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__bob_wells,Bob Wells,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__botanical_gardens,"Botanical
+Gardens",Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__both_sedoff,Both Sedoff,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__boy_scout,Boy Scout,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__branch_chief,"Branch
+Chief",Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__brenner_pass,"Brenner
+Pass",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__brigham_young,"Brigham
+Young",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__brigham_young,Brigham Young,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__british_school,"British
+School",Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__british_empire,British Empire,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__british_malaya,British Malaya,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__brooklyn_dodgers,Brooklyn Dodgers,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__brother_rodrigues,"Brother
+Rodrigues",Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__buenos_aires,Buenos Aires,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__building_fund_committee,Building Fund Committee,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__by_dec,By Dec,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__captain_john_smith,Captain John Smith,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__career_counseling,Career Counseling,Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__carmen_stevens,Carmen Stevens,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__caspar_milquetoast,"Caspar
+Milquetoast",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__ce_see,Ce See,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__central_intelligence,Central Intelligence,Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__central_intelligence_agency,"Central Intelligence
+Agency",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__central_park_west,Central Park West,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__charles_lindbergh,Charles Lindbergh,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__chase_manhattan_bank,Chase Manhattan Bank,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__chicago_someone,"Chicago
+Someone",Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__children_dwayne,Children Dwayne,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__chinese_bandits,"Chinese
+Bandits",Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__christmas_eve,Christmas Eve,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__christmas_tree,Christmas Tree,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__christopher_columbus,Christopher Columbus,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__chuck_vander_linden,Chuck Vander Linden,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__clandestine_services,"Clandestine
+Services",Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__clark_knowlton,Clark Knowlton,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__collection_group,Collection Group,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__colonel_oleg_penkovsky,Colonel Oleg Penkovsky,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__columbia_university,"Columbia
+University",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__columbia_presbyterian_hospital,Columbia Presbyterian Hospital,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__columbia_university_bookstore,Columbia University Bookstore,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__columbia_university_law_school,Columbia University Law School,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__columbia_university_school,Columbia University School,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__combined_soviet_operations_base,Combined Soviet Operations Base,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__commander_bond,Commander Bond,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__communications_workers,Communications Workers,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__communist_party,Communist Party,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__contacts_division,Contacts Division,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__coral_sea,Coral Sea,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__coreer_change,Coreer Change,Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__corpus_christi_naval_air,"Corpus
+Christi Naval Air",Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__corpus_christi_day,Corpus Christi Day,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__corpus_christi_naval_air,Corpus Christi Naval Air,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__counseling_staff,Counseling Staff,Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__crows_nest_harbor,Crows Nest Harbor,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__crows_nest_harbour,Crows Nest Harbour,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__cuban_missile,Cuban Missile,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__cyd_charisse,"Cyd
+Charisse",Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__dallas_n_archibald,Dallas N. Archibald,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__dave_murphy,"Dave
+Murphy",Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__dave_murphy,Dave Murphy,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__david_whitmer,"David
+Whitmer",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__david_e_murphy,David E. Murphy,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__david_murphy,David Murphy,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__david_smith,David Smith,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__defense_department,Defense Department,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__delaware_river,Delaware River,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__democratic_national_committees,Democratic National Committees,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__deputy_chief,"Deputy
+Chief",Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__deputy_director,"Deputy
+Director",Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__deseret_news,Deseret News,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__diana_farrell,Diana Farrell,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__dodge_polara,Dodge Polara,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__dolley_madison_parkway,"Dolley
+Madison Parkway",Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__don_searle,Don Searle,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__dorrie_nelson,Dorrie Nelson,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__eagle_rock,"Eagle
+Rock",Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__eagle_scout,Eagle Scout,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__east_berlin,East Berlin,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__east_germany,East Germany,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__eastern_european,"Eastern
+European",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__ed_speight,Ed Speight,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__edith_johnson,Edith Johnson,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__edward_howard_hunt,Edward Howard Hunt,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__edwin_aldrin,"Edwin
+Aldrin",Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__elaine_gwilliam,Elaine Gwilliam,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__elder_kimball,"Elder
+Kimball",Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__elder_evans,Elder Evans,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__elder_harold_b_lee,Elder Harold B. Lee,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__elder_kimball,Elder Kimball,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__elder_richard_l_evans,Elder Richard L. Evans,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__elders_kimball,Elders Kimball,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__electric_co,Electric Co,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__electronics_technician,Electronics Technician,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__ells_knudson,Ells Knudson,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__emigration_stake,Emigration Stake,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__english_channel,"English
+Channel",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__ensign_fugal,"Ensign
+Fugal",Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__environmental_protection_agency,"Environmental
+Protection Agency",Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__escola_americana,Escola Americana,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__evan_judd,Evan Judd,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__every_sunday,Every Sunday,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__executive_vice,"Executive
+Vice",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__executive_vice,Executive Vice,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__ezra_taft_benson,"Ezra
+Taft Benson",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__ezra_taft_benson,Ezra Taft Benson,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__falls_church,"Falls
+Church",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__falls_church_ward,Falls Church Ward,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__family_relations,Family Relations,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__far_east,"Far
+East",Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__far_eastern,Far Eastern,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__federal_aviation_adminstration,Federal Aviation Adminstration,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__field_hospital,Field Hospital,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__first_stop,"First
+Stop",Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__first_avenue,First Avenue,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__first_national_city_bank,First National City Bank,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__first_senator,First Senator,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__floyd_e_graham,Floyd E. Graham,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__ford_falcon,Ford Falcon,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__foreign_service_selection_boards,"Foreign
+Service Selection Boards",Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__forest_service,Forest Service,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__forestry_service,Forestry Service,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__forrest_black,Forrest Black,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__franconia_estates,Franconia Estates,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__franconia_rd,Franconia Rd,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__frank_carlucci,"Frank
+Carlucci",Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__frank_carlucci,Frank Carlucci,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__frank_kimball,Frank Kimball,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__frank_t_pomeroy,Frank T. Pomeroy,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__frank_william_gay,Frank William Gay,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__frederick_g_williams,"Frederick G.
+Williams",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__freeman_lee,Freeman Lee,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__french_indo,French Indo,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__gary_powers,Gary Powers,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__gayla_green,Gayla Green,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__general_authorities,"General
+Authorities",Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__general_authorities,General Authorities,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__general_conference,General Conference,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__general_counsel,General Counsel,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__general_officer,General Officer,Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__general_service_adminstration,"General Service
+Adminstration",Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__george_elmore,George Elmore,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__george_f_richards,George F. Richards,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__george_goolds,George Goolds,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__george_q_cannon,"George Q.
+Cannon",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__george_q_cannon,George Q. Cannon,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__george_washington,George Washington,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__george_washington_university,George Washington University,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__gerald_ford_family,"Gerald Ford
+Family",Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__gerald_miller,Gerald Miller,Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__golden_kimball,Golden Kimball,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__good_conduct_medal,Good Conduct Medal,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__grace_douglass,"Grace
+Douglass",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__gracie_mansion,Gracie Mansion,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__grant_larsen,Grant Larsen,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__great_britain,Great Britain,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__great_russians,Great Russians,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__growth_land,Growth Land,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__hal_milner,Hal Milner,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__harold_b_lee,Harold B. Lee,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__harold_stassen,Harold Stassen,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__harry_rositzke,Harry Rositzke,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__harry_s_truman,Harry S. Truman,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__hawley_act,Hawley Act,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__he_joined,"He
+Joined",Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__headquarters_duty,Headquarters Duty,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__heber_j_grant,"Heber J.
+Grant",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__helen_jeanne_jeppsen,Helen Jeanne Jeppsen,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__henry_bradfords,Henry Bradfords,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__hermano_rodrigues,Hermano Rodrigues,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__high_commissioner,High Commissioner,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__high_priest,High Priest,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__high_priest_group,High Priest Group,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__high_priest_group_leader,High Priest Group Leader,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__high_priests,High Priests,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__hilton_richard,Hilton Richard,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__hot_shoppes,Hot Shoppes,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__hotel_california,Hotel California,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__howard_anderson,Howard Anderson,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__hudson_river,Hudson River,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__hugh_fleischer,Hugh Fleischer,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__hugh_nibley,Hugh Nibley,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__hugh_tovar,Hugh Tovar,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__hyland_office,Hyland Office,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__idaho_falls,"Idaho
+Falls",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__iguazu_falls,Iguazu Falls,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__ila_anderson,Ila Anderson,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_october,"In
+October",Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_april,In April,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_athens,In Athens,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_august_soviet,In August Soviet,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_february,In February,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_florence,In Florence,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_july,In July,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_june,In June,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_montevideo,In Montevideo,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_october,In October,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_rome,In Rome,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_september,In September,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__in_washington,In Washington,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__indaba_club,Indaba Club,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__industrial_relations,Industrial Relations,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__installer_in_charge,Installer In Charge,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__intelligence_branch,Intelligence Branch,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__intelligence_medal,Intelligence Medal,Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__intelligence_service,Intelligence Service,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__intelligence_services,Intelligence Services,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__intermountain_international_relations_clubs,Intermountain International Relations Clubs,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__international_affairs,"International
+Affairs",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__international_relations,International Relations,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__international_relations_club,International Relations Club,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__international_relations_clubs,International Relations Clubs,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__isla_patrulla,Isla Patrulla,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__italian_alps,Italian Alps,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__jack_a_packer,Jack A. Packer,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__jack_maury,Jack Maury,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__jacques_richardson,Jacques Richardson,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__james_fletcher,James Fletcher,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__james_schlesinger,James Schlesinger,Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__james_w_dyer,James W. Dyer,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__janeiro_mission,Janeiro Mission,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__japanese_mainland,Japanese Mainland,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__jardin_botanico,Jardin Botanico,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__jay_jeppsen,"Jay
+Jeppsen",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__jay_jeppsen,Jay Jeppsen,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__jerry_miller,Jerry Miller,Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__jess_nixon,Jess Nixon,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__jim_burson,Jim Burson,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__jockey_club,Jockey Club,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__john_roosevelt,"John
+Roosevelt",Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__john_f_widtsoe,John F. Widtsoe,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__john_kennedy,John Kennedy,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__john_roosevelt,John Roosevelt,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__jonas_salk,Jonas Salk,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__joseph_smith,"Joseph
+Smith",Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__joseph_v_stalin,Joseph V. Stalin,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__julian_lowes,Julian Lowes,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__julliard_school,Julliard School,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__kay_bowen,Kay Bowen,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__kay_young,Kay Young,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__keith_schofield,Keith Schofield,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__ken_hampton,Ken Hampton,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__kensington_rd,Kensington Rd,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__kent_crowther,Kent Crowther,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__king_st,"King
+St",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__klaus_fuchs,"Klaus
+Fuchs",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__korean_war,Korean War,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__labor_day,Labor Day,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__lake_chiemsee,Lake Chiemsee,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__lake_city,Lake City,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__lake_constance,Lake Constance,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__lake_tegernsee,Lake Tegernsee,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__langley_high,Langley High,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__laraine_day,Laraine Day,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__las_vegas,Las Vegas,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__latin_american,"Latin
+American",Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__latter_day_saints,Latter Day Saints,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__leadership_systems,Leadership Systems,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__lee_harvey_oswald,Lee Harvey Oswald,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__lee_oswald,Lee Oswald,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__lela_kimball,Lela Kimball,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__lend_lease,Lend Lease,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__leo_durocher,"Leo
+Durocher",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__leo_wadsworth,Leo Wadsworth,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__les_raty,Les Raty,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__lester_allan_harris,"Lester Allan
+Harris",Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__limhi_rivers,Limhi Rivers,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__lincoln_memorial,"Lincoln
+Memorial",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__lincoln_memorial,Lincoln Memorial,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__little_sight,Little Sight,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__logan_temple,Logan Temple,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__lopez_quintas,Lopez Quintas,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__louis_f_nuffer,Louis F. Nuffer,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__macy_associates,"Macy
+Associates",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__main_st,"Main
+St",Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__major_andre,Major Andre,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__manhattan_ward,Manhattan Ward,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__margaret_thomas,Margaret Thomas,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__marianas_islands,Marianas Islands,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__marie_gray,Marie Gray,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__marion_jones,Marion Jones,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__mark_twain,Mark Twain,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__maronias_branch,Maronias Branch,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__marriot_corporation,Marriot Corporation,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__martin_harris,"Martin
+Harris",Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__marvin_green,Marvin Green,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__mary_brescia,Mary Brescia,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__may_day,May Day,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__meat_market,"Meat
+Market",Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__mel_mabey,Mel Mabey,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__memorial_day,Memorial Day,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__mesa_city,Mesa City,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__metropole_hotel,"Metropole
+Hotel",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__michael_sherrill,Michael Sherrill,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__middle_east,"Middle
+East",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__milan_smith,Milan Smith,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__military_intelligence_directorate,Military Intelligence Directorate,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__miss_america,Miss America,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__miss_washington,Miss Washington,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__mississippi_river,Mississippi River,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__model_a_ford,Model A Ford,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__moir_bowman,Moir Bowman,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__mormon_tabernacle_choir,Mormon Tabernacle Choir,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__morris_ave,Morris Ave,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__moscow_station,Moscow Station,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__my_boy_scout,My Boy Scout,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__my_college_years,My College Years,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__my_uncle_henry,My Uncle Henry,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__nad_peterson,Nad Peterson,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__national_wildlife_association,"National
+Wildlife Association",Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__national_security_agency,National Security Agency,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__nationalnaya_trudovoya_soyuz,Nationalnaya Trudovoya Soyuz,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__nato_supreme_commander,Nato Supreme Commander,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__neil_armstrong,Neil Armstrong,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__neu_schwanstein,Neu Schwanstein,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__new_york_city,"New
+
+York City",Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__new_york,"New
+York",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__new_york_city,"New
+York City",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__new_york_world,"New
+York World",Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__new_jersey,New Jersey,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__new_mexico,New Mexico,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__new_year,New Year,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__new_york_mets,New York Mets,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__new_york_times,New York Times,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__new_york_university,New York University,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__new_york_world,New York World,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__niagara_falls,"Niagara
+Falls",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__niagara_falls,Niagara Falls,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__nola_lowe,Nola Lowe,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__north_korean,"North
+Korean",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__north_atlantic,North Atlantic,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__north_atlantic_treaty_organization,North Atlantic Treaty Organization,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__notre_dame,Notre Dame,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__oliver_cowdery,Oliver Cowdery,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__on_christmas_day,"On Christmas
+Day",Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__on_dec,On Dec,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__on_new_year,On New Year,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__one_thanksgiving,"One
+Thanksgiving",Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__opposing_truman,Opposing Truman,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__our_world_war,Our World War,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__pam_jeppsen,Pam Jeppsen,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__parana_river,Parana River,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__park_arlington_apartments,"Park
+Arlington Apartments",Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__park_avenue,Park Avenue,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__pearl_harbor,"Pearl
+Harbor",Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__personel_management_staff,Personel Management Staff,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__personnel_evaluation,Personnel Evaluation,Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__personnel_management_staff,"Personnel Management
+Staff",Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__petroleum_exporting_countries,"Petroleum Exporting
+Countries",Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__philip_moseley,Philip Moseley,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__philippine_liberation_ribbon,Philippine Liberation Ribbon,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__plans_directorate,Plans Directorate,Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__policy_coordination,Policy Coordination,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__political_section,Political Section,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__post_exchange,Post Exchange,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__potomac_river,"Potomac
+River",Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__potomac_creek,Potomac Creek,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__president_eisenhower,"President
+Eisenhower",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__president_richard_nixon,"President
+Richard Nixon",Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__president_arthur_jensen,President Arthur Jensen,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__president_franklin_d_roosevelt,"President Franklin
+D. Roosevelt",Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__president_franklin_d_roosevelt,President Franklin D. Roosevelt,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__president_john_f_kennedy,President John F. Kennedy,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__primary_president,Primary President,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__prince_william,Prince William,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__quentin_johnson,"Quentin
+Johnson",Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__quiet_flows,Quiet Flows,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__quonset_point_naval_air,Quonset Point Naval Air,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__quonset_pt,Quonset Pt,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__radio_liberation,Radio Liberation,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__radio_technician_second_class,Radio Technician Second Class,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__radio_technician_third_class,"Radio Technician Third
+Class",Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__rayola_smith,Rayola Smith,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__rear_admiral,Rear Admiral,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__rehobeth_beach,"Rehobeth
+Beach",Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__rehobeth_beach,Rehobeth Beach,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__relief_society,Relief Society,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__relief_society_president,Relief Society President,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__requirements_branch,Requirements Branch,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__research_homes,"Research
+Homes",Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__research_homes,Research Homes,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__revel_nielson,Revel Nielson,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__revolutionary_war,Revolutionary War,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__rex_johnson,Rex Johnson,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__rhode_island_air_station,"Rhode Island Air
+Station",Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__rhodes_scholarship,"Rhodes
+Scholarship",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__richard_m_nixon,"Richard M.
+Nixon",Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__richard_r_lyman,Richard R. Lyman,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__rita_parker,Rita Parker,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__riverside_drive,Riverside Drive,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__robert_bolinder,Robert Bolinder,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__robert_e_wells,Robert E. Wells,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__robert_f_kennedy,"Robert F.
+Kennedy",Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__roman_forum,Roman Forum,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__ronald_sidney_harris,Ronald Sidney Harris,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__rose_hill,Rose Hill,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__roseanne_tueller,Roseanne Tueller,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__rotary_international,Rotary International,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__rueben_clark_law_school,Rueben Clark Law School,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__russian_institute,Russian Institute,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__ruth_lund,Ruth Lund,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__sabineschmidt_str,"Sabineschmidt
+Str",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__salt_lake_city,"Salt
+Lake City",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__salt_lake_tribune,Salt Lake Tribune,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__san_diego,"San
+Diego",Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__san_francisco,"San
+Francisco",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__san_clemente,San Clemente,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__satellite_operations,Satellite Operations,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__say_bon_voyage,Say Bon Voyage,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__schoenbrunn_palace,Schoenbrunn Palace,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__se_see,Se See,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__second_secretary,Second Secretary,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__select_committee,Select Committee,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__senator_robert_f_kennedy,Senator Robert F. Kennedy,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__senior_officer_seminar,Senior Officer Seminar,Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__service_co,Service Co,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__seven_corners,Seven Corners,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__seven_springs,Seven Springs,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__seville_mission,Seville Mission,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__shirley_tyson,Shirley Tyson,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__sidney_rigdon,Sidney Rigdon,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__silver_spring,Silver Spring,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__since_richard,Since Richard,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__singing_mothers,Singing Mothers,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__sister_kimball,Sister Kimball,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__sister_lee,Sister Lee,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__small_business_adminstration,"Small
+Business Adminstration",Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__snake_river,Snake River,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__son_daryl,Son Daryl,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__south_american,"South
+American",Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__south_atlantic,South Atlantic,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__south_korea,South Korea,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__southeast_asia,Southeast Asia,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__southern_area_command,"Southern Area
+Command",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__soviet_embassy,"Soviet
+Embassy",Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__soviet_operations,"Soviet
+Operations",Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__soviet_russia,"Soviet
+Russia",Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__soviet_union,"Soviet
+Union",Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__soviet_bloc,Soviet Bloc,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__soviet_bloc_division,Soviet Bloc Division,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__soviet_commercial_section,Soviet Commercial Section,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__soviet_division,Soviet Division,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__soviet_military_intelligence,Soviet Military Intelligence,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__soviet_section,Soviet Section,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__soviet_zone,Soviet Zone,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__spanish_fork,"Spanish
+Fork",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__spanish_american_war,Spanish American War,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__special_operations,Special Operations,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__spencer_w_kimball,Spencer W. Kimball,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__stafford_county,Stafford County,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__stake_conference,"Stake
+Conference",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__stake_president_david_smith,Stake President David Smith,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__sugar_loaf,Sugar Loaf,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__sun_valley,Sun Valley,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__sunday_school,"Sunday
+School",Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__sunday_school_president,"Sunday School
+President",Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__surprise_christmas,Surprise Christmas,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__swiss_alps,Swiss Alps,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__sylvester_q_cannon,Sylvester Q. Cannon,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__task_force,Task Force,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__ted_bell,Ted Bell,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__third_ward,Third Ward,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__thomas_e_dewey,Thomas E. Dewey,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__thomas_s_kimball,Thomas S. Kimball,Unclassified,candidate,2,9; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__three_witnesses,"Three
+Witnesses",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__thyrrenian_sea,Thyrrenian Sea,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__tom_sawyer,"Tom
+Sawyer",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__tom_karamessines,Tom Karamessines,Unclassified,candidate,2,10; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__tom_robertson,Tom Robertson,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__tom_taylor,Tom Taylor,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__top_secret,"Top
+Secret",Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__treasure_island,"Treasure
+Island",Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__truman_doctrine,Truman Doctrine,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__uncle_henry,Uncle Henry,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__uncle_roy,Uncle Roy,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__uncle_rudolf,Uncle Rudolf,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__uncle_sol,Uncle Sol,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__uncle_solomon_r_harris,Uncle Solomon R. Harris,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__uncle_vigil,Uncle Vigil,Unclassified,candidate,2,1; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__united_nations,United Nations,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__uruguayan_mission,Uruguayan Mission,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__utah_parks,"Utah
+Parks",Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__val_hyrics,"Val
+Hyrics",Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__val_carter,Val Carter,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__val_hyric,Val Hyric,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__vanderbilt_university,Vanderbilt University,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__vern_l_brown,Vern L. Brown,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__vernon_s_johnson,Vernon S. Johnson,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__vice_admiral_john,"Vice
+Admiral John",Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__victoria_hotel,"Victoria
+Hotel",Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__virgil_lehi_harris,Virgil Lehi Harris,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__vista_chinesa,Vista Chinesa,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__vivian_olson,Vivian Olson,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__wallace_rose_point,Wallace Rose Point,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__walt_sedoff,"Walt
+Sedoff",Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__walt_sedoff,Walt Sedoff,Unclassified,candidate,2,8; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__warsaw_pact,Warsaw Pact,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__washington_stake,Washington Stake,Unclassified,candidate,2,5; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__we_visited,"We
+Visited",Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__werner_dickenson,"Werner
+Dickenson",Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__werner_dickenson,Werner Dickenson,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__west_indies,West Indies,Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__west_point,West Point,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__west_virginia,West Virginia,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__western_electric,"Western
+Electric",Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__western_intelligence,Western Intelligence,Unclassified,candidate,2,7; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__western_pacific,Western Pacific,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__willard_marriott,"Willard
+Marriott",Unclassified,candidate,2,11; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__willard_d_hagey,Willard D. Hagey,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__wilson_hotel,Wilson Hotel,Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__world_war_two,World War Two,Unclassified,candidate,2,3; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__wymount_village,Wymount Village,Unclassified,candidate,2,4; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__yellowstone_park,"Yellowstone
+Park",Unclassified,candidate,2,2; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
+unclassified__yellowstone_park,Yellowstone Park,Unclassified,candidate,2,6; 12,capitalized_phrase_regex,"Capitalized phrase candidate. Review manually and classify as Person, Place, Organization, Event, or discard."
