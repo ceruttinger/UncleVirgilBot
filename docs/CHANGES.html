@@ -148,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Emotions</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./wordclouds.qmd"> 
+    <a class="nav-link" href="./wordclouds.html"> 
 <span class="menu-text">Word Clouds</span></a>
   </li>  
   <li class="nav-item">
@@ -160,7 +160,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Corpus QA</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./scans.qmd"> 
+    <a class="nav-link" href="./entities.html"> 
+<span class="menu-text">Entities</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./graph.html"> 
+<span class="menu-text">Entity Graph</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./passages.html"> 
+<span class="menu-text">Passages</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./scans.html"> 
 <span class="menu-text">Scanned PDFs</span></a>
   </li>  
   <li class="nav-item">
@@ -374,7 +386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/clarkruttinger\.info\/UncleVirgilBot\/");
+        var filterRegex = new RegExp("https:\/\/ceruttinger\.github\.io\/UncleVirgilBot\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

@@ -60,7 +60,7 @@ timeline |>
     approx_start_year,
     approx_end_year,
     life_stage,
-    location,
+    primary_locations,
     word_count,
     year_count,
     year_candidates
