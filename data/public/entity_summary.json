@@ -1,26 +1,26 @@
 [
   {
-    "entity_type": "Unclassified",
-    "entity_count": 631
+    "entity_type": "Person",
+    "entity_count": 63
   },
   {
     "entity_type": "Date",
     "entity_count": 60
   },
   {
-    "entity_type": "Person",
-    "entity_count": 55
-  },
-  {
     "entity_type": "Place",
-    "entity_count": 47
+    "entity_count": 58
   },
   {
     "entity_type": "Organization",
-    "entity_count": 15
+    "entity_count": 23
   },
   {
     "entity_type": "Organization/Place",
+    "entity_count": 7
+  },
+  {
+    "entity_type": "Event",
     "entity_count": 3
   }
 ]

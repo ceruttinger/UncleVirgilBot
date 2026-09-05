@@ -1,0 +1,210 @@
+suppressPackageStartupMessages({
+  library(readr)
+  library(dplyr)
+  library(stringr)
+  library(tidyr)
+  library(purrr)
+  library(jsonlite)
+})
+
+dir.create("data/processed", recursive = TRUE, showWarnings = FALSE)
+dir.create("data/public", recursive = TRUE, showWarnings = FALSE)
+
+if (!file.exists("data/processed/chapter_text.csv")) {
+  message("chapter_text.csv not found. Running R/01_prepare_corpus.R first.")
+  source("R/01_prepare_corpus.R")
+}
+
+chapters <- readr::read_csv("data/processed/chapter_text.csv", show_col_types = FALSE) |>
+  mutate(chapter = as.integer(chapter)) |>
+  filter(!is.na(chapter)) |>
+  filter(chapter != 12) # Chapter 12 is Full Text and duplicates all prior mentions.
+
+seed_path <- "data/entity_seeds.csv"
+
+if (!file.exists(seed_path)) {
+  starter <- tibble::tibble(
+    canonical_entity = character(),
+    entity_type = character(),
+    aliases = character(),
+    review_status = character(),
+    notes = character()
+  )
+  readr::write_csv(starter, seed_path)
+}
+
+seeds <- readr::read_csv(seed_path, show_col_types = FALSE)
+
+# Normalize seed schema so older patch versions do not break this script.
+for (col in c("canonical_entity", "entity_type", "aliases", "review_status", "notes")) {
+  if (!col %in% names(seeds)) seeds[[col]] <- ""
+}
+
+seeds <- seeds |>
+  transmute(
+    canonical_entity = as.character(canonical_entity),
+    entity_type = if_else(is.na(entity_type) | entity_type == "", "Unclassified", as.character(entity_type)),
+    aliases = if_else(is.na(aliases), "", as.character(aliases)),
+    review_status = if_else(is.na(review_status) | review_status == "", "candidate", as.character(review_status)),
+    notes = if_else(is.na(notes), "", as.character(notes))
+  ) |>
+  filter(!is.na(canonical_entity), str_squish(canonical_entity) != "") |>
+  mutate(canonical_entity = str_squish(canonical_entity)) |>
+  distinct(canonical_entity, .keep_all = TRUE)
+
+normalize_text <- function(x) {
+  x |>
+    str_to_lower() |>
+    str_replace_all("[\\r\\n]+", " ") |>
+    str_replace_all("[^a-z0-9]+", " ") |>
+    str_squish()
+}
+
+count_phrase <- function(text, phrase) {
+  text_norm <- normalize_text(text)
+  phrase_norm <- normalize_text(phrase)
+
+  if (is.na(phrase_norm) || phrase_norm == "") return(0L)
+
+  # phrase_norm only contains letters, numbers, and spaces after normalization.
+  pattern <- paste0("(^| )", str_replace_all(phrase_norm, " +", " +"), "( |$)")
+  as.integer(str_count(text_norm, regex(pattern)))
+}
+
+# Seed/alias mentions -------------------------------------------------------
+seed_aliases <- seeds |>
+  mutate(alias_blob = if_else(aliases == "", canonical_entity, paste(canonical_entity, aliases, sep = ";"))) |>
+  separate_rows(alias_blob, sep = "\\s*;\\s*") |>
+  mutate(alias = str_squish(alias_blob)) |>
+  filter(alias != "") |>
+  select(canonical_entity, entity_type, alias, review_status, notes) |>
+  distinct()
+
+seed_mentions <- tidyr::crossing(
+  chapters |> select(chapter, chapter_title, text),
+  seed_aliases
+) |>
+  mutate(count = purrr::map2_int(text, alias, count_phrase)) |>
+  filter(count > 0) |>
+  transmute(
+    chapter,
+    chapter_title,
+    canonical_entity,
+    entity_type,
+    matched_text = alias,
+    count,
+    extraction_method = "seed_alias_match",
+    review_status,
+    notes
+  )
+
+# Year/date mentions --------------------------------------------------------
+year_mentions <- chapters |>
+  transmute(
+    chapter,
+    chapter_title,
+    years = str_extract_all(text, "\\b(18|19|20)[0-9]{2}\\b")
+  ) |>
+  unnest_longer(years, values_to = "canonical_entity") |>
+  filter(!is.na(canonical_entity)) |>
+  count(chapter, chapter_title, canonical_entity, name = "count") |>
+  mutate(
+    entity_type = "Date",
+    matched_text = canonical_entity,
+    extraction_method = "year_regex",
+    review_status = "candidate",
+    notes = "Detected four-digit year. Review whether this is chapter-period date, historical context, or retrospective reference."
+  ) |>
+  select(chapter, chapter_title, canonical_entity, entity_type, matched_text, count, extraction_method, review_status, notes)
+
+# Capitalized candidate phrases ---------------------------------------------
+# These are intentionally candidates. The seed file is the authority layer.
+extract_candidate_phrases <- function(x) {
+  # Preserve line-break-created phrases but normalize them later.
+  phrases <- str_extract_all(
+    x,
+    "\\b(?:[A-Z][A-Za-z.'-]+|U\\.S\\.|LDS)(?:[\\s\\n]+(?:[A-Z][A-Za-z.'-]+|of|and|the|de|del|la|U\\.S\\.|LDS)){0,5}\\b"
+  )[[1]]
+
+  phrases <- str_replace_all(phrases, "[\\r\\n]+", " ")
+  phrases <- str_squish(phrases)
+  phrases <- phrases[nchar(phrases) >= 4]
+
+  # Remove common false positives from sentence starts and date fragments.
+  stop_candidates <- c(
+    "In", "On", "For", "The", "This", "That", "After", "Before", "During",
+    "Part", "Chapter", "World", "High", "Sunday", "Christmas", "January",
+    "February", "March", "April", "May", "June", "July", "August",
+    "September", "October", "November", "December"
+  )
+
+  phrases[!phrases %in% stop_candidates]
+}
+
+candidate_mentions <- chapters |>
+  transmute(chapter, chapter_title, candidate = map(text, extract_candidate_phrases)) |>
+  unnest_longer(candidate, values_to = "canonical_entity") |>
+  filter(!is.na(canonical_entity), canonical_entity != "") |>
+  mutate(
+    canonical_entity = str_replace_all(canonical_entity, "\\s+", " "),
+    canonical_entity_norm = normalize_text(canonical_entity)
+  ) |>
+  filter(nchar(canonical_entity_norm) >= 4) |>
+  count(chapter, chapter_title, canonical_entity, name = "count") |>
+  anti_join(
+    seeds |> mutate(canonical_entity_norm = normalize_text(canonical_entity)) |> select(canonical_entity_norm),
+    by = "canonical_entity_norm"
+  ) |>
+  select(-canonical_entity_norm) |>
+  mutate(
+    entity_type = "Unclassified",
+    matched_text = canonical_entity,
+    extraction_method = "capitalized_phrase_candidate",
+    review_status = "candidate",
+    notes = "Candidate extracted from capitalization pattern. Add to data/entity_seeds.csv with correct type if useful, or ignore if noise."
+  ) |>
+  select(chapter, chapter_title, canonical_entity, entity_type, matched_text, count, extraction_method, review_status, notes)
+
+entity_mentions <- bind_rows(seed_mentions, year_mentions, candidate_mentions) |>
+  group_by(chapter, chapter_title, canonical_entity, entity_type, matched_text, extraction_method, review_status, notes) |>
+  summarise(count = sum(count), .groups = "drop") |>
+  arrange(entity_type, canonical_entity, chapter)
+
+entity_registry <- entity_mentions |>
+  group_by(canonical_entity, entity_type) |>
+  summarise(
+    entity_id = paste0(
+      str_to_lower(str_replace_all(entity_type, "[^A-Za-z0-9]+", "_")),
+      "__",
+      str_to_lower(str_replace_all(canonical_entity, "[^A-Za-z0-9]+", "_"))
+    ),
+    review_status = if_else(any(review_status == "accepted"), "accepted", "candidate"),
+    total_count = sum(count),
+    chapters = paste(sort(unique(chapter)), collapse = "; "),
+    extraction_methods = paste(sort(unique(extraction_method)), collapse = "; "),
+    notes = paste(unique(notes[notes != ""]), collapse = " | "),
+    .groups = "drop"
+  ) |>
+  select(entity_id, canonical_entity, entity_type, review_status, total_count, chapters, extraction_methods, notes) |>
+  arrange(desc(total_count), entity_type, canonical_entity)
+
+entity_summary <- entity_registry |>
+  count(entity_type, name = "entity_count") |>
+  arrange(desc(entity_count), entity_type)
+
+readr::write_csv(entity_mentions, "data/processed/entity_mentions.csv")
+readr::write_csv(entity_registry, "data/processed/entity_registry.csv")
+readr::write_csv(entity_summary, "data/processed/entity_summary.csv")
+
+readr::write_csv(entity_mentions, "data/public/entity_mentions.csv")
+readr::write_csv(entity_registry, "data/public/entity_registry.csv")
+readr::write_csv(entity_summary, "data/public/entity_summary.csv")
+
+jsonlite::write_json(entity_mentions, "data/public/entity_mentions.json", pretty = TRUE, auto_unbox = TRUE)
+jsonlite::write_json(entity_registry, "data/public/entity_registry.json", pretty = TRUE, auto_unbox = TRUE)
+jsonlite::write_json(entity_summary, "data/public/entity_summary.json", pretty = TRUE, auto_unbox = TRUE)
+
+message("Wrote entity outputs without Chapter 12 Full Text duplication:")
+message("- data/processed/entity_mentions.csv")
+message("- data/processed/entity_registry.csv")
+message("- data/processed/entity_summary.csv")
