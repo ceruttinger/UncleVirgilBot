@@ -1,41 +1,166 @@
 ---
-title: "Sentiment"
+title: "Sentiment Analysis"
+page-layout: full
+toc: true
 ---
+
+This page shows two complementary sentiment views:
+
+1. **Sentiment by chapter** — a chapter-level summary of positive and negative language.
+2. **Sentiment within each chapter** — passage-level sentiment so you can see where tone rises and falls inside a chapter.
+
+The current method uses the `tidytext` Bing sentiment lexicon. This is a transparent dictionary-based method, not a model-generated interpretation. Treat it as a reading aid, not a final literary judgment.
 
 ```{r}
 #| label: sentiment-load
-#| echo: false
+#| message: false
+#| warning: false
 library(readr)
 library(dplyr)
+library(tidyr)
 library(ggplot2)
-if (!file.exists("data/processed/sentiment_by_chapter.csv")) {
-  source("R/02_sentiment_analysis.R")
-}
-sentiment <- read_csv("data/processed/sentiment_by_chapter.csv", show_col_types = FALSE)
+library(knitr)
+library(stringr)
+
+chapter_sentiment <- read_csv("data/public/sentiment_by_chapter.csv", show_col_types = FALSE)
+passage_sentiment <- read_csv("data/public/sentiment_within_chapter.csv", show_col_types = FALSE)
+passage_summary <- read_csv("data/public/sentiment_passage_summary.csv", show_col_types = FALSE)
 ```
 
-This page rebuilds the sentiment analysis in a reproducible way rather than relying on old saved PNG files.
+## Sentiment by chapter
 
-## Net sentiment by chapter
+This view compares chapters after adjusting net sentiment by chapter length. Positive values indicate more positive sentiment words per 1,000 words; negative values indicate more negative sentiment words per 1,000 words.
 
 ```{r}
-#| echo: false
-sentiment %>%
-  ggplot(aes(x = reorder(chapter_title, chapter), y = net_bing_sentiment)) +
+#| label: sentiment-by-chapter-plot
+#| fig-width: 12
+#| fig-height: 7
+chapter_sentiment |>
+  mutate(chapter_label = factor(chapter_label, levels = rev(chapter_label))) |>
+  ggplot(aes(x = chapter_label, y = net_per_1000_words)) +
   geom_col() +
   coord_flip() +
-  labs(x = NULL, y = "Positive words minus negative words", title = "Net Bing sentiment by chapter") +
-  theme_minimal()
+  geom_hline(yintercept = 0, linewidth = 0.3) +
+  labs(
+    title = "Net sentiment by chapter",
+    subtitle = "Positive minus negative sentiment words, normalized per 1,000 words",
+    x = NULL,
+    y = "Net sentiment per 1,000 words"
+  ) +
+  theme_minimal(base_size = 13)
 ```
 
-## AFINN score by chapter
+```{r}
+#| label: positive-negative-by-chapter
+#| fig-width: 12
+#| fig-height: 7
+chapter_sentiment |>
+  select(chapter, chapter_label, positive_count, negative_count) |>
+  pivot_longer(c(positive_count, negative_count), names_to = "sentiment", values_to = "count") |>
+  mutate(
+    sentiment = recode(sentiment, positive_count = "Positive", negative_count = "Negative"),
+    chapter_label = factor(chapter_label, levels = rev(unique(chapter_sentiment$chapter_label)))
+  ) |>
+  ggplot(aes(x = chapter_label, y = count, fill = sentiment)) +
+  geom_col(position = "dodge") +
+  coord_flip() +
+  labs(
+    title = "Positive and negative sentiment word counts by chapter",
+    subtitle = "Raw counts are useful, but longer chapters naturally have more sentiment words",
+    x = NULL,
+    y = "Sentiment word count",
+    fill = NULL
+  ) +
+  theme_minimal(base_size = 13)
+```
 
 ```{r}
-#| echo: false
-sentiment %>%
-  ggplot(aes(x = reorder(chapter_title, chapter), y = afinn_score)) +
-  geom_col() +
-  coord_flip() +
-  labs(x = NULL, y = "AFINN score", title = "AFINN sentiment by chapter") +
-  theme_minimal()
+#| label: sentiment-by-chapter-table
+chapter_sentiment |>
+  transmute(
+    Chapter = chapter,
+    Title = chapter_title,
+    `Word count` = word_count,
+    Positive = positive_count,
+    Negative = negative_count,
+    `Net sentiment` = net_sentiment,
+    `Net per 1,000 words` = net_per_1000_words,
+    `Sentiment words` = sentiment_word_count
+  ) |>
+  knitr::kable()
+```
+
+## Sentiment within each chapter
+
+This view uses the passage index. Each point is one passage. This is closer to what the original app was trying to show: not just whether a whole chapter trends positive or negative, but where the tonal shifts occur inside the chapter.
+
+```{r}
+#| label: within-chapter-sentiment-plot
+#| fig-width: 14
+#| fig-height: 14
+passage_sentiment |>
+  ggplot(aes(x = passage_number, y = net_per_1000_words, group = chapter)) +
+  geom_hline(yintercept = 0, linewidth = 0.25) +
+  geom_line(linewidth = 0.35) +
+  geom_point(size = 1.4) +
+  facet_wrap(~ chapter_label, scales = "free_x") +
+  labs(
+    title = "Sentiment shifts within each chapter",
+    subtitle = "Each point is a passage from the passage index",
+    x = "Passage number",
+    y = "Net sentiment per 1,000 words"
+  ) +
+  theme_minimal(base_size = 12)
+```
+
+## Strongest passage-level shifts
+
+These are useful review targets. They show where the lexicon method finds the strongest positive and negative passages. Read these against the original text before making interpretive claims.
+
+```{r}
+#| label: strongest-passages-table
+strongest_positive <- passage_sentiment |>
+  filter(sentiment_word_count >= 3) |>
+  arrange(desc(net_per_1000_words)) |>
+  slice_head(n = 10) |>
+  mutate(Direction = "Most positive")
+
+strongest_negative <- passage_sentiment |>
+  filter(sentiment_word_count >= 3) |>
+  arrange(net_per_1000_words) |>
+  slice_head(n = 10) |>
+  mutate(Direction = "Most negative")
+
+bind_rows(strongest_positive, strongest_negative) |>
+  transmute(
+    Direction,
+    Citation = citation_label,
+    `Net per 1,000 words` = net_per_1000_words,
+    Positive = positive_count,
+    Negative = negative_count,
+    Years = year_candidates,
+    Entities = str_trunc(entities_mentioned, 100),
+    Preview = text_preview
+  ) |>
+  knitr::kable()
+```
+
+## Passage sentiment table
+
+```{r}
+#| label: passage-sentiment-table
+passage_sentiment |>
+  transmute(
+    Citation = citation_label,
+    `Word count` = word_count,
+    Positive = positive_count,
+    Negative = negative_count,
+    `Net sentiment` = net_sentiment,
+    `Net per 1,000 words` = net_per_1000_words,
+    Direction = sentiment_direction,
+    Years = year_candidates,
+    Entities = str_trunc(entities_mentioned, 120)
+  ) |>
+  head(60) |>
+  knitr::kable()
 ```

@@ -1,0 +1,123 @@
+[
+  {
+    "chapter": 1,
+    "chapter_title": "Earliest Memories",
+    "chapter_label": "Ch. 01: Earliest Memories",
+    "passage_count": 14,
+    "positive_passages": 3,
+    "negative_passages": 7,
+    "neutral_passages": 4,
+    "strongest_positive_passage": "Ch. 1: Earliest Memories, passage 8",
+    "strongest_negative_passage": "Ch. 1: Earliest Memories, passage 5"
+  },
+  {
+    "chapter": 2,
+    "chapter_title": "The Teenage Period",
+    "chapter_label": "Ch. 02: The Teenage Period",
+    "passage_count": 18,
+    "positive_passages": 15,
+    "negative_passages": 2,
+    "neutral_passages": 1,
+    "strongest_positive_passage": "Ch. 2: The Teenage Period, passage 2",
+    "strongest_negative_passage": "Ch. 2: The Teenage Period, passage 5"
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "World War Two",
+    "chapter_label": "Ch. 03: World War Two",
+    "passage_count": 13,
+    "positive_passages": 7,
+    "negative_passages": 5,
+    "neutral_passages": 1,
+    "strongest_positive_passage": "Ch. 3: World War Two, passage 1",
+    "strongest_negative_passage": "Ch. 3: World War Two, passage 7"
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "My College Years BYU and Colombia",
+    "chapter_label": "Ch. 04: My College Years BYU and Colombia",
+    "passage_count": 18,
+    "positive_passages": 11,
+    "negative_passages": 4,
+    "neutral_passages": 3,
+    "strongest_positive_passage": "Ch. 4: My College Years BYU and Colombia, passage 14",
+    "strongest_negative_passage": "Ch. 4: My College Years BYU and Colombia, passage 3"
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "The CIA",
+    "chapter_label": "Ch. 05: The CIA",
+    "passage_count": 22,
+    "positive_passages": 15,
+    "negative_passages": 3,
+    "neutral_passages": 4,
+    "strongest_positive_passage": "Ch. 5: The CIA, passage 1",
+    "strongest_negative_passage": "Ch. 5: The CIA, passage 16"
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "Montevideo Uruguay",
+    "chapter_label": "Ch. 06: Montevideo Uruguay",
+    "passage_count": 14,
+    "positive_passages": 9,
+    "negative_passages": 2,
+    "neutral_passages": 3,
+    "strongest_positive_passage": "Ch. 6: Montevideo Uruguay, passage 6",
+    "strongest_negative_passage": "Ch. 6: Montevideo Uruguay, passage 3"
+  },
+  {
+    "chapter": 7,
+    "chapter_title": "Headquarters Duty",
+    "chapter_label": "Ch. 07: Headquarters Duty",
+    "passage_count": 17,
+    "positive_passages": 11,
+    "negative_passages": 3,
+    "neutral_passages": 3,
+    "strongest_positive_passage": "Ch. 7: Headquarters Duty, passage 2",
+    "strongest_negative_passage": "Ch. 7: Headquarters Duty, passage 4"
+  },
+  {
+    "chapter": 8,
+    "chapter_title": "Rio De Janeiro",
+    "chapter_label": "Ch. 08: Rio De Janeiro",
+    "passage_count": 13,
+    "positive_passages": 7,
+    "negative_passages": 4,
+    "neutral_passages": 2,
+    "strongest_positive_passage": "Ch. 8: Rio De Janeiro, passage 9",
+    "strongest_negative_passage": "Ch. 8: Rio De Janeiro, passage 3"
+  },
+  {
+    "chapter": 9,
+    "chapter_title": "The McLean Va. Years",
+    "chapter_label": "Ch. 09: The McLean Va. Years",
+    "passage_count": 6,
+    "positive_passages": 2,
+    "negative_passages": 3,
+    "neutral_passages": 1,
+    "strongest_positive_passage": "Ch. 9: The McLean Va. Years, passage 2",
+    "strongest_negative_passage": "Ch. 9: The McLean Va. Years, passage 5"
+  },
+  {
+    "chapter": 10,
+    "chapter_title": "Making a Career Change",
+    "chapter_label": "Ch. 10: Making a Career Change",
+    "passage_count": 12,
+    "positive_passages": 10,
+    "negative_passages": 1,
+    "neutral_passages": 1,
+    "strongest_positive_passage": "Ch. 10: Making a Career Change, passage 12",
+    "strongest_negative_passage": "Ch. 10: Making a Career Change, passage 4"
+  },
+  {
+    "chapter": 11,
+    "chapter_title": "Post Rio to Retirement",
+    "chapter_label": "Ch. 11: Post Rio to Retirement",
+    "passage_count": 18,
+    "positive_passages": 10,
+    "negative_passages": 1,
+    "neutral_passages": 7,
+    "strongest_positive_passage": "Ch. 11: Post Rio to Retirement, passage 6",
+    "strongest_negative_passage": "Ch. 11: Post Rio to Retirement, passage 10"
+  }
+]

@@ -1,0 +1,12 @@
+chapter,chapter_title,chapter_label,passage_count,positive_passages,negative_passages,neutral_passages,strongest_positive_passage,strongest_negative_passage
+1,Earliest Memories,Ch. 01: Earliest Memories,14,3,7,4,"Ch. 1: Earliest Memories, passage 8","Ch. 1: Earliest Memories, passage 5"
+2,The Teenage Period,Ch. 02: The Teenage Period,18,15,2,1,"Ch. 2: The Teenage Period, passage 2","Ch. 2: The Teenage Period, passage 5"
+3,World War Two,Ch. 03: World War Two,13,7,5,1,"Ch. 3: World War Two, passage 1","Ch. 3: World War Two, passage 7"
+4,My College Years BYU and Colombia,Ch. 04: My College Years BYU and Colombia,18,11,4,3,"Ch. 4: My College Years BYU and Colombia, passage 14","Ch. 4: My College Years BYU and Colombia, passage 3"
+5,The CIA,Ch. 05: The CIA,22,15,3,4,"Ch. 5: The CIA, passage 1","Ch. 5: The CIA, passage 16"
+6,Montevideo Uruguay,Ch. 06: Montevideo Uruguay,14,9,2,3,"Ch. 6: Montevideo Uruguay, passage 6","Ch. 6: Montevideo Uruguay, passage 3"
+7,Headquarters Duty,Ch. 07: Headquarters Duty,17,11,3,3,"Ch. 7: Headquarters Duty, passage 2","Ch. 7: Headquarters Duty, passage 4"
+8,Rio De Janeiro,Ch. 08: Rio De Janeiro,13,7,4,2,"Ch. 8: Rio De Janeiro, passage 9","Ch. 8: Rio De Janeiro, passage 3"
+9,The McLean Va. Years,Ch. 09: The McLean Va. Years,6,2,3,1,"Ch. 9: The McLean Va. Years, passage 2","Ch. 9: The McLean Va. Years, passage 5"
+10,Making a Career Change,Ch. 10: Making a Career Change,12,10,1,1,"Ch. 10: Making a Career Change, passage 12","Ch. 10: Making a Career Change, passage 4"
+11,Post Rio to Retirement,Ch. 11: Post Rio to Retirement,18,10,1,7,"Ch. 11: Post Rio to Retirement, passage 6","Ch. 11: Post Rio to Retirement, passage 10"

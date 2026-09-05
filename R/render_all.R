@@ -30,5 +30,6 @@ source("R/10_build_entity_graph.R")
 source("R/11_clean_graph_tooltips.R")
 }
 
+if (file.exists("R/13_build_sentiment_by_chapter.R")) source("R/13_build_sentiment_by_chapter.R")
 message("Done.")
 source("R/12_build_passage_index.R")

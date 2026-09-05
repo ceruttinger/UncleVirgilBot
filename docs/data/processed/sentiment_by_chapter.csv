@@ -1,12 +1,12 @@
-chapter,chapter_title,negative,positive,net_bing_sentiment,sentiment_intensity,afinn_score
-1,Earliest Memories,91,57,-34,148,-34
-2,The Teenage Period,47,106,59,153,59
-3,World War Two,61,60,-1,121,-1
-4,My College Years BYU and Colombia,61,98,37,159,37
-5,The CIA,88,140,52,228,52
-6,Montevideo Uruguay,58,85,27,143,27
-7,Headquarters Duty,53,96,43,149,43
-8,Rio De Janeiro,41,46,5,87,5
-9,The McLean Va. Years,26,25,-1,51,-1
-10,Making a Career Change,33,89,56,122,56
-11,Post Rio to Retirement,48,73,25,121,25
+chapter,chapter_title,chapter_label,word_count,positive_count,negative_count,sentiment_word_count,net_sentiment,net_per_1000_words,positive_share,negative_share,sentiment_method
+1,Earliest Memories,Ch. 01: Earliest Memories,3592,57,91,148,-34,-9.465,0.385,0.615,tidytext_bing_lexicon
+2,The Teenage Period,Ch. 02: The Teenage Period,3811,106,47,153,59,15.482,0.693,0.307,tidytext_bing_lexicon
+3,World War Two,Ch. 03: World War Two,2732,60,61,121,-1,-0.366,0.496,0.504,tidytext_bing_lexicon
+4,My College Years BYU and Colombia,Ch. 04: My College Years BYU and Colombia,4315,98,61,159,37,8.575,0.616,0.384,tidytext_bing_lexicon
+5,The CIA,Ch. 05: The CIA,6482,140,88,228,52,8.022,0.614,0.386,tidytext_bing_lexicon
+6,Montevideo Uruguay,Ch. 06: Montevideo Uruguay,3946,85,58,143,27,6.842,0.594,0.406,tidytext_bing_lexicon
+7,Headquarters Duty,Ch. 07: Headquarters Duty,3938,96,53,149,43,10.919,0.644,0.356,tidytext_bing_lexicon
+8,Rio De Janeiro,Ch. 08: Rio De Janeiro,3136,46,41,87,5,1.594,0.529,0.471,tidytext_bing_lexicon
+9,The McLean Va. Years,Ch. 09: The McLean Va. Years,1313,25,26,51,-1,-0.762,0.49,0.51,tidytext_bing_lexicon
+10,Making a Career Change,Ch. 10: Making a Career Change,2694,89,33,122,56,20.787,0.73,0.27,tidytext_bing_lexicon
+11,Post Rio to Retirement,Ch. 11: Post Rio to Retirement,3532,73,48,121,25,7.078,0.603,0.397,tidytext_bing_lexicon
