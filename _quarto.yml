@@ -31,6 +31,8 @@ website:
         text: Corpus QA
       - href: entities.qmd
         text: Entities
+      - href: graph.qmd
+        text: Entity Graph
       - href: scans.qmd
         text: Scanned PDFs
       - href: search.qmd

@@ -26,6 +26,8 @@ if (file.exists("R/08_build_timeline_table.R")) {
 
 if (file.exists("R/09_extract_named_entities.R")) {
   source("R/09_extract_named_entities.R")
+source("R/10_build_entity_graph.R")
+source("R/11_clean_graph_tooltips.R")
 }
 
 message("Done.")

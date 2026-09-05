@@ -1,0 +1,84 @@
+---
+title: "Entity Graph"
+format:
+  html:
+    page-layout: full
+    toc: true
+---
+
+## Entity graph
+
+This page turns the curated entity registry into a first-pass graph of the memoir.
+
+The graph is intentionally simple:
+
+- **Chapter** nodes represent memoir chapters.
+- **Entity** nodes represent people, places, organizations, events, and dates.
+- **MENTIONS** edges connect chapters to the entities found in them.
+- **SHARES_ENTITIES_WITH** edges connect chapters that share several recurring entities.
+
+This is not the final knowledge graph yet. It is the review layer that helps us decide which entities are important enough for the future chatbot and AWS retrieval system.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+library(readr)
+library(dplyr)
+
+nodes <- read_csv("data/public/graph_nodes.csv", show_col_types = FALSE)
+edges <- read_csv("data/public/graph_edges.csv", show_col_types = FALSE)
+
+nodes |>
+  count(type, sort = TRUE, name = "node_count") |>
+  knitr::kable(caption = "Graph nodes by type")
+```
+
+::: {.callout-note}
+Use the filters below to reduce the graph. A lower mention threshold shows more entities; a higher threshold shows the strongest recurring people, places, and organizations.
+:::
+
+<div id="entity-graph-controls" style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap; margin:1rem 0;">
+  <label>Entity type<br><select id="entity-type-filter"><option>All entity types</option></select></label>
+  <label>Minimum mentions<br><input id="entity-min-count" type="range" min="1" max="20" value="3" step="1" oninput="document.getElementById('entity-min-count-value').innerText=this.value"></label>
+  <strong id="entity-min-count-value">3</strong>
+  <button id="entity-graph-reset" type="button">Reset</button>
+</div>
+
+<div id="entity-graph" style="width:100%; height:720px; border:1px solid #ddd; border-radius:10px;"></div>
+
+<div id="entity-graph-details" style="margin-top:1rem; padding:1rem; border:1px solid #ddd; border-radius:10px; background:#fafafa;">
+Click a chapter or entity to inspect it.
+</div>
+
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<script src="assets/js/entity_graph.js"></script>
+
+## Highest-weight chapter/entity links
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+edge_tbl <- read_csv("data/public/graph_edges.csv", show_col_types = FALSE)
+node_tbl <- read_csv("data/public/graph_nodes.csv", show_col_types = FALSE) |>
+  select(id, label, type)
+
+edge_tbl |>
+  filter(relationship == "MENTIONS") |>
+  left_join(node_tbl |> rename(from_label = label, from_type = type), by = c("from" = "id")) |>
+  left_join(node_tbl |> rename(to_label = label, to_type = type), by = c("to" = "id")) |>
+  transmute(chapter = from_label, entity = to_label, entity_type = to_type, mentions = weight) |>
+  arrange(desc(mentions), chapter, entity) |>
+  head(25) |>
+  knitr::kable(caption = "Top chapter-to-entity relationships")
+```
+
+## Next review questions
+
+As you review the graph, look for these issues:
+
+1. Are any family members duplicated under nicknames or partial names?
+2. Are any places mislabeled as organizations, or organizations mislabeled as places?
+3. Are broad terms like “United States” useful, or should they be down-weighted later?
+4. Which entities should become first-class graph records for the future chatbot?

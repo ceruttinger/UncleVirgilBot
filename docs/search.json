@@ -698,5 +698,33 @@
     "title": "",
     "section": "Later production model",
     "text": "Later production model\nOnce entities are reviewed, promote accepted records into a database table:\n\nentities\nentity_aliases\nentity_mentions\nchapters\npassages\n\nThat database can power graph views and chatbot citations."
+  },
+  {
+    "objectID": "graph.html",
+    "href": "graph.html",
+    "title": "Entity Graph",
+    "section": "",
+    "text": "This graph shows how chapters connect to people, places, organizations, dates, and events extracted from the memoir. Use the controls below to reduce the graph to one chapter or one entity type at a time."
+  },
+  {
+    "objectID": "graph.html#entity-graph",
+    "href": "graph.html#entity-graph",
+    "title": "Entity Graph",
+    "section": "",
+    "text": "This page turns the curated entity registry into a first-pass graph of the memoir.\nThe graph is intentionally simple:\n\nChapter nodes represent memoir chapters.\nEntity nodes represent people, places, organizations, events, and dates.\nMENTIONS edges connect chapters to the entities found in them.\nSHARES_ENTITIES_WITH edges connect chapters that share several recurring entities.\n\nThis is not the final knowledge graph yet. It is the review layer that helps us decide which entities are important enough for the future chatbot and AWS retrieval system.\n\n\n\nGraph nodes by type\n\n\ntype\nnode_count\n\n\n\n\nPerson\n63\n\n\nPlace\n58\n\n\nDate\n42\n\n\nOrganization\n23\n\n\nChapter\n11\n\n\nOrganization/Place\n7\n\n\nEvent\n3\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nUse the filters below to reduce the graph. A lower mention threshold shows more entities; a higher threshold shows the strongest recurring people, places, and organizations.\n\n\n\nEntity typeAll entity types Minimum mentions 3 Reset\n\n\n\n\n\nClick a chapter or entity to inspect it."
+  },
+  {
+    "objectID": "graph.html#highest-weight-chapterentity-links",
+    "href": "graph.html#highest-weight-chapterentity-links",
+    "title": "Entity Graph",
+    "section": "Highest-weight chapter/entity links",
+    "text": "Highest-weight chapter/entity links\n\n\n\nTop chapter-to-entity relationships\n\n\n\n\n\n\n\n\nchapter\nentity\nentity_type\nmentions\n\n\n\n\nCh. 4: My College Years BYU and Colombia\nMarion\nPerson\n24\n\n\nCh. 5: The CIA\nMarion\nPerson\n24\n\n\nCh. 5: The CIA\nUnited States\nPlace\n24\n\n\nCh. 6: Montevideo Uruguay\nUruguay\nPlace\n22\n\n\nCh. 4: My College Years BYU and Colombia\nNew York\nPlace\n21\n\n\nCh. 7: Headquarters Duty\nUnited States\nPlace\n19\n\n\nCh. 8: Rio De Janeiro\nUnited States\nPlace\n17\n\n\nCh. 11: Post Rio to Retirement\nUnited States\nPlace\n16\n\n\nCh. 1: Earliest Memories\nUnited States\nPlace\n16\n\n\nCh. 6: Montevideo Uruguay\nUnited States\nPlace\n16\n\n\nCh. 1: Earliest Memories\nIdaho\nPlace\n15\n\n\nCh. 2: The Teenage Period\nUnited States\nPlace\n14\n\n\nCh. 5: The CIA\nSoviet Union\nPlace\n14\n\n\nCh. 7: Headquarters Duty\nMarion\nPerson\n14\n\n\nCh. 1: Earliest Memories\nRichard\nPerson\n13\n\n\nCh. 3: World War Two\nUnited States\nPlace\n13\n\n\nCh. 4: My College Years BYU and Colombia\nUnited States\nPlace\n13\n\n\nCh. 5: The CIA\nWashington\nPlace\n13\n\n\nCh. 1: Earliest Memories\nArizona\nPlace\n12\n\n\nCh. 2: The Teenage Period\nIdaho\nPlace\n12"
+  },
+  {
+    "objectID": "graph.html#next-review-questions",
+    "href": "graph.html#next-review-questions",
+    "title": "Entity Graph",
+    "section": "Next review questions",
+    "text": "Next review questions\nUse the chapter dropdown first. For each chapter, ask:\n\nAre the main people present?\nAre the main places present?\nAre organizations correctly separated from places?\nAre generic phrases being treated as entities?\nAre important family names or location variants missing?"
   }
 ]

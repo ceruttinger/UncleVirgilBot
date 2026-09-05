@@ -1,0 +1,2072 @@
+[
+  {
+    "id": "chapter_1",
+    "label": "Ch. 1: Earliest Memories",
+    "short_label": "Ch. 1",
+    "type": "Chapter",
+    "group": "Chapter",
+    "chapter": 1,
+    "title": "Ch. 1: Earliest Memories\nType: Chapter\nReview status: unreviewed seed\nTotal mentions: 25",
+    "value": 25
+  },
+  {
+    "id": "chapter_2",
+    "label": "Ch. 2: The Teenage Period",
+    "short_label": "Ch. 2",
+    "type": "Chapter",
+    "group": "Chapter",
+    "chapter": 2,
+    "title": "Ch. 2: The Teenage Period\nType: Chapter\nReview status: unreviewed seed\nTotal mentions: 25",
+    "value": 25
+  },
+  {
+    "id": "chapter_3",
+    "label": "Ch. 3: World War Two",
+    "short_label": "Ch. 3",
+    "type": "Chapter",
+    "group": "Chapter",
+    "chapter": 3,
+    "title": "Ch. 3: World War Two\nType: Chapter\nReview status: unreviewed seed\nTotal mentions: 25",
+    "value": 25
+  },
+  {
+    "id": "chapter_4",
+    "label": "Ch. 4: My College Years BYU and Colombia",
+    "short_label": "Ch. 4",
+    "type": "Chapter",
+    "group": "Chapter",
+    "chapter": 4,
+    "title": "Ch. 4: My College Years BYU and Colombia\nType: Chapter\nReview status: unreviewed seed\nTotal mentions: 25",
+    "value": 25
+  },
+  {
+    "id": "chapter_5",
+    "label": "Ch. 5: The CIA",
+    "short_label": "Ch. 5",
+    "type": "Chapter",
+    "group": "Chapter",
+    "chapter": 5,
+    "title": "Ch. 5: The CIA\nType: Chapter\nReview status: unreviewed seed\nTotal mentions: 25",
+    "value": 25
+  },
+  {
+    "id": "chapter_6",
+    "label": "Ch. 6: Montevideo Uruguay",
+    "short_label": "Ch. 6",
+    "type": "Chapter",
+    "group": "Chapter",
+    "chapter": 6,
+    "title": "Ch. 6: Montevideo Uruguay\nType: Chapter\nReview status: unreviewed seed\nTotal mentions: 25",
+    "value": 25
+  },
+  {
+    "id": "chapter_7",
+    "label": "Ch. 7: Headquarters Duty",
+    "short_label": "Ch. 7",
+    "type": "Chapter",
+    "group": "Chapter",
+    "chapter": 7,
+    "title": "Ch. 7: Headquarters Duty\nType: Chapter\nReview status: unreviewed seed\nTotal mentions: 25",
+    "value": 25
+  },
+  {
+    "id": "chapter_8",
+    "label": "Ch. 8: Rio De Janeiro",
+    "short_label": "Ch. 8",
+    "type": "Chapter",
+    "group": "Chapter",
+    "chapter": 8,
+    "title": "Ch. 8: Rio De Janeiro\nType: Chapter\nReview status: unreviewed seed\nTotal mentions: 25",
+    "value": 25
+  },
+  {
+    "id": "chapter_9",
+    "label": "Ch. 9: The McLean Va. Years",
+    "short_label": "Ch. 9",
+    "type": "Chapter",
+    "group": "Chapter",
+    "chapter": 9,
+    "title": "Ch. 9: The McLean Va. Years\nType: Chapter\nReview status: unreviewed seed\nTotal mentions: 25",
+    "value": 25
+  },
+  {
+    "id": "chapter_10",
+    "label": "Ch. 10: Making a Career Change",
+    "short_label": "Ch. 10",
+    "type": "Chapter",
+    "group": "Chapter",
+    "chapter": 10,
+    "title": "Ch. 10: Making a Career Change\nType: Chapter\nReview status: unreviewed seed\nTotal mentions: 25",
+    "value": 25
+  },
+  {
+    "id": "chapter_11",
+    "label": "Ch. 11: Post Rio to Retirement",
+    "short_label": "Ch. 11",
+    "type": "Chapter",
+    "group": "Chapter",
+    "chapter": 11,
+    "title": "Ch. 11: Post Rio to Retirement\nType: Chapter\nReview status: unreviewed seed\nTotal mentions: 25",
+    "value": 25
+  },
+  {
+    "id": "date__1973",
+    "label": "1973",
+    "short_label": "1973",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1973\nType: Date\nReview status: unreviewed seed\nTotal mentions: 13.856406460551",
+    "value": 13.8564
+  },
+  {
+    "id": "date__1945",
+    "label": "1945",
+    "short_label": "1945",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1945\nType: Date\nReview status: unreviewed seed\nTotal mentions: 12.6491106406735",
+    "value": 12.6491
+  },
+  {
+    "id": "date__1948",
+    "label": "1948",
+    "short_label": "1948",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1948\nType: Date\nReview status: unreviewed seed\nTotal mentions: 12.6491106406735",
+    "value": 12.6491
+  },
+  {
+    "id": "date__1961",
+    "label": "1961",
+    "short_label": "1961",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1961\nType: Date\nReview status: unreviewed seed\nTotal mentions: 12",
+    "value": 12
+  },
+  {
+    "id": "date__1968",
+    "label": "1968",
+    "short_label": "1968",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1968\nType: Date\nReview status: unreviewed seed\nTotal mentions: 12",
+    "value": 12
+  },
+  {
+    "id": "date__1953",
+    "label": "1953",
+    "short_label": "1953",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1953\nType: Date\nReview status: unreviewed seed\nTotal mentions: 11.3137084989848",
+    "value": 11.3137
+  },
+  {
+    "id": "date__1954",
+    "label": "1954",
+    "short_label": "1954",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1954\nType: Date\nReview status: unreviewed seed\nTotal mentions: 11.3137084989848",
+    "value": 11.3137
+  },
+  {
+    "id": "date__1974",
+    "label": "1974",
+    "short_label": "1974",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1974\nType: Date\nReview status: unreviewed seed\nTotal mentions: 11.3137084989848",
+    "value": 11.3137
+  },
+  {
+    "id": "date__1939",
+    "label": "1939",
+    "short_label": "1939",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1939\nType: Date\nReview status: unreviewed seed\nTotal mentions: 10.5830052442584",
+    "value": 10.583
+  },
+  {
+    "id": "date__1950",
+    "label": "1950",
+    "short_label": "1950",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1950\nType: Date\nReview status: unreviewed seed\nTotal mentions: 10.5830052442584",
+    "value": 10.583
+  },
+  {
+    "id": "date__1955",
+    "label": "1955",
+    "short_label": "1955",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1955\nType: Date\nReview status: unreviewed seed\nTotal mentions: 10.5830052442584",
+    "value": 10.583
+  },
+  {
+    "id": "date__1965",
+    "label": "1965",
+    "short_label": "1965",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1965\nType: Date\nReview status: unreviewed seed\nTotal mentions: 10.5830052442584",
+    "value": 10.583
+  },
+  {
+    "id": "date__1966",
+    "label": "1966",
+    "short_label": "1966",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1966\nType: Date\nReview status: unreviewed seed\nTotal mentions: 10.5830052442584",
+    "value": 10.583
+  },
+  {
+    "id": "date__1947",
+    "label": "1947",
+    "short_label": "1947",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1947\nType: Date\nReview status: unreviewed seed\nTotal mentions: 9.79795897113271",
+    "value": 9.798
+  },
+  {
+    "id": "date__1932",
+    "label": "1932",
+    "short_label": "1932",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1932\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "date__1940",
+    "label": "1940",
+    "short_label": "1940",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1940\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "date__1942",
+    "label": "1942",
+    "short_label": "1942",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1942\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "date__1952",
+    "label": "1952",
+    "short_label": "1952",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1952\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "date__1959",
+    "label": "1959",
+    "short_label": "1959",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1959\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "date__1960",
+    "label": "1960",
+    "short_label": "1960",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1960\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "date__1963",
+    "label": "1963",
+    "short_label": "1963",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1963\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "date__1969",
+    "label": "1969",
+    "short_label": "1969",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1969\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "date__1971",
+    "label": "1971",
+    "short_label": "1971",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1971\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "date__1929",
+    "label": "1929",
+    "short_label": "1929",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1929\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1930",
+    "label": "1930",
+    "short_label": "1930",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1930\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1943",
+    "label": "1943",
+    "short_label": "1943",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1943\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1946",
+    "label": "1946",
+    "short_label": "1946",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1946\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1949",
+    "label": "1949",
+    "short_label": "1949",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1949\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1956",
+    "label": "1956",
+    "short_label": "1956",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1956\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1958",
+    "label": "1958",
+    "short_label": "1958",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1958\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1962",
+    "label": "1962",
+    "short_label": "1962",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1962\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1964",
+    "label": "1964",
+    "short_label": "1964",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1964\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1970",
+    "label": "1970",
+    "short_label": "1970",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1970\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1972",
+    "label": "1972",
+    "short_label": "1972",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1972\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1934",
+    "label": "1934",
+    "short_label": "1934",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1934\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1941",
+    "label": "1941",
+    "short_label": "1941",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1941\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1988",
+    "label": "1988",
+    "short_label": "1988",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1988\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1924",
+    "label": "1924",
+    "short_label": "1924",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1924\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1926",
+    "label": "1926",
+    "short_label": "1926",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1926\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1927",
+    "label": "1927",
+    "short_label": "1927",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1927\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1936",
+    "label": "1936",
+    "short_label": "1936",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1936\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "date__1957",
+    "label": "1957",
+    "short_label": "1957",
+    "type": "Date",
+    "group": "Date",
+    "chapter": null,
+    "title": "1957\nType: Date\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "event_world_war_ii",
+    "label": "World War II",
+    "short_label": "World War II",
+    "type": "Event",
+    "group": "Event",
+    "chapter": null,
+    "title": "World War II\nType: Event\nReview status: unreviewed seed\nTotal mentions: 17.8885438199983",
+    "value": 17.8885
+  },
+  {
+    "id": "event_vietnam_war",
+    "label": "Vietnam War",
+    "short_label": "Vietnam War",
+    "type": "Event",
+    "group": "Event",
+    "chapter": null,
+    "title": "Vietnam War\nType: Event\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "event_american_revolution",
+    "label": "American Revolution",
+    "short_label": "American Revolution",
+    "type": "Event",
+    "group": "Event",
+    "chapter": null,
+    "title": "American Revolution\nType: Event\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_sunday_school",
+    "label": "Sunday School",
+    "short_label": "Sunday School",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Sunday School\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 12",
+    "value": 12
+  },
+  {
+    "id": "organization_air_force",
+    "label": "Air Force",
+    "short_label": "Air Force",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Air Force\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 10.5830052442584",
+    "value": 10.583
+  },
+  {
+    "id": "organization_columbia_university",
+    "label": "Columbia University",
+    "short_label": "Columbia University",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Columbia University\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 10.5830052442584",
+    "value": 10.583
+  },
+  {
+    "id": "organization_foreign_service",
+    "label": "Foreign Service",
+    "short_label": "Foreign Service",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Foreign Service\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 10.5830052442584",
+    "value": 10.583
+  },
+  {
+    "id": "organization_clandestine_services",
+    "label": "Clandestine Services",
+    "short_label": "Clandestine Services",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Clandestine Services\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "organization_personnel_management_staff",
+    "label": "Personnel Management Staff",
+    "short_label": "Personnel Management Staff",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Personnel Management Staff\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_strategic_services",
+    "label": "Strategic Services",
+    "short_label": "Strategic Services",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Strategic Services\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_utah_state_agricultural_college",
+    "label": "Utah State Agricultural College",
+    "short_label": "Utah State Agricultural College",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Utah State Agricultural College\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_central_intelligence_agency",
+    "label": "Central Intelligence Agency",
+    "short_label": "Central Intelligence Agency",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Central Intelligence Agency\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_state_department",
+    "label": "State Department",
+    "short_label": "State Department",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "State Department\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_western_electric",
+    "label": "Western Electric",
+    "short_label": "Western Electric",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Western Electric\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_first_presidency",
+    "label": "First Presidency",
+    "short_label": "First Presidency",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "First Presidency\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_u_s_navy",
+    "label": "U.S. Navy",
+    "short_label": "U.S. Navy",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "U.S. Navy\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_american_university",
+    "label": "American University",
+    "short_label": "American University",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "American University\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_brigham_young_university",
+    "label": "Brigham Young University",
+    "short_label": "Brigham Young University",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Brigham Young University\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_church_of_jesus_christ_of_latter_day_saints",
+    "label": "Church of Jesus Christ of Latter-day Saints",
+    "short_label": "Church of Jesus Christ of Latter-day Saints",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Church of Jesus Christ of Latter-day Saints\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_communications_workers_of_america",
+    "label": "Communications Workers of America",
+    "short_label": "Communications Workers of America",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Communications Workers of America\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_eastside_grammar_school",
+    "label": "Eastside Grammar School",
+    "short_label": "Eastside Grammar School",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Eastside Grammar School\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_lincoln_school",
+    "label": "Lincoln School",
+    "short_label": "Lincoln School",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Lincoln School\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_mountain_states_telephone_and_telegraph",
+    "label": "Mountain States Telephone and Telegraph",
+    "short_label": "Mountain States Telephone and Telegraph",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Mountain States Telephone and Telegraph\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_pomona_high_school",
+    "label": "Pomona High School",
+    "short_label": "Pomona High School",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Pomona High School\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_presiding_bishop_s_office",
+    "label": "Presiding Bishop's Office",
+    "short_label": "Presiding Bishop's Office",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Presiding Bishop's Office\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_riverside_grammar_school",
+    "label": "Riverside Grammar School",
+    "short_label": "Riverside Grammar School",
+    "type": "Organization",
+    "group": "Organization",
+    "chapter": null,
+    "title": "Riverside Grammar School\nType: Organization\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_place_american_embassy",
+    "label": "American Embassy",
+    "short_label": "American Embassy",
+    "type": "Organization/Place",
+    "group": "Organization/Place",
+    "chapter": null,
+    "title": "American Embassy\nType: Organization/Place\nReview status: unreviewed seed\nTotal mentions: 13.2664991614216",
+    "value": 13.2665
+  },
+  {
+    "id": "organization_place_alexandria_ward",
+    "label": "Alexandria Ward",
+    "short_label": "Alexandria Ward",
+    "type": "Organization/Place",
+    "group": "Organization/Place",
+    "chapter": null,
+    "title": "Alexandria Ward\nType: Organization/Place\nReview status: unreviewed seed\nTotal mentions: 10.5830052442584",
+    "value": 10.583
+  },
+  {
+    "id": "organization_place_arlington_ward",
+    "label": "Arlington Ward",
+    "short_label": "Arlington Ward",
+    "type": "Organization/Place",
+    "group": "Organization/Place",
+    "chapter": null,
+    "title": "Arlington Ward\nType: Organization/Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_place_soviet_embassy",
+    "label": "Soviet Embassy",
+    "short_label": "Soviet Embassy",
+    "type": "Organization/Place",
+    "group": "Organization/Place",
+    "chapter": null,
+    "title": "Soviet Embassy\nType: Organization/Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_place_arizona_temple",
+    "label": "Arizona Temple",
+    "short_label": "Arizona Temple",
+    "type": "Organization/Place",
+    "group": "Organization/Place",
+    "chapter": null,
+    "title": "Arizona Temple\nType: Organization/Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_place_idaho_falls_temple",
+    "label": "Idaho Falls Temple",
+    "short_label": "Idaho Falls Temple",
+    "type": "Organization/Place",
+    "group": "Organization/Place",
+    "chapter": null,
+    "title": "Idaho Falls Temple\nType: Organization/Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "organization_place_mesa_temple",
+    "label": "Mesa Temple",
+    "short_label": "Mesa Temple",
+    "type": "Organization/Place",
+    "group": "Organization/Place",
+    "chapter": null,
+    "title": "Mesa Temple\nType: Organization/Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_marion",
+    "label": "Marion",
+    "short_label": "Marion",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Marion\nType: Person\nReview status: unreviewed seed\nTotal mentions: 35",
+    "value": 35
+  },
+  {
+    "id": "person_richard",
+    "label": "Richard",
+    "short_label": "Richard",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Richard\nType: Person\nReview status: unreviewed seed\nTotal mentions: 18.3303027798234",
+    "value": 18.3303
+  },
+  {
+    "id": "person_martin",
+    "label": "Martin",
+    "short_label": "Martin",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Martin\nType: Person\nReview status: unreviewed seed\nTotal mentions: 16.9705627484771",
+    "value": 16.9706
+  },
+  {
+    "id": "person_loverna",
+    "label": "Loverna",
+    "short_label": "Loverna",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Loverna\nType: Person\nReview status: unreviewed seed\nTotal mentions: 14.422205101856",
+    "value": 14.4222
+  },
+  {
+    "id": "person_ila_rose",
+    "label": "Ila Rose",
+    "short_label": "Ila Rose",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Ila Rose\nType: Person\nReview status: unreviewed seed\nTotal mentions: 12",
+    "value": 12
+  },
+  {
+    "id": "person_franklin_d_roosevelt",
+    "label": "Franklin D. Roosevelt",
+    "short_label": "Franklin D. Roosevelt",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Franklin D. Roosevelt\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "person_rhoda_jones",
+    "label": "Rhoda Jones",
+    "short_label": "Rhoda Jones",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Rhoda Jones\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "person_heber_j_grant",
+    "label": "Heber J. Grant",
+    "short_label": "Heber J. Grant",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Heber J. Grant\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_howard_hunt",
+    "label": "Howard Hunt",
+    "short_label": "Howard Hunt",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Howard Hunt\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_joseph_smith",
+    "label": "Joseph Smith",
+    "short_label": "Joseph Smith",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Joseph Smith\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_julian_lowe",
+    "label": "Julian Lowe",
+    "short_label": "Julian Lowe",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Julian Lowe\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_richard_m_nixon",
+    "label": "Richard M. Nixon",
+    "short_label": "Richard M. Nixon",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Richard M. Nixon\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_dwight_d_eisenhower",
+    "label": "Dwight D. Eisenhower",
+    "short_label": "Dwight D. Eisenhower",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Dwight D. Eisenhower\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_jack_kelley",
+    "label": "Jack Kelley",
+    "short_label": "Jack Kelley",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Jack Kelley\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_joyce_mcneill",
+    "label": "Joyce McNeill",
+    "short_label": "Joyce McNeill",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Joyce McNeill\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_martin_harris",
+    "label": "Martin Harris",
+    "short_label": "Martin Harris",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Martin Harris\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_dottie_burton",
+    "label": "Dottie Burton",
+    "short_label": "Dottie Burton",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Dottie Burton\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_harold_price",
+    "label": "Harold Price",
+    "short_label": "Harold Price",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Harold Price\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_howard_hughes",
+    "label": "Howard Hughes",
+    "short_label": "Howard Hughes",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Howard Hughes\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_joe_dunn",
+    "label": "Joe Dunn",
+    "short_label": "Joe Dunn",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Joe Dunn\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_lyndon_johnson",
+    "label": "Lyndon Johnson",
+    "short_label": "Lyndon Johnson",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Lyndon Johnson\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_martin_luther_king",
+    "label": "Martin Luther King",
+    "short_label": "Martin Luther King",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Martin Luther King\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_melvin_olsen",
+    "label": "Melvin Olsen",
+    "short_label": "Melvin Olsen",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Melvin Olsen\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_solomon_webster_harris",
+    "label": "Solomon Webster Harris",
+    "short_label": "Solomon Webster Harris",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Solomon Webster Harris\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_spencer_w_kimball",
+    "label": "Spencer W. Kimball",
+    "short_label": "Spencer W. Kimball",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Spencer W. Kimball\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_wendell_thorne",
+    "label": "Wendell Thorne",
+    "short_label": "Wendell Thorne",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Wendell Thorne\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_al_harris",
+    "label": "Al Harris",
+    "short_label": "Al Harris",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Al Harris\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_anthony_w_ivins",
+    "label": "Anthony W. Ivins",
+    "short_label": "Anthony W. Ivins",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Anthony W. Ivins\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_carmen_stevens",
+    "label": "Carmen Stevens",
+    "short_label": "Carmen Stevens",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Carmen Stevens\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_clifford",
+    "label": "Clifford",
+    "short_label": "Clifford",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Clifford\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_cyd_charisse",
+    "label": "Cyd Charisse",
+    "short_label": "Cyd Charisse",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Cyd Charisse\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_david_o_mckay",
+    "label": "David O. McKay",
+    "short_label": "David O. McKay",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "David O. McKay\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_elwood_heiner",
+    "label": "Elwood Heiner",
+    "short_label": "Elwood Heiner",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Elwood Heiner\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_george_albert_smith",
+    "label": "George Albert Smith",
+    "short_label": "George Albert Smith",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "George Albert Smith\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_george_f_richards",
+    "label": "George F. Richards",
+    "short_label": "George F. Richards",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "George F. Richards\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_harry_truman",
+    "label": "Harry Truman",
+    "short_label": "Harry Truman",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Harry Truman\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_heber_austin",
+    "label": "Heber Austin",
+    "short_label": "Heber Austin",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Heber Austin\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_herbert_hoover",
+    "label": "Herbert Hoover",
+    "short_label": "Herbert Hoover",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Herbert Hoover\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_j_golden_kimball",
+    "label": "J. Golden Kimball",
+    "short_label": "J. Golden Kimball",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "J. Golden Kimball\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_john_s_mccain",
+    "label": "John S. McCain",
+    "short_label": "John S. McCain",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "John S. McCain\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_joseph_fielding_smith",
+    "label": "Joseph Fielding Smith",
+    "short_label": "Joseph Fielding Smith",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Joseph Fielding Smith\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_lester_allan_harris",
+    "label": "Lester Allan Harris",
+    "short_label": "Lester Allan Harris",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Lester Allan Harris\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_louis_f_nuffer",
+    "label": "Louis F. Nuffer",
+    "short_label": "Louis F. Nuffer",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Louis F. Nuffer\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_lucy_guyaz",
+    "label": "Lucy Guyaz",
+    "short_label": "Lucy Guyaz",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Lucy Guyaz\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_maria_del_carmen_stevens",
+    "label": "Maria del Carmen Stevens",
+    "short_label": "Maria del Carmen Stevens",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Maria del Carmen Stevens\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_mary_anderson",
+    "label": "Mary Anderson",
+    "short_label": "Mary Anderson",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Mary Anderson\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_maryette_rice_harris_standley",
+    "label": "Maryette Rice Harris Standley",
+    "short_label": "Maryette Rice Harris Standley",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Maryette Rice Harris Standley\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_nathan_harris",
+    "label": "Nathan Harris",
+    "short_label": "Nathan Harris",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Nathan Harris\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_raymond_spruance",
+    "label": "Raymond Spruance",
+    "short_label": "Raymond Spruance",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Raymond Spruance\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_reed_smoot",
+    "label": "Reed Smoot",
+    "short_label": "Reed Smoot",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Reed Smoot\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_reuel_neilson",
+    "label": "Reuel Neilson",
+    "short_label": "Reuel Neilson",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Reuel Neilson\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_richard_r_lyman",
+    "label": "Richard R. Lyman",
+    "short_label": "Richard R. Lyman",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Richard R. Lyman\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_roger_williams",
+    "label": "Roger Williams",
+    "short_label": "Roger Williams",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Roger Williams\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_rudger_clawson",
+    "label": "Rudger Clawson",
+    "short_label": "Rudger Clawson",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Rudger Clawson\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_solomon_r_harris",
+    "label": "Solomon R. Harris",
+    "short_label": "Solomon R. Harris",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Solomon R. Harris\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_stephen_l_richards",
+    "label": "Stephen L. Richards",
+    "short_label": "Stephen L. Richards",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Stephen L. Richards\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_sylvester_q_cannon",
+    "label": "Sylvester Q. Cannon",
+    "short_label": "Sylvester Q. Cannon",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Sylvester Q. Cannon\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_t_j_hurley",
+    "label": "T. J. Hurley",
+    "short_label": "T. J. Hurley",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "T. J. Hurley\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_tony_martin",
+    "label": "Tony Martin",
+    "short_label": "Tony Martin",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Tony Martin\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_tyrone_power",
+    "label": "Tyrone Power",
+    "short_label": "Tyrone Power",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Tyrone Power\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_vern_l_brown",
+    "label": "Vern L. Brown",
+    "short_label": "Vern L. Brown",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Vern L. Brown\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_wiley_snarr",
+    "label": "Wiley Snarr",
+    "short_label": "Wiley Snarr",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Wiley Snarr\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "person_wilmer_norton",
+    "label": "Wilmer Norton",
+    "short_label": "Wilmer Norton",
+    "type": "Person",
+    "group": "Person",
+    "chapter": null,
+    "title": "Wilmer Norton\nType: Person\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_united_states",
+    "label": "United States",
+    "short_label": "United States",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "United States\nType: Place\nReview status: unreviewed seed\nTotal mentions: 35",
+    "value": 35
+  },
+  {
+    "id": "place_idaho",
+    "label": "Idaho",
+    "short_label": "Idaho",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Idaho\nType: Place\nReview status: unreviewed seed\nTotal mentions: 27.1293199325011",
+    "value": 27.1293
+  },
+  {
+    "id": "place_washington",
+    "label": "Washington",
+    "short_label": "Washington",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Washington\nType: Place\nReview status: unreviewed seed\nTotal mentions: 25.6124969497314",
+    "value": 25.6125
+  },
+  {
+    "id": "place_new_york",
+    "label": "New York",
+    "short_label": "New York",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "New York\nType: Place\nReview status: unreviewed seed\nTotal mentions: 24.3310501211929",
+    "value": 24.3311
+  },
+  {
+    "id": "place_utah",
+    "label": "Utah",
+    "short_label": "Utah",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Utah\nType: Place\nReview status: unreviewed seed\nTotal mentions: 23.6643191323985",
+    "value": 23.6643
+  },
+  {
+    "id": "place_idaho_falls",
+    "label": "Idaho Falls",
+    "short_label": "Idaho Falls",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Idaho Falls\nType: Place\nReview status: unreviewed seed\nTotal mentions: 22.9782505861521",
+    "value": 22.9783
+  },
+  {
+    "id": "place_soviet_union",
+    "label": "Soviet Union",
+    "short_label": "Soviet Union",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Soviet Union\nType: Place\nReview status: unreviewed seed\nTotal mentions: 21.9089023002066",
+    "value": 21.9089
+  },
+  {
+    "id": "place_uruguay",
+    "label": "Uruguay",
+    "short_label": "Uruguay",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Uruguay\nType: Place\nReview status: unreviewed seed\nTotal mentions: 20.3960780543711",
+    "value": 20.3961
+  },
+  {
+    "id": "place_virginia",
+    "label": "Virginia",
+    "short_label": "Virginia",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Virginia\nType: Place\nReview status: unreviewed seed\nTotal mentions: 16.9705627484771",
+    "value": 16.9706
+  },
+  {
+    "id": "place_california",
+    "label": "California",
+    "short_label": "California",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "California\nType: Place\nReview status: unreviewed seed\nTotal mentions: 16.4924225024706",
+    "value": 16.4924
+  },
+  {
+    "id": "place_arizona",
+    "label": "Arizona",
+    "short_label": "Arizona",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Arizona\nType: Place\nReview status: unreviewed seed\nTotal mentions: 16",
+    "value": 16
+  },
+  {
+    "id": "place_montevideo",
+    "label": "Montevideo",
+    "short_label": "Montevideo",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Montevideo\nType: Place\nReview status: unreviewed seed\nTotal mentions: 15.4919333848297",
+    "value": 15.4919
+  },
+  {
+    "id": "place_rio_de_janeiro",
+    "label": "Rio De Janeiro",
+    "short_label": "Rio De Janeiro",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Rio De Janeiro\nType: Place\nReview status: unreviewed seed\nTotal mentions: 14.422205101856",
+    "value": 14.4222
+  },
+  {
+    "id": "place_salt_lake_city",
+    "label": "Salt Lake City",
+    "short_label": "Salt Lake City",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Salt Lake City\nType: Place\nReview status: unreviewed seed\nTotal mentions: 12",
+    "value": 12
+  },
+  {
+    "id": "place_japan",
+    "label": "Japan",
+    "short_label": "Japan",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Japan\nType: Place\nReview status: unreviewed seed\nTotal mentions: 11.3137084989848",
+    "value": 11.3137
+  },
+  {
+    "id": "place_mesa",
+    "label": "Mesa",
+    "short_label": "Mesa",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Mesa\nType: Place\nReview status: unreviewed seed\nTotal mentions: 11.3137084989848",
+    "value": 11.3137
+  },
+  {
+    "id": "place_new_york_city",
+    "label": "New York City",
+    "short_label": "New York City",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "New York City\nType: Place\nReview status: unreviewed seed\nTotal mentions: 10.5830052442584",
+    "value": 10.583
+  },
+  {
+    "id": "place_logan",
+    "label": "Logan",
+    "short_label": "Logan",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Logan\nType: Place\nReview status: unreviewed seed\nTotal mentions: 9.79795897113271",
+    "value": 9.798
+  },
+  {
+    "id": "place_vietnam",
+    "label": "Vietnam",
+    "short_label": "Vietnam",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Vietnam\nType: Place\nReview status: unreviewed seed\nTotal mentions: 9.79795897113271",
+    "value": 9.798
+  },
+  {
+    "id": "place_boston",
+    "label": "Boston",
+    "short_label": "Boston",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Boston\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "place_corpus_christi",
+    "label": "Corpus Christi",
+    "short_label": "Corpus Christi",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Corpus Christi\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "place_falls_church",
+    "label": "Falls Church",
+    "short_label": "Falls Church",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Falls Church\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "place_pearl_harbor",
+    "label": "Pearl Harbor",
+    "short_label": "Pearl Harbor",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Pearl Harbor\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "place_salmon",
+    "label": "Salmon",
+    "short_label": "Salmon",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Salmon\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "place_shanks_village",
+    "label": "Shanks Village",
+    "short_label": "Shanks Village",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Shanks Village\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8.94427190999916",
+    "value": 8.9443
+  },
+  {
+    "id": "place_bremerton",
+    "label": "Bremerton",
+    "short_label": "Bremerton",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Bremerton\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_philippines",
+    "label": "Philippines",
+    "short_label": "Philippines",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Philippines\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_pomona",
+    "label": "Pomona",
+    "short_label": "Pomona",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Pomona\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_san_francisco",
+    "label": "San Francisco",
+    "short_label": "San Francisco",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "San Francisco\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_far_east",
+    "label": "Far East",
+    "short_label": "Far East",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Far East\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_los_angeles",
+    "label": "Los Angeles",
+    "short_label": "Los Angeles",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Los Angeles\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_philippine_islands",
+    "label": "Philippine Islands",
+    "short_label": "Philippine Islands",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Philippine Islands\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_providence",
+    "label": "Providence",
+    "short_label": "Providence",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Providence\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_sao_paulo",
+    "label": "Sao Paulo",
+    "short_label": "Sao Paulo",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Sao Paulo\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_treasure_island",
+    "label": "Treasure Island",
+    "short_label": "Treasure Island",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Treasure Island\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_atlantic_ocean",
+    "label": "Atlantic Ocean",
+    "short_label": "Atlantic Ocean",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Atlantic Ocean\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_concord",
+    "label": "Concord",
+    "short_label": "Concord",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Concord\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_hawaii",
+    "label": "Hawaii",
+    "short_label": "Hawaii",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Hawaii\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_hill_cumorah",
+    "label": "Hill Cumorah",
+    "short_label": "Hill Cumorah",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Hill Cumorah\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_kansas_city",
+    "label": "Kansas City",
+    "short_label": "Kansas City",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Kansas City\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_quonset_point",
+    "label": "Quonset Point",
+    "short_label": "Quonset Point",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Quonset Point\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_rhode_island",
+    "label": "Rhode Island",
+    "short_label": "Rhode Island",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Rhode Island\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_sable_drive",
+    "label": "Sable Drive",
+    "short_label": "Sable Drive",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Sable Drive\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_south_china_sea",
+    "label": "South China Sea",
+    "short_label": "South China Sea",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "South China Sea\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_balboa_beach",
+    "label": "Balboa Beach",
+    "short_label": "Balboa Beach",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Balboa Beach\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_bunker_hill",
+    "label": "Bunker Hill",
+    "short_label": "Bunker Hill",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Bunker Hill\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_caribbean",
+    "label": "Caribbean",
+    "short_label": "Caribbean",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Caribbean\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_clarkston",
+    "label": "Clarkston",
+    "short_label": "Clarkston",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Clarkston\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_lexington",
+    "label": "Lexington",
+    "short_label": "Lexington",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Lexington\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_lone_pine",
+    "label": "Lone Pine",
+    "short_label": "Lone Pine",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Lone Pine\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_marcus_island",
+    "label": "Marcus Island",
+    "short_label": "Marcus Island",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Marcus Island\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_marianas_islands",
+    "label": "Marianas Islands",
+    "short_label": "Marianas Islands",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Marianas Islands\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_panama_canal",
+    "label": "Panama Canal",
+    "short_label": "Panama Canal",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Panama Canal\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_san_diego",
+    "label": "San Diego",
+    "short_label": "San Diego",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "San Diego\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_soda_springs",
+    "label": "Soda Springs",
+    "short_label": "Soda Springs",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Soda Springs\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_teton_mountains",
+    "label": "Teton Mountains",
+    "short_label": "Teton Mountains",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Teton Mountains\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_tooele",
+    "label": "Tooele",
+    "short_label": "Tooele",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Tooele\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  },
+  {
+    "id": "place_victor",
+    "label": "Victor",
+    "short_label": "Victor",
+    "type": "Place",
+    "group": "Place",
+    "chapter": null,
+    "title": "Victor\nType: Place\nReview status: unreviewed seed\nTotal mentions: 8",
+    "value": 8
+  }
+]

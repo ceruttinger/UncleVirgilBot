@@ -1,0 +1,115 @@
+---
+title: "Entity Graph"
+page-layout: full
+toc: false
+---
+
+This graph shows how chapters connect to people, places, organizations, dates, and events extracted from the memoir. Use the controls below to reduce the graph to one chapter or one entity type at a time.
+
+```{=html}
+<div class="uv-graph-shell">
+  <div class="uv-graph-controls" aria-label="Entity graph controls">
+    <label>
+      Chapter
+      <select id="uvChapterFilter">
+        <option value="all">All chapters</option>
+      </select>
+    </label>
+
+    <label>
+      Entity type
+      <select id="uvTypeFilter">
+        <option value="all">All entity types</option>
+      </select>
+    </label>
+
+    <label>
+      Minimum mentions
+      <input id="uvMinMentions" type="number" min="1" step="1" value="1" />
+    </label>
+
+    <label class="uv-checkbox-label">
+      <input id="uvHideChapterLinks" type="checkbox" checked />
+      Hide chapter-to-chapter links
+    </label>
+
+    <button id="uvSaveLayout" type="button">Save current layout</button>
+    <button id="uvClearLayout" type="button">Clear saved node positions</button>
+  </div>
+
+  <div id="uvGraphStats" class="uv-graph-stats">Loading graph…</div>
+  <div id="uvEntityGraph" class="uv-entity-graph"></div>
+</div>
+
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<script src="assets/js/entity_graph.js"></script>
+```
+
+## Highest-weight chapter/entity links
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(dplyr)
+library(knitr)
+
+edges <- read_csv("data/public/graph_edges.csv", show_col_types = FALSE)
+nodes <- read_csv("data/public/graph_nodes.csv", show_col_types = FALSE)
+
+edge_from <- intersect(c("from", "source", "source_id"), names(edges))[1]
+edge_to <- intersect(c("to", "target", "target_id"), names(edges))[1]
+edge_weight <- intersect(c("weight", "mentions", "value"), names(edges))[1]
+node_id <- intersect(c("id", "node_id"), names(nodes))[1]
+node_label <- intersect(c("label", "canonical_entity", "name"), names(nodes))[1]
+node_type <- intersect(c("node_type", "entity_type", "group", "type"), names(nodes))[1]
+
+if (!is.na(edge_from) && !is.na(edge_to) && !is.na(node_id) && !is.na(node_label)) {
+  edges2 <- edges |>
+    rename(from_id = all_of(edge_from), to_id = all_of(edge_to))
+
+  if (!is.na(edge_weight)) {
+    edges2 <- edges2 |> rename(mentions = all_of(edge_weight))
+  } else {
+    edges2 <- edges2 |> mutate(mentions = 1)
+  }
+
+  nodes2 <- nodes |>
+    rename(graph_id = all_of(node_id), graph_label = all_of(node_label))
+
+  if (!is.na(node_type)) {
+    nodes2 <- nodes2 |> rename(graph_type = all_of(node_type))
+  } else {
+    nodes2 <- nodes2 |> mutate(graph_type = NA_character_)
+  }
+
+  top_links <- edges2 |>
+    filter(grepl("chapter", from_id, ignore.case = TRUE) | grepl("chapter", to_id, ignore.case = TRUE)) |>
+    left_join(nodes2 |> select(graph_id, chapter = graph_label), by = c("from_id" = "graph_id")) |>
+    left_join(nodes2 |> select(graph_id, entity = graph_label, entity_type = graph_type), by = c("to_id" = "graph_id")) |>
+    filter(!is.na(chapter), !is.na(entity), !grepl("^Ch\\.", entity)) |>
+    arrange(desc(mentions), chapter, entity) |>
+    select(chapter, entity, entity_type, mentions) |>
+    head(20)
+
+  if (nrow(top_links) > 0) {
+    kable(top_links, caption = "Top chapter-to-entity relationships")
+  } else {
+    cat("No chapter-to-entity links found in the graph edge file.")
+  }
+} else {
+  cat("Graph table could not be summarized because expected columns were not found.")
+}
+```
+
+## Next review questions
+
+Use the chapter dropdown first. For each chapter, ask:
+
+- Are the main people present?
+- Are the main places present?
+- Are organizations correctly separated from places?
+- Are generic phrases being treated as entities?
+- Are important family names or location variants missing?

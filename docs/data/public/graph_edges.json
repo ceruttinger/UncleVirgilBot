@@ -1,0 +1,3173 @@
+[
+  {
+    "from": "chapter_1",
+    "to": "date__1924",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 1 mentions 1924 2 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "date__1926",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 1 mentions 1926 2 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "date__1927",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 1 mentions 1927 2 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "date__1929",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 1 mentions 1929 4 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "date__1930",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 1 mentions 1930 3 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "date__1932",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 1 mentions 1932 4 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "date__1934",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 1 mentions 1934 2 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "date__1940",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions 1940 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "organization_church_of_jesus_christ_of_latter_day_saints",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Church of Jesus Christ of Latter-day Saints 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "organization_eastside_grammar_school",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Eastside Grammar School 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "organization_lincoln_school",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Lincoln School 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "organization_place_arizona_temple",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 1 mentions Arizona Temple 2 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "organization_place_idaho_falls_temple",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 1 mentions Idaho Falls Temple 2 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "organization_place_mesa_temple",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Mesa Temple 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_anthony_w_ivins",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Anthony W. Ivins 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_carmen_stevens",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Carmen Stevens 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_clifford",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Clifford 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_david_o_mckay",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions David O. McKay 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_franklin_d_roosevelt",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 1 mentions Franklin D. Roosevelt 2 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_george_albert_smith",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions George Albert Smith 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_george_f_richards",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions George F. Richards 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_heber_j_grant",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Heber J. Grant 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_herbert_hoover",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Herbert Hoover 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_ila_rose",
+    "relationship": "MENTIONS",
+    "weight": 5,
+    "title": "Chapter 1 mentions Ila Rose 5 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_j_golden_kimball",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions J. Golden Kimball 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_joseph_fielding_smith",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Joseph Fielding Smith 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_loverna",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 1 mentions Loverna 4 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_lucy_guyaz",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Lucy Guyaz 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_maria_del_carmen_stevens",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Maria del Carmen Stevens 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_martin",
+    "relationship": "MENTIONS",
+    "weight": 5,
+    "title": "Chapter 1 mentions Martin 5 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_mary_anderson",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Mary Anderson 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_maryette_rice_harris_standley",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Maryette Rice Harris Standley 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_nathan_harris",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Nathan Harris 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_reed_smoot",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Reed Smoot 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_richard",
+    "relationship": "MENTIONS",
+    "weight": 13,
+    "title": "Chapter 1 mentions Richard 13 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_richard_r_lyman",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Richard R. Lyman 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_rudger_clawson",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Rudger Clawson 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_solomon_r_harris",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Solomon R. Harris 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_solomon_webster_harris",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Solomon Webster Harris 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_spencer_w_kimball",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Spencer W. Kimball 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_stephen_l_richards",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Stephen L. Richards 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "person_sylvester_q_cannon",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Sylvester Q. Cannon 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "place_arizona",
+    "relationship": "MENTIONS",
+    "weight": 12,
+    "title": "Chapter 1 mentions Arizona 12 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "place_atlantic_ocean",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Atlantic Ocean 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "place_idaho",
+    "relationship": "MENTIONS",
+    "weight": 15,
+    "title": "Chapter 1 mentions Idaho 15 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "place_idaho_falls",
+    "relationship": "MENTIONS",
+    "weight": 11,
+    "title": "Chapter 1 mentions Idaho Falls 11 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "place_logan",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 1 mentions Logan 2 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "place_lone_pine",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Lone Pine 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "place_mesa",
+    "relationship": "MENTIONS",
+    "weight": 8,
+    "title": "Chapter 1 mentions Mesa 8 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "place_new_york",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions New York 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "place_philippine_islands",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Philippine Islands 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "place_philippines",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 1 mentions Philippines 2 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "place_salmon",
+    "relationship": "MENTIONS",
+    "weight": 5,
+    "title": "Chapter 1 mentions Salmon 5 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "place_salt_lake_city",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Salt Lake City 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "place_soviet_union",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Soviet Union 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "place_tooele",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 1 mentions Tooele 1 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "place_united_states",
+    "relationship": "MENTIONS",
+    "weight": 16,
+    "title": "Chapter 1 mentions United States 16 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "place_utah",
+    "relationship": "MENTIONS",
+    "weight": 5,
+    "title": "Chapter 1 mentions Utah 5 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "date__1934",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions 1934 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "date__1936",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions 1936 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "date__1939",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 2 mentions 1939 3 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "date__1940",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 2 mentions 1940 3 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "date__1941",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 2 mentions 1941 3 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "date__1942",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 2 mentions 1942 3 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "date__1943",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 2 mentions 1943 2 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "date__1945",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions 1945 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "date__1988",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 2 mentions 1988 2 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "event_world_war_ii",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 2 mentions World War II 2 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "organization_communications_workers_of_america",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Communications Workers of America 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "organization_mountain_states_telephone_and_telegraph",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Mountain States Telephone and Telegraph 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "organization_pomona_high_school",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Pomona High School 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "organization_presiding_bishop_s_office",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Presiding Bishop's Office 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "organization_riverside_grammar_school",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Riverside Grammar School 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "organization_sunday_school",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 2 mentions Sunday School 2 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "organization_utah_state_agricultural_college",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 2 mentions Utah State Agricultural College 2 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "organization_western_electric",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 2 mentions Western Electric 3 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_al_harris",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Al Harris 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_elwood_heiner",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Elwood Heiner 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_harold_price",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Harold Price 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_heber_austin",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Heber Austin 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_ila_rose",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Ila Rose 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_jack_kelley",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 2 mentions Jack Kelley 3 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_joyce_mcneill",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 2 mentions Joyce McNeill 3 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_lester_allan_harris",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Lester Allan Harris 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_louis_f_nuffer",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Louis F. Nuffer 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_loverna",
+    "relationship": "MENTIONS",
+    "weight": 6,
+    "title": "Chapter 2 mentions Loverna 6 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_martin",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 2 mentions Martin 2 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_martin_harris",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Martin Harris 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_melvin_olsen",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 2 mentions Melvin Olsen 2 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_reuel_neilson",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Reuel Neilson 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_t_j_hurley",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions T. J. Hurley 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_vern_l_brown",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Vern L. Brown 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_wiley_snarr",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Wiley Snarr 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "person_wilmer_norton",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Wilmer Norton 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_balboa_beach",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Balboa Beach 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_california",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 2 mentions California 4 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_clarkston",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Clarkston 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_concord",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Concord 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_corpus_christi",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 2 mentions Corpus Christi 2 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_hawaii",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Hawaii 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_idaho",
+    "relationship": "MENTIONS",
+    "weight": 12,
+    "title": "Chapter 2 mentions Idaho 12 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_idaho_falls",
+    "relationship": "MENTIONS",
+    "weight": 9,
+    "title": "Chapter 2 mentions Idaho Falls 9 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_japan",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 2 mentions Japan 4 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_logan",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 2 mentions Logan 2 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_pearl_harbor",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 2 mentions Pearl Harbor 2 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_philippines",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Philippines 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_pomona",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 2 mentions Pomona 4 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_rhode_island",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Rhode Island 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_salt_lake_city",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 2 mentions Salt Lake City 4 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_san_francisco",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 2 mentions San Francisco 2 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_soda_springs",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Soda Springs 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_teton_mountains",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Teton Mountains 1 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_treasure_island",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 2 mentions Treasure Island 2 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_united_states",
+    "relationship": "MENTIONS",
+    "weight": 14,
+    "title": "Chapter 2 mentions United States 14 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_utah",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 2 mentions Utah 2 time(s)."
+  },
+  {
+    "from": "chapter_2",
+    "to": "place_victor",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 2 mentions Victor 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "date__1942",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 3 mentions 1942 2 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "date__1943",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions 1943 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "date__1945",
+    "relationship": "MENTIONS",
+    "weight": 9,
+    "title": "Chapter 3 mentions 1945 9 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "event_american_revolution",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions American Revolution 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "event_world_war_ii",
+    "relationship": "MENTIONS",
+    "weight": 6,
+    "title": "Chapter 3 mentions World War II 6 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "organization_u_s_navy",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 3 mentions U.S. Navy 2 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "organization_utah_state_agricultural_college",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 3 mentions Utah State Agricultural College 2 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "person_cyd_charisse",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Cyd Charisse 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "person_franklin_d_roosevelt",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 3 mentions Franklin D. Roosevelt 2 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "person_harry_truman",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Harry Truman 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "person_heber_j_grant",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Heber J. Grant 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "person_john_s_mccain",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions John S. McCain 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "person_marion",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Marion 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "person_martin",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Martin 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "person_raymond_spruance",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Raymond Spruance 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "person_richard",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Richard 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "person_roger_williams",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Roger Williams 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "person_tony_martin",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Tony Martin 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "person_tyrone_power",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Tyrone Power 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_arizona",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Arizona 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_atlantic_ocean",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Atlantic Ocean 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_boston",
+    "relationship": "MENTIONS",
+    "weight": 5,
+    "title": "Chapter 3 mentions Boston 5 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_bremerton",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 3 mentions Bremerton 4 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_bunker_hill",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Bunker Hill 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_caribbean",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Caribbean 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_concord",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Concord 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_corpus_christi",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 3 mentions Corpus Christi 2 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_far_east",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Far East 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_hawaii",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Hawaii 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_idaho",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 3 mentions Idaho 3 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_idaho_falls",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Idaho Falls 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_japan",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 3 mentions Japan 2 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_lexington",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Lexington 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_logan",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 3 mentions Logan 2 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_marcus_island",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Marcus Island 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_marianas_islands",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Marianas Islands 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_panama_canal",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Panama Canal 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_pearl_harbor",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 3 mentions Pearl Harbor 3 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_philippine_islands",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 3 mentions Philippine Islands 2 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_philippines",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Philippines 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_providence",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 3 mentions Providence 3 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_quonset_point",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 3 mentions Quonset Point 2 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_rhode_island",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Rhode Island 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_san_diego",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions San Diego 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_san_francisco",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions San Francisco 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_south_china_sea",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 3 mentions South China Sea 2 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_treasure_island",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 3 mentions Treasure Island 1 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_united_states",
+    "relationship": "MENTIONS",
+    "weight": 13,
+    "title": "Chapter 3 mentions United States 13 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_utah",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 3 mentions Utah 3 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_vietnam",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 3 mentions Vietnam 2 time(s)."
+  },
+  {
+    "from": "chapter_3",
+    "to": "place_washington",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 3 mentions Washington 3 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "date__1932",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions 1932 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "date__1939",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 4 mentions 1939 2 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "date__1946",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 4 mentions 1946 4 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "date__1947",
+    "relationship": "MENTIONS",
+    "weight": 5,
+    "title": "Chapter 4 mentions 1947 5 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "date__1948",
+    "relationship": "MENTIONS",
+    "weight": 10,
+    "title": "Chapter 4 mentions 1948 10 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "date__1949",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 4 mentions 1949 4 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "date__1950",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 4 mentions 1950 4 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "date__1952",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions 1952 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "date__1953",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions 1953 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "event_world_war_ii",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 4 mentions World War II 2 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "organization_air_force",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions Air Force 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "organization_brigham_young_university",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions Brigham Young University 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "organization_central_intelligence_agency",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions Central Intelligence Agency 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "organization_columbia_university",
+    "relationship": "MENTIONS",
+    "weight": 6,
+    "title": "Chapter 4 mentions Columbia University 6 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "organization_strategic_services",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 4 mentions Strategic Services 2 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "person_dwight_d_eisenhower",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 4 mentions Dwight D. Eisenhower 2 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "person_franklin_d_roosevelt",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions Franklin D. Roosevelt 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "person_harold_price",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions Harold Price 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "person_howard_hughes",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions Howard Hughes 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "person_ila_rose",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 4 mentions Ila Rose 2 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "person_joseph_smith",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions Joseph Smith 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "person_marion",
+    "relationship": "MENTIONS",
+    "weight": 24,
+    "title": "Chapter 4 mentions Marion 24 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "person_martin",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 4 mentions Martin 3 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "person_martin_harris",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions Martin Harris 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "person_rhoda_jones",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions Rhoda Jones 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "person_richard",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions Richard 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "person_richard_m_nixon",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions Richard M. Nixon 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "person_solomon_webster_harris",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions Solomon Webster Harris 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "place_california",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 4 mentions California 2 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "place_idaho",
+    "relationship": "MENTIONS",
+    "weight": 12,
+    "title": "Chapter 4 mentions Idaho 12 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "place_idaho_falls",
+    "relationship": "MENTIONS",
+    "weight": 11,
+    "title": "Chapter 4 mentions Idaho Falls 11 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "place_new_york",
+    "relationship": "MENTIONS",
+    "weight": 21,
+    "title": "Chapter 4 mentions New York 21 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "place_new_york_city",
+    "relationship": "MENTIONS",
+    "weight": 5,
+    "title": "Chapter 4 mentions New York City 5 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "place_salt_lake_city",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 4 mentions Salt Lake City 4 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "place_san_francisco",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions San Francisco 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "place_shanks_village",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 4 mentions Shanks Village 4 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "place_soviet_union",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions Soviet Union 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "place_united_states",
+    "relationship": "MENTIONS",
+    "weight": 13,
+    "title": "Chapter 4 mentions United States 13 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "place_utah",
+    "relationship": "MENTIONS",
+    "weight": 6,
+    "title": "Chapter 4 mentions Utah 6 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "place_virginia",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 4 mentions Virginia 1 time(s)."
+  },
+  {
+    "from": "chapter_4",
+    "to": "place_washington",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 4 mentions Washington 3 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "date__1936",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions 1936 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "date__1939",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 5 mentions 1939 2 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "date__1943",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions 1943 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "date__1947",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions 1947 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "date__1950",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions 1950 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "date__1952",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 5 mentions 1952 4 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "date__1953",
+    "relationship": "MENTIONS",
+    "weight": 7,
+    "title": "Chapter 5 mentions 1953 7 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "date__1954",
+    "relationship": "MENTIONS",
+    "weight": 8,
+    "title": "Chapter 5 mentions 1954 8 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "date__1955",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 5 mentions 1955 3 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "event_world_war_ii",
+    "relationship": "MENTIONS",
+    "weight": 9,
+    "title": "Chapter 5 mentions World War II 9 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "organization_air_force",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 5 mentions Air Force 4 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "organization_central_intelligence_agency",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions Central Intelligence Agency 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "organization_clandestine_services",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 5 mentions Clandestine Services 2 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "organization_columbia_university",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions Columbia University 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "organization_first_presidency",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions First Presidency 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "organization_place_alexandria_ward",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions Alexandria Ward 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "organization_state_department",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions State Department 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "organization_strategic_services",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 5 mentions Strategic Services 2 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "organization_sunday_school",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions Sunday School 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "person_heber_j_grant",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 5 mentions Heber J. Grant 2 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "person_howard_hughes",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions Howard Hughes 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "person_joe_dunn",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions Joe Dunn 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "person_joseph_smith",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 5 mentions Joseph Smith 2 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "person_loverna",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 5 mentions Loverna 2 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "person_marion",
+    "relationship": "MENTIONS",
+    "weight": 24,
+    "title": "Chapter 5 mentions Marion 24 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "person_martin",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 5 mentions Martin 3 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "person_martin_harris",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions Martin Harris 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "person_wendell_thorne",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions Wendell Thorne 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "place_california",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 5 mentions California 3 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "place_falls_church",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 5 mentions Falls Church 2 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "place_far_east",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions Far East 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "place_idaho",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 5 mentions Idaho 3 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "place_idaho_falls",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions Idaho Falls 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "place_kansas_city",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions Kansas City 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "place_new_york",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 5 mentions New York 2 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "place_sable_drive",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions Sable Drive 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "place_shanks_village",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 5 mentions Shanks Village 1 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "place_soviet_union",
+    "relationship": "MENTIONS",
+    "weight": 14,
+    "title": "Chapter 5 mentions Soviet Union 14 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "place_united_states",
+    "relationship": "MENTIONS",
+    "weight": 24,
+    "title": "Chapter 5 mentions United States 24 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "place_utah",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 5 mentions Utah 3 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "place_virginia",
+    "relationship": "MENTIONS",
+    "weight": 5,
+    "title": "Chapter 5 mentions Virginia 5 time(s)."
+  },
+  {
+    "from": "chapter_5",
+    "to": "place_washington",
+    "relationship": "MENTIONS",
+    "weight": 13,
+    "title": "Chapter 5 mentions Washington 13 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "date__1930",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 6 mentions 1930 1 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "date__1940",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 6 mentions 1940 1 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "date__1950",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 6 mentions 1950 1 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "date__1955",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 6 mentions 1955 3 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "date__1956",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 6 mentions 1956 4 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "date__1957",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 6 mentions 1957 2 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "date__1958",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 6 mentions 1958 4 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "date__1959",
+    "relationship": "MENTIONS",
+    "weight": 5,
+    "title": "Chapter 6 mentions 1959 5 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "date__1969",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 6 mentions 1969 1 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "event_world_war_ii",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 6 mentions World War II 1 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "organization_air_force",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 6 mentions Air Force 2 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "organization_place_alexandria_ward",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 6 mentions Alexandria Ward 2 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "organization_place_american_embassy",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 6 mentions American Embassy 4 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "person_dottie_burton",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 6 mentions Dottie Burton 1 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "person_howard_hunt",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 6 mentions Howard Hunt 2 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "person_joe_dunn",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 6 mentions Joe Dunn 1 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "person_marion",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 6 mentions Marion 4 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "person_rhoda_jones",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 6 mentions Rhoda Jones 1 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "person_richard",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 6 mentions Richard 1 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "person_richard_m_nixon",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 6 mentions Richard M. Nixon 1 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "person_spencer_w_kimball",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 6 mentions Spencer W. Kimball 1 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "place_california",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 6 mentions California 1 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "place_far_east",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 6 mentions Far East 1 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "place_idaho",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 6 mentions Idaho 1 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "place_japan",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 6 mentions Japan 2 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "place_montevideo",
+    "relationship": "MENTIONS",
+    "weight": 9,
+    "title": "Chapter 6 mentions Montevideo 9 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "place_new_york",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 6 mentions New York 4 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "place_new_york_city",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 6 mentions New York City 1 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "place_soviet_union",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 6 mentions Soviet Union 4 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "place_united_states",
+    "relationship": "MENTIONS",
+    "weight": 16,
+    "title": "Chapter 6 mentions United States 16 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "place_uruguay",
+    "relationship": "MENTIONS",
+    "weight": 22,
+    "title": "Chapter 6 mentions Uruguay 22 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "place_utah",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 6 mentions Utah 3 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "place_virginia",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 6 mentions Virginia 2 time(s)."
+  },
+  {
+    "from": "chapter_6",
+    "to": "place_washington",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 6 mentions Washington 4 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "date__1950",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 7 mentions 1950 1 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "date__1960",
+    "relationship": "MENTIONS",
+    "weight": 5,
+    "title": "Chapter 7 mentions 1960 5 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "date__1961",
+    "relationship": "MENTIONS",
+    "weight": 9,
+    "title": "Chapter 7 mentions 1961 9 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "date__1962",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 7 mentions 1962 4 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "date__1963",
+    "relationship": "MENTIONS",
+    "weight": 5,
+    "title": "Chapter 7 mentions 1963 5 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "date__1964",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 7 mentions 1964 3 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "date__1965",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 7 mentions 1965 2 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "organization_central_intelligence_agency",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 7 mentions Central Intelligence Agency 1 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "organization_place_alexandria_ward",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 7 mentions Alexandria Ward 1 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "organization_place_american_embassy",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 7 mentions American Embassy 1 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "organization_place_arlington_ward",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 7 mentions Arlington Ward 2 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "organization_place_soviet_embassy",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 7 mentions Soviet Embassy 1 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "person_ila_rose",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 7 mentions Ila Rose 1 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "person_joseph_smith",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 7 mentions Joseph Smith 1 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "person_julian_lowe",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 7 mentions Julian Lowe 2 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "person_lyndon_johnson",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 7 mentions Lyndon Johnson 1 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "person_marion",
+    "relationship": "MENTIONS",
+    "weight": 14,
+    "title": "Chapter 7 mentions Marion 14 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "person_rhoda_jones",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 7 mentions Rhoda Jones 1 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "person_richard",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 7 mentions Richard 1 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "place_arizona",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 7 mentions Arizona 1 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "place_california",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 7 mentions California 1 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "place_falls_church",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 7 mentions Falls Church 3 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "place_hill_cumorah",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 7 mentions Hill Cumorah 1 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "place_new_york",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 7 mentions New York 2 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "place_rio_de_janeiro",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 7 mentions Rio De Janeiro 2 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "place_sable_drive",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 7 mentions Sable Drive 1 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "place_soviet_union",
+    "relationship": "MENTIONS",
+    "weight": 7,
+    "title": "Chapter 7 mentions Soviet Union 7 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "place_united_states",
+    "relationship": "MENTIONS",
+    "weight": 19,
+    "title": "Chapter 7 mentions United States 19 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "place_uruguay",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 7 mentions Uruguay 4 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "place_utah",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 7 mentions Utah 4 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "place_virginia",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 7 mentions Virginia 3 time(s)."
+  },
+  {
+    "from": "chapter_7",
+    "to": "place_washington",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 7 mentions Washington 4 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "date__1965",
+    "relationship": "MENTIONS",
+    "weight": 5,
+    "title": "Chapter 8 mentions 1965 5 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "date__1966",
+    "relationship": "MENTIONS",
+    "weight": 7,
+    "title": "Chapter 8 mentions 1966 7 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "date__1988",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 8 mentions 1988 1 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "organization_foreign_service",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 8 mentions Foreign Service 1 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "organization_place_american_embassy",
+    "relationship": "MENTIONS",
+    "weight": 6,
+    "title": "Chapter 8 mentions American Embassy 6 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "organization_place_soviet_embassy",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 8 mentions Soviet Embassy 2 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "organization_state_department",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 8 mentions State Department 1 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "organization_sunday_school",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 8 mentions Sunday School 1 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "person_dottie_burton",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 8 mentions Dottie Burton 1 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "person_julian_lowe",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 8 mentions Julian Lowe 1 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "person_marion",
+    "relationship": "MENTIONS",
+    "weight": 12,
+    "title": "Chapter 8 mentions Marion 12 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "person_martin",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 8 mentions Martin 1 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "person_rhoda_jones",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 8 mentions Rhoda Jones 1 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "person_richard",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 8 mentions Richard 2 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "person_richard_m_nixon",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 8 mentions Richard M. Nixon 1 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "place_california",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 8 mentions California 2 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "place_corpus_christi",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 8 mentions Corpus Christi 1 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "place_montevideo",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 8 mentions Montevideo 4 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "place_new_york",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 8 mentions New York 3 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "place_rio_de_janeiro",
+    "relationship": "MENTIONS",
+    "weight": 9,
+    "title": "Chapter 8 mentions Rio De Janeiro 9 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "place_sao_paulo",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 8 mentions Sao Paulo 2 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "place_soviet_union",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 8 mentions Soviet Union 1 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "place_united_states",
+    "relationship": "MENTIONS",
+    "weight": 17,
+    "title": "Chapter 8 mentions United States 17 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "place_utah",
+    "relationship": "MENTIONS",
+    "weight": 5,
+    "title": "Chapter 8 mentions Utah 5 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "place_vietnam",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 8 mentions Vietnam 1 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "place_virginia",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 8 mentions Virginia 1 time(s)."
+  },
+  {
+    "from": "chapter_8",
+    "to": "place_washington",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 8 mentions Washington 2 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "date__1964",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 9 mentions 1964 1 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "date__1968",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 9 mentions 1968 3 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "event_vietnam_war",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 9 mentions Vietnam War 1 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "organization_clandestine_services",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 9 mentions Clandestine Services 1 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "organization_state_department",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 9 mentions State Department 1 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "organization_sunday_school",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 9 mentions Sunday School 1 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "person_dwight_d_eisenhower",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 9 mentions Dwight D. Eisenhower 1 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "person_lyndon_johnson",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 9 mentions Lyndon Johnson 1 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "person_marion",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 9 mentions Marion 4 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "person_martin",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 9 mentions Martin 1 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "person_martin_luther_king",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 9 mentions Martin Luther King 1 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "person_richard",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 9 mentions Richard 1 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "person_richard_m_nixon",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 9 mentions Richard M. Nixon 1 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "place_los_angeles",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 9 mentions Los Angeles 1 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "place_new_york",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 9 mentions New York 3 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "place_new_york_city",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 9 mentions New York City 1 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "place_rio_de_janeiro",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 9 mentions Rio De Janeiro 1 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "place_sao_paulo",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 9 mentions Sao Paulo 1 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "place_soviet_union",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 9 mentions Soviet Union 2 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "place_united_states",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 9 mentions United States 3 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "place_utah",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 9 mentions Utah 2 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "place_vietnam",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 9 mentions Vietnam 2 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "place_virginia",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 9 mentions Virginia 1 time(s)."
+  },
+  {
+    "from": "chapter_9",
+    "to": "place_washington",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 9 mentions Washington 1 time(s)."
+  },
+  {
+    "from": "chapter_10",
+    "to": "date__1968",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 10 mentions 1968 1 time(s)."
+  },
+  {
+    "from": "chapter_10",
+    "to": "date__1969",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 10 mentions 1969 1 time(s)."
+  },
+  {
+    "from": "chapter_10",
+    "to": "date__1971",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 10 mentions 1971 1 time(s)."
+  },
+  {
+    "from": "chapter_10",
+    "to": "date__1972",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 10 mentions 1972 1 time(s)."
+  },
+  {
+    "from": "chapter_10",
+    "to": "date__1973",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 10 mentions 1973 3 time(s)."
+  },
+  {
+    "from": "chapter_10",
+    "to": "organization_clandestine_services",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 10 mentions Clandestine Services 2 time(s)."
+  },
+  {
+    "from": "chapter_10",
+    "to": "organization_foreign_service",
+    "relationship": "MENTIONS",
+    "weight": 5,
+    "title": "Chapter 10 mentions Foreign Service 5 time(s)."
+  },
+  {
+    "from": "chapter_10",
+    "to": "organization_personnel_management_staff",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 10 mentions Personnel Management Staff 2 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "date__1955",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 11 mentions 1955 1 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "date__1968",
+    "relationship": "MENTIONS",
+    "weight": 5,
+    "title": "Chapter 11 mentions 1968 5 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "date__1969",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 11 mentions 1969 3 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "date__1970",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 11 mentions 1970 4 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "date__1971",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 11 mentions 1971 4 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "date__1972",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 11 mentions 1972 3 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "date__1973",
+    "relationship": "MENTIONS",
+    "weight": 9,
+    "title": "Chapter 11 mentions 1973 9 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "date__1974",
+    "relationship": "MENTIONS",
+    "weight": 8,
+    "title": "Chapter 11 mentions 1974 8 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "event_vietnam_war",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 11 mentions Vietnam War 1 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "organization_american_university",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 11 mentions American University 1 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "organization_first_presidency",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 11 mentions First Presidency 1 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "organization_foreign_service",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 11 mentions Foreign Service 1 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "organization_personnel_management_staff",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 11 mentions Personnel Management Staff 2 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "organization_place_alexandria_ward",
+    "relationship": "MENTIONS",
+    "weight": 3,
+    "title": "Chapter 11 mentions Alexandria Ward 3 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "organization_place_arlington_ward",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 11 mentions Arlington Ward 1 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "organization_sunday_school",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 11 mentions Sunday School 4 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "person_howard_hunt",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 11 mentions Howard Hunt 2 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "person_julian_lowe",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 11 mentions Julian Lowe 1 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "person_loverna",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 11 mentions Loverna 1 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "person_marion",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 11 mentions Marion 4 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "person_martin",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 11 mentions Martin 2 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "person_martin_luther_king",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 11 mentions Martin Luther King 1 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "person_rhoda_jones",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 11 mentions Rhoda Jones 1 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "person_richard",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 11 mentions Richard 1 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "person_wendell_thorne",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 11 mentions Wendell Thorne 1 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "place_arizona",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 11 mentions Arizona 2 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "place_california",
+    "relationship": "MENTIONS",
+    "weight": 4,
+    "title": "Chapter 11 mentions California 4 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "place_hill_cumorah",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 11 mentions Hill Cumorah 1 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "place_kansas_city",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 11 mentions Kansas City 1 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "place_los_angeles",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 11 mentions Los Angeles 2 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "place_montevideo",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 11 mentions Montevideo 2 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "place_new_york",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 11 mentions New York 1 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "place_rio_de_janeiro",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 11 mentions Rio De Janeiro 1 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "place_united_states",
+    "relationship": "MENTIONS",
+    "weight": 16,
+    "title": "Chapter 11 mentions United States 16 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "place_utah",
+    "relationship": "MENTIONS",
+    "weight": 2,
+    "title": "Chapter 11 mentions Utah 2 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "place_vietnam",
+    "relationship": "MENTIONS",
+    "weight": 1,
+    "title": "Chapter 11 mentions Vietnam 1 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "place_virginia",
+    "relationship": "MENTIONS",
+    "weight": 5,
+    "title": "Chapter 11 mentions Virginia 5 time(s)."
+  },
+  {
+    "from": "chapter_11",
+    "to": "place_washington",
+    "relationship": "MENTIONS",
+    "weight": 11,
+    "title": "Chapter 11 mentions Washington 11 time(s)."
+  },
+  {
+    "from": "chapter_1",
+    "to": "chapter_2",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 7,
+    "title": "These chapters share 7 recurring entities."
+  },
+  {
+    "from": "chapter_1",
+    "to": "chapter_3",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 5,
+    "title": "These chapters share 5 recurring entities."
+  },
+  {
+    "from": "chapter_1",
+    "to": "chapter_4",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 6,
+    "title": "These chapters share 6 recurring entities."
+  },
+  {
+    "from": "chapter_1",
+    "to": "chapter_5",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 5,
+    "title": "These chapters share 5 recurring entities."
+  },
+  {
+    "from": "chapter_1",
+    "to": "chapter_8",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 3,
+    "title": "These chapters share 3 recurring entities."
+  },
+  {
+    "from": "chapter_1",
+    "to": "chapter_11",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 4,
+    "title": "These chapters share 4 recurring entities."
+  },
+  {
+    "from": "chapter_2",
+    "to": "chapter_3",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 9,
+    "title": "These chapters share 9 recurring entities."
+  },
+  {
+    "from": "chapter_2",
+    "to": "chapter_4",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 8,
+    "title": "These chapters share 8 recurring entities."
+  },
+  {
+    "from": "chapter_2",
+    "to": "chapter_5",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 7,
+    "title": "These chapters share 7 recurring entities."
+  },
+  {
+    "from": "chapter_2",
+    "to": "chapter_6",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 3,
+    "title": "These chapters share 3 recurring entities."
+  },
+  {
+    "from": "chapter_2",
+    "to": "chapter_8",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 3,
+    "title": "These chapters share 3 recurring entities."
+  },
+  {
+    "from": "chapter_2",
+    "to": "chapter_11",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 5,
+    "title": "These chapters share 5 recurring entities."
+  },
+  {
+    "from": "chapter_3",
+    "to": "chapter_4",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 5,
+    "title": "These chapters share 5 recurring entities."
+  },
+  {
+    "from": "chapter_3",
+    "to": "chapter_5",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 5,
+    "title": "These chapters share 5 recurring entities."
+  },
+  {
+    "from": "chapter_3",
+    "to": "chapter_6",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 4,
+    "title": "These chapters share 4 recurring entities."
+  },
+  {
+    "from": "chapter_3",
+    "to": "chapter_7",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 3,
+    "title": "These chapters share 3 recurring entities."
+  },
+  {
+    "from": "chapter_3",
+    "to": "chapter_8",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 3,
+    "title": "These chapters share 3 recurring entities."
+  },
+  {
+    "from": "chapter_3",
+    "to": "chapter_9",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 3,
+    "title": "These chapters share 3 recurring entities."
+  },
+  {
+    "from": "chapter_3",
+    "to": "chapter_11",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 3,
+    "title": "These chapters share 3 recurring entities."
+  },
+  {
+    "from": "chapter_4",
+    "to": "chapter_5",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 10,
+    "title": "These chapters share 10 recurring entities."
+  },
+  {
+    "from": "chapter_4",
+    "to": "chapter_6",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 5,
+    "title": "These chapters share 5 recurring entities."
+  },
+  {
+    "from": "chapter_4",
+    "to": "chapter_7",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 5,
+    "title": "These chapters share 5 recurring entities."
+  },
+  {
+    "from": "chapter_4",
+    "to": "chapter_8",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 6,
+    "title": "These chapters share 6 recurring entities."
+  },
+  {
+    "from": "chapter_4",
+    "to": "chapter_9",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 4,
+    "title": "These chapters share 4 recurring entities."
+  },
+  {
+    "from": "chapter_4",
+    "to": "chapter_11",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 6,
+    "title": "These chapters share 6 recurring entities."
+  },
+  {
+    "from": "chapter_5",
+    "to": "chapter_6",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 8,
+    "title": "These chapters share 8 recurring entities."
+  },
+  {
+    "from": "chapter_5",
+    "to": "chapter_7",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 8,
+    "title": "These chapters share 8 recurring entities."
+  },
+  {
+    "from": "chapter_5",
+    "to": "chapter_8",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 6,
+    "title": "These chapters share 6 recurring entities."
+  },
+  {
+    "from": "chapter_5",
+    "to": "chapter_9",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 5,
+    "title": "These chapters share 5 recurring entities."
+  },
+  {
+    "from": "chapter_5",
+    "to": "chapter_11",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 7,
+    "title": "These chapters share 7 recurring entities."
+  },
+  {
+    "from": "chapter_6",
+    "to": "chapter_7",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 8,
+    "title": "These chapters share 8 recurring entities."
+  },
+  {
+    "from": "chapter_6",
+    "to": "chapter_8",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 7,
+    "title": "These chapters share 7 recurring entities."
+  },
+  {
+    "from": "chapter_6",
+    "to": "chapter_9",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 5,
+    "title": "These chapters share 5 recurring entities."
+  },
+  {
+    "from": "chapter_6",
+    "to": "chapter_11",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 8,
+    "title": "These chapters share 8 recurring entities."
+  },
+  {
+    "from": "chapter_7",
+    "to": "chapter_8",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 6,
+    "title": "These chapters share 6 recurring entities."
+  },
+  {
+    "from": "chapter_7",
+    "to": "chapter_9",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 5,
+    "title": "These chapters share 5 recurring entities."
+  },
+  {
+    "from": "chapter_7",
+    "to": "chapter_11",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 5,
+    "title": "These chapters share 5 recurring entities."
+  },
+  {
+    "from": "chapter_8",
+    "to": "chapter_9",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 4,
+    "title": "These chapters share 4 recurring entities."
+  },
+  {
+    "from": "chapter_8",
+    "to": "chapter_11",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 6,
+    "title": "These chapters share 6 recurring entities."
+  },
+  {
+    "from": "chapter_9",
+    "to": "chapter_11",
+    "relationship": "SHARES_ENTITIES_WITH",
+    "weight": 3,
+    "title": "These chapters share 3 recurring entities."
+  }
+]

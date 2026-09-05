@@ -1,0 +1,454 @@
+from,to,relationship,weight,title
+chapter_1,date__1924,MENTIONS,2,Chapter 1 mentions 1924 2 time(s).
+chapter_1,date__1926,MENTIONS,2,Chapter 1 mentions 1926 2 time(s).
+chapter_1,date__1927,MENTIONS,2,Chapter 1 mentions 1927 2 time(s).
+chapter_1,date__1929,MENTIONS,4,Chapter 1 mentions 1929 4 time(s).
+chapter_1,date__1930,MENTIONS,3,Chapter 1 mentions 1930 3 time(s).
+chapter_1,date__1932,MENTIONS,4,Chapter 1 mentions 1932 4 time(s).
+chapter_1,date__1934,MENTIONS,2,Chapter 1 mentions 1934 2 time(s).
+chapter_1,date__1940,MENTIONS,1,Chapter 1 mentions 1940 1 time(s).
+chapter_1,organization_church_of_jesus_christ_of_latter_day_saints,MENTIONS,1,Chapter 1 mentions Church of Jesus Christ of Latter-day Saints 1 time(s).
+chapter_1,organization_eastside_grammar_school,MENTIONS,1,Chapter 1 mentions Eastside Grammar School 1 time(s).
+chapter_1,organization_lincoln_school,MENTIONS,1,Chapter 1 mentions Lincoln School 1 time(s).
+chapter_1,organization_place_arizona_temple,MENTIONS,2,Chapter 1 mentions Arizona Temple 2 time(s).
+chapter_1,organization_place_idaho_falls_temple,MENTIONS,2,Chapter 1 mentions Idaho Falls Temple 2 time(s).
+chapter_1,organization_place_mesa_temple,MENTIONS,1,Chapter 1 mentions Mesa Temple 1 time(s).
+chapter_1,person_anthony_w_ivins,MENTIONS,1,Chapter 1 mentions Anthony W. Ivins 1 time(s).
+chapter_1,person_carmen_stevens,MENTIONS,1,Chapter 1 mentions Carmen Stevens 1 time(s).
+chapter_1,person_clifford,MENTIONS,1,Chapter 1 mentions Clifford 1 time(s).
+chapter_1,person_david_o_mckay,MENTIONS,1,Chapter 1 mentions David O. McKay 1 time(s).
+chapter_1,person_franklin_d_roosevelt,MENTIONS,2,Chapter 1 mentions Franklin D. Roosevelt 2 time(s).
+chapter_1,person_george_albert_smith,MENTIONS,1,Chapter 1 mentions George Albert Smith 1 time(s).
+chapter_1,person_george_f_richards,MENTIONS,1,Chapter 1 mentions George F. Richards 1 time(s).
+chapter_1,person_heber_j_grant,MENTIONS,1,Chapter 1 mentions Heber J. Grant 1 time(s).
+chapter_1,person_herbert_hoover,MENTIONS,1,Chapter 1 mentions Herbert Hoover 1 time(s).
+chapter_1,person_ila_rose,MENTIONS,5,Chapter 1 mentions Ila Rose 5 time(s).
+chapter_1,person_j_golden_kimball,MENTIONS,1,Chapter 1 mentions J. Golden Kimball 1 time(s).
+chapter_1,person_joseph_fielding_smith,MENTIONS,1,Chapter 1 mentions Joseph Fielding Smith 1 time(s).
+chapter_1,person_loverna,MENTIONS,4,Chapter 1 mentions Loverna 4 time(s).
+chapter_1,person_lucy_guyaz,MENTIONS,1,Chapter 1 mentions Lucy Guyaz 1 time(s).
+chapter_1,person_maria_del_carmen_stevens,MENTIONS,1,Chapter 1 mentions Maria del Carmen Stevens 1 time(s).
+chapter_1,person_martin,MENTIONS,5,Chapter 1 mentions Martin 5 time(s).
+chapter_1,person_mary_anderson,MENTIONS,1,Chapter 1 mentions Mary Anderson 1 time(s).
+chapter_1,person_maryette_rice_harris_standley,MENTIONS,1,Chapter 1 mentions Maryette Rice Harris Standley 1 time(s).
+chapter_1,person_nathan_harris,MENTIONS,1,Chapter 1 mentions Nathan Harris 1 time(s).
+chapter_1,person_reed_smoot,MENTIONS,1,Chapter 1 mentions Reed Smoot 1 time(s).
+chapter_1,person_richard,MENTIONS,13,Chapter 1 mentions Richard 13 time(s).
+chapter_1,person_richard_r_lyman,MENTIONS,1,Chapter 1 mentions Richard R. Lyman 1 time(s).
+chapter_1,person_rudger_clawson,MENTIONS,1,Chapter 1 mentions Rudger Clawson 1 time(s).
+chapter_1,person_solomon_r_harris,MENTIONS,1,Chapter 1 mentions Solomon R. Harris 1 time(s).
+chapter_1,person_solomon_webster_harris,MENTIONS,1,Chapter 1 mentions Solomon Webster Harris 1 time(s).
+chapter_1,person_spencer_w_kimball,MENTIONS,1,Chapter 1 mentions Spencer W. Kimball 1 time(s).
+chapter_1,person_stephen_l_richards,MENTIONS,1,Chapter 1 mentions Stephen L. Richards 1 time(s).
+chapter_1,person_sylvester_q_cannon,MENTIONS,1,Chapter 1 mentions Sylvester Q. Cannon 1 time(s).
+chapter_1,place_arizona,MENTIONS,12,Chapter 1 mentions Arizona 12 time(s).
+chapter_1,place_atlantic_ocean,MENTIONS,1,Chapter 1 mentions Atlantic Ocean 1 time(s).
+chapter_1,place_idaho,MENTIONS,15,Chapter 1 mentions Idaho 15 time(s).
+chapter_1,place_idaho_falls,MENTIONS,11,Chapter 1 mentions Idaho Falls 11 time(s).
+chapter_1,place_logan,MENTIONS,2,Chapter 1 mentions Logan 2 time(s).
+chapter_1,place_lone_pine,MENTIONS,1,Chapter 1 mentions Lone Pine 1 time(s).
+chapter_1,place_mesa,MENTIONS,8,Chapter 1 mentions Mesa 8 time(s).
+chapter_1,place_new_york,MENTIONS,1,Chapter 1 mentions New York 1 time(s).
+chapter_1,place_philippine_islands,MENTIONS,1,Chapter 1 mentions Philippine Islands 1 time(s).
+chapter_1,place_philippines,MENTIONS,2,Chapter 1 mentions Philippines 2 time(s).
+chapter_1,place_salmon,MENTIONS,5,Chapter 1 mentions Salmon 5 time(s).
+chapter_1,place_salt_lake_city,MENTIONS,1,Chapter 1 mentions Salt Lake City 1 time(s).
+chapter_1,place_soviet_union,MENTIONS,1,Chapter 1 mentions Soviet Union 1 time(s).
+chapter_1,place_tooele,MENTIONS,1,Chapter 1 mentions Tooele 1 time(s).
+chapter_1,place_united_states,MENTIONS,16,Chapter 1 mentions United States 16 time(s).
+chapter_1,place_utah,MENTIONS,5,Chapter 1 mentions Utah 5 time(s).
+chapter_2,date__1934,MENTIONS,1,Chapter 2 mentions 1934 1 time(s).
+chapter_2,date__1936,MENTIONS,1,Chapter 2 mentions 1936 1 time(s).
+chapter_2,date__1939,MENTIONS,3,Chapter 2 mentions 1939 3 time(s).
+chapter_2,date__1940,MENTIONS,3,Chapter 2 mentions 1940 3 time(s).
+chapter_2,date__1941,MENTIONS,3,Chapter 2 mentions 1941 3 time(s).
+chapter_2,date__1942,MENTIONS,3,Chapter 2 mentions 1942 3 time(s).
+chapter_2,date__1943,MENTIONS,2,Chapter 2 mentions 1943 2 time(s).
+chapter_2,date__1945,MENTIONS,1,Chapter 2 mentions 1945 1 time(s).
+chapter_2,date__1988,MENTIONS,2,Chapter 2 mentions 1988 2 time(s).
+chapter_2,event_world_war_ii,MENTIONS,2,Chapter 2 mentions World War II 2 time(s).
+chapter_2,organization_communications_workers_of_america,MENTIONS,1,Chapter 2 mentions Communications Workers of America 1 time(s).
+chapter_2,organization_mountain_states_telephone_and_telegraph,MENTIONS,1,Chapter 2 mentions Mountain States Telephone and Telegraph 1 time(s).
+chapter_2,organization_pomona_high_school,MENTIONS,1,Chapter 2 mentions Pomona High School 1 time(s).
+chapter_2,organization_presiding_bishop_s_office,MENTIONS,1,Chapter 2 mentions Presiding Bishop's Office 1 time(s).
+chapter_2,organization_riverside_grammar_school,MENTIONS,1,Chapter 2 mentions Riverside Grammar School 1 time(s).
+chapter_2,organization_sunday_school,MENTIONS,2,Chapter 2 mentions Sunday School 2 time(s).
+chapter_2,organization_utah_state_agricultural_college,MENTIONS,2,Chapter 2 mentions Utah State Agricultural College 2 time(s).
+chapter_2,organization_western_electric,MENTIONS,3,Chapter 2 mentions Western Electric 3 time(s).
+chapter_2,person_al_harris,MENTIONS,1,Chapter 2 mentions Al Harris 1 time(s).
+chapter_2,person_elwood_heiner,MENTIONS,1,Chapter 2 mentions Elwood Heiner 1 time(s).
+chapter_2,person_harold_price,MENTIONS,1,Chapter 2 mentions Harold Price 1 time(s).
+chapter_2,person_heber_austin,MENTIONS,1,Chapter 2 mentions Heber Austin 1 time(s).
+chapter_2,person_ila_rose,MENTIONS,1,Chapter 2 mentions Ila Rose 1 time(s).
+chapter_2,person_jack_kelley,MENTIONS,3,Chapter 2 mentions Jack Kelley 3 time(s).
+chapter_2,person_joyce_mcneill,MENTIONS,3,Chapter 2 mentions Joyce McNeill 3 time(s).
+chapter_2,person_lester_allan_harris,MENTIONS,1,Chapter 2 mentions Lester Allan Harris 1 time(s).
+chapter_2,person_louis_f_nuffer,MENTIONS,1,Chapter 2 mentions Louis F. Nuffer 1 time(s).
+chapter_2,person_loverna,MENTIONS,6,Chapter 2 mentions Loverna 6 time(s).
+chapter_2,person_martin,MENTIONS,2,Chapter 2 mentions Martin 2 time(s).
+chapter_2,person_martin_harris,MENTIONS,1,Chapter 2 mentions Martin Harris 1 time(s).
+chapter_2,person_melvin_olsen,MENTIONS,2,Chapter 2 mentions Melvin Olsen 2 time(s).
+chapter_2,person_reuel_neilson,MENTIONS,1,Chapter 2 mentions Reuel Neilson 1 time(s).
+chapter_2,person_t_j_hurley,MENTIONS,1,Chapter 2 mentions T. J. Hurley 1 time(s).
+chapter_2,person_vern_l_brown,MENTIONS,1,Chapter 2 mentions Vern L. Brown 1 time(s).
+chapter_2,person_wiley_snarr,MENTIONS,1,Chapter 2 mentions Wiley Snarr 1 time(s).
+chapter_2,person_wilmer_norton,MENTIONS,1,Chapter 2 mentions Wilmer Norton 1 time(s).
+chapter_2,place_balboa_beach,MENTIONS,1,Chapter 2 mentions Balboa Beach 1 time(s).
+chapter_2,place_california,MENTIONS,4,Chapter 2 mentions California 4 time(s).
+chapter_2,place_clarkston,MENTIONS,1,Chapter 2 mentions Clarkston 1 time(s).
+chapter_2,place_concord,MENTIONS,1,Chapter 2 mentions Concord 1 time(s).
+chapter_2,place_corpus_christi,MENTIONS,2,Chapter 2 mentions Corpus Christi 2 time(s).
+chapter_2,place_hawaii,MENTIONS,1,Chapter 2 mentions Hawaii 1 time(s).
+chapter_2,place_idaho,MENTIONS,12,Chapter 2 mentions Idaho 12 time(s).
+chapter_2,place_idaho_falls,MENTIONS,9,Chapter 2 mentions Idaho Falls 9 time(s).
+chapter_2,place_japan,MENTIONS,4,Chapter 2 mentions Japan 4 time(s).
+chapter_2,place_logan,MENTIONS,2,Chapter 2 mentions Logan 2 time(s).
+chapter_2,place_pearl_harbor,MENTIONS,2,Chapter 2 mentions Pearl Harbor 2 time(s).
+chapter_2,place_philippines,MENTIONS,1,Chapter 2 mentions Philippines 1 time(s).
+chapter_2,place_pomona,MENTIONS,4,Chapter 2 mentions Pomona 4 time(s).
+chapter_2,place_rhode_island,MENTIONS,1,Chapter 2 mentions Rhode Island 1 time(s).
+chapter_2,place_salt_lake_city,MENTIONS,4,Chapter 2 mentions Salt Lake City 4 time(s).
+chapter_2,place_san_francisco,MENTIONS,2,Chapter 2 mentions San Francisco 2 time(s).
+chapter_2,place_soda_springs,MENTIONS,1,Chapter 2 mentions Soda Springs 1 time(s).
+chapter_2,place_teton_mountains,MENTIONS,1,Chapter 2 mentions Teton Mountains 1 time(s).
+chapter_2,place_treasure_island,MENTIONS,2,Chapter 2 mentions Treasure Island 2 time(s).
+chapter_2,place_united_states,MENTIONS,14,Chapter 2 mentions United States 14 time(s).
+chapter_2,place_utah,MENTIONS,2,Chapter 2 mentions Utah 2 time(s).
+chapter_2,place_victor,MENTIONS,1,Chapter 2 mentions Victor 1 time(s).
+chapter_3,date__1942,MENTIONS,2,Chapter 3 mentions 1942 2 time(s).
+chapter_3,date__1943,MENTIONS,1,Chapter 3 mentions 1943 1 time(s).
+chapter_3,date__1945,MENTIONS,9,Chapter 3 mentions 1945 9 time(s).
+chapter_3,event_american_revolution,MENTIONS,1,Chapter 3 mentions American Revolution 1 time(s).
+chapter_3,event_world_war_ii,MENTIONS,6,Chapter 3 mentions World War II 6 time(s).
+chapter_3,organization_u_s_navy,MENTIONS,2,Chapter 3 mentions U.S. Navy 2 time(s).
+chapter_3,organization_utah_state_agricultural_college,MENTIONS,2,Chapter 3 mentions Utah State Agricultural College 2 time(s).
+chapter_3,person_cyd_charisse,MENTIONS,1,Chapter 3 mentions Cyd Charisse 1 time(s).
+chapter_3,person_franklin_d_roosevelt,MENTIONS,2,Chapter 3 mentions Franklin D. Roosevelt 2 time(s).
+chapter_3,person_harry_truman,MENTIONS,1,Chapter 3 mentions Harry Truman 1 time(s).
+chapter_3,person_heber_j_grant,MENTIONS,1,Chapter 3 mentions Heber J. Grant 1 time(s).
+chapter_3,person_john_s_mccain,MENTIONS,1,Chapter 3 mentions John S. McCain 1 time(s).
+chapter_3,person_marion,MENTIONS,1,Chapter 3 mentions Marion 1 time(s).
+chapter_3,person_martin,MENTIONS,1,Chapter 3 mentions Martin 1 time(s).
+chapter_3,person_raymond_spruance,MENTIONS,1,Chapter 3 mentions Raymond Spruance 1 time(s).
+chapter_3,person_richard,MENTIONS,1,Chapter 3 mentions Richard 1 time(s).
+chapter_3,person_roger_williams,MENTIONS,1,Chapter 3 mentions Roger Williams 1 time(s).
+chapter_3,person_tony_martin,MENTIONS,1,Chapter 3 mentions Tony Martin 1 time(s).
+chapter_3,person_tyrone_power,MENTIONS,1,Chapter 3 mentions Tyrone Power 1 time(s).
+chapter_3,place_arizona,MENTIONS,1,Chapter 3 mentions Arizona 1 time(s).
+chapter_3,place_atlantic_ocean,MENTIONS,1,Chapter 3 mentions Atlantic Ocean 1 time(s).
+chapter_3,place_boston,MENTIONS,5,Chapter 3 mentions Boston 5 time(s).
+chapter_3,place_bremerton,MENTIONS,4,Chapter 3 mentions Bremerton 4 time(s).
+chapter_3,place_bunker_hill,MENTIONS,1,Chapter 3 mentions Bunker Hill 1 time(s).
+chapter_3,place_caribbean,MENTIONS,1,Chapter 3 mentions Caribbean 1 time(s).
+chapter_3,place_concord,MENTIONS,1,Chapter 3 mentions Concord 1 time(s).
+chapter_3,place_corpus_christi,MENTIONS,2,Chapter 3 mentions Corpus Christi 2 time(s).
+chapter_3,place_far_east,MENTIONS,1,Chapter 3 mentions Far East 1 time(s).
+chapter_3,place_hawaii,MENTIONS,1,Chapter 3 mentions Hawaii 1 time(s).
+chapter_3,place_idaho,MENTIONS,3,Chapter 3 mentions Idaho 3 time(s).
+chapter_3,place_idaho_falls,MENTIONS,1,Chapter 3 mentions Idaho Falls 1 time(s).
+chapter_3,place_japan,MENTIONS,2,Chapter 3 mentions Japan 2 time(s).
+chapter_3,place_lexington,MENTIONS,1,Chapter 3 mentions Lexington 1 time(s).
+chapter_3,place_logan,MENTIONS,2,Chapter 3 mentions Logan 2 time(s).
+chapter_3,place_marcus_island,MENTIONS,1,Chapter 3 mentions Marcus Island 1 time(s).
+chapter_3,place_marianas_islands,MENTIONS,1,Chapter 3 mentions Marianas Islands 1 time(s).
+chapter_3,place_panama_canal,MENTIONS,1,Chapter 3 mentions Panama Canal 1 time(s).
+chapter_3,place_pearl_harbor,MENTIONS,3,Chapter 3 mentions Pearl Harbor 3 time(s).
+chapter_3,place_philippine_islands,MENTIONS,2,Chapter 3 mentions Philippine Islands 2 time(s).
+chapter_3,place_philippines,MENTIONS,1,Chapter 3 mentions Philippines 1 time(s).
+chapter_3,place_providence,MENTIONS,3,Chapter 3 mentions Providence 3 time(s).
+chapter_3,place_quonset_point,MENTIONS,2,Chapter 3 mentions Quonset Point 2 time(s).
+chapter_3,place_rhode_island,MENTIONS,1,Chapter 3 mentions Rhode Island 1 time(s).
+chapter_3,place_san_diego,MENTIONS,1,Chapter 3 mentions San Diego 1 time(s).
+chapter_3,place_san_francisco,MENTIONS,1,Chapter 3 mentions San Francisco 1 time(s).
+chapter_3,place_south_china_sea,MENTIONS,2,Chapter 3 mentions South China Sea 2 time(s).
+chapter_3,place_treasure_island,MENTIONS,1,Chapter 3 mentions Treasure Island 1 time(s).
+chapter_3,place_united_states,MENTIONS,13,Chapter 3 mentions United States 13 time(s).
+chapter_3,place_utah,MENTIONS,3,Chapter 3 mentions Utah 3 time(s).
+chapter_3,place_vietnam,MENTIONS,2,Chapter 3 mentions Vietnam 2 time(s).
+chapter_3,place_washington,MENTIONS,3,Chapter 3 mentions Washington 3 time(s).
+chapter_4,date__1932,MENTIONS,1,Chapter 4 mentions 1932 1 time(s).
+chapter_4,date__1939,MENTIONS,2,Chapter 4 mentions 1939 2 time(s).
+chapter_4,date__1946,MENTIONS,4,Chapter 4 mentions 1946 4 time(s).
+chapter_4,date__1947,MENTIONS,5,Chapter 4 mentions 1947 5 time(s).
+chapter_4,date__1948,MENTIONS,10,Chapter 4 mentions 1948 10 time(s).
+chapter_4,date__1949,MENTIONS,4,Chapter 4 mentions 1949 4 time(s).
+chapter_4,date__1950,MENTIONS,4,Chapter 4 mentions 1950 4 time(s).
+chapter_4,date__1952,MENTIONS,1,Chapter 4 mentions 1952 1 time(s).
+chapter_4,date__1953,MENTIONS,1,Chapter 4 mentions 1953 1 time(s).
+chapter_4,event_world_war_ii,MENTIONS,2,Chapter 4 mentions World War II 2 time(s).
+chapter_4,organization_air_force,MENTIONS,1,Chapter 4 mentions Air Force 1 time(s).
+chapter_4,organization_brigham_young_university,MENTIONS,1,Chapter 4 mentions Brigham Young University 1 time(s).
+chapter_4,organization_central_intelligence_agency,MENTIONS,1,Chapter 4 mentions Central Intelligence Agency 1 time(s).
+chapter_4,organization_columbia_university,MENTIONS,6,Chapter 4 mentions Columbia University 6 time(s).
+chapter_4,organization_strategic_services,MENTIONS,2,Chapter 4 mentions Strategic Services 2 time(s).
+chapter_4,person_dwight_d_eisenhower,MENTIONS,2,Chapter 4 mentions Dwight D. Eisenhower 2 time(s).
+chapter_4,person_franklin_d_roosevelt,MENTIONS,1,Chapter 4 mentions Franklin D. Roosevelt 1 time(s).
+chapter_4,person_harold_price,MENTIONS,1,Chapter 4 mentions Harold Price 1 time(s).
+chapter_4,person_howard_hughes,MENTIONS,1,Chapter 4 mentions Howard Hughes 1 time(s).
+chapter_4,person_ila_rose,MENTIONS,2,Chapter 4 mentions Ila Rose 2 time(s).
+chapter_4,person_joseph_smith,MENTIONS,1,Chapter 4 mentions Joseph Smith 1 time(s).
+chapter_4,person_marion,MENTIONS,24,Chapter 4 mentions Marion 24 time(s).
+chapter_4,person_martin,MENTIONS,3,Chapter 4 mentions Martin 3 time(s).
+chapter_4,person_martin_harris,MENTIONS,1,Chapter 4 mentions Martin Harris 1 time(s).
+chapter_4,person_rhoda_jones,MENTIONS,1,Chapter 4 mentions Rhoda Jones 1 time(s).
+chapter_4,person_richard,MENTIONS,1,Chapter 4 mentions Richard 1 time(s).
+chapter_4,person_richard_m_nixon,MENTIONS,1,Chapter 4 mentions Richard M. Nixon 1 time(s).
+chapter_4,person_solomon_webster_harris,MENTIONS,1,Chapter 4 mentions Solomon Webster Harris 1 time(s).
+chapter_4,place_california,MENTIONS,2,Chapter 4 mentions California 2 time(s).
+chapter_4,place_idaho,MENTIONS,12,Chapter 4 mentions Idaho 12 time(s).
+chapter_4,place_idaho_falls,MENTIONS,11,Chapter 4 mentions Idaho Falls 11 time(s).
+chapter_4,place_new_york,MENTIONS,21,Chapter 4 mentions New York 21 time(s).
+chapter_4,place_new_york_city,MENTIONS,5,Chapter 4 mentions New York City 5 time(s).
+chapter_4,place_salt_lake_city,MENTIONS,4,Chapter 4 mentions Salt Lake City 4 time(s).
+chapter_4,place_san_francisco,MENTIONS,1,Chapter 4 mentions San Francisco 1 time(s).
+chapter_4,place_shanks_village,MENTIONS,4,Chapter 4 mentions Shanks Village 4 time(s).
+chapter_4,place_soviet_union,MENTIONS,1,Chapter 4 mentions Soviet Union 1 time(s).
+chapter_4,place_united_states,MENTIONS,13,Chapter 4 mentions United States 13 time(s).
+chapter_4,place_utah,MENTIONS,6,Chapter 4 mentions Utah 6 time(s).
+chapter_4,place_virginia,MENTIONS,1,Chapter 4 mentions Virginia 1 time(s).
+chapter_4,place_washington,MENTIONS,3,Chapter 4 mentions Washington 3 time(s).
+chapter_5,date__1936,MENTIONS,1,Chapter 5 mentions 1936 1 time(s).
+chapter_5,date__1939,MENTIONS,2,Chapter 5 mentions 1939 2 time(s).
+chapter_5,date__1943,MENTIONS,1,Chapter 5 mentions 1943 1 time(s).
+chapter_5,date__1947,MENTIONS,1,Chapter 5 mentions 1947 1 time(s).
+chapter_5,date__1950,MENTIONS,1,Chapter 5 mentions 1950 1 time(s).
+chapter_5,date__1952,MENTIONS,4,Chapter 5 mentions 1952 4 time(s).
+chapter_5,date__1953,MENTIONS,7,Chapter 5 mentions 1953 7 time(s).
+chapter_5,date__1954,MENTIONS,8,Chapter 5 mentions 1954 8 time(s).
+chapter_5,date__1955,MENTIONS,3,Chapter 5 mentions 1955 3 time(s).
+chapter_5,event_world_war_ii,MENTIONS,9,Chapter 5 mentions World War II 9 time(s).
+chapter_5,organization_air_force,MENTIONS,4,Chapter 5 mentions Air Force 4 time(s).
+chapter_5,organization_central_intelligence_agency,MENTIONS,1,Chapter 5 mentions Central Intelligence Agency 1 time(s).
+chapter_5,organization_clandestine_services,MENTIONS,2,Chapter 5 mentions Clandestine Services 2 time(s).
+chapter_5,organization_columbia_university,MENTIONS,1,Chapter 5 mentions Columbia University 1 time(s).
+chapter_5,organization_first_presidency,MENTIONS,1,Chapter 5 mentions First Presidency 1 time(s).
+chapter_5,organization_place_alexandria_ward,MENTIONS,1,Chapter 5 mentions Alexandria Ward 1 time(s).
+chapter_5,organization_state_department,MENTIONS,1,Chapter 5 mentions State Department 1 time(s).
+chapter_5,organization_strategic_services,MENTIONS,2,Chapter 5 mentions Strategic Services 2 time(s).
+chapter_5,organization_sunday_school,MENTIONS,1,Chapter 5 mentions Sunday School 1 time(s).
+chapter_5,person_heber_j_grant,MENTIONS,2,Chapter 5 mentions Heber J. Grant 2 time(s).
+chapter_5,person_howard_hughes,MENTIONS,1,Chapter 5 mentions Howard Hughes 1 time(s).
+chapter_5,person_joe_dunn,MENTIONS,1,Chapter 5 mentions Joe Dunn 1 time(s).
+chapter_5,person_joseph_smith,MENTIONS,2,Chapter 5 mentions Joseph Smith 2 time(s).
+chapter_5,person_loverna,MENTIONS,2,Chapter 5 mentions Loverna 2 time(s).
+chapter_5,person_marion,MENTIONS,24,Chapter 5 mentions Marion 24 time(s).
+chapter_5,person_martin,MENTIONS,3,Chapter 5 mentions Martin 3 time(s).
+chapter_5,person_martin_harris,MENTIONS,1,Chapter 5 mentions Martin Harris 1 time(s).
+chapter_5,person_wendell_thorne,MENTIONS,1,Chapter 5 mentions Wendell Thorne 1 time(s).
+chapter_5,place_california,MENTIONS,3,Chapter 5 mentions California 3 time(s).
+chapter_5,place_falls_church,MENTIONS,2,Chapter 5 mentions Falls Church 2 time(s).
+chapter_5,place_far_east,MENTIONS,1,Chapter 5 mentions Far East 1 time(s).
+chapter_5,place_idaho,MENTIONS,3,Chapter 5 mentions Idaho 3 time(s).
+chapter_5,place_idaho_falls,MENTIONS,1,Chapter 5 mentions Idaho Falls 1 time(s).
+chapter_5,place_kansas_city,MENTIONS,1,Chapter 5 mentions Kansas City 1 time(s).
+chapter_5,place_new_york,MENTIONS,2,Chapter 5 mentions New York 2 time(s).
+chapter_5,place_sable_drive,MENTIONS,1,Chapter 5 mentions Sable Drive 1 time(s).
+chapter_5,place_shanks_village,MENTIONS,1,Chapter 5 mentions Shanks Village 1 time(s).
+chapter_5,place_soviet_union,MENTIONS,14,Chapter 5 mentions Soviet Union 14 time(s).
+chapter_5,place_united_states,MENTIONS,24,Chapter 5 mentions United States 24 time(s).
+chapter_5,place_utah,MENTIONS,3,Chapter 5 mentions Utah 3 time(s).
+chapter_5,place_virginia,MENTIONS,5,Chapter 5 mentions Virginia 5 time(s).
+chapter_5,place_washington,MENTIONS,13,Chapter 5 mentions Washington 13 time(s).
+chapter_6,date__1930,MENTIONS,1,Chapter 6 mentions 1930 1 time(s).
+chapter_6,date__1940,MENTIONS,1,Chapter 6 mentions 1940 1 time(s).
+chapter_6,date__1950,MENTIONS,1,Chapter 6 mentions 1950 1 time(s).
+chapter_6,date__1955,MENTIONS,3,Chapter 6 mentions 1955 3 time(s).
+chapter_6,date__1956,MENTIONS,4,Chapter 6 mentions 1956 4 time(s).
+chapter_6,date__1957,MENTIONS,2,Chapter 6 mentions 1957 2 time(s).
+chapter_6,date__1958,MENTIONS,4,Chapter 6 mentions 1958 4 time(s).
+chapter_6,date__1959,MENTIONS,5,Chapter 6 mentions 1959 5 time(s).
+chapter_6,date__1969,MENTIONS,1,Chapter 6 mentions 1969 1 time(s).
+chapter_6,event_world_war_ii,MENTIONS,1,Chapter 6 mentions World War II 1 time(s).
+chapter_6,organization_air_force,MENTIONS,2,Chapter 6 mentions Air Force 2 time(s).
+chapter_6,organization_place_alexandria_ward,MENTIONS,2,Chapter 6 mentions Alexandria Ward 2 time(s).
+chapter_6,organization_place_american_embassy,MENTIONS,4,Chapter 6 mentions American Embassy 4 time(s).
+chapter_6,person_dottie_burton,MENTIONS,1,Chapter 6 mentions Dottie Burton 1 time(s).
+chapter_6,person_howard_hunt,MENTIONS,2,Chapter 6 mentions Howard Hunt 2 time(s).
+chapter_6,person_joe_dunn,MENTIONS,1,Chapter 6 mentions Joe Dunn 1 time(s).
+chapter_6,person_marion,MENTIONS,4,Chapter 6 mentions Marion 4 time(s).
+chapter_6,person_rhoda_jones,MENTIONS,1,Chapter 6 mentions Rhoda Jones 1 time(s).
+chapter_6,person_richard,MENTIONS,1,Chapter 6 mentions Richard 1 time(s).
+chapter_6,person_richard_m_nixon,MENTIONS,1,Chapter 6 mentions Richard M. Nixon 1 time(s).
+chapter_6,person_spencer_w_kimball,MENTIONS,1,Chapter 6 mentions Spencer W. Kimball 1 time(s).
+chapter_6,place_california,MENTIONS,1,Chapter 6 mentions California 1 time(s).
+chapter_6,place_far_east,MENTIONS,1,Chapter 6 mentions Far East 1 time(s).
+chapter_6,place_idaho,MENTIONS,1,Chapter 6 mentions Idaho 1 time(s).
+chapter_6,place_japan,MENTIONS,2,Chapter 6 mentions Japan 2 time(s).
+chapter_6,place_montevideo,MENTIONS,9,Chapter 6 mentions Montevideo 9 time(s).
+chapter_6,place_new_york,MENTIONS,4,Chapter 6 mentions New York 4 time(s).
+chapter_6,place_new_york_city,MENTIONS,1,Chapter 6 mentions New York City 1 time(s).
+chapter_6,place_soviet_union,MENTIONS,4,Chapter 6 mentions Soviet Union 4 time(s).
+chapter_6,place_united_states,MENTIONS,16,Chapter 6 mentions United States 16 time(s).
+chapter_6,place_uruguay,MENTIONS,22,Chapter 6 mentions Uruguay 22 time(s).
+chapter_6,place_utah,MENTIONS,3,Chapter 6 mentions Utah 3 time(s).
+chapter_6,place_virginia,MENTIONS,2,Chapter 6 mentions Virginia 2 time(s).
+chapter_6,place_washington,MENTIONS,4,Chapter 6 mentions Washington 4 time(s).
+chapter_7,date__1950,MENTIONS,1,Chapter 7 mentions 1950 1 time(s).
+chapter_7,date__1960,MENTIONS,5,Chapter 7 mentions 1960 5 time(s).
+chapter_7,date__1961,MENTIONS,9,Chapter 7 mentions 1961 9 time(s).
+chapter_7,date__1962,MENTIONS,4,Chapter 7 mentions 1962 4 time(s).
+chapter_7,date__1963,MENTIONS,5,Chapter 7 mentions 1963 5 time(s).
+chapter_7,date__1964,MENTIONS,3,Chapter 7 mentions 1964 3 time(s).
+chapter_7,date__1965,MENTIONS,2,Chapter 7 mentions 1965 2 time(s).
+chapter_7,organization_central_intelligence_agency,MENTIONS,1,Chapter 7 mentions Central Intelligence Agency 1 time(s).
+chapter_7,organization_place_alexandria_ward,MENTIONS,1,Chapter 7 mentions Alexandria Ward 1 time(s).
+chapter_7,organization_place_american_embassy,MENTIONS,1,Chapter 7 mentions American Embassy 1 time(s).
+chapter_7,organization_place_arlington_ward,MENTIONS,2,Chapter 7 mentions Arlington Ward 2 time(s).
+chapter_7,organization_place_soviet_embassy,MENTIONS,1,Chapter 7 mentions Soviet Embassy 1 time(s).
+chapter_7,person_ila_rose,MENTIONS,1,Chapter 7 mentions Ila Rose 1 time(s).
+chapter_7,person_joseph_smith,MENTIONS,1,Chapter 7 mentions Joseph Smith 1 time(s).
+chapter_7,person_julian_lowe,MENTIONS,2,Chapter 7 mentions Julian Lowe 2 time(s).
+chapter_7,person_lyndon_johnson,MENTIONS,1,Chapter 7 mentions Lyndon Johnson 1 time(s).
+chapter_7,person_marion,MENTIONS,14,Chapter 7 mentions Marion 14 time(s).
+chapter_7,person_rhoda_jones,MENTIONS,1,Chapter 7 mentions Rhoda Jones 1 time(s).
+chapter_7,person_richard,MENTIONS,1,Chapter 7 mentions Richard 1 time(s).
+chapter_7,place_arizona,MENTIONS,1,Chapter 7 mentions Arizona 1 time(s).
+chapter_7,place_california,MENTIONS,1,Chapter 7 mentions California 1 time(s).
+chapter_7,place_falls_church,MENTIONS,3,Chapter 7 mentions Falls Church 3 time(s).
+chapter_7,place_hill_cumorah,MENTIONS,1,Chapter 7 mentions Hill Cumorah 1 time(s).
+chapter_7,place_new_york,MENTIONS,2,Chapter 7 mentions New York 2 time(s).
+chapter_7,place_rio_de_janeiro,MENTIONS,2,Chapter 7 mentions Rio De Janeiro 2 time(s).
+chapter_7,place_sable_drive,MENTIONS,1,Chapter 7 mentions Sable Drive 1 time(s).
+chapter_7,place_soviet_union,MENTIONS,7,Chapter 7 mentions Soviet Union 7 time(s).
+chapter_7,place_united_states,MENTIONS,19,Chapter 7 mentions United States 19 time(s).
+chapter_7,place_uruguay,MENTIONS,4,Chapter 7 mentions Uruguay 4 time(s).
+chapter_7,place_utah,MENTIONS,4,Chapter 7 mentions Utah 4 time(s).
+chapter_7,place_virginia,MENTIONS,3,Chapter 7 mentions Virginia 3 time(s).
+chapter_7,place_washington,MENTIONS,4,Chapter 7 mentions Washington 4 time(s).
+chapter_8,date__1965,MENTIONS,5,Chapter 8 mentions 1965 5 time(s).
+chapter_8,date__1966,MENTIONS,7,Chapter 8 mentions 1966 7 time(s).
+chapter_8,date__1988,MENTIONS,1,Chapter 8 mentions 1988 1 time(s).
+chapter_8,organization_foreign_service,MENTIONS,1,Chapter 8 mentions Foreign Service 1 time(s).
+chapter_8,organization_place_american_embassy,MENTIONS,6,Chapter 8 mentions American Embassy 6 time(s).
+chapter_8,organization_place_soviet_embassy,MENTIONS,2,Chapter 8 mentions Soviet Embassy 2 time(s).
+chapter_8,organization_state_department,MENTIONS,1,Chapter 8 mentions State Department 1 time(s).
+chapter_8,organization_sunday_school,MENTIONS,1,Chapter 8 mentions Sunday School 1 time(s).
+chapter_8,person_dottie_burton,MENTIONS,1,Chapter 8 mentions Dottie Burton 1 time(s).
+chapter_8,person_julian_lowe,MENTIONS,1,Chapter 8 mentions Julian Lowe 1 time(s).
+chapter_8,person_marion,MENTIONS,12,Chapter 8 mentions Marion 12 time(s).
+chapter_8,person_martin,MENTIONS,1,Chapter 8 mentions Martin 1 time(s).
+chapter_8,person_rhoda_jones,MENTIONS,1,Chapter 8 mentions Rhoda Jones 1 time(s).
+chapter_8,person_richard,MENTIONS,2,Chapter 8 mentions Richard 2 time(s).
+chapter_8,person_richard_m_nixon,MENTIONS,1,Chapter 8 mentions Richard M. Nixon 1 time(s).
+chapter_8,place_california,MENTIONS,2,Chapter 8 mentions California 2 time(s).
+chapter_8,place_corpus_christi,MENTIONS,1,Chapter 8 mentions Corpus Christi 1 time(s).
+chapter_8,place_montevideo,MENTIONS,4,Chapter 8 mentions Montevideo 4 time(s).
+chapter_8,place_new_york,MENTIONS,3,Chapter 8 mentions New York 3 time(s).
+chapter_8,place_rio_de_janeiro,MENTIONS,9,Chapter 8 mentions Rio De Janeiro 9 time(s).
+chapter_8,place_sao_paulo,MENTIONS,2,Chapter 8 mentions Sao Paulo 2 time(s).
+chapter_8,place_soviet_union,MENTIONS,1,Chapter 8 mentions Soviet Union 1 time(s).
+chapter_8,place_united_states,MENTIONS,17,Chapter 8 mentions United States 17 time(s).
+chapter_8,place_utah,MENTIONS,5,Chapter 8 mentions Utah 5 time(s).
+chapter_8,place_vietnam,MENTIONS,1,Chapter 8 mentions Vietnam 1 time(s).
+chapter_8,place_virginia,MENTIONS,1,Chapter 8 mentions Virginia 1 time(s).
+chapter_8,place_washington,MENTIONS,2,Chapter 8 mentions Washington 2 time(s).
+chapter_9,date__1964,MENTIONS,1,Chapter 9 mentions 1964 1 time(s).
+chapter_9,date__1968,MENTIONS,3,Chapter 9 mentions 1968 3 time(s).
+chapter_9,event_vietnam_war,MENTIONS,1,Chapter 9 mentions Vietnam War 1 time(s).
+chapter_9,organization_clandestine_services,MENTIONS,1,Chapter 9 mentions Clandestine Services 1 time(s).
+chapter_9,organization_state_department,MENTIONS,1,Chapter 9 mentions State Department 1 time(s).
+chapter_9,organization_sunday_school,MENTIONS,1,Chapter 9 mentions Sunday School 1 time(s).
+chapter_9,person_dwight_d_eisenhower,MENTIONS,1,Chapter 9 mentions Dwight D. Eisenhower 1 time(s).
+chapter_9,person_lyndon_johnson,MENTIONS,1,Chapter 9 mentions Lyndon Johnson 1 time(s).
+chapter_9,person_marion,MENTIONS,4,Chapter 9 mentions Marion 4 time(s).
+chapter_9,person_martin,MENTIONS,1,Chapter 9 mentions Martin 1 time(s).
+chapter_9,person_martin_luther_king,MENTIONS,1,Chapter 9 mentions Martin Luther King 1 time(s).
+chapter_9,person_richard,MENTIONS,1,Chapter 9 mentions Richard 1 time(s).
+chapter_9,person_richard_m_nixon,MENTIONS,1,Chapter 9 mentions Richard M. Nixon 1 time(s).
+chapter_9,place_los_angeles,MENTIONS,1,Chapter 9 mentions Los Angeles 1 time(s).
+chapter_9,place_new_york,MENTIONS,3,Chapter 9 mentions New York 3 time(s).
+chapter_9,place_new_york_city,MENTIONS,1,Chapter 9 mentions New York City 1 time(s).
+chapter_9,place_rio_de_janeiro,MENTIONS,1,Chapter 9 mentions Rio De Janeiro 1 time(s).
+chapter_9,place_sao_paulo,MENTIONS,1,Chapter 9 mentions Sao Paulo 1 time(s).
+chapter_9,place_soviet_union,MENTIONS,2,Chapter 9 mentions Soviet Union 2 time(s).
+chapter_9,place_united_states,MENTIONS,3,Chapter 9 mentions United States 3 time(s).
+chapter_9,place_utah,MENTIONS,2,Chapter 9 mentions Utah 2 time(s).
+chapter_9,place_vietnam,MENTIONS,2,Chapter 9 mentions Vietnam 2 time(s).
+chapter_9,place_virginia,MENTIONS,1,Chapter 9 mentions Virginia 1 time(s).
+chapter_9,place_washington,MENTIONS,1,Chapter 9 mentions Washington 1 time(s).
+chapter_10,date__1968,MENTIONS,1,Chapter 10 mentions 1968 1 time(s).
+chapter_10,date__1969,MENTIONS,1,Chapter 10 mentions 1969 1 time(s).
+chapter_10,date__1971,MENTIONS,1,Chapter 10 mentions 1971 1 time(s).
+chapter_10,date__1972,MENTIONS,1,Chapter 10 mentions 1972 1 time(s).
+chapter_10,date__1973,MENTIONS,3,Chapter 10 mentions 1973 3 time(s).
+chapter_10,organization_clandestine_services,MENTIONS,2,Chapter 10 mentions Clandestine Services 2 time(s).
+chapter_10,organization_foreign_service,MENTIONS,5,Chapter 10 mentions Foreign Service 5 time(s).
+chapter_10,organization_personnel_management_staff,MENTIONS,2,Chapter 10 mentions Personnel Management Staff 2 time(s).
+chapter_11,date__1955,MENTIONS,1,Chapter 11 mentions 1955 1 time(s).
+chapter_11,date__1968,MENTIONS,5,Chapter 11 mentions 1968 5 time(s).
+chapter_11,date__1969,MENTIONS,3,Chapter 11 mentions 1969 3 time(s).
+chapter_11,date__1970,MENTIONS,4,Chapter 11 mentions 1970 4 time(s).
+chapter_11,date__1971,MENTIONS,4,Chapter 11 mentions 1971 4 time(s).
+chapter_11,date__1972,MENTIONS,3,Chapter 11 mentions 1972 3 time(s).
+chapter_11,date__1973,MENTIONS,9,Chapter 11 mentions 1973 9 time(s).
+chapter_11,date__1974,MENTIONS,8,Chapter 11 mentions 1974 8 time(s).
+chapter_11,event_vietnam_war,MENTIONS,1,Chapter 11 mentions Vietnam War 1 time(s).
+chapter_11,organization_american_university,MENTIONS,1,Chapter 11 mentions American University 1 time(s).
+chapter_11,organization_first_presidency,MENTIONS,1,Chapter 11 mentions First Presidency 1 time(s).
+chapter_11,organization_foreign_service,MENTIONS,1,Chapter 11 mentions Foreign Service 1 time(s).
+chapter_11,organization_personnel_management_staff,MENTIONS,2,Chapter 11 mentions Personnel Management Staff 2 time(s).
+chapter_11,organization_place_alexandria_ward,MENTIONS,3,Chapter 11 mentions Alexandria Ward 3 time(s).
+chapter_11,organization_place_arlington_ward,MENTIONS,1,Chapter 11 mentions Arlington Ward 1 time(s).
+chapter_11,organization_sunday_school,MENTIONS,4,Chapter 11 mentions Sunday School 4 time(s).
+chapter_11,person_howard_hunt,MENTIONS,2,Chapter 11 mentions Howard Hunt 2 time(s).
+chapter_11,person_julian_lowe,MENTIONS,1,Chapter 11 mentions Julian Lowe 1 time(s).
+chapter_11,person_loverna,MENTIONS,1,Chapter 11 mentions Loverna 1 time(s).
+chapter_11,person_marion,MENTIONS,4,Chapter 11 mentions Marion 4 time(s).
+chapter_11,person_martin,MENTIONS,2,Chapter 11 mentions Martin 2 time(s).
+chapter_11,person_martin_luther_king,MENTIONS,1,Chapter 11 mentions Martin Luther King 1 time(s).
+chapter_11,person_rhoda_jones,MENTIONS,1,Chapter 11 mentions Rhoda Jones 1 time(s).
+chapter_11,person_richard,MENTIONS,1,Chapter 11 mentions Richard 1 time(s).
+chapter_11,person_wendell_thorne,MENTIONS,1,Chapter 11 mentions Wendell Thorne 1 time(s).
+chapter_11,place_arizona,MENTIONS,2,Chapter 11 mentions Arizona 2 time(s).
+chapter_11,place_california,MENTIONS,4,Chapter 11 mentions California 4 time(s).
+chapter_11,place_hill_cumorah,MENTIONS,1,Chapter 11 mentions Hill Cumorah 1 time(s).
+chapter_11,place_kansas_city,MENTIONS,1,Chapter 11 mentions Kansas City 1 time(s).
+chapter_11,place_los_angeles,MENTIONS,2,Chapter 11 mentions Los Angeles 2 time(s).
+chapter_11,place_montevideo,MENTIONS,2,Chapter 11 mentions Montevideo 2 time(s).
+chapter_11,place_new_york,MENTIONS,1,Chapter 11 mentions New York 1 time(s).
+chapter_11,place_rio_de_janeiro,MENTIONS,1,Chapter 11 mentions Rio De Janeiro 1 time(s).
+chapter_11,place_united_states,MENTIONS,16,Chapter 11 mentions United States 16 time(s).
+chapter_11,place_utah,MENTIONS,2,Chapter 11 mentions Utah 2 time(s).
+chapter_11,place_vietnam,MENTIONS,1,Chapter 11 mentions Vietnam 1 time(s).
+chapter_11,place_virginia,MENTIONS,5,Chapter 11 mentions Virginia 5 time(s).
+chapter_11,place_washington,MENTIONS,11,Chapter 11 mentions Washington 11 time(s).
+chapter_1,chapter_2,SHARES_ENTITIES_WITH,7,These chapters share 7 recurring entities.
+chapter_1,chapter_3,SHARES_ENTITIES_WITH,5,These chapters share 5 recurring entities.
+chapter_1,chapter_4,SHARES_ENTITIES_WITH,6,These chapters share 6 recurring entities.
+chapter_1,chapter_5,SHARES_ENTITIES_WITH,5,These chapters share 5 recurring entities.
+chapter_1,chapter_8,SHARES_ENTITIES_WITH,3,These chapters share 3 recurring entities.
+chapter_1,chapter_11,SHARES_ENTITIES_WITH,4,These chapters share 4 recurring entities.
+chapter_2,chapter_3,SHARES_ENTITIES_WITH,9,These chapters share 9 recurring entities.
+chapter_2,chapter_4,SHARES_ENTITIES_WITH,8,These chapters share 8 recurring entities.
+chapter_2,chapter_5,SHARES_ENTITIES_WITH,7,These chapters share 7 recurring entities.
+chapter_2,chapter_6,SHARES_ENTITIES_WITH,3,These chapters share 3 recurring entities.
+chapter_2,chapter_8,SHARES_ENTITIES_WITH,3,These chapters share 3 recurring entities.
+chapter_2,chapter_11,SHARES_ENTITIES_WITH,5,These chapters share 5 recurring entities.
+chapter_3,chapter_4,SHARES_ENTITIES_WITH,5,These chapters share 5 recurring entities.
+chapter_3,chapter_5,SHARES_ENTITIES_WITH,5,These chapters share 5 recurring entities.
+chapter_3,chapter_6,SHARES_ENTITIES_WITH,4,These chapters share 4 recurring entities.
+chapter_3,chapter_7,SHARES_ENTITIES_WITH,3,These chapters share 3 recurring entities.
+chapter_3,chapter_8,SHARES_ENTITIES_WITH,3,These chapters share 3 recurring entities.
+chapter_3,chapter_9,SHARES_ENTITIES_WITH,3,These chapters share 3 recurring entities.
+chapter_3,chapter_11,SHARES_ENTITIES_WITH,3,These chapters share 3 recurring entities.
+chapter_4,chapter_5,SHARES_ENTITIES_WITH,10,These chapters share 10 recurring entities.
+chapter_4,chapter_6,SHARES_ENTITIES_WITH,5,These chapters share 5 recurring entities.
+chapter_4,chapter_7,SHARES_ENTITIES_WITH,5,These chapters share 5 recurring entities.
+chapter_4,chapter_8,SHARES_ENTITIES_WITH,6,These chapters share 6 recurring entities.
+chapter_4,chapter_9,SHARES_ENTITIES_WITH,4,These chapters share 4 recurring entities.
+chapter_4,chapter_11,SHARES_ENTITIES_WITH,6,These chapters share 6 recurring entities.
+chapter_5,chapter_6,SHARES_ENTITIES_WITH,8,These chapters share 8 recurring entities.
+chapter_5,chapter_7,SHARES_ENTITIES_WITH,8,These chapters share 8 recurring entities.
+chapter_5,chapter_8,SHARES_ENTITIES_WITH,6,These chapters share 6 recurring entities.
+chapter_5,chapter_9,SHARES_ENTITIES_WITH,5,These chapters share 5 recurring entities.
+chapter_5,chapter_11,SHARES_ENTITIES_WITH,7,These chapters share 7 recurring entities.
+chapter_6,chapter_7,SHARES_ENTITIES_WITH,8,These chapters share 8 recurring entities.
+chapter_6,chapter_8,SHARES_ENTITIES_WITH,7,These chapters share 7 recurring entities.
+chapter_6,chapter_9,SHARES_ENTITIES_WITH,5,These chapters share 5 recurring entities.
+chapter_6,chapter_11,SHARES_ENTITIES_WITH,8,These chapters share 8 recurring entities.
+chapter_7,chapter_8,SHARES_ENTITIES_WITH,6,These chapters share 6 recurring entities.
+chapter_7,chapter_9,SHARES_ENTITIES_WITH,5,These chapters share 5 recurring entities.
+chapter_7,chapter_11,SHARES_ENTITIES_WITH,5,These chapters share 5 recurring entities.
+chapter_8,chapter_9,SHARES_ENTITIES_WITH,4,These chapters share 4 recurring entities.
+chapter_8,chapter_11,SHARES_ENTITIES_WITH,6,These chapters share 6 recurring entities.
+chapter_9,chapter_11,SHARES_ENTITIES_WITH,3,These chapters share 3 recurring entities.
