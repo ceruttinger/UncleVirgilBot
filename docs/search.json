@@ -726,5 +726,47 @@
     "title": "Entity Graph",
     "section": "Next review questions",
     "text": "Next review questions\nUse the chapter dropdown first. For each chapter, ask:\n\nAre the main people present?\nAre the main places present?\nAre organizations correctly separated from places?\nAre generic phrases being treated as entities?\nAre important family names or location variants missing?"
+  },
+  {
+    "objectID": "passages.html",
+    "href": "passages.html",
+    "title": "Passage Index",
+    "section": "",
+    "text": "This is the bridge from a static memoir site to Uncle Virgil Bot. Each chapter is split into reviewable passages, and each passage is linked to detected people, places, organizations, events, and years. The future chatbot should retrieve these passages and cite them directly."
+  },
+  {
+    "objectID": "passages.html#why-this-page-matters",
+    "href": "passages.html#why-this-page-matters",
+    "title": "Passage Index",
+    "section": "",
+    "text": "This is the bridge from a static memoir site to Uncle Virgil Bot. Each chapter is split into reviewable passages, and each passage is linked to detected people, places, organizations, events, and years. The future chatbot should retrieve these passages and cite them directly."
+  },
+  {
+    "objectID": "passages.html#passage-summary-by-chapter",
+    "href": "passages.html#passage-summary-by-chapter",
+    "title": "Passage Index",
+    "section": "Passage summary by chapter",
+    "text": "Passage summary by chapter"
+  },
+  {
+    "objectID": "passages.html#passage-browser",
+    "href": "passages.html#passage-browser",
+    "title": "Passage Index",
+    "section": "Passage browser",
+    "text": "Passage browser\nUse this table to inspect the retrieval units that a chatbot would use. The citation_label column is the citation text the bot can return with an answer."
+  },
+  {
+    "objectID": "passages.html#passageentity-links",
+    "href": "passages.html#passageentity-links",
+    "title": "Passage Index",
+    "section": "Passage/entity links",
+    "text": "Passage/entity links\nThis is the many-to-many bridge table: one passage can mention many entities, and one entity can appear in many passages."
+  },
+  {
+    "objectID": "passages.html#next-review-questions",
+    "href": "passages.html#next-review-questions",
+    "title": "Passage Index",
+    "section": "Next review questions",
+    "text": "Next review questions\n\nAre the passage lengths readable enough for citations?\nAre important family names and locations showing up in the passage/entity links?\nDo any OCR errors create fake entities?\nShould the chatbot cite whole chapters, passages, or both?"
   }
 ]

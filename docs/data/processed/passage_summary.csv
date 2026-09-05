@@ -1,0 +1,12 @@
+chapter,chapter_title,passage_count,total_words,passages_with_entities,avg_entities_per_passage,top_entities
+1,Earliest Memories,15,3695,15,6.27,Idaho; Richard; Arizona; Idaho Falls; Mesa; Ila Rose; Martin; Salmon
+2,The Teenage Period,16,3896,16,4.88,Idaho; Idaho Falls; Loverna; California; Japan; Pomona; Salt Lake City; Jack Kelley
+3,World War Two,12,2760,12,5.17,Boston; Bremerton; Idaho; Pearl Harbor; Providence; Utah; Washington; Corpus Christi
+4,My College Years BYU and Colombia,18,4368,18,4.44,Marion; New York; Idaho; Idaho Falls; Columbia University; Utah; New York City; Salt Lake City
+5,The CIA,27,6498,23,2.89,Marion; Soviet Union; Washington; Virginia; World War II; Air Force; California; Idaho
+6,Montevideo Uruguay,16,3963,15,3.25,Uruguay; Montevideo; Marion; Washington; New York; Soviet Union; United States; Utah
+7,Headquarters Duty,16,3974,15,3.12,Marion; Soviet Union; United States; Uruguay; Utah; Washington; Falls Church; Virginia
+8,Rio De Janeiro,13,3157,13,2.92,Marion; Rio De Janeiro; Utah; Montevideo; New York; California; Richard; Sao Paulo
+9,The McLean Va. Years,5,1321,5,4.6,Marion; New York; Soviet Union; United States; Utah; Vietnam; Clandestine Services; Dwight D. Eisenhower
+10,Making a Career Change,11,2726,5,0.55,Foreign Service; Clandestine Services; Personnel Management Staff
+11,Post Rio to Retirement,15,3580,15,3.33,Washington; Virginia; California; Marion; Sunday School; Alexandria Ward; Arizona; Howard Hunt

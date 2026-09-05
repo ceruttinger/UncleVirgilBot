@@ -1,0 +1,91 @@
+---
+title: "Passage Index"
+page-layout: full
+toc: true
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(readr)
+library(dplyr)
+library(DT)
+
+passages <- read_csv("data/public/passage_index.csv", show_col_types = FALSE)
+summary <- read_csv("data/public/passage_summary.csv", show_col_types = FALSE)
+mentions <- read_csv("data/public/passage_entity_mentions.csv", show_col_types = FALSE)
+```
+
+## Why this page matters
+
+This is the bridge from a static memoir site to Uncle Virgil Bot. Each chapter is split into reviewable passages, and each passage is linked to detected people, places, organizations, events, and years. The future chatbot should retrieve these passages and cite them directly.
+
+## Passage summary by chapter
+
+```{r}
+#| echo: false
+summary |>
+  select(chapter, chapter_title, passage_count, total_words, passages_with_entities, avg_entities_per_passage, top_entities) |>
+  datatable(
+    rownames = FALSE,
+    filter = "top",
+    options = list(
+      pageLength = 11,
+      scrollX = TRUE,
+      dom = "tip"
+    )
+  )
+```
+
+## Passage browser
+
+Use this table to inspect the retrieval units that a chatbot would use. The `citation_label` column is the citation text the bot can return with an answer.
+
+```{r}
+#| echo: false
+passages |>
+  select(
+    passage_id, chapter, chapter_title, passage_number,
+    citation_label, word_count, year_candidates,
+    entity_count, entities_mentioned, text
+  ) |>
+  datatable(
+    rownames = FALSE,
+    filter = "top",
+    extensions = c("Buttons"),
+    options = list(
+      pageLength = 10,
+      scrollX = TRUE,
+      scrollY = "620px",
+      dom = "Bfrtip",
+      buttons = c("copy", "csv")
+    )
+  )
+```
+
+## Passage/entity links
+
+This is the many-to-many bridge table: one passage can mention many entities, and one entity can appear in many passages.
+
+```{r}
+#| echo: false
+mentions |>
+  arrange(chapter, passage_number, entity_type, canonical_entity) |>
+  datatable(
+    rownames = FALSE,
+    filter = "top",
+    options = list(
+      pageLength = 15,
+      scrollX = TRUE,
+      scrollY = "520px"
+    )
+  )
+```
+
+## Next review questions
+
+1. Are the passage lengths readable enough for citations?
+2. Are important family names and locations showing up in the passage/entity links?
+3. Do any OCR errors create fake entities?
+4. Should the chatbot cite whole chapters, passages, or both?

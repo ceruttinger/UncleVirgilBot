@@ -1,0 +1,612 @@
+passage_id,chapter,chapter_title,passage_number,entity_id,canonical_entity,entity_type,review_status,mention_count
+ch01_p001,1,Earliest Memories,1,person_ila_rose,Ila Rose,Person,unreviewed seed,2
+ch01_p001,1,Earliest Memories,1,person_loverna,Loverna,Person,unreviewed seed,1
+ch01_p001,1,Earliest Memories,1,person_martin,Martin,Person,unreviewed seed,1
+ch01_p001,1,Earliest Memories,1,person_mary_anderson,Mary Anderson,Person,unreviewed seed,1
+ch01_p001,1,Earliest Memories,1,person_maryette_rice_harris_standley,Maryette Rice Harris Standley,Person,unreviewed seed,1
+ch01_p001,1,Earliest Memories,1,person_solomon_webster_harris,Solomon Webster Harris,Person,unreviewed seed,1
+ch01_p001,1,Earliest Memories,1,place_idaho,Idaho,Place,unreviewed seed,3
+ch01_p001,1,Earliest Memories,1,place_idaho_falls,Idaho Falls,Place,unreviewed seed,3
+ch01_p001,1,Earliest Memories,1,place_logan,Logan,Place,unreviewed seed,1
+ch01_p001,1,Earliest Memories,1,place_lone_pine,Lone Pine,Place,unreviewed seed,1
+ch01_p001,1,Earliest Memories,1,place_utah,Utah,Place,unreviewed seed,1
+ch01_p002,1,Earliest Memories,2,organization_place_arizona_temple,Arizona Temple,Organization/Place,unreviewed seed,1
+ch01_p002,1,Earliest Memories,2,person_loverna,Loverna,Person,unreviewed seed,1
+ch01_p002,1,Earliest Memories,2,place_arizona,Arizona,Place,unreviewed seed,8
+ch01_p002,1,Earliest Memories,2,place_mesa,Mesa,Place,unreviewed seed,1
+ch01_p002,1,Earliest Memories,2,place_tooele,Tooele,Place,unreviewed seed,1
+ch01_p002,1,Earliest Memories,2,place_utah,Utah,Place,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,organization_place_arizona_temple,Arizona Temple,Organization/Place,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,person_anthony_w_ivins,Anthony W. Ivins,Person,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,person_david_o_mckay,David O. McKay,Person,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,person_george_albert_smith,George Albert Smith,Person,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,person_george_f_richards,George F. Richards,Person,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,person_heber_j_grant,Heber J. Grant,Person,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,person_ila_rose,Ila Rose,Person,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,person_j_golden_kimball,J. Golden Kimball,Person,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,person_joseph_fielding_smith,Joseph Fielding Smith,Person,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,person_loverna,Loverna,Person,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,person_martin,Martin,Person,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,person_richard,Richard,Person,unreviewed seed,2
+ch01_p003,1,Earliest Memories,3,person_richard_r_lyman,Richard R. Lyman,Person,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,person_rudger_clawson,Rudger Clawson,Person,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,person_spencer_w_kimball,Spencer W. Kimball,Person,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,person_stephen_l_richards,Stephen L. Richards,Person,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,person_sylvester_q_cannon,Sylvester Q. Cannon,Person,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,place_arizona,Arizona,Place,unreviewed seed,1
+ch01_p003,1,Earliest Memories,3,place_atlantic_ocean,Atlantic Ocean,Place,candidate,1
+ch01_p003,1,Earliest Memories,3,place_new_york,New York,Place,accepted,1
+ch01_p004,1,Earliest Memories,4,organization_lincoln_school,Lincoln School,Organization,unreviewed seed,1
+ch01_p004,1,Earliest Memories,4,person_martin,Martin,Person,unreviewed seed,1
+ch01_p004,1,Earliest Memories,4,place_arizona,Arizona,Place,unreviewed seed,1
+ch01_p004,1,Earliest Memories,4,place_mesa,Mesa,Place,unreviewed seed,3
+ch01_p005,1,Earliest Memories,5,person_herbert_hoover,Herbert Hoover,Person,unreviewed seed,1
+ch01_p005,1,Earliest Memories,5,person_ila_rose,Ila Rose,Person,unreviewed seed,1
+ch01_p005,1,Earliest Memories,5,person_martin,Martin,Person,unreviewed seed,1
+ch01_p005,1,Earliest Memories,5,person_nathan_harris,Nathan Harris,Person,unreviewed seed,1
+ch01_p005,1,Earliest Memories,5,person_richard,Richard,Person,unreviewed seed,1
+ch01_p005,1,Earliest Memories,5,place_mesa,Mesa,Place,unreviewed seed,1
+ch01_p005,1,Earliest Memories,5,place_utah,Utah,Place,unreviewed seed,1
+ch01_p006,1,Earliest Memories,6,organization_church_of_jesus_christ_of_latter_day_saints,Church of Jesus Christ of Latter-day Saints,Organization,unreviewed seed,1
+ch01_p006,1,Earliest Memories,6,organization_place_mesa_temple,Mesa Temple,Organization/Place,unreviewed seed,1
+ch01_p006,1,Earliest Memories,6,person_reed_smoot,Reed Smoot,Person,unreviewed seed,1
+ch01_p006,1,Earliest Memories,6,person_solomon_r_harris,Solomon R. Harris,Person,unreviewed seed,1
+ch01_p006,1,Earliest Memories,6,place_arizona,Arizona,Place,unreviewed seed,1
+ch01_p006,1,Earliest Memories,6,place_idaho,Idaho,Place,unreviewed seed,2
+ch01_p006,1,Earliest Memories,6,place_idaho_falls,Idaho Falls,Place,unreviewed seed,2
+ch01_p006,1,Earliest Memories,6,place_mesa,Mesa,Place,unreviewed seed,2
+ch01_p006,1,Earliest Memories,6,place_utah,Utah,Place,unreviewed seed,1
+ch01_p007,1,Earliest Memories,7,organization_eastside_grammar_school,Eastside Grammar School,Organization,unreviewed seed,1
+ch01_p007,1,Earliest Memories,7,person_clifford,Clifford,Person,unreviewed seed,1
+ch01_p007,1,Earliest Memories,7,person_richard,Richard,Person,unreviewed seed,1
+ch01_p007,1,Earliest Memories,7,place_arizona,Arizona,Place,unreviewed seed,1
+ch01_p007,1,Earliest Memories,7,place_idaho,Idaho,Place,unreviewed seed,3
+ch01_p007,1,Earliest Memories,7,place_idaho_falls,Idaho Falls,Place,unreviewed seed,2
+ch01_p007,1,Earliest Memories,7,place_mesa,Mesa,Place,unreviewed seed,1
+ch01_p008,1,Earliest Memories,8,person_richard,Richard,Person,unreviewed seed,1
+ch01_p008,1,Earliest Memories,8,place_logan,Logan,Place,unreviewed seed,1
+ch01_p008,1,Earliest Memories,8,place_salt_lake_city,Salt Lake City,Place,unreviewed seed,1
+ch01_p008,1,Earliest Memories,8,place_united_states,United States,Place,accepted,1
+ch01_p008,1,Earliest Memories,8,place_utah,Utah,Place,unreviewed seed,1
+ch01_p009,1,Earliest Memories,9,person_lucy_guyaz,Lucy Guyaz,Person,unreviewed seed,1
+ch01_p009,1,Earliest Memories,9,person_richard,Richard,Person,unreviewed seed,1
+ch01_p009,1,Earliest Memories,9,place_idaho,Idaho,Place,unreviewed seed,2
+ch01_p009,1,Earliest Memories,9,place_philippine_islands,Philippine Islands,Place,unreviewed seed,1
+ch01_p009,1,Earliest Memories,9,place_salmon,Salmon,Place,unreviewed seed,4
+ch01_p010,1,Earliest Memories,10,person_ila_rose,Ila Rose,Person,unreviewed seed,1
+ch01_p010,1,Earliest Memories,10,person_loverna,Loverna,Person,unreviewed seed,1
+ch01_p010,1,Earliest Memories,10,person_martin,Martin,Person,unreviewed seed,1
+ch01_p010,1,Earliest Memories,10,person_richard,Richard,Person,unreviewed seed,1
+ch01_p010,1,Earliest Memories,10,place_salmon,Salmon,Place,unreviewed seed,1
+ch01_p011,1,Earliest Memories,11,place_idaho,Idaho,Place,unreviewed seed,1
+ch01_p012,1,Earliest Memories,12,person_franklin_d_roosevelt,Franklin D. Roosevelt,Person,unreviewed seed,2
+ch01_p013,1,Earliest Memories,13,organization_place_idaho_falls_temple,Idaho Falls Temple,Organization/Place,unreviewed seed,1
+ch01_p013,1,Earliest Memories,13,place_idaho,Idaho,Place,unreviewed seed,1
+ch01_p013,1,Earliest Memories,13,place_idaho_falls,Idaho Falls,Place,unreviewed seed,1
+ch01_p013,1,Earliest Memories,13,place_united_states,United States,Place,accepted,2
+ch01_p014,1,Earliest Memories,14,organization_place_idaho_falls_temple,Idaho Falls Temple,Organization/Place,unreviewed seed,1
+ch01_p014,1,Earliest Memories,14,person_carmen_stevens,Carmen Stevens,Person,unreviewed seed,1
+ch01_p014,1,Earliest Memories,14,person_maria_del_carmen_stevens,Maria del Carmen Stevens,Person,unreviewed seed,1
+ch01_p014,1,Earliest Memories,14,person_richard,Richard,Person,unreviewed seed,2
+ch01_p014,1,Earliest Memories,14,place_idaho,Idaho,Place,unreviewed seed,3
+ch01_p014,1,Earliest Memories,14,place_idaho_falls,Idaho Falls,Place,unreviewed seed,3
+ch01_p014,1,Earliest Memories,14,place_philippines,Philippines,Place,unreviewed seed,1
+ch01_p015,1,Earliest Memories,15,person_richard,Richard,Person,unreviewed seed,4
+ch01_p015,1,Earliest Memories,15,place_philippines,Philippines,Place,unreviewed seed,1
+ch02_p001,2,The Teenage Period,1,organization_sunday_school,Sunday School,Organization,candidate,1
+ch02_p001,2,The Teenage Period,1,person_louis_f_nuffer,Louis F. Nuffer,Person,unreviewed seed,1
+ch02_p001,2,The Teenage Period,1,person_martin,Martin,Person,unreviewed seed,1
+ch02_p001,2,The Teenage Period,1,person_martin_harris,Martin Harris,Person,unreviewed seed,1
+ch02_p001,2,The Teenage Period,1,person_vern_l_brown,Vern L. Brown,Person,unreviewed seed,1
+ch02_p001,2,The Teenage Period,1,place_clarkston,Clarkston,Place,unreviewed seed,1
+ch02_p001,2,The Teenage Period,1,place_logan,Logan,Place,unreviewed seed,1
+ch02_p001,2,The Teenage Period,1,place_utah,Utah,Place,unreviewed seed,1
+ch02_p002,2,The Teenage Period,2,person_martin,Martin,Person,unreviewed seed,1
+ch02_p002,2,The Teenage Period,2,place_idaho,Idaho,Place,unreviewed seed,2
+ch02_p002,2,The Teenage Period,2,place_salt_lake_city,Salt Lake City,Place,unreviewed seed,1
+ch02_p002,2,The Teenage Period,2,place_soda_springs,Soda Springs,Place,unreviewed seed,1
+ch02_p003,2,The Teenage Period,3,person_wiley_snarr,Wiley Snarr,Person,unreviewed seed,1
+ch02_p004,2,The Teenage Period,4,organization_riverside_grammar_school,Riverside Grammar School,Organization,unreviewed seed,1
+ch02_p004,2,The Teenage Period,4,place_idaho,Idaho,Place,unreviewed seed,4
+ch02_p004,2,The Teenage Period,4,place_idaho_falls,Idaho Falls,Place,unreviewed seed,4
+ch02_p004,2,The Teenage Period,4,place_salt_lake_city,Salt Lake City,Place,unreviewed seed,1
+ch02_p005,2,The Teenage Period,5,person_lester_allan_harris,Lester Allan Harris,Person,unreviewed seed,1
+ch02_p005,2,The Teenage Period,5,person_loverna,Loverna,Person,unreviewed seed,1
+ch02_p005,2,The Teenage Period,5,place_california,California,Place,unreviewed seed,2
+ch02_p005,2,The Teenage Period,5,place_concord,Concord,Place,unreviewed seed,1
+ch02_p005,2,The Teenage Period,5,place_pomona,Pomona,Place,unreviewed seed,1
+ch02_p006,2,The Teenage Period,6,person_al_harris,Al Harris,Person,unreviewed seed,1
+ch02_p007,2,The Teenage Period,7,organization_pomona_high_school,Pomona High School,Organization,unreviewed seed,1
+ch02_p007,2,The Teenage Period,7,person_loverna,Loverna,Person,unreviewed seed,2
+ch02_p007,2,The Teenage Period,7,place_california,California,Place,unreviewed seed,1
+ch02_p007,2,The Teenage Period,7,place_pomona,Pomona,Place,unreviewed seed,2
+ch02_p008,2,The Teenage Period,8,person_loverna,Loverna,Person,unreviewed seed,3
+ch02_p008,2,The Teenage Period,8,place_california,California,Place,unreviewed seed,1
+ch02_p008,2,The Teenage Period,8,place_idaho,Idaho,Place,unreviewed seed,1
+ch02_p008,2,The Teenage Period,8,place_idaho_falls,Idaho Falls,Place,unreviewed seed,1
+ch02_p009,2,The Teenage Period,9,person_harold_price,Harold Price,Person,unreviewed seed,1
+ch02_p009,2,The Teenage Period,9,person_jack_kelley,Jack Kelley,Person,unreviewed seed,1
+ch02_p009,2,The Teenage Period,9,person_melvin_olsen,Melvin Olsen,Person,unreviewed seed,1
+ch02_p009,2,The Teenage Period,9,person_wilmer_norton,Wilmer Norton,Person,unreviewed seed,1
+ch02_p009,2,The Teenage Period,9,place_idaho,Idaho,Place,unreviewed seed,2
+ch02_p009,2,The Teenage Period,9,place_idaho_falls,Idaho Falls,Place,unreviewed seed,2
+ch02_p010,2,The Teenage Period,10,event_world_war_ii,World War II,Event,accepted,1
+ch02_p010,2,The Teenage Period,10,place_idaho,Idaho,Place,unreviewed seed,2
+ch02_p010,2,The Teenage Period,10,place_idaho_falls,Idaho Falls,Place,unreviewed seed,1
+ch02_p010,2,The Teenage Period,10,place_pomona,Pomona,Place,unreviewed seed,1
+ch02_p010,2,The Teenage Period,10,place_teton_mountains,Teton Mountains,Place,unreviewed seed,1
+ch02_p010,2,The Teenage Period,10,place_victor,Victor,Place,unreviewed seed,1
+ch02_p011,2,The Teenage Period,11,organization_presiding_bishop_s_office,Presiding Bishop's Office,Organization,unreviewed seed,1
+ch02_p011,2,The Teenage Period,11,person_heber_austin,Heber Austin,Person,unreviewed seed,1
+ch02_p011,2,The Teenage Period,11,person_jack_kelley,Jack Kelley,Person,unreviewed seed,2
+ch02_p011,2,The Teenage Period,11,person_melvin_olsen,Melvin Olsen,Person,unreviewed seed,1
+ch02_p011,2,The Teenage Period,11,place_idaho,Idaho,Place,unreviewed seed,1
+ch02_p011,2,The Teenage Period,11,place_idaho_falls,Idaho Falls,Place,unreviewed seed,1
+ch02_p011,2,The Teenage Period,11,place_salt_lake_city,Salt Lake City,Place,unreviewed seed,1
+ch02_p011,2,The Teenage Period,11,place_san_francisco,San Francisco,Place,unreviewed seed,1
+ch02_p011,2,The Teenage Period,11,place_treasure_island,Treasure Island,Place,unreviewed seed,1
+ch02_p011,2,The Teenage Period,11,place_united_states,United States,Place,accepted,1
+ch02_p012,2,The Teenage Period,12,organization_communications_workers_of_america,Communications Workers of America,Organization,unreviewed seed,1
+ch02_p012,2,The Teenage Period,12,organization_mountain_states_telephone_and_telegraph,Mountain States Telephone and Telegraph,Organization,unreviewed seed,1
+ch02_p012,2,The Teenage Period,12,organization_western_electric,Western Electric,Organization,unreviewed seed,1
+ch02_p012,2,The Teenage Period,12,person_joyce_mcneill,Joyce McNeill,Person,unreviewed seed,1
+ch02_p012,2,The Teenage Period,12,place_salt_lake_city,Salt Lake City,Place,unreviewed seed,1
+ch02_p013,2,The Teenage Period,13,organization_sunday_school,Sunday School,Organization,candidate,1
+ch02_p013,2,The Teenage Period,13,person_joyce_mcneill,Joyce McNeill,Person,unreviewed seed,1
+ch02_p013,2,The Teenage Period,13,place_hawaii,Hawaii,Place,unreviewed seed,1
+ch02_p013,2,The Teenage Period,13,place_japan,Japan,Place,unreviewed seed,4
+ch02_p013,2,The Teenage Period,13,place_pearl_harbor,Pearl Harbor,Place,unreviewed seed,2
+ch02_p013,2,The Teenage Period,13,place_philippines,Philippines,Place,unreviewed seed,1
+ch02_p014,2,The Teenage Period,14,organization_western_electric,Western Electric,Organization,unreviewed seed,1
+ch02_p014,2,The Teenage Period,14,person_elwood_heiner,Elwood Heiner,Person,unreviewed seed,1
+ch02_p014,2,The Teenage Period,14,person_joyce_mcneill,Joyce McNeill,Person,unreviewed seed,1
+ch02_p014,2,The Teenage Period,14,person_t_j_hurley,T. J. Hurley,Person,unreviewed seed,1
+ch02_p015,2,The Teenage Period,15,organization_utah_state_agricultural_college,Utah State Agricultural College,Organization,accepted,1
+ch02_p015,2,The Teenage Period,15,person_reuel_neilson,Reuel Neilson,Person,unreviewed seed,1
+ch02_p015,2,The Teenage Period,15,place_corpus_christi,Corpus Christi,Place,unreviewed seed,2
+ch02_p015,2,The Teenage Period,15,place_logan,Logan,Place,unreviewed seed,1
+ch02_p015,2,The Teenage Period,15,place_san_francisco,San Francisco,Place,unreviewed seed,1
+ch02_p015,2,The Teenage Period,15,place_treasure_island,Treasure Island,Place,unreviewed seed,1
+ch02_p015,2,The Teenage Period,15,place_utah,Utah,Place,unreviewed seed,1
+ch02_p016,2,The Teenage Period,16,organization_western_electric,Western Electric,Organization,unreviewed seed,1
+ch02_p016,2,The Teenage Period,16,person_ila_rose,Ila Rose,Person,unreviewed seed,1
+ch02_p016,2,The Teenage Period,16,place_rhode_island,Rhode Island,Place,unreviewed seed,1
+ch03_p001,3,World War Two,1,organization_u_s_navy,U.S. Navy,Organization,unreviewed seed,1
+ch03_p001,3,World War Two,1,organization_utah_state_agricultural_college,Utah State Agricultural College,Organization,accepted,1
+ch03_p001,3,World War Two,1,person_cyd_charisse,Cyd Charisse,Person,unreviewed seed,1
+ch03_p001,3,World War Two,1,person_martin,Martin,Person,unreviewed seed,1
+ch03_p001,3,World War Two,1,person_tony_martin,Tony Martin,Person,unreviewed seed,1
+ch03_p001,3,World War Two,1,place_corpus_christi,Corpus Christi,Place,unreviewed seed,1
+ch03_p001,3,World War Two,1,place_logan,Logan,Place,unreviewed seed,1
+ch03_p001,3,World War Two,1,place_treasure_island,Treasure Island,Place,unreviewed seed,1
+ch03_p001,3,World War Two,1,place_utah,Utah,Place,unreviewed seed,2
+ch03_p002,3,World War Two,2,person_roger_williams,Roger Williams,Person,unreviewed seed,1
+ch03_p002,3,World War Two,2,person_tyrone_power,Tyrone Power,Person,unreviewed seed,1
+ch03_p002,3,World War Two,2,place_corpus_christi,Corpus Christi,Place,unreviewed seed,1
+ch03_p002,3,World War Two,2,place_providence,Providence,Place,unreviewed seed,3
+ch03_p002,3,World War Two,2,place_quonset_point,Quonset Point,Place,unreviewed seed,1
+ch03_p002,3,World War Two,2,place_rhode_island,Rhode Island,Place,unreviewed seed,1
+ch03_p003,3,World War Two,3,event_american_revolution,American Revolution,Event,accepted,1
+ch03_p003,3,World War Two,3,place_boston,Boston,Place,unreviewed seed,5
+ch03_p003,3,World War Two,3,place_bunker_hill,Bunker Hill,Place,unreviewed seed,1
+ch03_p003,3,World War Two,3,place_caribbean,Caribbean,Place,unreviewed seed,1
+ch03_p003,3,World War Two,3,place_concord,Concord,Place,unreviewed seed,1
+ch03_p003,3,World War Two,3,place_lexington,Lexington,Place,unreviewed seed,1
+ch03_p003,3,World War Two,3,place_logan,Logan,Place,unreviewed seed,1
+ch03_p003,3,World War Two,3,place_quonset_point,Quonset Point,Place,unreviewed seed,1
+ch03_p004,3,World War Two,4,event_world_war_ii,World War II,Event,accepted,1
+ch03_p004,3,World War Two,4,person_marion,Marion,Person,unreviewed seed,1
+ch03_p004,3,World War Two,4,place_arizona,Arizona,Place,unreviewed seed,1
+ch03_p004,3,World War Two,4,place_atlantic_ocean,Atlantic Ocean,Place,candidate,1
+ch03_p004,3,World War Two,4,place_hawaii,Hawaii,Place,unreviewed seed,1
+ch03_p004,3,World War Two,4,place_marcus_island,Marcus Island,Place,unreviewed seed,1
+ch03_p004,3,World War Two,4,place_panama_canal,Panama Canal,Place,unreviewed seed,1
+ch03_p004,3,World War Two,4,place_pearl_harbor,Pearl Harbor,Place,unreviewed seed,1
+ch03_p004,3,World War Two,4,place_san_diego,San Diego,Place,unreviewed seed,1
+ch03_p005,3,World War Two,5,event_world_war_ii,World War II,Event,accepted,1
+ch03_p005,3,World War Two,5,organization_u_s_navy,U.S. Navy,Organization,unreviewed seed,1
+ch03_p005,3,World War Two,5,person_john_s_mccain,John S. McCain,Person,unreviewed seed,1
+ch03_p005,3,World War Two,5,person_raymond_spruance,Raymond Spruance,Person,unreviewed seed,1
+ch03_p005,3,World War Two,5,person_richard,Richard,Person,unreviewed seed,1
+ch03_p005,3,World War Two,5,place_marianas_islands,Marianas Islands,Place,unreviewed seed,1
+ch03_p005,3,World War Two,5,place_philippine_islands,Philippine Islands,Place,unreviewed seed,1
+ch03_p005,3,World War Two,5,place_south_china_sea,South China Sea,Place,unreviewed seed,2
+ch03_p005,3,World War Two,5,place_vietnam,Vietnam,Place,unreviewed seed,2
+ch03_p006,3,World War Two,6,person_franklin_d_roosevelt,Franklin D. Roosevelt,Person,unreviewed seed,1
+ch03_p006,3,World War Two,6,person_harry_truman,Harry Truman,Person,unreviewed seed,1
+ch03_p006,3,World War Two,6,person_heber_j_grant,Heber J. Grant,Person,unreviewed seed,1
+ch03_p006,3,World War Two,6,place_bremerton,Bremerton,Place,unreviewed seed,2
+ch03_p006,3,World War Two,6,place_japan,Japan,Place,unreviewed seed,1
+ch03_p006,3,World War Two,6,place_pearl_harbor,Pearl Harbor,Place,unreviewed seed,1
+ch03_p006,3,World War Two,6,place_washington,Washington,Place,unreviewed seed,2
+ch03_p007,3,World War Two,7,place_bremerton,Bremerton,Place,unreviewed seed,1
+ch03_p007,3,World War Two,7,place_far_east,Far East,Place,accepted,1
+ch03_p007,3,World War Two,7,place_japan,Japan,Place,unreviewed seed,1
+ch03_p007,3,World War Two,7,place_pearl_harbor,Pearl Harbor,Place,unreviewed seed,1
+ch03_p007,3,World War Two,7,place_philippines,Philippines,Place,unreviewed seed,1
+ch03_p007,3,World War Two,7,place_san_francisco,San Francisco,Place,unreviewed seed,1
+ch03_p007,3,World War Two,7,place_washington,Washington,Place,unreviewed seed,1
+ch03_p008,3,World War Two,8,person_franklin_d_roosevelt,Franklin D. Roosevelt,Person,unreviewed seed,1
+ch03_p009,3,World War Two,9,place_philippine_islands,Philippine Islands,Place,unreviewed seed,1
+ch03_p010,3,World War Two,10,place_utah,Utah,Place,unreviewed seed,1
+ch03_p011,3,World War Two,11,place_bremerton,Bremerton,Place,unreviewed seed,1
+ch03_p011,3,World War Two,11,place_idaho,Idaho,Place,unreviewed seed,1
+ch03_p012,3,World War Two,12,place_idaho,Idaho,Place,unreviewed seed,2
+ch03_p012,3,World War Two,12,place_idaho_falls,Idaho Falls,Place,unreviewed seed,1
+ch04_p001,4,My College Years BYU and Colombia,1,place_idaho,Idaho,Place,unreviewed seed,2
+ch04_p001,4,My College Years BYU and Colombia,1,place_idaho_falls,Idaho Falls,Place,unreviewed seed,2
+ch04_p001,4,My College Years BYU and Colombia,1,place_salt_lake_city,Salt Lake City,Place,unreviewed seed,2
+ch04_p002,4,My College Years BYU and Colombia,2,person_marion,Marion,Person,unreviewed seed,1
+ch04_p002,4,My College Years BYU and Colombia,2,place_salt_lake_city,Salt Lake City,Place,unreviewed seed,1
+ch04_p003,4,My College Years BYU and Colombia,3,person_marion,Marion,Person,unreviewed seed,3
+ch04_p003,4,My College Years BYU and Colombia,3,place_idaho,Idaho,Place,unreviewed seed,3
+ch04_p003,4,My College Years BYU and Colombia,3,place_idaho_falls,Idaho Falls,Place,unreviewed seed,3
+ch04_p003,4,My College Years BYU and Colombia,3,place_salt_lake_city,Salt Lake City,Place,unreviewed seed,1
+ch04_p004,4,My College Years BYU and Colombia,4,person_joseph_smith,Joseph Smith,Person,accepted,1
+ch04_p004,4,My College Years BYU and Colombia,4,person_marion,Marion,Person,unreviewed seed,3
+ch04_p004,4,My College Years BYU and Colombia,4,person_martin,Martin,Person,unreviewed seed,1
+ch04_p004,4,My College Years BYU and Colombia,4,place_idaho,Idaho,Place,unreviewed seed,2
+ch04_p004,4,My College Years BYU and Colombia,4,place_idaho_falls,Idaho Falls,Place,unreviewed seed,1
+ch04_p004,4,My College Years BYU and Colombia,4,place_san_francisco,San Francisco,Place,unreviewed seed,1
+ch04_p005,4,My College Years BYU and Colombia,5,person_ila_rose,Ila Rose,Person,unreviewed seed,1
+ch04_p005,4,My College Years BYU and Colombia,5,person_marion,Marion,Person,unreviewed seed,1
+ch04_p005,4,My College Years BYU and Colombia,5,person_solomon_webster_harris,Solomon Webster Harris,Person,unreviewed seed,1
+ch04_p005,4,My College Years BYU and Colombia,5,place_idaho,Idaho,Place,unreviewed seed,3
+ch04_p005,4,My College Years BYU and Colombia,5,place_idaho_falls,Idaho Falls,Place,unreviewed seed,3
+ch04_p006,4,My College Years BYU and Colombia,6,person_howard_hughes,Howard Hughes,Person,accepted,1
+ch04_p006,4,My College Years BYU and Colombia,6,place_utah,Utah,Place,unreviewed seed,2
+ch04_p007,4,My College Years BYU and Colombia,7,organization_brigham_young_university,Brigham Young University,Organization,unreviewed seed,1
+ch04_p007,4,My College Years BYU and Colombia,7,organization_columbia_university,Columbia University,Organization,unreviewed seed,1
+ch04_p007,4,My College Years BYU and Colombia,7,person_ila_rose,Ila Rose,Person,unreviewed seed,1
+ch04_p007,4,My College Years BYU and Colombia,7,person_marion,Marion,Person,unreviewed seed,1
+ch04_p007,4,My College Years BYU and Colombia,7,place_california,California,Place,unreviewed seed,1
+ch04_p007,4,My College Years BYU and Colombia,7,place_new_york,New York,Place,accepted,1
+ch04_p007,4,My College Years BYU and Colombia,7,place_new_york_city,New York City,Place,candidate,1
+ch04_p007,4,My College Years BYU and Colombia,7,place_soviet_union,Soviet Union,Place,accepted,1
+ch04_p008,4,My College Years BYU and Colombia,8,person_harold_price,Harold Price,Person,unreviewed seed,1
+ch04_p008,4,My College Years BYU and Colombia,8,person_marion,Marion,Person,unreviewed seed,3
+ch04_p008,4,My College Years BYU and Colombia,8,place_idaho,Idaho,Place,unreviewed seed,1
+ch04_p008,4,My College Years BYU and Colombia,8,place_idaho_falls,Idaho Falls,Place,unreviewed seed,1
+ch04_p008,4,My College Years BYU and Colombia,8,place_new_york,New York,Place,accepted,3
+ch04_p008,4,My College Years BYU and Colombia,8,place_new_york_city,New York City,Place,candidate,2
+ch04_p009,4,My College Years BYU and Colombia,9,organization_columbia_university,Columbia University,Organization,unreviewed seed,1
+ch04_p009,4,My College Years BYU and Colombia,9,place_new_york,New York,Place,accepted,2
+ch04_p009,4,My College Years BYU and Colombia,9,place_shanks_village,Shanks Village,Place,accepted,1
+ch04_p009,4,My College Years BYU and Colombia,9,place_washington,Washington,Place,unreviewed seed,1
+ch04_p010,4,My College Years BYU and Colombia,10,organization_columbia_university,Columbia University,Organization,unreviewed seed,2
+ch04_p010,4,My College Years BYU and Colombia,10,place_idaho,Idaho,Place,unreviewed seed,1
+ch04_p010,4,My College Years BYU and Colombia,10,place_idaho_falls,Idaho Falls,Place,unreviewed seed,1
+ch04_p010,4,My College Years BYU and Colombia,10,place_new_york,New York,Place,accepted,2
+ch04_p010,4,My College Years BYU and Colombia,10,place_shanks_village,Shanks Village,Place,accepted,1
+ch04_p011,4,My College Years BYU and Colombia,11,person_franklin_d_roosevelt,Franklin D. Roosevelt,Person,unreviewed seed,1
+ch04_p011,4,My College Years BYU and Colombia,11,person_marion,Marion,Person,unreviewed seed,2
+ch04_p011,4,My College Years BYU and Colombia,11,place_new_york,New York,Place,accepted,1
+ch04_p012,4,My College Years BYU and Colombia,12,person_marion,Marion,Person,unreviewed seed,3
+ch04_p012,4,My College Years BYU and Colombia,12,person_rhoda_jones,Rhoda Jones,Person,accepted,1
+ch04_p012,4,My College Years BYU and Colombia,12,place_new_york,New York,Place,accepted,3
+ch04_p012,4,My College Years BYU and Colombia,12,place_new_york_city,New York City,Place,candidate,1
+ch04_p012,4,My College Years BYU and Colombia,12,place_shanks_village,Shanks Village,Place,accepted,1
+ch04_p013,4,My College Years BYU and Colombia,13,person_marion,Marion,Person,unreviewed seed,3
+ch04_p013,4,My College Years BYU and Colombia,13,place_new_york,New York,Place,accepted,2
+ch04_p013,4,My College Years BYU and Colombia,13,place_new_york_city,New York City,Place,candidate,1
+ch04_p014,4,My College Years BYU and Colombia,14,person_marion,Marion,Person,unreviewed seed,2
+ch04_p014,4,My College Years BYU and Colombia,14,person_martin,Martin,Person,unreviewed seed,1
+ch04_p014,4,My College Years BYU and Colombia,14,place_california,California,Place,unreviewed seed,1
+ch04_p014,4,My College Years BYU and Colombia,14,place_new_york,New York,Place,accepted,1
+ch04_p015,4,My College Years BYU and Colombia,15,place_new_york,New York,Place,accepted,1
+ch04_p016,4,My College Years BYU and Colombia,16,event_world_war_ii,World War II,Event,accepted,1
+ch04_p016,4,My College Years BYU and Colombia,16,organization_air_force,Air Force,Organization,accepted,1
+ch04_p016,4,My College Years BYU and Colombia,16,organization_central_intelligence_agency,Central Intelligence Agency,Organization,unreviewed seed,1
+ch04_p016,4,My College Years BYU and Colombia,16,organization_columbia_university,Columbia University,Organization,unreviewed seed,2
+ch04_p016,4,My College Years BYU and Colombia,16,organization_strategic_services,Strategic Services,Organization,accepted,1
+ch04_p016,4,My College Years BYU and Colombia,16,person_dwight_d_eisenhower,Dwight D. Eisenhower,Person,accepted,2
+ch04_p016,4,My College Years BYU and Colombia,16,place_united_states,United States,Place,accepted,2
+ch04_p016,4,My College Years BYU and Colombia,16,place_washington,Washington,Place,unreviewed seed,1
+ch04_p017,4,My College Years BYU and Colombia,17,person_marion,Marion,Person,unreviewed seed,1
+ch04_p017,4,My College Years BYU and Colombia,17,person_martin,Martin,Person,unreviewed seed,1
+ch04_p017,4,My College Years BYU and Colombia,17,person_martin_harris,Martin Harris,Person,unreviewed seed,1
+ch04_p017,4,My College Years BYU and Colombia,17,person_richard,Richard,Person,unreviewed seed,1
+ch04_p017,4,My College Years BYU and Colombia,17,person_richard_m_nixon,Richard M. Nixon,Person,accepted,1
+ch04_p017,4,My College Years BYU and Colombia,17,place_shanks_village,Shanks Village,Place,accepted,1
+ch04_p017,4,My College Years BYU and Colombia,17,place_utah,Utah,Place,unreviewed seed,3
+ch04_p017,4,My College Years BYU and Colombia,17,place_virginia,Virginia,Place,unreviewed seed,1
+ch04_p017,4,My College Years BYU and Colombia,17,place_washington,Washington,Place,unreviewed seed,1
+ch04_p018,4,My College Years BYU and Colombia,18,person_marion,Marion,Person,unreviewed seed,1
+ch04_p018,4,My College Years BYU and Colombia,18,place_utah,Utah,Place,unreviewed seed,1
+ch05_p001,5,The CIA,1,event_world_war_ii,World War II,Event,accepted,1
+ch05_p001,5,The CIA,1,organization_central_intelligence_agency,Central Intelligence Agency,Organization,unreviewed seed,1
+ch05_p001,5,The CIA,1,organization_strategic_services,Strategic Services,Organization,accepted,1
+ch05_p001,5,The CIA,1,place_new_york,New York,Place,accepted,1
+ch05_p001,5,The CIA,1,place_shanks_village,Shanks Village,Place,accepted,1
+ch05_p001,5,The CIA,1,place_utah,Utah,Place,unreviewed seed,1
+ch05_p001,5,The CIA,1,place_washington,Washington,Place,unreviewed seed,2
+ch05_p002,5,The CIA,2,event_world_war_ii,World War II,Event,accepted,1
+ch05_p002,5,The CIA,2,place_soviet_union,Soviet Union,Place,accepted,2
+ch05_p002,5,The CIA,2,place_virginia,Virginia,Place,unreviewed seed,1
+ch05_p002,5,The CIA,2,place_washington,Washington,Place,unreviewed seed,1
+ch05_p003,5,The CIA,3,place_soviet_union,Soviet Union,Place,accepted,2
+ch05_p004,5,The CIA,4,place_soviet_union,Soviet Union,Place,accepted,1
+ch05_p005,5,The CIA,5,organization_air_force,Air Force,Organization,accepted,2
+ch05_p005,5,The CIA,5,organization_clandestine_services,Clandestine Services,Organization,accepted,1
+ch05_p005,5,The CIA,5,place_falls_church,Falls Church,Place,accepted,1
+ch05_p005,5,The CIA,5,place_far_east,Far East,Place,accepted,1
+ch05_p005,5,The CIA,5,place_soviet_union,Soviet Union,Place,accepted,1
+ch05_p005,5,The CIA,5,place_virginia,Virginia,Place,unreviewed seed,1
+ch05_p005,5,The CIA,5,place_washington,Washington,Place,unreviewed seed,2
+ch05_p006,5,The CIA,6,organization_clandestine_services,Clandestine Services,Organization,accepted,1
+ch05_p006,5,The CIA,6,organization_sunday_school,Sunday School,Organization,candidate,1
+ch05_p006,5,The CIA,6,person_marion,Marion,Person,unreviewed seed,5
+ch05_p006,5,The CIA,6,place_falls_church,Falls Church,Place,accepted,1
+ch05_p006,5,The CIA,6,place_virginia,Virginia,Place,unreviewed seed,1
+ch05_p007,5,The CIA,7,person_howard_hughes,Howard Hughes,Person,accepted,1
+ch05_p007,5,The CIA,7,person_loverna,Loverna,Person,unreviewed seed,1
+ch05_p007,5,The CIA,7,person_marion,Marion,Person,unreviewed seed,2
+ch05_p007,5,The CIA,7,person_martin,Martin,Person,unreviewed seed,1
+ch05_p007,5,The CIA,7,place_california,California,Place,unreviewed seed,2
+ch05_p007,5,The CIA,7,place_utah,Utah,Place,unreviewed seed,1
+ch05_p007,5,The CIA,7,place_washington,Washington,Place,unreviewed seed,1
+ch05_p008,5,The CIA,8,person_marion,Marion,Person,unreviewed seed,2
+ch05_p008,5,The CIA,8,place_washington,Washington,Place,unreviewed seed,1
+ch05_p009,5,The CIA,9,person_marion,Marion,Person,unreviewed seed,1
+ch05_p009,5,The CIA,9,place_idaho,Idaho,Place,unreviewed seed,1
+ch05_p009,5,The CIA,9,place_washington,Washington,Place,unreviewed seed,1
+ch05_p010,5,The CIA,10,event_world_war_ii,World War II,Event,accepted,1
+ch05_p010,5,The CIA,10,place_soviet_union,Soviet Union,Place,accepted,2
+ch05_p010,5,The CIA,10,place_washington,Washington,Place,unreviewed seed,1
+ch05_p012,5,The CIA,12,organization_columbia_university,Columbia University,Organization,unreviewed seed,1
+ch05_p012,5,The CIA,12,organization_state_department,State Department,Organization,accepted,1
+ch05_p012,5,The CIA,12,person_marion,Marion,Person,unreviewed seed,2
+ch05_p013,5,The CIA,13,person_marion,Marion,Person,unreviewed seed,2
+ch05_p013,5,The CIA,13,place_idaho,Idaho,Place,unreviewed seed,2
+ch05_p013,5,The CIA,13,place_idaho_falls,Idaho Falls,Place,unreviewed seed,1
+ch05_p014,5,The CIA,14,person_marion,Marion,Person,unreviewed seed,1
+ch05_p014,5,The CIA,14,place_soviet_union,Soviet Union,Place,accepted,1
+ch05_p017,5,The CIA,17,organization_air_force,Air Force,Organization,accepted,1
+ch05_p017,5,The CIA,17,person_marion,Marion,Person,unreviewed seed,1
+ch05_p018,5,The CIA,18,place_soviet_union,Soviet Union,Place,accepted,2
+ch05_p020,5,The CIA,20,person_marion,Marion,Person,unreviewed seed,2
+ch05_p020,5,The CIA,20,place_virginia,Virginia,Place,unreviewed seed,1
+ch05_p021,5,The CIA,21,person_marion,Marion,Person,unreviewed seed,3
+ch05_p022,5,The CIA,22,person_marion,Marion,Person,unreviewed seed,1
+ch05_p023,5,The CIA,23,event_world_war_ii,World War II,Event,accepted,1
+ch05_p023,5,The CIA,23,place_soviet_union,Soviet Union,Place,accepted,2
+ch05_p024,5,The CIA,24,person_marion,Marion,Person,unreviewed seed,2
+ch05_p024,5,The CIA,24,place_kansas_city,Kansas City,Place,accepted,1
+ch05_p024,5,The CIA,24,place_new_york,New York,Place,accepted,1
+ch05_p024,5,The CIA,24,place_united_states,United States,Place,accepted,1
+ch05_p024,5,The CIA,24,place_washington,Washington,Place,unreviewed seed,1
+ch05_p025,5,The CIA,25,person_loverna,Loverna,Person,unreviewed seed,1
+ch05_p025,5,The CIA,25,person_martin,Martin,Person,unreviewed seed,1
+ch05_p025,5,The CIA,25,place_california,California,Place,unreviewed seed,1
+ch05_p025,5,The CIA,25,place_utah,Utah,Place,unreviewed seed,1
+ch05_p025,5,The CIA,25,place_virginia,Virginia,Place,unreviewed seed,1
+ch05_p025,5,The CIA,25,place_washington,Washington,Place,unreviewed seed,2
+ch05_p026,5,The CIA,26,organization_place_alexandria_ward,Alexandria Ward,Organization/Place,accepted,1
+ch05_p026,5,The CIA,26,person_heber_j_grant,Heber J. Grant,Person,unreviewed seed,2
+ch05_p026,5,The CIA,26,person_joe_dunn,Joe Dunn,Person,accepted,1
+ch05_p026,5,The CIA,26,person_wendell_thorne,Wendell Thorne,Person,accepted,1
+ch05_p026,5,The CIA,26,place_sable_drive,Sable Drive,Place,accepted,1
+ch05_p026,5,The CIA,26,place_washington,Washington,Place,unreviewed seed,1
+ch05_p027,5,The CIA,27,organization_first_presidency,First Presidency,Organization,candidate,1
+ch05_p027,5,The CIA,27,person_joseph_smith,Joseph Smith,Person,accepted,2
+ch05_p027,5,The CIA,27,person_martin,Martin,Person,unreviewed seed,1
+ch05_p027,5,The CIA,27,person_martin_harris,Martin Harris,Person,unreviewed seed,1
+ch06_p001,6,Montevideo Uruguay,1,place_japan,Japan,Place,unreviewed seed,1
+ch06_p001,6,Montevideo Uruguay,1,place_montevideo,Montevideo,Place,unreviewed seed,1
+ch06_p001,6,Montevideo Uruguay,1,place_uruguay,Uruguay,Place,unreviewed seed,1
+ch06_p002,6,Montevideo Uruguay,2,organization_air_force,Air Force,Organization,accepted,1
+ch06_p002,6,Montevideo Uruguay,2,organization_place_alexandria_ward,Alexandria Ward,Organization/Place,accepted,2
+ch06_p002,6,Montevideo Uruguay,2,place_far_east,Far East,Place,accepted,1
+ch06_p002,6,Montevideo Uruguay,2,place_japan,Japan,Place,unreviewed seed,1
+ch06_p003,6,Montevideo Uruguay,3,person_joe_dunn,Joe Dunn,Person,accepted,1
+ch06_p003,6,Montevideo Uruguay,3,place_united_states,United States,Place,accepted,1
+ch06_p003,6,Montevideo Uruguay,3,place_washington,Washington,Place,unreviewed seed,1
+ch06_p004,6,Montevideo Uruguay,4,place_idaho,Idaho,Place,unreviewed seed,1
+ch06_p004,6,Montevideo Uruguay,4,place_uruguay,Uruguay,Place,unreviewed seed,1
+ch06_p004,6,Montevideo Uruguay,4,place_utah,Utah,Place,unreviewed seed,1
+ch06_p004,6,Montevideo Uruguay,4,place_virginia,Virginia,Place,unreviewed seed,2
+ch06_p004,6,Montevideo Uruguay,4,place_washington,Washington,Place,unreviewed seed,1
+ch06_p005,6,Montevideo Uruguay,5,place_montevideo,Montevideo,Place,unreviewed seed,1
+ch06_p005,6,Montevideo Uruguay,5,place_new_york,New York,Place,accepted,1
+ch06_p005,6,Montevideo Uruguay,5,place_soviet_union,Soviet Union,Place,accepted,2
+ch06_p005,6,Montevideo Uruguay,5,place_uruguay,Uruguay,Place,unreviewed seed,3
+ch06_p006,6,Montevideo Uruguay,6,place_montevideo,Montevideo,Place,unreviewed seed,1
+ch06_p006,6,Montevideo Uruguay,6,place_new_york,New York,Place,accepted,1
+ch06_p006,6,Montevideo Uruguay,6,place_united_states,United States,Place,accepted,1
+ch06_p007,6,Montevideo Uruguay,7,place_united_states,United States,Place,accepted,1
+ch06_p008,6,Montevideo Uruguay,8,person_marion,Marion,Person,unreviewed seed,1
+ch06_p008,6,Montevideo Uruguay,8,person_richard,Richard,Person,unreviewed seed,1
+ch06_p008,6,Montevideo Uruguay,8,person_richard_m_nixon,Richard M. Nixon,Person,accepted,1
+ch06_p008,6,Montevideo Uruguay,8,place_montevideo,Montevideo,Place,unreviewed seed,1
+ch06_p008,6,Montevideo Uruguay,8,place_uruguay,Uruguay,Place,unreviewed seed,2
+ch06_p009,6,Montevideo Uruguay,9,place_montevideo,Montevideo,Place,unreviewed seed,1
+ch06_p009,6,Montevideo Uruguay,9,place_uruguay,Uruguay,Place,unreviewed seed,3
+ch06_p010,6,Montevideo Uruguay,10,place_uruguay,Uruguay,Place,unreviewed seed,5
+ch06_p011,6,Montevideo Uruguay,11,person_howard_hunt,Howard Hunt,Person,accepted,1
+ch06_p011,6,Montevideo Uruguay,11,place_montevideo,Montevideo,Place,unreviewed seed,1
+ch06_p011,6,Montevideo Uruguay,11,place_soviet_union,Soviet Union,Place,accepted,1
+ch06_p011,6,Montevideo Uruguay,11,place_uruguay,Uruguay,Place,unreviewed seed,2
+ch06_p012,6,Montevideo Uruguay,12,person_dottie_burton,Dottie Burton,Person,accepted,1
+ch06_p012,6,Montevideo Uruguay,12,person_marion,Marion,Person,unreviewed seed,2
+ch06_p012,6,Montevideo Uruguay,12,person_rhoda_jones,Rhoda Jones,Person,accepted,1
+ch06_p012,6,Montevideo Uruguay,12,person_spencer_w_kimball,Spencer W. Kimball,Person,unreviewed seed,1
+ch06_p012,6,Montevideo Uruguay,12,place_uruguay,Uruguay,Place,unreviewed seed,2
+ch06_p014,6,Montevideo Uruguay,14,place_montevideo,Montevideo,Place,unreviewed seed,1
+ch06_p014,6,Montevideo Uruguay,14,place_uruguay,Uruguay,Place,unreviewed seed,1
+ch06_p015,6,Montevideo Uruguay,15,place_montevideo,Montevideo,Place,unreviewed seed,2
+ch06_p015,6,Montevideo Uruguay,15,place_uruguay,Uruguay,Place,unreviewed seed,1
+ch06_p015,6,Montevideo Uruguay,15,place_washington,Washington,Place,unreviewed seed,1
+ch06_p016,6,Montevideo Uruguay,16,person_marion,Marion,Person,unreviewed seed,1
+ch06_p016,6,Montevideo Uruguay,16,place_california,California,Place,unreviewed seed,1
+ch06_p016,6,Montevideo Uruguay,16,place_new_york,New York,Place,accepted,1
+ch06_p016,6,Montevideo Uruguay,16,place_new_york_city,New York City,Place,candidate,1
+ch06_p016,6,Montevideo Uruguay,16,place_uruguay,Uruguay,Place,unreviewed seed,1
+ch06_p016,6,Montevideo Uruguay,16,place_utah,Utah,Place,unreviewed seed,2
+ch06_p016,6,Montevideo Uruguay,16,place_washington,Washington,Place,unreviewed seed,1
+ch07_p001,7,Headquarters Duty,1,place_california,California,Place,unreviewed seed,1
+ch07_p001,7,Headquarters Duty,1,place_sable_drive,Sable Drive,Place,accepted,1
+ch07_p001,7,Headquarters Duty,1,place_uruguay,Uruguay,Place,unreviewed seed,1
+ch07_p001,7,Headquarters Duty,1,place_utah,Utah,Place,unreviewed seed,2
+ch07_p001,7,Headquarters Duty,1,place_washington,Washington,Place,unreviewed seed,1
+ch07_p002,7,Headquarters Duty,2,organization_place_alexandria_ward,Alexandria Ward,Organization/Place,accepted,1
+ch07_p002,7,Headquarters Duty,2,place_uruguay,Uruguay,Place,unreviewed seed,1
+ch07_p003,7,Headquarters Duty,3,place_soviet_union,Soviet Union,Place,accepted,2
+ch07_p003,7,Headquarters Duty,3,place_united_states,United States,Place,accepted,2
+ch07_p004,7,Headquarters Duty,4,organization_central_intelligence_agency,Central Intelligence Agency,Organization,unreviewed seed,1
+ch07_p004,7,Headquarters Duty,4,person_joseph_smith,Joseph Smith,Person,accepted,1
+ch07_p004,7,Headquarters Duty,4,person_richard,Richard,Person,unreviewed seed,1
+ch07_p004,7,Headquarters Duty,4,place_hill_cumorah,Hill Cumorah,Place,candidate,1
+ch07_p004,7,Headquarters Duty,4,place_new_york,New York,Place,accepted,1
+ch07_p004,7,Headquarters Duty,4,place_united_states,United States,Place,accepted,2
+ch07_p005,7,Headquarters Duty,5,person_marion,Marion,Person,unreviewed seed,1
+ch07_p005,7,Headquarters Duty,5,place_uruguay,Uruguay,Place,unreviewed seed,1
+ch07_p005,7,Headquarters Duty,5,place_washington,Washington,Place,unreviewed seed,1
+ch07_p006,7,Headquarters Duty,6,place_falls_church,Falls Church,Place,accepted,1
+ch07_p007,7,Headquarters Duty,7,person_marion,Marion,Person,unreviewed seed,2
+ch07_p007,7,Headquarters Duty,7,place_falls_church,Falls Church,Place,accepted,1
+ch07_p007,7,Headquarters Duty,7,place_uruguay,Uruguay,Place,unreviewed seed,1
+ch07_p008,7,Headquarters Duty,8,organization_place_arlington_ward,Arlington Ward,Organization/Place,accepted,2
+ch07_p008,7,Headquarters Duty,8,person_marion,Marion,Person,unreviewed seed,1
+ch07_p008,7,Headquarters Duty,8,place_soviet_union,Soviet Union,Place,accepted,1
+ch07_p010,7,Headquarters Duty,10,person_julian_lowe,Julian Lowe,Person,accepted,2
+ch07_p010,7,Headquarters Duty,10,person_marion,Marion,Person,unreviewed seed,1
+ch07_p010,7,Headquarters Duty,10,place_falls_church,Falls Church,Place,accepted,1
+ch07_p011,7,Headquarters Duty,11,person_lyndon_johnson,Lyndon Johnson,Person,accepted,1
+ch07_p011,7,Headquarters Duty,11,person_marion,Marion,Person,unreviewed seed,2
+ch07_p011,7,Headquarters Duty,11,place_virginia,Virginia,Place,unreviewed seed,1
+ch07_p012,7,Headquarters Duty,12,person_ila_rose,Ila Rose,Person,unreviewed seed,1
+ch07_p012,7,Headquarters Duty,12,person_marion,Marion,Person,unreviewed seed,1
+ch07_p012,7,Headquarters Duty,12,place_soviet_union,Soviet Union,Place,accepted,2
+ch07_p012,7,Headquarters Duty,12,place_virginia,Virginia,Place,unreviewed seed,1
+ch07_p013,7,Headquarters Duty,13,person_marion,Marion,Person,unreviewed seed,3
+ch07_p013,7,Headquarters Duty,13,person_rhoda_jones,Rhoda Jones,Person,accepted,1
+ch07_p013,7,Headquarters Duty,13,place_united_states,United States,Place,accepted,1
+ch07_p013,7,Headquarters Duty,13,place_washington,Washington,Place,unreviewed seed,1
+ch07_p014,7,Headquarters Duty,14,person_marion,Marion,Person,unreviewed seed,3
+ch07_p014,7,Headquarters Duty,14,place_arizona,Arizona,Place,unreviewed seed,1
+ch07_p014,7,Headquarters Duty,14,place_new_york,New York,Place,accepted,1
+ch07_p014,7,Headquarters Duty,14,place_soviet_union,Soviet Union,Place,accepted,2
+ch07_p015,7,Headquarters Duty,15,place_united_states,United States,Place,accepted,1
+ch07_p015,7,Headquarters Duty,15,place_utah,Utah,Place,unreviewed seed,1
+ch07_p015,7,Headquarters Duty,15,place_virginia,Virginia,Place,unreviewed seed,1
+ch07_p015,7,Headquarters Duty,15,place_washington,Washington,Place,unreviewed seed,1
+ch07_p016,7,Headquarters Duty,16,organization_place_soviet_embassy,Soviet Embassy,Organization/Place,accepted,1
+ch07_p016,7,Headquarters Duty,16,place_rio_de_janeiro,Rio De Janeiro,Place,unreviewed seed,2
+ch07_p016,7,Headquarters Duty,16,place_utah,Utah,Place,unreviewed seed,1
+ch08_p001,8,Rio De Janeiro,1,person_marion,Marion,Person,unreviewed seed,1
+ch08_p001,8,Rio De Janeiro,1,person_rhoda_jones,Rhoda Jones,Person,accepted,1
+ch08_p001,8,Rio De Janeiro,1,place_rio_de_janeiro,Rio De Janeiro,Place,unreviewed seed,3
+ch08_p001,8,Rio De Janeiro,1,place_washington,Washington,Place,unreviewed seed,2
+ch08_p002,8,Rio De Janeiro,2,person_julian_lowe,Julian Lowe,Person,accepted,1
+ch08_p003,8,Rio De Janeiro,3,organization_state_department,State Department,Organization,accepted,1
+ch08_p003,8,Rio De Janeiro,3,place_new_york,New York,Place,accepted,3
+ch08_p004,8,Rio De Janeiro,4,person_marion,Marion,Person,unreviewed seed,1
+ch08_p004,8,Rio De Janeiro,4,place_california,California,Place,unreviewed seed,1
+ch08_p004,8,Rio De Janeiro,4,place_rio_de_janeiro,Rio De Janeiro,Place,unreviewed seed,3
+ch08_p005,8,Rio De Janeiro,5,organization_sunday_school,Sunday School,Organization,candidate,1
+ch08_p005,8,Rio De Janeiro,5,person_marion,Marion,Person,unreviewed seed,1
+ch08_p006,8,Rio De Janeiro,6,place_rio_de_janeiro,Rio De Janeiro,Place,unreviewed seed,1
+ch08_p007,8,Rio De Janeiro,7,organization_place_soviet_embassy,Soviet Embassy,Organization/Place,accepted,1
+ch08_p007,8,Rio De Janeiro,7,person_marion,Marion,Person,unreviewed seed,2
+ch08_p007,8,Rio De Janeiro,7,place_rio_de_janeiro,Rio De Janeiro,Place,unreviewed seed,1
+ch08_p007,8,Rio De Janeiro,7,place_sao_paulo,Sao Paulo,Place,accepted,1
+ch08_p007,8,Rio De Janeiro,7,place_soviet_union,Soviet Union,Place,accepted,1
+ch08_p008,8,Rio De Janeiro,8,person_marion,Marion,Person,unreviewed seed,2
+ch08_p008,8,Rio De Janeiro,8,place_corpus_christi,Corpus Christi,Place,unreviewed seed,1
+ch08_p008,8,Rio De Janeiro,8,place_sao_paulo,Sao Paulo,Place,accepted,1
+ch08_p009,8,Rio De Janeiro,9,organization_foreign_service,Foreign Service,Organization,accepted,1
+ch08_p009,8,Rio De Janeiro,9,organization_place_soviet_embassy,Soviet Embassy,Organization/Place,accepted,1
+ch08_p009,8,Rio De Janeiro,9,person_richard,Richard,Person,unreviewed seed,1
+ch08_p009,8,Rio De Janeiro,9,place_montevideo,Montevideo,Place,unreviewed seed,4
+ch08_p010,8,Rio De Janeiro,10,person_marion,Marion,Person,unreviewed seed,1
+ch08_p010,8,Rio De Janeiro,10,person_richard,Richard,Person,unreviewed seed,1
+ch08_p011,8,Rio De Janeiro,11,person_marion,Marion,Person,unreviewed seed,3
+ch08_p011,8,Rio De Janeiro,11,person_martin,Martin,Person,unreviewed seed,1
+ch08_p012,8,Rio De Janeiro,12,organization_place_american_embassy,American Embassy,Organization/Place,accepted,1
+ch08_p012,8,Rio De Janeiro,12,place_rio_de_janeiro,Rio De Janeiro,Place,unreviewed seed,1
+ch08_p012,8,Rio De Janeiro,12,place_utah,Utah,Place,unreviewed seed,1
+ch08_p013,8,Rio De Janeiro,13,person_dottie_burton,Dottie Burton,Person,accepted,1
+ch08_p013,8,Rio De Janeiro,13,person_marion,Marion,Person,unreviewed seed,1
+ch08_p013,8,Rio De Janeiro,13,place_california,California,Place,unreviewed seed,1
+ch08_p013,8,Rio De Janeiro,13,place_utah,Utah,Place,unreviewed seed,4
+ch08_p013,8,Rio De Janeiro,13,place_vietnam,Vietnam,Place,unreviewed seed,1
+ch08_p013,8,Rio De Janeiro,13,place_virginia,Virginia,Place,unreviewed seed,1
+ch09_p001,9,The McLean Va. Years,1,organization_clandestine_services,Clandestine Services,Organization,accepted,1
+ch09_p001,9,The McLean Va. Years,1,place_rio_de_janeiro,Rio De Janeiro,Place,unreviewed seed,1
+ch09_p001,9,The McLean Va. Years,1,place_virginia,Virginia,Place,unreviewed seed,1
+ch09_p002,9,The McLean Va. Years,2,place_soviet_union,Soviet Union,Place,accepted,2
+ch09_p003,9,The McLean Va. Years,3,organization_sunday_school,Sunday School,Organization,candidate,1
+ch09_p004,9,The McLean Va. Years,4,event_vietnam_war,Vietnam War,Event,accepted,1
+ch09_p004,9,The McLean Va. Years,4,person_dwight_d_eisenhower,Dwight D. Eisenhower,Person,accepted,1
+ch09_p004,9,The McLean Va. Years,4,person_lyndon_johnson,Lyndon Johnson,Person,accepted,1
+ch09_p004,9,The McLean Va. Years,4,person_marion,Marion,Person,unreviewed seed,2
+ch09_p004,9,The McLean Va. Years,4,person_martin,Martin,Person,unreviewed seed,1
+ch09_p004,9,The McLean Va. Years,4,person_martin_luther_king,Martin Luther King,Person,accepted,1
+ch09_p004,9,The McLean Va. Years,4,person_richard,Richard,Person,unreviewed seed,1
+ch09_p004,9,The McLean Va. Years,4,person_richard_m_nixon,Richard M. Nixon,Person,accepted,1
+ch09_p004,9,The McLean Va. Years,4,place_los_angeles,Los Angeles,Place,accepted,1
+ch09_p004,9,The McLean Va. Years,4,place_sao_paulo,Sao Paulo,Place,accepted,1
+ch09_p004,9,The McLean Va. Years,4,place_united_states,United States,Place,accepted,2
+ch09_p004,9,The McLean Va. Years,4,place_utah,Utah,Place,unreviewed seed,1
+ch09_p004,9,The McLean Va. Years,4,place_vietnam,Vietnam,Place,unreviewed seed,2
+ch09_p004,9,The McLean Va. Years,4,place_washington,Washington,Place,unreviewed seed,1
+ch09_p005,9,The McLean Va. Years,5,person_marion,Marion,Person,unreviewed seed,2
+ch09_p005,9,The McLean Va. Years,5,place_new_york,New York,Place,accepted,2
+ch09_p005,9,The McLean Va. Years,5,place_new_york_city,New York City,Place,candidate,1
+ch09_p005,9,The McLean Va. Years,5,place_utah,Utah,Place,unreviewed seed,1
+ch10_p001,10,Making a Career Change,1,organization_clandestine_services,Clandestine Services,Organization,accepted,1
+ch10_p001,10,Making a Career Change,1,organization_personnel_management_staff,Personnel Management Staff,Organization,accepted,2
+ch10_p003,10,Making a Career Change,3,organization_foreign_service,Foreign Service,Organization,accepted,1
+ch10_p004,10,Making a Career Change,4,organization_foreign_service,Foreign Service,Organization,accepted,3
+ch10_p005,10,Making a Career Change,5,organization_clandestine_services,Clandestine Services,Organization,accepted,1
+ch10_p008,10,Making a Career Change,8,organization_foreign_service,Foreign Service,Organization,accepted,1
+ch11_p001,11,Post Rio to Retirement,1,organization_personnel_management_staff,Personnel Management Staff,Organization,accepted,1
+ch11_p002,11,Post Rio to Retirement,2,event_vietnam_war,Vietnam War,Event,accepted,1
+ch11_p002,11,Post Rio to Retirement,2,person_martin,Martin,Person,unreviewed seed,1
+ch11_p002,11,Post Rio to Retirement,2,person_martin_luther_king,Martin Luther King,Person,accepted,1
+ch11_p002,11,Post Rio to Retirement,2,person_richard,Richard,Person,unreviewed seed,1
+ch11_p002,11,Post Rio to Retirement,2,place_los_angeles,Los Angeles,Place,accepted,1
+ch11_p002,11,Post Rio to Retirement,2,place_rio_de_janeiro,Rio De Janeiro,Place,unreviewed seed,1
+ch11_p002,11,Post Rio to Retirement,2,place_united_states,United States,Place,accepted,2
+ch11_p002,11,Post Rio to Retirement,2,place_vietnam,Vietnam,Place,unreviewed seed,1
+ch11_p002,11,Post Rio to Retirement,2,place_virginia,Virginia,Place,unreviewed seed,1
+ch11_p002,11,Post Rio to Retirement,2,place_washington,Washington,Place,unreviewed seed,1
+ch11_p003,11,Post Rio to Retirement,3,organization_american_university,American University,Organization,accepted,1
+ch11_p003,11,Post Rio to Retirement,3,organization_first_presidency,First Presidency,Organization,candidate,1
+ch11_p003,11,Post Rio to Retirement,3,organization_personnel_management_staff,Personnel Management Staff,Organization,accepted,1
+ch11_p003,11,Post Rio to Retirement,3,person_julian_lowe,Julian Lowe,Person,accepted,1
+ch11_p003,11,Post Rio to Retirement,3,place_washington,Washington,Place,unreviewed seed,3
+ch11_p004,11,Post Rio to Retirement,4,place_hill_cumorah,Hill Cumorah,Place,candidate,1
+ch11_p005,11,Post Rio to Retirement,5,person_martin,Martin,Person,unreviewed seed,1
+ch11_p005,11,Post Rio to Retirement,5,place_utah,Utah,Place,unreviewed seed,1
+ch11_p005,11,Post Rio to Retirement,5,place_washington,Washington,Place,unreviewed seed,1
+ch11_p006,11,Post Rio to Retirement,6,place_california,California,Place,unreviewed seed,1
+ch11_p006,11,Post Rio to Retirement,6,place_washington,Washington,Place,unreviewed seed,1
+ch11_p007,11,Post Rio to Retirement,7,organization_place_alexandria_ward,Alexandria Ward,Organization/Place,accepted,1
+ch11_p007,11,Post Rio to Retirement,7,person_loverna,Loverna,Person,unreviewed seed,1
+ch11_p007,11,Post Rio to Retirement,7,person_wendell_thorne,Wendell Thorne,Person,accepted,1
+ch11_p007,11,Post Rio to Retirement,7,place_california,California,Place,unreviewed seed,1
+ch11_p007,11,Post Rio to Retirement,7,place_virginia,Virginia,Place,unreviewed seed,2
+ch11_p008,11,Post Rio to Retirement,8,person_howard_hunt,Howard Hunt,Person,accepted,2
+ch11_p008,11,Post Rio to Retirement,8,place_california,California,Place,unreviewed seed,1
+ch11_p008,11,Post Rio to Retirement,8,place_montevideo,Montevideo,Place,unreviewed seed,2
+ch11_p008,11,Post Rio to Retirement,8,place_washington,Washington,Place,unreviewed seed,2
+ch11_p009,11,Post Rio to Retirement,9,organization_place_arlington_ward,Arlington Ward,Organization/Place,accepted,1
+ch11_p009,11,Post Rio to Retirement,9,place_new_york,New York,Place,accepted,1
+ch11_p009,11,Post Rio to Retirement,9,place_washington,Washington,Place,unreviewed seed,1
+ch11_p010,11,Post Rio to Retirement,10,person_rhoda_jones,Rhoda Jones,Person,accepted,1
+ch11_p010,11,Post Rio to Retirement,10,place_arizona,Arizona,Place,unreviewed seed,1
+ch11_p010,11,Post Rio to Retirement,10,place_california,California,Place,unreviewed seed,1
+ch11_p010,11,Post Rio to Retirement,10,place_los_angeles,Los Angeles,Place,accepted,1
+ch11_p011,11,Post Rio to Retirement,11,organization_foreign_service,Foreign Service,Organization,accepted,1
+ch11_p012,11,Post Rio to Retirement,12,organization_sunday_school,Sunday School,Organization,candidate,4
+ch11_p012,11,Post Rio to Retirement,12,person_marion,Marion,Person,unreviewed seed,1
+ch11_p012,11,Post Rio to Retirement,12,place_utah,Utah,Place,unreviewed seed,1
+ch11_p012,11,Post Rio to Retirement,12,place_virginia,Virginia,Place,unreviewed seed,1
+ch11_p012,11,Post Rio to Retirement,12,place_washington,Washington,Place,unreviewed seed,1
+ch11_p013,11,Post Rio to Retirement,13,organization_place_alexandria_ward,Alexandria Ward,Organization/Place,accepted,1
+ch11_p014,11,Post Rio to Retirement,14,place_kansas_city,Kansas City,Place,accepted,1
+ch11_p014,11,Post Rio to Retirement,14,place_virginia,Virginia,Place,unreviewed seed,1
+ch11_p015,11,Post Rio to Retirement,15,person_marion,Marion,Person,unreviewed seed,3
+ch11_p015,11,Post Rio to Retirement,15,place_arizona,Arizona,Place,unreviewed seed,1
+ch11_p015,11,Post Rio to Retirement,15,place_washington,Washington,Place,unreviewed seed,1

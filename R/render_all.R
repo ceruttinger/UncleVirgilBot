@@ -31,3 +31,4 @@ source("R/11_clean_graph_tooltips.R")
 }
 
 message("Done.")
+source("R/12_build_passage_index.R")

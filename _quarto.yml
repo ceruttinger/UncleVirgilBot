@@ -33,6 +33,8 @@ website:
         text: Entities
       - href: graph.qmd
         text: Entity Graph
+      - href: passages.qmd
+        text: Passages
       - href: scans.qmd
         text: Scanned PDFs
       - href: search.qmd

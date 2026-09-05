@@ -1,0 +1,356 @@
+suppressPackageStartupMessages({
+  library(readr)
+  library(dplyr)
+  library(stringr)
+  library(purrr)
+  library(tidyr)
+  library(jsonlite)
+  library(tibble)
+})
+
+message("Building passage index bridge...")
+
+dir.create("data/processed", recursive = TRUE, showWarnings = FALSE)
+dir.create("data/public", recursive = TRUE, showWarnings = FALSE)
+
+normalize_text <- function(x) {
+  x <- ifelse(is.na(x), "", x)
+  x |>
+    str_replace_all("\r\n?", "\n") |>
+    str_replace_all("[ \t]+", " ") |>
+    str_replace_all("\n[ \t]+", "\n") |>
+    str_replace_all("[ \t]+\n", "\n") |>
+    str_squish()
+}
+
+normalize_for_match <- function(x) {
+  x <- ifelse(is.na(x), "", x)
+  x |>
+    str_to_lower() |>
+    str_replace_all("[\r\n]+", " ") |>
+    str_replace_all("[^a-z0-9]+", " ") |>
+    str_squish()
+}
+
+word_count <- function(x) {
+  x <- str_squish(ifelse(is.na(x), "", x))
+  ifelse(x == "", 0L, str_count(x, "\\S+"))
+}
+
+count_phrase <- function(text_norm, phrase_norm) {
+  if (is.na(text_norm) || is.na(phrase_norm) || phrase_norm == "") return(0L)
+  pattern <- paste0("\\b", phrase_norm, "\\b")
+  as.integer(str_count(text_norm, regex(pattern)))
+}
+
+first_existing <- function(paths) {
+  hit <- paths[file.exists(paths)]
+  if (length(hit) == 0) NA_character_ else hit[[1]]
+}
+
+read_chapter_corpus <- function() {
+  csv_candidates <- c(
+    "data/processed/chapters.csv",
+    "data/processed/corpus_chapters.csv",
+    "data/processed/chapter_text.csv",
+    "data/public/chapters.csv",
+    "data/public/corpus_chapters.csv"
+  )
+  json_candidates <- c(
+    "data/raw/corpus_raw_from_rds.json",
+    "data/raw/corpus_raw.json",
+    "data/public/chapters.json",
+    "data/public/corpus_chapters.json",
+    "corpus_data.json"
+  )
+
+  csv_path <- first_existing(csv_candidates)
+  if (!is.na(csv_path)) {
+    message("Using chapter source: ", csv_path)
+    chapters <- read_csv(csv_path, show_col_types = FALSE)
+  } else {
+    json_path <- first_existing(json_candidates)
+    if (is.na(json_path)) {
+      stop("Could not find a chapter corpus source. Expected one of: ",
+           paste(c(csv_candidates, json_candidates), collapse = ", "))
+    }
+    message("Using chapter source: ", json_path)
+    raw <- jsonlite::fromJSON(json_path, simplifyVector = TRUE)
+    if (is.data.frame(raw)) {
+      chapters <- as_tibble(raw)
+    } else if (is.list(raw)) {
+      chapters <- bind_rows(lapply(raw, as_tibble))
+    } else {
+      stop("Unsupported JSON corpus shape in ", json_path)
+    }
+  }
+
+  nms <- names(chapters)
+  text_col <- intersect(c("text", "chapter_text", "raw_text", "content", "body"), nms)[1]
+  if (is.na(text_col)) stop("No text column found in chapter source. Columns: ", paste(nms, collapse = ", "))
+
+  chapter_col <- intersect(c("chapter", "chapter_number", "_row", "row", "id"), nms)[1]
+  title_col <- intersect(c("chapter_title", "title", "name", "heading"), nms)[1]
+
+  out <- chapters |>
+    mutate(.row_number_for_bridge = row_number()) |>
+    transmute(
+      chapter = if (!is.na(chapter_col)) suppressWarnings(as.integer(.data[[chapter_col]])) else .row_number_for_bridge,
+      chapter_title = if (!is.na(title_col)) as.character(.data[[title_col]]) else paste("Chapter", chapter),
+      text = as.character(.data[[text_col]])
+    ) |>
+    mutate(
+      chapter = if_else(is.na(chapter), row_number(), chapter),
+      chapter_title = if_else(is.na(chapter_title) | chapter_title == "", paste("Chapter", chapter), chapter_title),
+      text = normalize_text(text)
+    ) |>
+    filter(
+      !is.na(text),
+      text != "",
+      !str_detect(str_to_lower(chapter_title), "^full text$|full memoir|entire memoir"),
+      chapter != 12
+    ) |>
+    arrange(chapter)
+
+  # If metadata has cleaner titles, use them.
+  meta_path <- "data/chapter_metadata.csv"
+  if (file.exists(meta_path)) {
+    meta <- read_csv(meta_path, show_col_types = FALSE)
+    if (all(c("chapter", "chapter_title") %in% names(meta))) {
+      out <- out |>
+        left_join(meta |> select(chapter, meta_chapter_title = chapter_title), by = "chapter") |>
+        mutate(chapter_title = coalesce(meta_chapter_title, chapter_title)) |>
+        select(-meta_chapter_title)
+    }
+  }
+
+  out
+}
+
+split_into_passages <- function(text, target_words = 230L, max_words = 340L) {
+  text <- text |>
+    str_replace_all("\r\n?", "\n") |>
+    str_replace_all("\n{3,}", "\n\n") |>
+    str_trim()
+
+  paragraphs <- str_split(text, "\n\s*\n", simplify = FALSE)[[1]] |>
+    str_squish()
+  paragraphs <- paragraphs[paragraphs != ""]
+
+  # OCR/RDS sources sometimes have weak paragraphing. Fall back to sentence-like units.
+  if (length(paragraphs) < 4) {
+    paragraphs <- str_split(text, "(?<=[.!?])\\s+(?=[A-Z0-9])", simplify = FALSE)[[1]] |>
+      str_squish()
+    paragraphs <- paragraphs[paragraphs != ""]
+  }
+
+  chunks <- character(0)
+  current <- character(0)
+  current_words <- 0L
+
+  flush_current <- function() {
+    str_squish(paste(current, collapse = "\n\n"))
+  }
+
+  for (p in paragraphs) {
+    wc <- word_count(p)
+
+    # Very long OCR paragraph: split by sentence-like boundaries into smaller pieces.
+    if (wc > max_words) {
+      sentences <- str_split(p, "(?<=[.!?;:])\\s+(?=[A-Z0-9])", simplify = FALSE)[[1]] |>
+        str_squish()
+      sentences <- sentences[sentences != ""]
+      if (length(sentences) <= 1) {
+        words <- str_split(p, "\\s+", simplify = FALSE)[[1]]
+        sentences <- split(words, ceiling(seq_along(words) / target_words)) |>
+          map_chr(~ paste(.x, collapse = " "))
+      }
+      for (s in sentences) {
+        swc <- word_count(s)
+        if (current_words > 0 && current_words + swc > max_words) {
+          chunks <- c(chunks, flush_current())
+          current <- character(0)
+          current_words <- 0L
+        }
+        current <- c(current, s)
+        current_words <- current_words + swc
+        if (current_words >= target_words) {
+          chunks <- c(chunks, flush_current())
+          current <- character(0)
+          current_words <- 0L
+        }
+      }
+      next
+    }
+
+    if (current_words > 0 && current_words + wc > max_words) {
+      chunks <- c(chunks, flush_current())
+      current <- character(0)
+      current_words <- 0L
+    }
+
+    current <- c(current, p)
+    current_words <- current_words + wc
+
+    if (current_words >= target_words) {
+      chunks <- c(chunks, flush_current())
+      current <- character(0)
+      current_words <- 0L
+    }
+  }
+
+  if (current_words > 0) chunks <- c(chunks, flush_current())
+  chunks[chunks != ""]
+}
+
+chapters <- read_chapter_corpus()
+
+if (nrow(chapters) == 0) stop("No narrative chapters found for passage indexing.")
+
+passages <- chapters |>
+  mutate(passages = map(text, split_into_passages)) |>
+  select(chapter, chapter_title, passages) |>
+  unnest_longer(passages, values_to = "text") |>
+  group_by(chapter) |>
+  mutate(passage_number = row_number()) |>
+  ungroup() |>
+  mutate(
+    passage_id = sprintf("ch%02d_p%03d", as.integer(chapter), as.integer(passage_number)),
+    text = normalize_text(text),
+    word_count = word_count(text),
+    char_count = nchar(text),
+    year_candidates = map_chr(
+      str_extract_all(text, "\\b(18[0-9]{2}|19[0-9]{2}|20[0-9]{2})\\b"),
+      ~ paste(unique(.x), collapse = "; ")
+    ),
+    text_norm = normalize_for_match(text)
+  ) |>
+  select(passage_id, chapter, chapter_title, passage_number, text, word_count, char_count, year_candidates, text_norm)
+
+registry_path <- first_existing(c("data/processed/entity_registry.csv", "data/public/entity_registry.csv"))
+
+if (!is.na(registry_path)) {
+  registry <- read_csv(registry_path, show_col_types = FALSE) |>
+    filter(!is.na(canonical_entity), canonical_entity != "") |>
+    filter(entity_type != "Date") |>
+    mutate(
+      canonical_entity = as.character(canonical_entity),
+      entity_type = as.character(entity_type),
+      review_status = if_else(is.na(review_status) | review_status == "", "unreviewed seed", review_status),
+      entity_norm = normalize_for_match(canonical_entity)
+    ) |>
+    filter(entity_norm != "") |>
+    distinct(entity_id, canonical_entity, entity_type, review_status, entity_norm, .keep_all = TRUE)
+
+  if (nrow(registry) > 0) {
+    passage_entity_mentions <- crossing(
+      passages |> select(passage_id, chapter, chapter_title, passage_number, text_norm),
+      registry |> select(entity_id, canonical_entity, entity_type, review_status, entity_norm)
+    ) |>
+      mutate(mention_count = map2_int(text_norm, entity_norm, count_phrase)) |>
+      filter(mention_count > 0) |>
+      arrange(chapter, passage_number, entity_type, canonical_entity) |>
+      select(passage_id, chapter, chapter_title, passage_number,
+             entity_id, canonical_entity, entity_type, review_status, mention_count)
+  } else {
+    passage_entity_mentions <- tibble(
+      passage_id = character(), chapter = integer(), chapter_title = character(), passage_number = integer(),
+      entity_id = character(), canonical_entity = character(), entity_type = character(),
+      review_status = character(), mention_count = integer()
+    )
+  }
+} else {
+  warning("No entity_registry.csv found. Passage index will be built without entity links.")
+  passage_entity_mentions <- tibble(
+    passage_id = character(), chapter = integer(), chapter_title = character(), passage_number = integer(),
+    entity_id = character(), canonical_entity = character(), entity_type = character(),
+    review_status = character(), mention_count = integer()
+  )
+}
+
+entity_rollup <- passage_entity_mentions |>
+  group_by(passage_id) |>
+  summarise(
+    entities_mentioned = paste(unique(canonical_entity), collapse = "; "),
+    people = paste(unique(canonical_entity[entity_type == "Person"]), collapse = "; "),
+    places = paste(unique(canonical_entity[entity_type == "Place"]), collapse = "; "),
+    organizations = paste(unique(canonical_entity[entity_type %in% c("Organization", "Organization/Place")]), collapse = "; "),
+    events = paste(unique(canonical_entity[entity_type == "Event"]), collapse = "; "),
+    entity_count = n_distinct(entity_id),
+    entity_mentions = sum(mention_count),
+    .groups = "drop"
+  )
+
+pdf_map <- tibble(chapter = integer(), source_pdf = character())
+pdf_manifest_path <- first_existing(c("data/public/pdf_manifest.csv", "data/processed/pdf_manifest.csv"))
+if (!is.na(pdf_manifest_path)) {
+  pdf_manifest <- read_csv(pdf_manifest_path, show_col_types = FALSE)
+  if ("chapter" %in% names(pdf_manifest)) {
+    pdf_col <- intersect(c("file", "path", "pdf", "pdf_path", "href", "url", "source_pdf"), names(pdf_manifest))[1]
+    if (!is.na(pdf_col)) {
+      pdf_map <- pdf_manifest |>
+        transmute(chapter = suppressWarnings(as.integer(chapter)), source_pdf = as.character(.data[[pdf_col]])) |>
+        filter(!is.na(chapter)) |>
+        distinct(chapter, .keep_all = TRUE)
+    }
+  }
+}
+
+passage_index <- passages |>
+  select(-text_norm) |>
+  left_join(entity_rollup, by = "passage_id") |>
+  left_join(pdf_map, by = "chapter") |>
+  mutate(
+    across(c(entities_mentioned, people, places, organizations, events, source_pdf), ~ coalesce(.x, "")),
+    entity_count = coalesce(entity_count, 0L),
+    entity_mentions = coalesce(entity_mentions, 0L),
+    source_label = paste0("Chapter ", chapter, ", passage ", passage_number),
+    citation_label = paste0("Ch. ", chapter, ": ", chapter_title, ", passage ", passage_number)
+  ) |>
+  select(
+    passage_id, chapter, chapter_title, passage_number,
+    source_label, citation_label,
+    word_count, char_count, year_candidates,
+    entity_count, entity_mentions,
+    entities_mentioned, people, places, organizations, events,
+    source_pdf, text
+  ) |>
+  arrange(chapter, passage_number)
+
+passage_summary <- passage_index |>
+  group_by(chapter, chapter_title) |>
+  summarise(
+    passage_count = n(),
+    total_words = sum(word_count, na.rm = TRUE),
+    passages_with_entities = sum(entity_count > 0, na.rm = TRUE),
+    avg_entities_per_passage = round(mean(entity_count, na.rm = TRUE), 2),
+    top_entities = passage_entity_mentions |>
+      filter(chapter == cur_group()$chapter) |>
+      group_by(canonical_entity) |>
+      summarise(n = sum(mention_count), .groups = "drop") |>
+      arrange(desc(n), canonical_entity) |>
+      slice_head(n = 8) |>
+      pull(canonical_entity) |>
+      paste(collapse = "; "),
+    .groups = "drop"
+  ) |>
+  arrange(chapter)
+
+write_csv(passage_index, "data/processed/passage_index.csv")
+write_csv(passage_entity_mentions, "data/processed/passage_entity_mentions.csv")
+write_csv(passage_summary, "data/processed/passage_summary.csv")
+write_csv(passage_index, "data/public/passage_index.csv")
+write_csv(passage_entity_mentions, "data/public/passage_entity_mentions.csv")
+write_csv(passage_summary, "data/public/passage_summary.csv")
+
+write_json(passage_index, "data/public/passage_index.json", pretty = TRUE, auto_unbox = TRUE, na = "null")
+write_json(passage_entity_mentions, "data/public/passage_entity_mentions.json", pretty = TRUE, auto_unbox = TRUE, na = "null")
+write_json(passage_summary, "data/public/passage_summary.json", pretty = TRUE, auto_unbox = TRUE, na = "null")
+
+message("Wrote passage bridge outputs:")
+message("- data/public/passage_index.csv")
+message("- data/public/passage_index.json")
+message("- data/public/passage_entity_mentions.csv")
+message("- data/public/passage_summary.csv")
+message("Passage count: ", nrow(passage_index))
+message("Passage/entity links: ", nrow(passage_entity_mentions))

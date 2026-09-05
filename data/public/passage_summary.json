@@ -1,0 +1,101 @@
+[
+  {
+    "chapter": 1,
+    "chapter_title": "Earliest Memories",
+    "passage_count": 15,
+    "total_words": 3695,
+    "passages_with_entities": 15,
+    "avg_entities_per_passage": 6.27,
+    "top_entities": "Idaho; Richard; Arizona; Idaho Falls; Mesa; Ila Rose; Martin; Salmon"
+  },
+  {
+    "chapter": 2,
+    "chapter_title": "The Teenage Period",
+    "passage_count": 16,
+    "total_words": 3896,
+    "passages_with_entities": 16,
+    "avg_entities_per_passage": 4.88,
+    "top_entities": "Idaho; Idaho Falls; Loverna; California; Japan; Pomona; Salt Lake City; Jack Kelley"
+  },
+  {
+    "chapter": 3,
+    "chapter_title": "World War Two",
+    "passage_count": 12,
+    "total_words": 2760,
+    "passages_with_entities": 12,
+    "avg_entities_per_passage": 5.17,
+    "top_entities": "Boston; Bremerton; Idaho; Pearl Harbor; Providence; Utah; Washington; Corpus Christi"
+  },
+  {
+    "chapter": 4,
+    "chapter_title": "My College Years BYU and Colombia",
+    "passage_count": 18,
+    "total_words": 4368,
+    "passages_with_entities": 18,
+    "avg_entities_per_passage": 4.44,
+    "top_entities": "Marion; New York; Idaho; Idaho Falls; Columbia University; Utah; New York City; Salt Lake City"
+  },
+  {
+    "chapter": 5,
+    "chapter_title": "The CIA",
+    "passage_count": 27,
+    "total_words": 6498,
+    "passages_with_entities": 23,
+    "avg_entities_per_passage": 2.89,
+    "top_entities": "Marion; Soviet Union; Washington; Virginia; World War II; Air Force; California; Idaho"
+  },
+  {
+    "chapter": 6,
+    "chapter_title": "Montevideo Uruguay",
+    "passage_count": 16,
+    "total_words": 3963,
+    "passages_with_entities": 15,
+    "avg_entities_per_passage": 3.25,
+    "top_entities": "Uruguay; Montevideo; Marion; Washington; New York; Soviet Union; United States; Utah"
+  },
+  {
+    "chapter": 7,
+    "chapter_title": "Headquarters Duty",
+    "passage_count": 16,
+    "total_words": 3974,
+    "passages_with_entities": 15,
+    "avg_entities_per_passage": 3.12,
+    "top_entities": "Marion; Soviet Union; United States; Uruguay; Utah; Washington; Falls Church; Virginia"
+  },
+  {
+    "chapter": 8,
+    "chapter_title": "Rio De Janeiro",
+    "passage_count": 13,
+    "total_words": 3157,
+    "passages_with_entities": 13,
+    "avg_entities_per_passage": 2.92,
+    "top_entities": "Marion; Rio De Janeiro; Utah; Montevideo; New York; California; Richard; Sao Paulo"
+  },
+  {
+    "chapter": 9,
+    "chapter_title": "The McLean Va. Years",
+    "passage_count": 5,
+    "total_words": 1321,
+    "passages_with_entities": 5,
+    "avg_entities_per_passage": 4.6,
+    "top_entities": "Marion; New York; Soviet Union; United States; Utah; Vietnam; Clandestine Services; Dwight D. Eisenhower"
+  },
+  {
+    "chapter": 10,
+    "chapter_title": "Making a Career Change",
+    "passage_count": 11,
+    "total_words": 2726,
+    "passages_with_entities": 5,
+    "avg_entities_per_passage": 0.55,
+    "top_entities": "Foreign Service; Clandestine Services; Personnel Management Staff"
+  },
+  {
+    "chapter": 11,
+    "chapter_title": "Post Rio to Retirement",
+    "passage_count": 15,
+    "total_words": 3580,
+    "passages_with_entities": 15,
+    "avg_entities_per_passage": 3.33,
+    "top_entities": "Washington; Virginia; California; Marion; Sunday School; Alexandria Ward; Arizona; Howard Hunt"
+  }
+]
