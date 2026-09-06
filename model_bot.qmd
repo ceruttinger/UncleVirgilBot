@@ -1,0 +1,65 @@
+---
+title: "Ask Uncle Virgil"
+page-layout: full
+toc: false
+---
+
+```{=html}
+<link rel="stylesheet" href="assets/css/model_bot.css">
+
+<section class="uv-model-shell">
+  <header class="uv-model-header">
+    <div class="uv-model-note" role="note">
+      <p>This page sends a question to the AWS Lambda model bridge. The backend retrieves relevant memoir passages from S3, sends them to Bedrock, and returns an answer with source labels.</p>
+    </div>
+  </header>
+
+  <section class="uv-model-card" aria-labelledby="uv-model-title">
+    <h2 id="uv-model-title">Ask Uncle Virgil Bot</h2>
+    <p class="uv-model-help">Ask a question or choose a starter prompt. The model should answer from retrieved memoir passages and list the source passages underneath.</p>
+
+    <div class="uv-model-search-row">
+      <input
+        id="uv-model-question"
+        class="uv-model-input"
+        type="text"
+        value="What does Virgil say about the CIA and Soviet Union?"
+        aria-label="Question for Uncle Virgil Bot"
+      />
+      <button id="uv-model-ask" class="uv-model-primary" type="button">Ask model</button>
+    </div>
+
+    <div class="uv-model-examples" aria-label="Example model questions">
+      <button type="button" class="uv-model-example" data-query="What does Virgil say about the CIA and Soviet Union?">CIA / Soviet Union</button>
+      <button type="button" class="uv-model-example" data-query="What does the memoir say about Marion?">Marion</button>
+      <button type="button" class="uv-model-example" data-query="What does the memoir say about Idaho Falls?">Idaho Falls</button>
+      <button type="button" class="uv-model-example" data-query="What does Virgil say about World War II?">World War II</button>
+      <button type="button" class="uv-model-example" data-query="What does the memoir say about Rio De Janeiro?">Rio De Janeiro</button>
+    </div>
+
+    <div id="uv-model-status" class="uv-model-status">Ready. Ask a question.</div>
+  </section>
+
+  <section class="uv-model-answer-card" aria-labelledby="uv-model-answer-title">
+    <h2 id="uv-model-answer-title">Model answer</h2>
+    <div id="uv-model-answer" class="uv-model-answer">No answer yet.</div>
+  </section>
+
+  <section class="uv-model-sources-card" aria-labelledby="uv-model-sources-title">
+    <h2 id="uv-model-sources-title">Retrieved sources</h2>
+    <div id="uv-model-sources" class="uv-model-sources">
+      <p class="uv-model-muted">Sources will appear here after the model responds.</p>
+    </div>
+  </section>
+
+  <section class="uv-model-explain">
+    <h2>How to read this page</h2>
+    <p>This is the experimental model-backed version. The stable browser-only retrieval page remains available on the main Chatbot tab. If this page fails, the likely causes are Lambda CORS, Bedrock model access, or the Lambda environment variables.</p>
+  </section>
+</section>
+
+<script>
+window.UNCLE_VIRGIL_MODEL_ENDPOINT = "https://55shc77ehmicnhxmj7trwxk5jq0qhgaj.lambda-url.us-east-2.on.aws/";
+</script>
+<script src="assets/js/aws_model_bot.js"></script>
+```

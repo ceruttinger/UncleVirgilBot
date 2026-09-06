@@ -3565,3 +3565,47 @@ body .uvbot-instructions {
   }
 }
 /* === Uncle Virgil Bot v9 layout end === */
+
+@import url("model_bot.css");
+
+/* Final public-page layout helpers */
+.uv-project-hero {
+  max-width: 1120px;
+  margin: 0 auto 2rem auto;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid #c8d8ef;
+  border-radius: 14px;
+  background: #f8fbff;
+}
+
+.uv-component-grid {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.uv-component-card {
+  border: 1px solid #c8d8ef;
+  border-radius: 14px;
+  padding: 1.25rem;
+  background: #fff;
+}
+
+.uv-component-card h3 {
+  margin-top: 0;
+}
+
+.uv-component-card .btn {
+  margin-right: .5rem;
+  margin-top: .25rem;
+}
+
+/* Emotion page polish */
+.quarto-title-block .title, h1, h2 {
+  letter-spacing: -0.02em;
+}
+.emotion-note {
+  margin: 1rem 0;
+}

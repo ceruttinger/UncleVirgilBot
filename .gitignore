@@ -53,3 +53,9 @@ data/raw_scans/
 # Local patch backups
 .patch_backups/
 *.bak*
+
+# Local patch backups
+.patch_backups/
+*.bak
+*.bak.*
+*.bak_*

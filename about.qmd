@@ -1,24 +1,79 @@
 ---
-title: "About the Project"
+title: "About this Project"
+toc: true
+execute:
+  echo: false
+  warning: false
+  message: false
 ---
 
-The original Uncle Virgil project was an R/Shiny biography text-analysis app. This rebuild keeps the digital humanities purpose but moves the public-facing site to Quarto.
+## Project overview
 
-## Source pipeline
+**Uncle Virgil Bot** is a digital humanities project built around a memoir written by **Virgil Harris**, my grandfather's brother. The memoir has been converted into a structured text corpus so it can be explored through reading, search, textual analysis, named entities, graphs, and a model-backed question-answering prototype.
 
-The legacy workflow used:
+This project treats the memoir as both a family-history document and a research corpus. The site preserves access to the source scans while also creating derived data products that make the memoir easier to analyze.
 
-```text
-PDF scans -> PNG page images -> Tesseract OCR -> RDS text files -> combined corpus -> sentiment/word cloud outputs -> corpus_data.json
-```
+## What the site includes
 
-The new workflow starts from `corpus_data.json`, creates chapter-level datasets, and renders static analysis pages.
+### Memoir text and scanned source material
 
-## What comes next
+The chapter pages provide readable text derived from the OCR/RDS source files. The scanned PDFs remain available so readers can compare the extracted text against the original pages.
 
-1. Review chapter boundaries and dates.
-2. Improve OCR cleanup without destroying historical wording.
-3. Add named entities: people, places, organizations, dates.
-4. Add topic modeling and chapter similarity.
-5. Add AWS backend retrieval.
-6. Add model-generated answers with citations back to chapters and passages.
+### Timeline
+
+The timeline uses curated chapter-level date ranges along with detected year candidates from the text. This helps separate a chapter's main life period from historical references, later reflections, and background dates.
+
+### Sentiment analysis
+
+The sentiment layer shows overall positive/negative tone by chapter and sentiment shifts within each chapter. It is useful for seeing where the memoir becomes more reflective, difficult, affectionate, institutional, or event-driven.
+
+### Emotion analysis
+
+The emotion layer uses lexicon-based categories such as anger, anticipation, disgust, fear, joy, sadness, surprise, trust, positive, and negative. These should be read as exploratory signals rather than psychological claims. They show where certain kinds of emotionally coded language cluster in the memoir.
+
+### Named entities
+
+The entity layer identifies recurring people, places, organizations, dates, and events. This makes it easier to follow major figures, family members, geographic movement, institutional settings, and historical references across chapters.
+
+### Entity graph
+
+The entity graph turns the memoir into a network. Chapters connect to the people, places, organizations, events, and dates they mention. This makes it possible to explore questions like:
+
+- Which chapters share the same people or places?
+- Where do family, military, church, education, and government work overlap?
+- Which entities anchor different life stages?
+- Which historical contexts appear across multiple chapters?
+
+The graph is not meant to be a final scholarly interpretation. It is a navigation and discovery tool.
+
+### Passage index
+
+The passage index breaks the memoir into smaller citation-ready units. Each passage has a chapter, passage number, source label, detected years, and linked entities. This provides the retrieval layer for search and model-backed answers.
+
+### Ask Uncle Virgil
+
+The model-backed prototype retrieves relevant passages and sends them to an AWS-hosted model. The model then produces an answer grounded in the retrieved passages and lists the source labels underneath. This keeps the AI layer connected to the memoir rather than letting it answer from general knowledge alone.
+
+## How to interpret the analysis
+
+The analysis pages are exploratory. OCR artifacts, spelling variation, historical language, and the limits of lexicon-based methods can affect the results. The strongest use of the site is comparative: reading across chapters, checking source passages, and using the graph and passage tools to discover patterns worth closer human interpretation.
+
+## Technical approach
+
+The project is built as a static Quarto website with generated data files. The source text is processed into chapters, passages, sentiment tables, emotion tables, entity registries, graph nodes and edges, and search indexes. The static pages run on GitHub Pages. The experimental model-backed page uses an AWS Lambda endpoint, S3-hosted passage data, and Amazon Bedrock.
+
+## Project author and contact
+
+This project was designed and developed by **Clark Ruttinger** as a digital humanities exercise in corpus analysis, memoir exploration, and AI-assisted historical interpretation.
+
+For more information about the designer and author of this project, including professional background, other analytics projects, and contact information, please visit:
+
+[clarkruttinger.info](https://clarkruttinger.info)
+
+## Support this project
+
+This site uses a small AWS-backed model service for the Ask Uncle Virgil feature. If you find the project useful or want to support its continued operation, you can send support through Venmo.
+
+**Venmo:** [@Clark-Ruttinger](https://venmo.com/u/Clark-Ruttinger)
+
+![](assets/img/venmo-qr.png){fig-alt="Venmo QR code for Clark Ruttinger" width=260}

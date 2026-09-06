@@ -26,41 +26,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -108,7 +73,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<meta name="robots" content="noindex, nofollow">
 <link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
 <script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
@@ -150,24 +114,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Chapters</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./timeline.html"> 
+<span class="menu-text">Timeline</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./sentiment.html"> 
 <span class="menu-text">Sentiment</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./emotions.html"> 
 <span class="menu-text">Emotions</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./wordclouds.html"> 
-<span class="menu-text">Word Clouds</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./timeline.html"> 
-<span class="menu-text">Timeline</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./corpus_review.html"> 
-<span class="menu-text">Corpus QA</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./entities.html"> 
@@ -190,16 +146,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Search</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./chatbot.html"> 
-<span class="menu-text">Chatbot</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./next_steps.html"> 
-<span class="menu-text">Next Steps</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./aws_pipeline.html"> 
-<span class="menu-text">AWS Pipeline</span></a>
+    <a class="nav-link" href="./model_bot.html"> 
+<span class="menu-text">Ask Uncle Virgil</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
@@ -230,7 +178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Chapters</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<h1 class="title">Chapters</h1>
 </div>
 
 
@@ -250,8 +198,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This table is the first version of the chapter metadata layer. The year ranges are initial estimates and should be reviewed against the memoir before final timeline claims.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-a73b569d19a0d010e1b2" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-a73b569d19a0d010e1b2">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12"],[1,2,3,4,5,6,7,8,9,10,11,12],["Earliest Memories","The Teenage Period","World War Two","My College Years BYU and Colombia","The CIA","Montevideo Uruguay","Headquarters Duty","Rio De Janeiro","The McLean Va. Years","Making a Career Change","Post Rio to Retirement","Full Text"],[1922,1935,1942,1946,1951,1955,1960,1965,1968,1968,1968,null],[1934,1942,1945,1952,1958,1959,1964,1968,1970,1973,1975,null],["Childhood and early adolescence","Teenage years, early work, first marriage","Military service","College, remarriage, church service, early family formation","Early intelligence career","Foreign service assignment","Headquarters and family life","Foreign service assignment","Family and career in Virginia","Personnel management career transition","Later career and retirement transition","Reference view"],["Idaho Falls, ID; Mesa, AZ; Pomona, CA","Idaho Falls, ID; Pomona, CA; Salt Lake City, UT","U.S. Navy; Treasure Island; Logan; Corpus Christi; Quonset Point; USS Wasp; Pacific theater","Idaho Falls, ID; Provo, UT; BYU; Colombia","Washington, DC area; Munich; Europe; CIA assignments","Montevideo, Uruguay; Paraguay; Brazil/Argentina border region","Washington, DC area; Virginia; Utah/California home leave","Rio de Janeiro, Brazil","McLean, VA; Washington, DC area","Washington, DC area; CIA personnel management staff","Washington, DC area; Virginia; later family/travel locations","All locations"],[3592,3811,2732,4315,6482,3946,3938,3136,1313,2694,3532,39491],["medium","medium","high","medium","low","low","low","low","medium","medium","low","not_applicable"],["Approximate. Begins with family history, Idaho Falls, Mesa, father death, Depression-era childhood, and early school years. Dates need manual review against scans.","Approximate. Covers church youth roles, work, high school, Pomona, Salt Lake City, Western Electric, Pearl Harbor, Joyce, and enlistment.","Approximate. Covers Navy electronics/radar training, USS Wasp, Pacific engagements, ship damage, end of war, and discharge.","Approximate. Needs review after fuller chapter pass; title comes from old app/corpus heading.","Approximate. Needs review after entity/timeline extraction. Includes early CIA period and field operations context.","Approximate. Corpus heading includes Montevideo Uruguay; text includes return-to-headquarters material near boundary, so boundaries need review.","Approximate. Needs review after detailed timeline extraction.","Approximate. Corpus heading has OCR variation around chapter eight/Rio de Janeiro.","Approximate. Old UI says Mclean Va. Years; OCR heading has McLean variation.","Approximate. Text explicitly frames this as a major career change and personnel management period.","Approximate. Needs review; final chapter appears to cover later career, family events, and retirement.","Derived full-text reference, not a narrative chapter. Exclude from timeline and chapter-level comparisons unless explicitly needed."]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>chapter<\/th>\n      <th>chapter_title<\/th>\n      <th>approx_start_year<\/th>\n      <th>approx_end_year<\/th>\n      <th>life_stage<\/th>\n      <th>primary_locations<\/th>\n      <th>word_count<\/th>\n      <th>date_confidence<\/th>\n      <th>notes<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":12,"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,3,4,7]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"chapter","targets":1},{"name":"chapter_title","targets":2},{"name":"approx_start_year","targets":3},{"name":"approx_end_year","targets":4},{"name":"life_stage","targets":5},{"name":"primary_locations","targets":6},{"name":"word_count","targets":7},{"name":"date_confidence","targets":8},{"name":"notes","targets":9}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,12,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-c351989b996f2b02deeb" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-c351989b996f2b02deeb">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12"],[1,2,3,4,5,6,7,8,9,10,11,12],["Earliest Memories","The Teenage Period","World War Two","My College Years BYU and Colombia","The CIA","Montevideo Uruguay","Headquarters Duty","Rio De Janeiro","The McLean Va. Years","Making a Career Change","Post Rio to Retirement","Full Text"],[1922,1935,1942,1946,1951,1955,1960,1965,1968,1968,1968,null],[1934,1942,1945,1952,1958,1959,1964,1968,1970,1973,1975,null],["Childhood and early adolescence","Teenage years, early work, first marriage","Military service","College, remarriage, church service, early family formation","Early intelligence career","Foreign service assignment","Headquarters and family life","Foreign service assignment","Family and career in Virginia","Personnel management career transition","Later career and retirement transition","Reference view"],["Idaho Falls, ID; Mesa, AZ; Pomona, CA","Idaho Falls, ID; Pomona, CA; Salt Lake City, UT","U.S. Navy; Treasure Island; Logan; Corpus Christi; Quonset Point; USS Wasp; Pacific theater","Idaho Falls, ID; Provo, UT; BYU; Colombia","Washington, DC area; Munich; Europe; CIA assignments","Montevideo, Uruguay; Paraguay; Brazil/Argentina border region","Washington, DC area; Virginia; Utah/California home leave","Rio de Janeiro, Brazil","McLean, VA; Washington, DC area","Washington, DC area; CIA personnel management staff","Washington, DC area; Virginia; later family/travel locations","All locations"],[3592,3811,2732,4315,6482,3946,3938,3136,1313,2694,3532,39491],["medium","medium","high","medium","low","low","low","low","medium","medium","low","not_applicable"],["Approximate. Begins with family history, Idaho Falls, Mesa, father death, Depression-era childhood, and early school years. Dates need manual review against scans.","Approximate. Covers church youth roles, work, high school, Pomona, Salt Lake City, Western Electric, Pearl Harbor, Joyce, and enlistment.","Approximate. Covers Navy electronics/radar training, USS Wasp, Pacific engagements, ship damage, end of war, and discharge.","Approximate. Needs review after fuller chapter pass; title comes from old app/corpus heading.","Approximate. Needs review after entity/timeline extraction. Includes early CIA period and field operations context.","Approximate. Corpus heading includes Montevideo Uruguay; text includes return-to-headquarters material near boundary, so boundaries need review.","Approximate. Needs review after detailed timeline extraction.","Approximate. Corpus heading has OCR variation around chapter eight/Rio de Janeiro.","Approximate. Old UI says Mclean Va. Years; OCR heading has McLean variation.","Approximate. Text explicitly frames this as a major career change and personnel management period.","Approximate. Needs review; final chapter appears to cover later career, family events, and retirement.","Derived full-text reference, not a narrative chapter. Exclude from timeline and chapter-level comparisons unless explicitly needed."]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>chapter<\/th>\n      <th>chapter_title<\/th>\n      <th>approx_start_year<\/th>\n      <th>approx_end_year<\/th>\n      <th>life_stage<\/th>\n      <th>primary_locations<\/th>\n      <th>word_count<\/th>\n      <th>date_confidence<\/th>\n      <th>notes<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":12,"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,3,4,7]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"chapter","targets":1},{"name":"chapter_title","targets":2},{"name":"approx_start_year","targets":3},{"name":"approx_end_year","targets":4},{"name":"life_stage","targets":5},{"name":"primary_locations","targets":6},{"name":"word_count","targets":7},{"name":"date_confidence","targets":8},{"name":"notes","targets":9}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,12,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <section id="chapter-files" class="level2">
@@ -262,8 +210,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 data/processed/chapters/chapter_11.md</code></pre>
 <p>Chapter 12 is a full-text reference and is excluded from timeline charts by default.</p>
 
-
-<!-- -->
 
 </section>
 
@@ -339,60 +285,9 @@ data/processed/chapters/chapter_11.md</code></pre>
       });
       clipboardModal.on('success', onCopySuccess);
     }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
-        for (let i=0; i<cellDetails.length; i++) {
-          const details = cellDetails[i];
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
-    }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/ceruttinger\.github\.io\/UncleVirgilBot\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -718,59 +613,8 @@ data/processed/chapters/chapter_11.md</code></pre>
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Chapters"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: chapters-load</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>metadata <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/chapter_metadata.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>stats <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/processed/chapter_stats.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>chapter_table <span class="ot">&lt;-</span> metadata <span class="sc">%&gt;%</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(stats <span class="sc">%&gt;%</span> <span class="fu">select</span>(chapter, word_count, char_count), <span class="at">by =</span> <span class="st">"chapter"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(chapter, chapter_title, approx_start_year, approx_end_year, life_stage,</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>         primary_locations, word_count, date_confidence, notes)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>This table is the first version of the chapter metadata layer. The year ranges are initial estimates and should be reviewed against the memoir before final timeline claims.</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(chapter_table, <span class="at">options =</span> <span class="fu">list</span>(<span class="at">pageLength =</span> <span class="dv">12</span>, <span class="at">scrollX =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Chapter files</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>The chapter-split text files are generated into:</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="in">data/processed/chapters/chapter_01.md</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="in">...</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="in">data/processed/chapters/chapter_11.md</span></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>Chapter 12 is a full-text reference and is excluded from timeline charts by default.</span>
-</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
-</div></div></div></div></div>
+  </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>Uncle Virgil memoir analysis project</p>
-</div>   
-    <div class="nav-footer-center">
-      &nbsp;
-    </div>
-    <div class="nav-footer-right">
-<p>Built with Quarto</p>
-</div>
-  </div>
-</footer>
 
 
 

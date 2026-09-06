@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About the Project – Uncle Virgil Bot</title>
+<title>About this Project – Uncle Virgil Bot</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,41 +25,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -108,7 +73,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<meta name="robots" content="noindex, nofollow">
 
 
 <link rel="stylesheet" href="assets/css/styles.css">
@@ -140,24 +104,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Chapters</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./timeline.html"> 
+<span class="menu-text">Timeline</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./sentiment.html"> 
 <span class="menu-text">Sentiment</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./emotions.html"> 
 <span class="menu-text">Emotions</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./wordclouds.html"> 
-<span class="menu-text">Word Clouds</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./timeline.html"> 
-<span class="menu-text">Timeline</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./corpus_review.html"> 
-<span class="menu-text">Corpus QA</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./entities.html"> 
@@ -180,16 +136,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Search</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./chatbot.html"> 
-<span class="menu-text">Chatbot</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./next_steps.html"> 
-<span class="menu-text">Next Steps</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./aws_pipeline.html"> 
-<span class="menu-text">AWS Pipeline</span></a>
+    <a class="nav-link" href="./model_bot.html"> 
+<span class="menu-text">Ask Uncle Virgil</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./about.html" aria-current="page"> 
@@ -211,8 +159,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#source-pipeline" id="toc-source-pipeline" class="nav-link active" data-scroll-target="#source-pipeline">Source pipeline</a></li>
-  <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next">What comes next</a></li>
+  <li><a href="#project-overview" id="toc-project-overview" class="nav-link active" data-scroll-target="#project-overview">Project overview</a></li>
+  <li><a href="#what-the-site-includes" id="toc-what-the-site-includes" class="nav-link" data-scroll-target="#what-the-site-includes">What the site includes</a>
+  <ul class="collapse">
+  <li><a href="#memoir-text-and-scanned-source-material" id="toc-memoir-text-and-scanned-source-material" class="nav-link" data-scroll-target="#memoir-text-and-scanned-source-material">Memoir text and scanned source material</a></li>
+  <li><a href="#timeline" id="toc-timeline" class="nav-link" data-scroll-target="#timeline">Timeline</a></li>
+  <li><a href="#sentiment-analysis" id="toc-sentiment-analysis" class="nav-link" data-scroll-target="#sentiment-analysis">Sentiment analysis</a></li>
+  <li><a href="#emotion-analysis" id="toc-emotion-analysis" class="nav-link" data-scroll-target="#emotion-analysis">Emotion analysis</a></li>
+  <li><a href="#named-entities" id="toc-named-entities" class="nav-link" data-scroll-target="#named-entities">Named entities</a></li>
+  <li><a href="#entity-graph" id="toc-entity-graph" class="nav-link" data-scroll-target="#entity-graph">Entity graph</a></li>
+  <li><a href="#passage-index" id="toc-passage-index" class="nav-link" data-scroll-target="#passage-index">Passage index</a></li>
+  <li><a href="#ask-uncle-virgil" id="toc-ask-uncle-virgil" class="nav-link" data-scroll-target="#ask-uncle-virgil">Ask Uncle Virgil</a></li>
+  </ul></li>
+  <li><a href="#how-to-interpret-the-analysis" id="toc-how-to-interpret-the-analysis" class="nav-link" data-scroll-target="#how-to-interpret-the-analysis">How to interpret the analysis</a></li>
+  <li><a href="#technical-approach" id="toc-technical-approach" class="nav-link" data-scroll-target="#technical-approach">Technical approach</a></li>
+  <li><a href="#project-author-and-contact" id="toc-project-author-and-contact" class="nav-link" data-scroll-target="#project-author-and-contact">Project author and contact</a></li>
+  <li><a href="#support-this-project" id="toc-support-this-project" class="nav-link" data-scroll-target="#support-this-project">Support this project</a></li>
   </ul>
 </nav>
     </div>
@@ -221,7 +183,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">About the Project</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<h1 class="title">About this Project</h1>
 </div>
 
 
@@ -238,26 +200,73 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The original Uncle Virgil project was an R/Shiny biography text-analysis app. This rebuild keeps the digital humanities purpose but moves the public-facing site to Quarto.</p>
-<section id="source-pipeline" class="level2">
-<h2 class="anchored" data-anchor-id="source-pipeline">Source pipeline</h2>
-<p>The legacy workflow used:</p>
-<pre class="text"><code>PDF scans -&gt; PNG page images -&gt; Tesseract OCR -&gt; RDS text files -&gt; combined corpus -&gt; sentiment/word cloud outputs -&gt; corpus_data.json</code></pre>
-<p>The new workflow starts from <code>corpus_data.json</code>, creates chapter-level datasets, and renders static analysis pages.</p>
+<section id="project-overview" class="level2">
+<h2 class="anchored" data-anchor-id="project-overview">Project overview</h2>
+<p><strong>Uncle Virgil Bot</strong> is a digital humanities project built around a memoir written by <strong>Virgil Harris</strong>, my grandfather’s brother. The memoir has been converted into a structured text corpus so it can be explored through reading, search, textual analysis, named entities, graphs, and a model-backed question-answering prototype.</p>
+<p>This project treats the memoir as both a family-history document and a research corpus. The site preserves access to the source scans while also creating derived data products that make the memoir easier to analyze.</p>
 </section>
-<section id="what-comes-next" class="level2">
-<h2 class="anchored" data-anchor-id="what-comes-next">What comes next</h2>
-<ol type="1">
-<li>Review chapter boundaries and dates.</li>
-<li>Improve OCR cleanup without destroying historical wording.</li>
-<li>Add named entities: people, places, organizations, dates.</li>
-<li>Add topic modeling and chapter similarity.</li>
-<li>Add AWS backend retrieval.</li>
-<li>Add model-generated answers with citations back to chapters and passages.</li>
-</ol>
+<section id="what-the-site-includes" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-site-includes">What the site includes</h2>
+<section id="memoir-text-and-scanned-source-material" class="level3">
+<h3 class="anchored" data-anchor-id="memoir-text-and-scanned-source-material">Memoir text and scanned source material</h3>
+<p>The chapter pages provide readable text derived from the OCR/RDS source files. The scanned PDFs remain available so readers can compare the extracted text against the original pages.</p>
+</section>
+<section id="timeline" class="level3">
+<h3 class="anchored" data-anchor-id="timeline">Timeline</h3>
+<p>The timeline uses curated chapter-level date ranges along with detected year candidates from the text. This helps separate a chapter’s main life period from historical references, later reflections, and background dates.</p>
+</section>
+<section id="sentiment-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="sentiment-analysis">Sentiment analysis</h3>
+<p>The sentiment layer shows overall positive/negative tone by chapter and sentiment shifts within each chapter. It is useful for seeing where the memoir becomes more reflective, difficult, affectionate, institutional, or event-driven.</p>
+</section>
+<section id="emotion-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="emotion-analysis">Emotion analysis</h3>
+<p>The emotion layer uses lexicon-based categories such as anger, anticipation, disgust, fear, joy, sadness, surprise, trust, positive, and negative. These should be read as exploratory signals rather than psychological claims. They show where certain kinds of emotionally coded language cluster in the memoir.</p>
+</section>
+<section id="named-entities" class="level3">
+<h3 class="anchored" data-anchor-id="named-entities">Named entities</h3>
+<p>The entity layer identifies recurring people, places, organizations, dates, and events. This makes it easier to follow major figures, family members, geographic movement, institutional settings, and historical references across chapters.</p>
+</section>
+<section id="entity-graph" class="level3">
+<h3 class="anchored" data-anchor-id="entity-graph">Entity graph</h3>
+<p>The entity graph turns the memoir into a network. Chapters connect to the people, places, organizations, events, and dates they mention. This makes it possible to explore questions like:</p>
+<ul>
+<li>Which chapters share the same people or places?</li>
+<li>Where do family, military, church, education, and government work overlap?</li>
+<li>Which entities anchor different life stages?</li>
+<li>Which historical contexts appear across multiple chapters?</li>
+</ul>
+<p>The graph is not meant to be a final scholarly interpretation. It is a navigation and discovery tool.</p>
+</section>
+<section id="passage-index" class="level3">
+<h3 class="anchored" data-anchor-id="passage-index">Passage index</h3>
+<p>The passage index breaks the memoir into smaller citation-ready units. Each passage has a chapter, passage number, source label, detected years, and linked entities. This provides the retrieval layer for search and model-backed answers.</p>
+</section>
+<section id="ask-uncle-virgil" class="level3">
+<h3 class="anchored" data-anchor-id="ask-uncle-virgil">Ask Uncle Virgil</h3>
+<p>The model-backed prototype retrieves relevant passages and sends them to an AWS-hosted model. The model then produces an answer grounded in the retrieved passages and lists the source labels underneath. This keeps the AI layer connected to the memoir rather than letting it answer from general knowledge alone.</p>
+</section>
+</section>
+<section id="how-to-interpret-the-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-interpret-the-analysis">How to interpret the analysis</h2>
+<p>The analysis pages are exploratory. OCR artifacts, spelling variation, historical language, and the limits of lexicon-based methods can affect the results. The strongest use of the site is comparative: reading across chapters, checking source passages, and using the graph and passage tools to discover patterns worth closer human interpretation.</p>
+</section>
+<section id="technical-approach" class="level2">
+<h2 class="anchored" data-anchor-id="technical-approach">Technical approach</h2>
+<p>The project is built as a static Quarto website with generated data files. The source text is processed into chapters, passages, sentiment tables, emotion tables, entity registries, graph nodes and edges, and search indexes. The static pages run on GitHub Pages. The experimental model-backed page uses an AWS Lambda endpoint, S3-hosted passage data, and Amazon Bedrock.</p>
+</section>
+<section id="project-author-and-contact" class="level2">
+<h2 class="anchored" data-anchor-id="project-author-and-contact">Project author and contact</h2>
+<p>This project was designed and developed by <strong>Clark Ruttinger</strong> as a digital humanities exercise in corpus analysis, memoir exploration, and AI-assisted historical interpretation.</p>
+<p>For more information about the designer and author of this project, including professional background, other analytics projects, and contact information, please visit:</p>
+<p><a href="https://clarkruttinger.info">clarkruttinger.info</a></p>
+</section>
+<section id="support-this-project" class="level2">
+<h2 class="anchored" data-anchor-id="support-this-project">Support this project</h2>
+<p>This site uses a small AWS-backed model service for the Ask Uncle Virgil feature. If you find the project useful or want to support its continued operation, you can send support through Venmo.</p>
+<p><strong>Venmo:</strong> <a href="https://venmo.com/u/Clark-Ruttinger"><span class="citation" data-cites="Clark-Ruttinger">@Clark-Ruttinger</span></a></p>
+<p><img src="assets/img/venmo-qr.png" class="img-fluid" alt="Venmo QR code for Clark Ruttinger" width="260"></p>
 
-
-<!-- -->
 
 </section>
 
@@ -333,60 +342,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       });
       clipboardModal.on('success', onCopySuccess);
     }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
-        for (let i=0; i<cellDetails.length; i++) {
-          const details = cellDetails[i];
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
-    }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/ceruttinger\.github\.io\/UncleVirgilBot\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -712,46 +670,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "About the Project"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>The original Uncle Virgil project was an R/Shiny biography text-analysis app. This rebuild keeps the digital humanities purpose but moves the public-facing site to Quarto.</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Source pipeline</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>The legacy workflow used:</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="in">```text</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="in">PDF scans -&gt; PNG page images -&gt; Tesseract OCR -&gt; RDS text files -&gt; combined corpus -&gt; sentiment/word cloud outputs -&gt; corpus_data.json</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>The new workflow starts from <span class="in">`corpus_data.json`</span>, creates chapter-level datasets, and renders static analysis pages.</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## What comes next</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Review chapter boundaries and dates.</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Improve OCR cleanup without destroying historical wording.</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Add named entities: people, places, organizations, dates.</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Add topic modeling and chapter similarity.</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Add AWS backend retrieval.</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Add model-generated answers with citations back to chapters and passages.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
-</div></div></div></div></div>
+  </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>Uncle Virgil memoir analysis project</p>
-</div>   
-    <div class="nav-footer-center">
-      &nbsp;
-    </div>
-    <div class="nav-footer-right">
-<p>Built with Quarto</p>
-</div>
-  </div>
-</footer>
 
 
 

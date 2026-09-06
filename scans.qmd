@@ -1,13 +1,16 @@
 ---
 title: "Scanned PDFs"
+toc: false
+execute:
+  echo: false
+  warning: false
+  message: false
 ---
 
 This page links to the original scanned chapter PDFs.
 
 The OCR text powers the analysis pages and search. The scanned PDFs preserve the original source pages so readers can inspect the memoir as scanned.
 
-::: callout-warning
-If this site is public, these PDFs are public too. For a private family version, the PDFs should eventually move to private AWS S3 storage with signed links.
 :::
 
 ```{r}

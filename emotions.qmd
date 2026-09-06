@@ -1,42 +1,234 @@
 ---
 title: "Emotion Analysis"
+page-layout: article
+toc: true
+execute:
+  echo: false
+  warning: false
+  message: false
 ---
 
-```{r}
-#| label: emotions-load
-#| echo: false
+```{r setup}
 library(readr)
 library(dplyr)
+library(tidyr)
+library(stringr)
+library(forcats)
 library(ggplot2)
-if (!file.exists("data/processed/nrc_emotions_by_chapter.csv")) {
-  source("R/02_sentiment_analysis.R")
+library(knitr)
+
+emotion_categories <- c(
+  "anger", "anticipation", "disgust", "fear",
+  "joy", "sadness", "surprise", "trust"
+)
+
+safe_read <- function(path) {
+  if (!file.exists(path)) {
+    return(tibble())
+  }
+  read_csv(path, show_col_types = FALSE)
 }
-emotions <- read_csv("data/processed/nrc_emotions_by_chapter.csv", show_col_types = FALSE)
+
+standardize_emotion_col <- function(df) {
+  if (nrow(df) == 0) return(df)
+  if ("emotion" %in% names(df) && !"sentiment" %in% names(df)) {
+    df <- rename(df, sentiment = emotion)
+  }
+  df
+}
+
+make_chapter_label <- function(df) {
+  if (nrow(df) == 0) return(df)
+  if (!"chapter_label" %in% names(df)) {
+    if (all(c("chapter", "chapter_title") %in% names(df))) {
+      df <- mutate(df, chapter_label = paste0("Ch. ", chapter, ": ", chapter_title))
+    } else if ("chapter" %in% names(df)) {
+      df <- mutate(df, chapter_label = paste0("Ch. ", chapter))
+    }
+  }
+  df
+}
+
+emotion_by_chapter <- safe_read("data/public/emotion_by_chapter.csv") |>
+  standardize_emotion_col() |>
+  make_chapter_label()
+
+emotion_within_chapter <- safe_read("data/public/emotion_within_chapter.csv") |>
+  standardize_emotion_col() |>
+  make_chapter_label()
+
+passage_emotion_summary <- safe_read("data/public/passage_emotion_summary.csv") |>
+  standardize_emotion_col() |>
+  make_chapter_label()
+
+lexicon_source <- "Unknown"
+if ("lexicon_source" %in% names(emotion_by_chapter) && nrow(emotion_by_chapter) > 0) {
+  lexicon_source <- emotion_by_chapter |>
+    filter(!is.na(lexicon_source), lexicon_source != "") |>
+    distinct(lexicon_source) |>
+    pull(lexicon_source) |>
+    first()
+}
 ```
 
-The emotion layer uses the NRC lexicon categories: anger, anticipation, disgust, fear, joy, sadness, surprise, trust, positive, and negative.
+This page analyzes the memoir using the NRC emotion categories: anger, anticipation, disgust, fear, joy, sadness, surprise, and trust. Positive and negative sentiment are handled separately on the Sentiment page.
 
 ## Emotion counts by chapter
 
-```{r}
-#| echo: false
-emotions %>%
-  filter(!sentiment %in% c("positive", "negative")) %>%
-  ggplot(aes(x = reorder(chapter_title, chapter), y = n, fill = sentiment)) +
-  geom_col() +
-  coord_flip() +
-  labs(x = NULL, y = "Word matches", fill = "Emotion", title = "NRC emotion profile by chapter") +
-  theme_minimal()
+This chart shows the number of NRC emotion-word matches in each chapter. Treat this as a reading aid, not as a psychological diagnosis of the author. Lexicon methods count word matches and can miss irony, context, negation, and OCR noise.
+
+```{r emotion-counts-by-chapter, fig.width=10, fig.height=7}
+plot_data <- emotion_by_chapter |>
+  filter(sentiment %in% emotion_categories) |>
+  mutate(
+    chapter_label = fct_reorder(chapter_label, chapter),
+    sentiment = str_to_title(sentiment)
+  )
+
+if (nrow(plot_data) == 0) {
+  cat("No emotion-count data is available yet. Rebuild the emotion analysis data products.")
+} else {
+  ggplot(plot_data, aes(x = chapter_label, y = count, fill = sentiment)) +
+    geom_col(position = "dodge") +
+    coord_flip() +
+    labs(
+      title = "NRC emotion word matches by chapter",
+      x = NULL,
+      y = "Word matches",
+      fill = "Emotion"
+    ) +
+    theme_minimal(base_size = 12) +
+    theme(legend.position = "bottom")
+}
+```
+
+## Emotion rates by chapter
+
+Raw counts are affected by chapter length. This view normalizes emotion-word matches per 1,000 words where the data is available.
+
+```{r emotion-rates-by-chapter, fig.width=10, fig.height=7}
+rate_col <- case_when(
+  "rate_per_1000_words" %in% names(emotion_by_chapter) ~ "rate_per_1000_words",
+  "rate_per_1000" %in% names(emotion_by_chapter) ~ "rate_per_1000",
+  TRUE ~ NA_character_
+)
+
+if (is.na(rate_col)) {
+  cat("Emotion-rate data is not available yet.")
+} else {
+  rate_data <- emotion_by_chapter |>
+    filter(sentiment %in% emotion_categories) |>
+    mutate(
+      chapter_label = fct_reorder(chapter_label, chapter),
+      sentiment = str_to_title(sentiment),
+      rate = .data[[rate_col]]
+    )
+
+  if (nrow(rate_data) == 0) {
+    cat("No emotion-rate data is available yet.")
+  } else {
+    ggplot(rate_data, aes(x = chapter_label, y = rate, fill = sentiment)) +
+      geom_col(position = "dodge") +
+      coord_flip() +
+      labs(
+        title = "Emotion word matches per 1,000 words",
+        x = NULL,
+        y = "Matches per 1,000 words",
+        fill = "Emotion"
+      ) +
+      theme_minimal(base_size = 12) +
+      theme(legend.position = "bottom")
+  }
+}
 ```
 
 ## Dominant emotion per chapter
 
-```{r}
-#| echo: false
-emotions %>%
-  filter(!sentiment %in% c("positive", "negative")) %>%
-  group_by(chapter, chapter_title) %>%
-  slice_max(n, n = 1, with_ties = FALSE) %>%
-  ungroup() %>%
-  select(chapter, chapter_title, dominant_emotion = sentiment, count = n)
+This table identifies the highest-count NRC emotion category in each chapter. It is most useful as a guide for close reading: the label points to where the chapter’s language clusters, not to a definitive emotional meaning.
+
+```{r dominant-emotion-table}
+dominant <- emotion_by_chapter |>
+  filter(sentiment %in% emotion_categories) |>
+  group_by(chapter, chapter_title, chapter_label) |>
+  slice_max(order_by = count, n = 1, with_ties = FALSE) |>
+  ungroup() |>
+  transmute(
+    Chapter = chapter_label,
+    `Dominant emotion` = str_to_title(sentiment),
+    `Word matches` = count
+  ) |>
+  arrange(as.numeric(str_extract(Chapter, "(?<=Ch\\. )\\d+")))
+
+if (nrow(dominant) == 0) {
+  cat("No dominant-emotion data is available yet.")
+} else {
+  kable(dominant)
+}
 ```
+
+## Emotion shifts within chapters
+
+This chart shows how emotion-word matches shift across passages within each chapter. The passage-level view is useful for finding moments where the memoir changes tone.
+
+```{r within-chapter-emotions, fig.width=11, fig.height=9}
+within_data <- emotion_within_chapter |>
+  filter(sentiment %in% emotion_categories) |>
+  mutate(
+    chapter_label = fct_reorder(chapter_label, chapter),
+    sentiment = str_to_title(sentiment)
+  )
+
+if (nrow(within_data) == 0 || !"passage_number" %in% names(within_data)) {
+  cat("No within-chapter emotion data is available yet.")
+} else {
+  ggplot(within_data, aes(x = passage_number, y = count, color = sentiment, group = sentiment)) +
+    geom_line(linewidth = 0.5, alpha = 0.8) +
+    geom_point(size = 1.4, alpha = 0.85) +
+    facet_wrap(~ chapter_label, scales = "free_x") +
+    labs(
+      title = "Passage-level emotion shifts within chapters",
+      x = "Passage number",
+      y = "Word matches",
+      color = "Emotion"
+    ) +
+    theme_minimal(base_size = 11) +
+    theme(
+      legend.position = "bottom",
+      strip.text = element_text(face = "bold")
+    )
+}
+```
+
+## Passage emotion highlights
+
+These passage-level summaries help identify where strong emotion-word clusters occur and where close reading may be worthwhile.
+
+```{r passage-emotion-highlights}
+if (nrow(passage_emotion_summary) == 0) {
+  cat("No passage-level emotion summary is available yet.")
+} else {
+  display_cols <- intersect(
+    c(
+      "citation_label", "passage_id", "chapter", "chapter_title",
+      "passage_number", "dominant_emotion", "sentiment",
+      "dominant_count", "total_emotion_matches", "count",
+      "lexicon_source"
+    ),
+    names(passage_emotion_summary)
+  )
+
+  passage_emotion_summary |>
+    mutate(sort_count = coalesce(
+      suppressWarnings(as.numeric(.data[[intersect(c("total_emotion_matches", "dominant_count", "count"), names(passage_emotion_summary))[1]]])),
+      0
+    )) |>
+    arrange(desc(sort_count)) |>
+    select(any_of(display_cols)) |>
+    head(25) |>
+    kable()
+}
+```
+
+## How to read this analysis
+
+Emotion analysis is a distant-reading technique. It helps surface patterns for interpretation, but it does not replace reading the passages themselves. The best use is to move from the charts into the passage index, scanned PDFs, and model-backed bot to inspect the underlying text.

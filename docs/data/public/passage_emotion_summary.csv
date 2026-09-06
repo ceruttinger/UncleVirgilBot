@@ -1,0 +1,165 @@
+passage_id,citation_label,chapter,chapter_title,passage_number,passage_word_count,dominant_emotion,dominant_count,rate_per_1000_words,lexicon_source
+ch01_p001,"Ch. 1: Earliest Memories, passage 1",1,Earliest Memories,1,236,anticipation,9,38.13559322033898,NRC lexicon via tidytext/textdata
+ch01_p002,"Ch. 1: Earliest Memories, passage 2",1,Earliest Memories,2,232,anticipation,4,17.241379310344826,NRC lexicon via tidytext/textdata
+ch01_p003,"Ch. 1: Earliest Memories, passage 3",1,Earliest Memories,3,228,trust,9,39.473684210526315,NRC lexicon via tidytext/textdata
+ch01_p004,"Ch. 1: Earliest Memories, passage 4",1,Earliest Memories,4,270,trust,12,44.44444444444444,NRC lexicon via tidytext/textdata
+ch01_p005,"Ch. 1: Earliest Memories, passage 5",1,Earliest Memories,5,261,sadness,15,57.47126436781609,NRC lexicon via tidytext/textdata
+ch01_p006,"Ch. 1: Earliest Memories, passage 6",1,Earliest Memories,6,234,trust,14,59.82905982905983,NRC lexicon via tidytext/textdata
+ch01_p007,"Ch. 1: Earliest Memories, passage 7",1,Earliest Memories,7,252,trust,10,39.682539682539684,NRC lexicon via tidytext/textdata
+ch01_p008,"Ch. 1: Earliest Memories, passage 8",1,Earliest Memories,8,260,trust,16,61.53846153846154,NRC lexicon via tidytext/textdata
+ch01_p009,"Ch. 1: Earliest Memories, passage 9",1,Earliest Memories,9,242,anticipation,8,33.057851239669425,NRC lexicon via tidytext/textdata
+ch01_p010,"Ch. 1: Earliest Memories, passage 10",1,Earliest Memories,10,242,anticipation,8,33.057851239669425,NRC lexicon via tidytext/textdata
+ch01_p011,"Ch. 1: Earliest Memories, passage 11",1,Earliest Memories,11,235,joy,11,46.80851063829787,NRC lexicon via tidytext/textdata
+ch01_p012,"Ch. 1: Earliest Memories, passage 12",1,Earliest Memories,12,231,anticipation,7,30.303030303030305,NRC lexicon via tidytext/textdata
+ch01_p013,"Ch. 1: Earliest Memories, passage 13",1,Earliest Memories,13,233,trust,8,34.33476394849785,NRC lexicon via tidytext/textdata
+ch01_p014,"Ch. 1: Earliest Memories, passage 14",1,Earliest Memories,14,231,fear,4,17.316017316017316,NRC lexicon via tidytext/textdata
+ch01_p015,"Ch. 1: Earliest Memories, passage 15",1,Earliest Memories,15,242,anticipation,8,33.057851239669425,NRC lexicon via tidytext/textdata
+ch02_p001,"Ch. 2: The Teenage Period, passage 1",2,The Teenage Period,1,248,trust,15,60.483870967741936,NRC lexicon via tidytext/textdata
+ch02_p002,"Ch. 2: The Teenage Period, passage 2",2,The Teenage Period,2,241,trust,10,41.49377593360996,NRC lexicon via tidytext/textdata
+ch02_p003,"Ch. 2: The Teenage Period, passage 3",2,The Teenage Period,3,240,anticipation,6,25,NRC lexicon via tidytext/textdata
+ch02_p004,"Ch. 2: The Teenage Period, passage 4",2,The Teenage Period,4,241,trust,13,53.941908713692946,NRC lexicon via tidytext/textdata
+ch02_p005,"Ch. 2: The Teenage Period, passage 5",2,The Teenage Period,5,245,trust,7,28.57142857142857,NRC lexicon via tidytext/textdata
+ch02_p006,"Ch. 2: The Teenage Period, passage 6",2,The Teenage Period,6,236,trust,14,59.32203389830509,NRC lexicon via tidytext/textdata
+ch02_p007,"Ch. 2: The Teenage Period, passage 7",2,The Teenage Period,7,228,trust,11,48.24561403508772,NRC lexicon via tidytext/textdata
+ch02_p008,"Ch. 2: The Teenage Period, passage 8",2,The Teenage Period,8,246,trust,15,60.97560975609756,NRC lexicon via tidytext/textdata
+ch02_p009,"Ch. 2: The Teenage Period, passage 9",2,The Teenage Period,9,216,trust,7,32.407407407407405,NRC lexicon via tidytext/textdata
+ch02_p010,"Ch. 2: The Teenage Period, passage 10",2,The Teenage Period,10,247,trust,10,40.48582995951417,NRC lexicon via tidytext/textdata
+ch02_p011,"Ch. 2: The Teenage Period, passage 11",2,The Teenage Period,11,245,trust,10,40.816326530612244,NRC lexicon via tidytext/textdata
+ch02_p012,"Ch. 2: The Teenage Period, passage 12",2,The Teenage Period,12,270,trust,10,37.03703703703704,NRC lexicon via tidytext/textdata
+ch02_p013,"Ch. 2: The Teenage Period, passage 13",2,The Teenage Period,13,261,fear,11,42.145593869731805,NRC lexicon via tidytext/textdata
+ch02_p014,"Ch. 2: The Teenage Period, passage 14",2,The Teenage Period,14,248,anticipation,12,48.387096774193544,NRC lexicon via tidytext/textdata
+ch02_p015,"Ch. 2: The Teenage Period, passage 15",2,The Teenage Period,15,235,trust,9,38.297872340425535,NRC lexicon via tidytext/textdata
+ch02_p016,"Ch. 2: The Teenage Period, passage 16",2,The Teenage Period,16,200,surprise,6,30,NRC lexicon via tidytext/textdata
+ch03_p001,"Ch. 3: World War Two, passage 1",3,World War Two,1,241,trust,8,33.19502074688797,NRC lexicon via tidytext/textdata
+ch03_p002,"Ch. 3: World War Two, passage 2",3,World War Two,2,251,trust,8,31.872509960159363,NRC lexicon via tidytext/textdata
+ch03_p003,"Ch. 3: World War Two, passage 3",3,World War Two,3,255,anticipation,10,39.21568627450981,NRC lexicon via tidytext/textdata
+ch03_p004,"Ch. 3: World War Two, passage 4",3,World War Two,4,252,fear,9,35.714285714285715,NRC lexicon via tidytext/textdata
+ch03_p005,"Ch. 3: World War Two, passage 5",3,World War Two,5,248,anger,15,60.483870967741936,NRC lexicon via tidytext/textdata
+ch03_p006,"Ch. 3: World War Two, passage 6",3,World War Two,6,238,anger,8,33.61344537815126,NRC lexicon via tidytext/textdata
+ch03_p007,"Ch. 3: World War Two, passage 7",3,World War Two,7,241,fear,6,24.896265560165972,NRC lexicon via tidytext/textdata
+ch03_p008,"Ch. 3: World War Two, passage 8",3,World War Two,8,233,anticipation,10,42.918454935622314,NRC lexicon via tidytext/textdata
+ch03_p009,"Ch. 3: World War Two, passage 9",3,World War Two,9,232,sadness,6,25.862068965517242,NRC lexicon via tidytext/textdata
+ch03_p010,"Ch. 3: World War Two, passage 10",3,World War Two,10,245,anticipation,7,28.57142857142857,NRC lexicon via tidytext/textdata
+ch03_p011,"Ch. 3: World War Two, passage 11",3,World War Two,11,238,sadness,6,25.210084033613445,NRC lexicon via tidytext/textdata
+ch03_p012,"Ch. 3: World War Two, passage 12",3,World War Two,12,69,joy,6,86.95652173913044,NRC lexicon via tidytext/textdata
+ch04_p001,"Ch. 4: My College Years BYU and Colombia, passage 1",4,My College Years BYU and Colombia,1,230,trust,12,52.17391304347826,NRC lexicon via tidytext/textdata
+ch04_p002,"Ch. 4: My College Years BYU and Colombia, passage 2",4,My College Years BYU and Colombia,2,222,trust,4,18.01801801801802,NRC lexicon via tidytext/textdata
+ch04_p003,"Ch. 4: My College Years BYU and Colombia, passage 3",4,My College Years BYU and Colombia,3,249,anticipation,8,32.128514056224894,NRC lexicon via tidytext/textdata
+ch04_p004,"Ch. 4: My College Years BYU and Colombia, passage 4",4,My College Years BYU and Colombia,4,236,trust,15,63.559322033898304,NRC lexicon via tidytext/textdata
+ch04_p005,"Ch. 4: My College Years BYU and Colombia, passage 5",4,My College Years BYU and Colombia,5,230,trust,9,39.130434782608695,NRC lexicon via tidytext/textdata
+ch04_p006,"Ch. 4: My College Years BYU and Colombia, passage 6",4,My College Years BYU and Colombia,6,261,trust,11,42.145593869731805,NRC lexicon via tidytext/textdata
+ch04_p007,"Ch. 4: My College Years BYU and Colombia, passage 7",4,My College Years BYU and Colombia,7,261,anticipation,10,38.314176245210724,NRC lexicon via tidytext/textdata
+ch04_p008,"Ch. 4: My College Years BYU and Colombia, passage 8",4,My College Years BYU and Colombia,8,232,anticipation,9,38.793103448275865,NRC lexicon via tidytext/textdata
+ch04_p009,"Ch. 4: My College Years BYU and Colombia, passage 9",4,My College Years BYU and Colombia,9,249,anticipation,4,16.064257028112447,NRC lexicon via tidytext/textdata
+ch04_p010,"Ch. 4: My College Years BYU and Colombia, passage 10",4,My College Years BYU and Colombia,10,230,trust,10,43.47826086956522,NRC lexicon via tidytext/textdata
+ch04_p011,"Ch. 4: My College Years BYU and Colombia, passage 11",4,My College Years BYU and Colombia,11,233,trust,8,34.33476394849785,NRC lexicon via tidytext/textdata
+ch04_p012,"Ch. 4: My College Years BYU and Colombia, passage 12",4,My College Years BYU and Colombia,12,248,trust,14,56.45161290322581,NRC lexicon via tidytext/textdata
+ch04_p013,"Ch. 4: My College Years BYU and Colombia, passage 13",4,My College Years BYU and Colombia,13,246,trust,9,36.58536585365854,NRC lexicon via tidytext/textdata
+ch04_p014,"Ch. 4: My College Years BYU and Colombia, passage 14",4,My College Years BYU and Colombia,14,241,anticipation,10,41.49377593360996,NRC lexicon via tidytext/textdata
+ch04_p015,"Ch. 4: My College Years BYU and Colombia, passage 15",4,My College Years BYU and Colombia,15,243,trust,9,37.03703703703704,NRC lexicon via tidytext/textdata
+ch04_p016,"Ch. 4: My College Years BYU and Colombia, passage 16",4,My College Years BYU and Colombia,16,255,trust,13,50.98039215686274,NRC lexicon via tidytext/textdata
+ch04_p017,"Ch. 4: My College Years BYU and Colombia, passage 17",4,My College Years BYU and Colombia,17,238,trust,7,29.41176470588235,NRC lexicon via tidytext/textdata
+ch04_p018,"Ch. 4: My College Years BYU and Colombia, passage 18",4,My College Years BYU and Colombia,18,248,trust,7,28.225806451612904,NRC lexicon via tidytext/textdata
+ch05_p001,"Ch. 5: The CIA, passage 1",5,The CIA,1,261,fear,9,34.48275862068965,NRC lexicon via tidytext/textdata
+ch05_p002,"Ch. 5: The CIA, passage 2",5,The CIA,2,264,trust,10,37.87878787878788,NRC lexicon via tidytext/textdata
+ch05_p003,"Ch. 5: The CIA, passage 3",5,The CIA,3,246,trust,9,36.58536585365854,NRC lexicon via tidytext/textdata
+ch05_p004,"Ch. 5: The CIA, passage 4",5,The CIA,4,258,fear,5,19.37984496124031,NRC lexicon via tidytext/textdata
+ch05_p005,"Ch. 5: The CIA, passage 5",5,The CIA,5,261,trust,7,26.819923371647512,NRC lexicon via tidytext/textdata
+ch05_p006,"Ch. 5: The CIA, passage 6",5,The CIA,6,245,trust,12,48.97959183673469,NRC lexicon via tidytext/textdata
+ch05_p007,"Ch. 5: The CIA, passage 7",5,The CIA,7,230,trust,7,30.434782608695652,NRC lexicon via tidytext/textdata
+ch05_p008,"Ch. 5: The CIA, passage 8",5,The CIA,8,237,anticipation,8,33.755274261603375,NRC lexicon via tidytext/textdata
+ch05_p009,"Ch. 5: The CIA, passage 9",5,The CIA,9,232,trust,5,21.551724137931036,NRC lexicon via tidytext/textdata
+ch05_p010,"Ch. 5: The CIA, passage 10",5,The CIA,10,261,trust,8,30.65134099616858,NRC lexicon via tidytext/textdata
+ch05_p011,"Ch. 5: The CIA, passage 11",5,The CIA,11,262,trust,4,15.267175572519083,NRC lexicon via tidytext/textdata
+ch05_p012,"Ch. 5: The CIA, passage 12",5,The CIA,12,280,trust,6,21.428571428571427,NRC lexicon via tidytext/textdata
+ch05_p013,"Ch. 5: The CIA, passage 13",5,The CIA,13,235,anticipation,8,34.04255319148936,NRC lexicon via tidytext/textdata
+ch05_p014,"Ch. 5: The CIA, passage 14",5,The CIA,14,231,trust,8,34.63203463203463,NRC lexicon via tidytext/textdata
+ch05_p015,"Ch. 5: The CIA, passage 15",5,The CIA,15,261,trust,6,22.988505747126435,NRC lexicon via tidytext/textdata
+ch05_p016,"Ch. 5: The CIA, passage 16",5,The CIA,16,242,joy,4,16.528925619834713,NRC lexicon via tidytext/textdata
+ch05_p017,"Ch. 5: The CIA, passage 17",5,The CIA,17,255,joy,11,43.13725490196078,NRC lexicon via tidytext/textdata
+ch05_p018,"Ch. 5: The CIA, passage 18",5,The CIA,18,235,fear,10,42.5531914893617,NRC lexicon via tidytext/textdata
+ch05_p019,"Ch. 5: The CIA, passage 19",5,The CIA,19,235,trust,11,46.80851063829787,NRC lexicon via tidytext/textdata
+ch05_p020,"Ch. 5: The CIA, passage 20",5,The CIA,20,237,trust,10,42.19409282700422,NRC lexicon via tidytext/textdata
+ch05_p021,"Ch. 5: The CIA, passage 21",5,The CIA,21,249,anticipation,6,24.096385542168676,NRC lexicon via tidytext/textdata
+ch05_p022,"Ch. 5: The CIA, passage 22",5,The CIA,22,257,anticipation,5,19.45525291828794,NRC lexicon via tidytext/textdata
+ch05_p023,"Ch. 5: The CIA, passage 23",5,The CIA,23,233,trust,8,34.33476394849785,NRC lexicon via tidytext/textdata
+ch05_p024,"Ch. 5: The CIA, passage 24",5,The CIA,24,234,anticipation,5,21.367521367521366,NRC lexicon via tidytext/textdata
+ch05_p025,"Ch. 5: The CIA, passage 25",5,The CIA,25,234,anticipation,5,21.367521367521366,NRC lexicon via tidytext/textdata
+ch05_p026,"Ch. 5: The CIA, passage 26",5,The CIA,26,236,trust,13,55.08474576271186,NRC lexicon via tidytext/textdata
+ch05_p027,"Ch. 5: The CIA, passage 27",5,The CIA,27,110,trust,9,81.81818181818181,NRC lexicon via tidytext/textdata
+ch06_p001,"Ch. 6: Montevideo Uruguay, passage 1",6,Montevideo Uruguay,1,253,trust,11,43.47826086956522,NRC lexicon via tidytext/textdata
+ch06_p002,"Ch. 6: Montevideo Uruguay, passage 2",6,Montevideo Uruguay,2,259,trust,7,27.027027027027028,NRC lexicon via tidytext/textdata
+ch06_p003,"Ch. 6: Montevideo Uruguay, passage 3",6,Montevideo Uruguay,3,241,anticipation,7,29.04564315352697,NRC lexicon via tidytext/textdata
+ch06_p004,"Ch. 6: Montevideo Uruguay, passage 4",6,Montevideo Uruguay,4,247,anticipation,10,40.48582995951417,NRC lexicon via tidytext/textdata
+ch06_p005,"Ch. 6: Montevideo Uruguay, passage 5",6,Montevideo Uruguay,5,268,anticipation,6,22.388059701492537,NRC lexicon via tidytext/textdata
+ch06_p006,"Ch. 6: Montevideo Uruguay, passage 6",6,Montevideo Uruguay,6,235,trust,7,29.787234042553195,NRC lexicon via tidytext/textdata
+ch06_p007,"Ch. 6: Montevideo Uruguay, passage 7",6,Montevideo Uruguay,7,269,trust,15,55.762081784386616,NRC lexicon via tidytext/textdata
+ch06_p008,"Ch. 6: Montevideo Uruguay, passage 8",6,Montevideo Uruguay,8,263,trust,13,49.42965779467681,NRC lexicon via tidytext/textdata
+ch06_p009,"Ch. 6: Montevideo Uruguay, passage 9",6,Montevideo Uruguay,9,244,trust,6,24.59016393442623,NRC lexicon via tidytext/textdata
+ch06_p010,"Ch. 6: Montevideo Uruguay, passage 10",6,Montevideo Uruguay,10,281,fear,7,24.91103202846975,NRC lexicon via tidytext/textdata
+ch06_p011,"Ch. 6: Montevideo Uruguay, passage 11",6,Montevideo Uruguay,11,239,fear,10,41.84100418410041,NRC lexicon via tidytext/textdata
+ch06_p012,"Ch. 6: Montevideo Uruguay, passage 12",6,Montevideo Uruguay,12,241,trust,10,41.49377593360996,NRC lexicon via tidytext/textdata
+ch06_p013,"Ch. 6: Montevideo Uruguay, passage 13",6,Montevideo Uruguay,13,236,trust,8,33.898305084745765,NRC lexicon via tidytext/textdata
+ch06_p014,"Ch. 6: Montevideo Uruguay, passage 14",6,Montevideo Uruguay,14,243,trust,7,28.80658436213992,NRC lexicon via tidytext/textdata
+ch06_p015,"Ch. 6: Montevideo Uruguay, passage 15",6,Montevideo Uruguay,15,237,trust,9,37.9746835443038,NRC lexicon via tidytext/textdata
+ch06_p016,"Ch. 6: Montevideo Uruguay, passage 16",6,Montevideo Uruguay,16,218,trust,5,22.93577981651376,NRC lexicon via tidytext/textdata
+ch07_p001,"Ch. 7: Headquarters Duty, passage 1",7,Headquarters Duty,1,235,anticipation,9,38.297872340425535,NRC lexicon via tidytext/textdata
+ch07_p002,"Ch. 7: Headquarters Duty, passage 2",7,Headquarters Duty,2,238,trust,14,58.8235294117647,NRC lexicon via tidytext/textdata
+ch07_p003,"Ch. 7: Headquarters Duty, passage 3",7,Headquarters Duty,3,266,fear,9,33.83458646616541,NRC lexicon via tidytext/textdata
+ch07_p004,"Ch. 7: Headquarters Duty, passage 4",7,Headquarters Duty,4,290,trust,14,48.275862068965516,NRC lexicon via tidytext/textdata
+ch07_p005,"Ch. 7: Headquarters Duty, passage 5",7,Headquarters Duty,5,249,sadness,9,36.144578313253014,NRC lexicon via tidytext/textdata
+ch07_p006,"Ch. 7: Headquarters Duty, passage 6",7,Headquarters Duty,6,234,trust,7,29.914529914529915,NRC lexicon via tidytext/textdata
+ch07_p007,"Ch. 7: Headquarters Duty, passage 7",7,Headquarters Duty,7,238,anticipation,12,50.42016806722689,NRC lexicon via tidytext/textdata
+ch07_p008,"Ch. 7: Headquarters Duty, passage 8",7,Headquarters Duty,8,259,fear,5,19.305019305019304,NRC lexicon via tidytext/textdata
+ch07_p009,"Ch. 7: Headquarters Duty, passage 9",7,Headquarters Duty,9,229,trust,4,17.46724890829694,NRC lexicon via tidytext/textdata
+ch07_p010,"Ch. 7: Headquarters Duty, passage 10",7,Headquarters Duty,10,274,trust,16,58.394160583941606,NRC lexicon via tidytext/textdata
+ch07_p011,"Ch. 7: Headquarters Duty, passage 11",7,Headquarters Duty,11,247,anticipation,13,52.63157894736842,NRC lexicon via tidytext/textdata
+ch07_p012,"Ch. 7: Headquarters Duty, passage 12",7,Headquarters Duty,12,245,trust,5,20.408163265306122,NRC lexicon via tidytext/textdata
+ch07_p013,"Ch. 7: Headquarters Duty, passage 13",7,Headquarters Duty,13,244,anticipation,7,28.688524590163937,NRC lexicon via tidytext/textdata
+ch07_p014,"Ch. 7: Headquarters Duty, passage 14",7,Headquarters Duty,14,248,trust,5,20.161290322580644,NRC lexicon via tidytext/textdata
+ch07_p015,"Ch. 7: Headquarters Duty, passage 15",7,Headquarters Duty,15,232,anticipation,11,47.41379310344827,NRC lexicon via tidytext/textdata
+ch07_p016,"Ch. 7: Headquarters Duty, passage 16",7,Headquarters Duty,16,250,trust,7,28,NRC lexicon via tidytext/textdata
+ch08_p001,"Ch. 8: Rio De Janeiro, passage 1",8,Rio De Janeiro,1,243,anticipation,5,20.5761316872428,NRC lexicon via tidytext/textdata
+ch08_p002,"Ch. 8: Rio De Janeiro, passage 2",8,Rio De Janeiro,2,236,trust,8,33.898305084745765,NRC lexicon via tidytext/textdata
+ch08_p003,"Ch. 8: Rio De Janeiro, passage 3",8,Rio De Janeiro,3,241,sadness,7,29.04564315352697,NRC lexicon via tidytext/textdata
+ch08_p004,"Ch. 8: Rio De Janeiro, passage 4",8,Rio De Janeiro,4,244,anticipation,5,20.491803278688522,NRC lexicon via tidytext/textdata
+ch08_p005,"Ch. 8: Rio De Janeiro, passage 5",8,Rio De Janeiro,5,267,trust,10,37.453183520599254,NRC lexicon via tidytext/textdata
+ch08_p006,"Ch. 8: Rio De Janeiro, passage 6",8,Rio De Janeiro,6,252,fear,4,15.873015873015872,NRC lexicon via tidytext/textdata
+ch08_p007,"Ch. 8: Rio De Janeiro, passage 7",8,Rio De Janeiro,7,234,trust,7,29.914529914529915,NRC lexicon via tidytext/textdata
+ch08_p008,"Ch. 8: Rio De Janeiro, passage 8",8,Rio De Janeiro,8,250,trust,7,28,NRC lexicon via tidytext/textdata
+ch08_p009,"Ch. 8: Rio De Janeiro, passage 9",8,Rio De Janeiro,9,233,trust,13,55.79399141630902,NRC lexicon via tidytext/textdata
+ch08_p010,"Ch. 8: Rio De Janeiro, passage 10",8,Rio De Janeiro,10,234,trust,12,51.28205128205128,NRC lexicon via tidytext/textdata
+ch08_p011,"Ch. 8: Rio De Janeiro, passage 11",8,Rio De Janeiro,11,239,anticipation,6,25.10460251046025,NRC lexicon via tidytext/textdata
+ch08_p012,"Ch. 8: Rio De Janeiro, passage 12",8,Rio De Janeiro,12,251,anticipation,6,23.904382470119522,NRC lexicon via tidytext/textdata
+ch08_p013,"Ch. 8: Rio De Janeiro, passage 13",8,Rio De Janeiro,13,234,sadness,5,21.367521367521366,NRC lexicon via tidytext/textdata
+ch09_p001,"Ch. 9: The McLean Va. Years, passage 1",9,The McLean Va. Years,1,248,trust,8,32.25806451612903,NRC lexicon via tidytext/textdata
+ch09_p002,"Ch. 9: The McLean Va. Years, passage 2",9,The McLean Va. Years,2,291,trust,8,27.491408934707902,NRC lexicon via tidytext/textdata
+ch09_p003,"Ch. 9: The McLean Va. Years, passage 3",9,The McLean Va. Years,3,294,trust,12,40.816326530612244,NRC lexicon via tidytext/textdata
+ch09_p004,"Ch. 9: The McLean Va. Years, passage 4",9,The McLean Va. Years,4,249,trust,10,40.16064257028113,NRC lexicon via tidytext/textdata
+ch09_p005,"Ch. 9: The McLean Va. Years, passage 5",9,The McLean Va. Years,5,243,anticipation,8,32.92181069958848,NRC lexicon via tidytext/textdata
+ch10_p001,"Ch. 10: Making a Career Change, passage 1",10,Making a Career Change,1,279,trust,11,39.42652329749104,NRC lexicon via tidytext/textdata
+ch10_p002,"Ch. 10: Making a Career Change, passage 2",10,Making a Career Change,2,231,trust,6,25.974025974025977,NRC lexicon via tidytext/textdata
+ch10_p003,"Ch. 10: Making a Career Change, passage 3",10,Making a Career Change,3,243,anticipation,10,41.1522633744856,NRC lexicon via tidytext/textdata
+ch10_p004,"Ch. 10: Making a Career Change, passage 4",10,Making a Career Change,4,240,anticipation,10,41.666666666666664,NRC lexicon via tidytext/textdata
+ch10_p005,"Ch. 10: Making a Career Change, passage 5",10,Making a Career Change,5,250,trust,17,68,NRC lexicon via tidytext/textdata
+ch10_p006,"Ch. 10: Making a Career Change, passage 6",10,Making a Career Change,6,303,anticipation,14,46.2046204620462,NRC lexicon via tidytext/textdata
+ch10_p007,"Ch. 10: Making a Career Change, passage 7",10,Making a Career Change,7,248,trust,9,36.29032258064517,NRC lexicon via tidytext/textdata
+ch10_p008,"Ch. 10: Making a Career Change, passage 8",10,Making a Career Change,8,269,trust,13,48.32713754646841,NRC lexicon via tidytext/textdata
+ch10_p009,"Ch. 10: Making a Career Change, passage 9",10,Making a Career Change,9,241,trust,16,66.39004149377594,NRC lexicon via tidytext/textdata
+ch10_p010,"Ch. 10: Making a Career Change, passage 10",10,Making a Career Change,10,241,trust,11,45.64315352697095,NRC lexicon via tidytext/textdata
+ch10_p011,"Ch. 10: Making a Career Change, passage 11",10,Making a Career Change,11,187,trust,15,80.21390374331551,NRC lexicon via tidytext/textdata
+ch11_p001,"Ch. 11: Post Rio to Retirement, passage 1",11,Post Rio to Retirement,1,251,anticipation,7,27.888446215139442,NRC lexicon via tidytext/textdata
+ch11_p002,"Ch. 11: Post Rio to Retirement, passage 2",11,Post Rio to Retirement,2,237,trust,5,21.09704641350211,NRC lexicon via tidytext/textdata
+ch11_p003,"Ch. 11: Post Rio to Retirement, passage 3",11,Post Rio to Retirement,3,236,trust,9,38.13559322033898,NRC lexicon via tidytext/textdata
+ch11_p004,"Ch. 11: Post Rio to Retirement, passage 4",11,Post Rio to Retirement,4,273,anticipation,7,25.64102564102564,NRC lexicon via tidytext/textdata
+ch11_p005,"Ch. 11: Post Rio to Retirement, passage 5",11,Post Rio to Retirement,5,242,trust,10,41.32231404958678,NRC lexicon via tidytext/textdata
+ch11_p006,"Ch. 11: Post Rio to Retirement, passage 6",11,Post Rio to Retirement,6,246,joy,5,20.32520325203252,NRC lexicon via tidytext/textdata
+ch11_p007,"Ch. 11: Post Rio to Retirement, passage 7",11,Post Rio to Retirement,7,247,anticipation,6,24.291497975708502,NRC lexicon via tidytext/textdata
+ch11_p008,"Ch. 11: Post Rio to Retirement, passage 8",11,Post Rio to Retirement,8,234,trust,5,21.367521367521366,NRC lexicon via tidytext/textdata
+ch11_p009,"Ch. 11: Post Rio to Retirement, passage 9",11,Post Rio to Retirement,9,231,anticipation,7,30.303030303030305,NRC lexicon via tidytext/textdata
+ch11_p010,"Ch. 11: Post Rio to Retirement, passage 10",11,Post Rio to Retirement,10,230,trust,7,30.434782608695652,NRC lexicon via tidytext/textdata
+ch11_p011,"Ch. 11: Post Rio to Retirement, passage 11",11,Post Rio to Retirement,11,233,trust,8,34.33476394849785,NRC lexicon via tidytext/textdata
+ch11_p012,"Ch. 11: Post Rio to Retirement, passage 12",11,Post Rio to Retirement,12,236,trust,15,63.559322033898304,NRC lexicon via tidytext/textdata
+ch11_p013,"Ch. 11: Post Rio to Retirement, passage 13",11,Post Rio to Retirement,13,238,trust,7,29.41176470588235,NRC lexicon via tidytext/textdata
+ch11_p014,"Ch. 11: Post Rio to Retirement, passage 14",11,Post Rio to Retirement,14,233,anticipation,5,21.459227467811157,NRC lexicon via tidytext/textdata
+ch11_p015,"Ch. 11: Post Rio to Retirement, passage 15",11,Post Rio to Retirement,15,198,anticipation,9,45.45454545454545,NRC lexicon via tidytext/textdata
